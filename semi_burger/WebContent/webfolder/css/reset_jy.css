@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* reset */
+
+html,body {height:100%;}
+body, h1, h2, h3, h4, h5, h6, div, p, span, strong, em, blockquote, pre, address,
+ul, ol, li, dl, dt, dd, table, th, td, form, fieldset, input, select, label, textarea, img, a {margin:0; padding:0; border:0px;word-break:break-all; word-wrap:break-word}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;}
+header, section, footer, aside, nav, main, article, figure {display: block; }
+img,fieldset{border:0} 
+ul,ol{list-style:none} 
+fieldset legend {position:absolute;visibility:hidden;overflow:hidden;width:0;height:0;margin:0;padding:0;font:0/0 Arial;}
+hr {clear:both;display:none;}
+div img,li img,dd img {vertical-align:top;}
+*html body img {margin:none; padding:none;} /*for IE 6*/
+a{color:#333;text-decoration:none}
+a:focus, a:hover, a:active {text-decoration:none;}
+iframe {border:0;}
+
+body {color:#333;font-size:14px;line-height:120%;font-family:'Roboto','Noto Sans','Noto Sans KR', '돋움', Dotum, tahoma, sans-serif;font-weight:400;letter-spacing:-0.03em;}
+img, input, select, textarea, button {border:0; vertical-align:top; color:#666;font-family:'Roboto', 'Noto Sans','Noto Sans KR', '돋움', Dotum, tahoma, sans-serif}
+address {font-style: normal}
+
+table caption {visibility:hidden; overflow:hidden; width:0; height:0; margin:0; padding:0; font:0/0 Arial;}
+table {width:100%;border-spacing:0; border:0; border-collapse:collapse;font-size:14px;table-layout: fixed;}
+textarea {resize:none; border:1px solid #e0e0e0; padding:5px 10px;color:#424242;font-size:14px;font-family:'Roboto','Noto Sans','Noto Sans KR', '돋움', Dotum, tahoma, sans-serif;}
+input[type=file] {padding:0;}
+input[type="text"],input[type="password"] {padding:5px 10px; border: 1px solid #ccc; border-radius:0;font-size:14px; color:#333; line-height:120%;font-family:'Roboto','Noto Sans','Noto Sans KR', '돋움', Dotum, tahoma, sans-serif;}
+input[type="checkbox"] {vertical-align: middle;}
+select {padding:5px 10px; border:1px solid #ccc;font-family:'Roboto','Noto Sans','notokr-medium', '돋움', Dotum, tahoma, sans-serif; cursor: pointer;-webkit-appearance: none;-moz-appearance: none;}
+select::-ms-expand {display: none;}
+
+/* user class */
+.hide {position:absolute;visibility:hidden;overflow:hidden;width:0;height:0;margin:0;padding:0;font:0/0 Arial;}
+.fl {float:left;}
+.fr {float:right;}
+.clear_fix:after{content:'';display:block;clear:both;}
+.pos_r{position:relative;}
+.pos_a	{position:absolute;}
+.pos_f{position:fixed;}
+.ta_c{text-align:center;}
+
+/**/
+#wrapper {position:relative; width:100%; min-width:980px;}
+.skipToContent a {z-index:100000;position:absolute;top:0;left:0;width:1px;height:1px;font-size:0;line-height:0;overflow:hidden}
+.skipToContent a:focus, #skip a:active {width:200px;height:50px;background:#21272e;color:#fff;font-size:14px;font-weight:bold;text-align:center;text-decoration:none;line-height:50px}
