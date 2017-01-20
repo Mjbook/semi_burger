@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2>테스트입니다ㄴㅇ라ㅣ넝리ㅏ너이ㅏㅓ.</h2>
-ㄴ아러니아ㅓㄹ
+<h2>테스트입니다.</h2>
+dasdsadsd
+>>>>>>> branch 'master' of https://github.com/yongburger/semi_burger.git
 </body>
 </html>
