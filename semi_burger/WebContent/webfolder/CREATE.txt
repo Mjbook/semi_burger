@@ -105,6 +105,6 @@ create sequence qna_board_seq start with 1;
 
 create sequence toping_seq start with 1;
 
-select * from user_sequences; - 확인해보기
+select * from user_sequences; - 확인해보기 ㅡㅡ
 
 	
