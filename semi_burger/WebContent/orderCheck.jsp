@@ -9,7 +9,20 @@
 </head>
 <body>
 <%@include file="/header.jsp"%>
-
+	<section>
+		<article>
+			<table>
+				<tbody>
+					<tr>
+						<th>주문 번호</th>
+						<th>주문 메뉴</th>
+						<th>주문상태</th>
+						<th>주문 일시</th>
+					</tr>
+				</tbody>
+			</table>
+		</article>
+	</section>
 <%@include file="/footer.jsp"%>
 </body>
 </html>
