@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+header p{
+	text-align:right;
+}
+header nav li{
+	list-style-type: none;
+	display: inline;
+	margin-left: 40px;
+}
