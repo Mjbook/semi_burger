@@ -53,7 +53,7 @@
 					} else {
 						%> <!-- 로그인 후 -->
 						<li><a> <%=sname %> 님 로그인 중</a></li>				
-						<li><a href="./franchise/inquiry.php">가맹문의</a></li>				
+						<li><a> 로그아웃 </a></li>				
 						<li><a href="./community/custom.php">고객센터</a></li>
 						<%
 					}

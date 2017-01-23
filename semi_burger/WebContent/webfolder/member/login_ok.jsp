@@ -42,7 +42,7 @@
 	} else {
 		%>
 		<script>
-		window.alert('고객센터로 연락주세요');
+		window.alert('고객센터로 연락주세요~');
 		location.href='/semi_burger/webfolder/member/login.jsp';
 		</script>
 		<%

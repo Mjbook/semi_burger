@@ -15,6 +15,23 @@ public class MemberDTO {
 	public MemberDTO(){
 		
 	}
+	
+	public MemberDTO(int member_no, String id, String paddwd, String name, String birth, String cellphone, String email,
+			String address, int discount, String grade) {
+		super();
+		this.member_no = member_no;
+		this.id = id;
+		this.paddwd = paddwd;
+		this.name = name;
+		this.birth = birth;
+		this.cellphone = cellphone;
+		this.email = email;
+		this.address = address;
+		this.discount = discount;
+		this.grade = grade;
+	}
+
+
 
 	public int getMember_no() {
 		return member_no;

@@ -13,7 +13,7 @@
 </style>
 </head>
 <body>
-
+ 
 <section>
 	<fieldset>
 	<form name="login" action="login_ok.jsp" method="post">
@@ -27,7 +27,7 @@
 		  	<td> </td>
 		  </tr>	
 		  <tr>
-		  	<td colspan="2"> 회원가입 | 아이디, 비밀번호 찾기 </td>		  	
+		  	<td colspan="2"> 회원 가입 | 아이디, 비밀번호 찾기 </td>		  	
 		  </tr>		
 		</table>
 	</form>
