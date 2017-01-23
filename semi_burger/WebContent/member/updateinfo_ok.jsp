@@ -4,7 +4,7 @@
 <% request.setCharacterEncoding("utf-8"); %> 
 
 <jsp:useBean id="mdao" class="member.MemberDAO" scope="session"/>
-<jsp:useBean id="mdto" class="member.MemberDTO"/>
+<jsp:useBean id="mdto" class="member.MemberDTO"/> 
 <jsp:setProperty property="*" name="mdto"/>
 
 <%

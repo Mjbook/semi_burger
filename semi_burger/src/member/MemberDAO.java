@@ -109,7 +109,7 @@ public class MemberDAO {
 			} catch(Exception e2){ }
 		}
 		
-	}
+	} 
 	
 	/** 회원정보 수정*/
 	public int UpdateInfo(MemberDTO dto){
