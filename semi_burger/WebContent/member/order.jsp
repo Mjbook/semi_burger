@@ -78,9 +78,7 @@
 				</tfoot>
 				
 				<tbody>
-				<tr>
-						
-				</tr>
+				
 				</tbody>
 			</table>
 		</form>
