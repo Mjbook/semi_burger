@@ -1,23 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <header>
 <%
 	String sname = (String)session.getAttribute("sname");
 	
 	if(sname==null){
 		%><!-- 로그인 전 -->
-		<li><a href="/semi_burger/webfolder/member/login.jsp">로그인</a></li>				
-		<li><a> 회원가입 </a></li>				
-		<li><a href="./community/custom.php">고객센터</a></li>
+		<li><a href="/semi_burger/member/login.jsp">로그인</a> | 회원가입 </li> 						
 		<%
 	} else {
 		%> <!-- 로그인 후 -->
-		<li><a> <%=sname %> 님 로그인 중</a></li>				
-		<li><a> 로그아웃 </a></li>				
-		<li><a href="./community/custom.php">고객센터</a></li>
+		<li><a> <%=sname %> 님 로그인 중</a> | <a href="/semi_burger/member/logout.jsp"> 로그아웃 </a></li>			
 		<%
 	}
-%>
 %>
 	<nav>
 		<ol class="bigmenu">
