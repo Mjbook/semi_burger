@@ -86,6 +86,16 @@ CREATE TABLE TOPING (
 	TOPING_PAY VARCHAR2(100) NOT NULL
 );
 
+CREATE TABLE NOTICE_BOARD (
+	NOTICE_NO NUMBER(22) PRIMARY KEY,
+	NAME VARCHAR2(20) NOT NULL,
+	SUBJECT VARCHAR2(300) NOT NULL,
+	CONTENT VARCHAR2(4000) NOT NULL,
+	INSERT_DATE DATE,
+	BOARD_COUNT NUMBER(22)
+);
+
+
 
 create sequence board_seq start with 1;
 
@@ -104,6 +114,8 @@ create sequence order_list_seq start with 1;
 create sequence qna_board_seq start with 1;
 
 create sequence toping_seq start with 1;
+
+create sequence notice_seq start with 1;
 
 select * from user_sequences; - 확인해보기 ㅡㅡ
 
