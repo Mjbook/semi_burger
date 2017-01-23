@@ -6,7 +6,7 @@
 <jsp:useBean id="bmdao" class="yb.burger.BurgerDAO"/>
 <jsp:useBean id="bmdto" class="yb.burger.BurgerDTO"/>
 <html>
-<%
+<%	request.setCharacterEncoding("utf-8");
 	if(session.getAttribute("sid")==null){
 %>
 <script>
@@ -29,36 +29,63 @@
 	width:250px;
 }
 </style>
-</head>
-<body>
 <%
 	ArrayList<BurgerDTO> arr=bmdao.burgerMenu(bmdto);
+	String choice=request.getParameter("1");
+	System.out.print(choice);
 %>
+<%
+if(arr==null){
+%>
+<script>
+	window.alert('메뉴 준비중');
+	location.href='/semi_burger/index.jsp';
+</script><%
+	return;
+}
+for(int i=0;i<arr.size();i++){
+%>
+	<script>
+	function add<%=i%>(menu){
+		no=document.select.m<%=i%>.value;
+		document.select.m<%=i%>.value=0;
+		no=Math.trunc(no);
+		if(no<=0){
+			window.alert('주문 수량을 다시 확인해 주세요.');
+			return;
+		}
+		location.href='/semi_burger/member/order.jsp?menu='+<%=i%>+'&no='+no;
+	}
+</script>
+<%
+}
+%>
+
+</head>
+<body>
+
 <%@include file="/header.jsp"%>
 	<section>
 		<article>
-			<form name="select">
+		<form name="select">
 			<table>
-			<%if(arr==null){
-			%>
-				<tr><td>메뉴 준비 중</td></tr>	
-			<%
-			}else{
-				for(int i=0;i<arr.size();i++){
-					bmdto=arr.get(i);
-			%>
-					<tr>
-						<td><%=bmdto.getItem_name()%></td>
-						<td><%=bmdto.getItem_pay()+"원"%></td>
-						<td><input type="number" min="0"></td>
-						<td><input type="button" value="추가" onclick="addMenu()"></td>
-					</tr>
-			<%
-				}
+		<%
+			for(int i=0;i<arr.size();i++){
+				bmdto=arr.get(i);
+		%>	
+				<tr>
+					<td><%=bmdto.getItem_name()%></td>
+					<td><%=bmdto.getItem_pay()+"원"%></td>
+					<td><input name="m<%=i %>" type="number" min="0"></td>
+					<td><input type="button" value="추가" onclick="add<%=i%>(<%=i%>)"></td>
+				</tr>
+			
+		<%
 			}
-			%>
+			
+		%>
 			</table>
-			</form>		
+		</form>
 		</article>
 		
 		<article>
@@ -66,7 +93,7 @@
 			<table id="orderlist">
 				<thead>
 				<tr>
-					<th colspan="3"><%=session.getAttribute("sid")+"님 주문서" %></th>
+					<th colspan="3"><%=session.getAttribute("sid")+"님의 주문서" %></th>
 				</tr>
 				</thead>
 				
@@ -83,7 +110,8 @@
 				</tfoot>
 				
 				<tbody>
-				
+					<tr>
+					</tr>
 				</tbody>
 			</table>
 		</form>
