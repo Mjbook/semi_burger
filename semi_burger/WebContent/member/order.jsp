@@ -39,17 +39,22 @@
 		<article>
 			<form name="select">
 			<table>
+			<%if(arr==null){
+			%>
+				<tr><td>메뉴 준비 중</td></tr>	
 			<%
-			for(int i=0;i<arr.size();i++){
-				bmdto=arr.get(i);
-				%>
-				<tr>
-					<td><%=bmdto.getItem_name()%></td>
-					<td><%=bmdto.getItem_pay()+"원"%></td>
-					<td><input type="number" min="0"></td>
-					<td><input type="button" value="추가" onclick="addMenu()"></td>
-				</tr>
-				<%
+			}else{
+				for(int i=0;i<arr.size();i++){
+					bmdto=arr.get(i);
+			%>
+					<tr>
+						<td><%=bmdto.getItem_name()%></td>
+						<td><%=bmdto.getItem_pay()+"원"%></td>
+						<td><input type="number" min="0"></td>
+						<td><input type="button" value="추가" onclick="addMenu()"></td>
+					</tr>
+			<%
+				}
 			}
 			%>
 			</table>
