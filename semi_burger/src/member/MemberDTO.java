@@ -13,7 +13,7 @@ public class MemberDTO {
 	private String grade;
 	
 	public MemberDTO(){
-		
+		 
 	}
 	
 	public MemberDTO(int member_no, String id, String paddwd, String name, String birth, String cellphone, String email,
