@@ -20,7 +20,7 @@
 	} else{
 		%>
 		<script>
-		window.alert('회원가입 실패 :(');
+		window.alert('회원가입 실패 :( ');
 		location.href='/semi_burger/member/join.jsp';
 		</script>
 		<%

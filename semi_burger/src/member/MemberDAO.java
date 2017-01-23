@@ -116,7 +116,7 @@ public class MemberDAO {
 		try{
 			conn = yb.db.YB_DB.getConn();
 			
-			
+			String sql = "";
 		} catch(Exception e){
 			e.printStackTrace();
 			return ERROR;
