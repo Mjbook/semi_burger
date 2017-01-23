@@ -27,7 +27,7 @@
 		  	<td> </td>
 		  </tr>	
 		  <tr>
-		  	<td colspan="2"> 회원 가입 | 아이디,비밀번호 찾기 </td>		  	
+		  	<td colspan="2"> 회원가입 | 아이디,비밀번호 찾기 </td>		  	
 		  </tr>		
 		</table>
 	</form>

@@ -21,7 +21,7 @@
 		
 		%>
 		<script>
-		window.alert('로그인 성공');
+		window.alert('로그인 성공!');
 		location.href='/semi_burger/index.jsp';
 		</script>
 		<%

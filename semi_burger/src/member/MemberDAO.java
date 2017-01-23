@@ -11,8 +11,7 @@ public class MemberDAO {
 	public static final int NOT_PWD = 2;
 	public static final int LOGIN_OK = 3;
 	public static final int ERROR = -1;
-	
-	
+		
 	/** 로그인 관련 메서드*/
 	public int memberLogin(String userid, String userpwd){
 		try{

@@ -31,8 +31,6 @@ public class MemberDTO {
 		this.grade = grade;
 	}
 
-
-
 	public int getMember_no() {
 		return member_no;
 	}

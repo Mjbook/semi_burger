@@ -4,6 +4,5 @@
 
 <%
 	session.invalidate();
-
 	response.sendRedirect("/semi_burger/index.jsp");
 %>
