@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css"
-href="/semi_burger/css/mainLayout.css">
+href="/semi_burger/css/mainLayout.css"> 
 <style>
 	h1{
 		text-align: center;

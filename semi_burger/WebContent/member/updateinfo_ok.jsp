@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<% request.setCharacterEncoding("utf-8"); %>
+<% request.setCharacterEncoding("utf-8"); %> 
 
 <jsp:useBean id="mdao" class="member.MemberDAO" scope="session"/>
 <jsp:useBean id="mdto" class="member.MemberDTO"/>
