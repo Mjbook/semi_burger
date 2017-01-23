@@ -1,0 +1,46 @@
+톰캣 설정
+
+conf -> sever 파일 editplus로 열기
+
+
+
+<Connector port="9090" protocol="HTTP/1.1"
+
+  connectionTimeout="20000"
+               
+  redirectPort="8443" URIEncoding="utf-8"/>
+
+
+
+1) window - 환경설정 - general - workspace - text file endcoding :  Other : UFT-8
+
+
+
+2) Project Explorer 에서 마우스 오른쪽 - new - other - server - next - 
+  Apache - Tomcat v7.0 - next - Tomcat installation directory : 설치 폴더 설정 - Finish
+
+
+
+3) Project Explorer 에서 마우스 오른쪽 - new - other - web - Dynamic Web Project - 
+  name: myweb - next - next - Generate web ... 체크 
+
+
+
+4) window - 환경설정 - web - JSP files  - editor - templates - new JSP File(HTML) 
+ - edit -  <! DOCTYPE html 뒤에 모두 지우기 > - <meta charset="${encoding}">
+
+
+
+5)  window - 환경설정 - web - JSP files - Encoding 을 맨 위에 UTF-8로 설정
+
+
+
+6) WebContent - 마우스 오른쪽 - new - other - web - JSP file - 이름 : testA 
+
+
+
+7) window - show view - other - server - 화면 왼쪽 아래 Modules - 추가하기 - 저장(컨트롤+S) - 닫기 - 서버 재생
+
+
+
+8) http://localhost:9090/myweb/testA.jsp

@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<jsp:useBean id="mdao" class="member.MemberDAO" scope="session"/>
 
 <!DOCTYPE HTML>
 <html lang="ko">
@@ -36,10 +40,24 @@
 	<header>		
 		<div class="gnb_wrap clear_fix">
 			<div class="top_gnb">
-				<ul class="clear_fix"><!--로그인 전-->
-					<li><a href="/semi_burger/webfolder/member/login.jsp">로그인</a></li>				
-					<li><a href="./franchise/inquiry.php">가맹문의</a></li>				
-					<li><a href="./community/custom.php">고객센터</a></li>
+				<ul class="clear_fix">
+				<%
+					String sname = (String)session.getAttribute("sname");
+				
+					if(sname==null){
+						%><!-- 로그인 전 -->
+						<li><a href="/semi_burger/webfolder/member/login.jsp">로그인</a></li>				
+						<li><a href="./franchise/inquiry.php">가맹문의</a></li>				
+						<li><a href="./community/custom.php">고객센터</a></li>
+						<%
+					} else {
+						%> <!-- 로그인 후 -->
+						<li><a> <%=sname %> 님 로그인 중</a></li>				
+						<li><a href="./franchise/inquiry.php">가맹문의</a></li>				
+						<li><a href="./community/custom.php">고객센터</a></li>
+						<%
+					}
+				%>
 				</ul>			
 			</div>
 			<h1><a href="./main"><img src="./images/top_logo.png" alt="꿉자" /></a></h1>
