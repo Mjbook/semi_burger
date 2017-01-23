@@ -12,7 +12,7 @@ public class MemberDAO {
 	public static final int LOGIN_OK = 3;
 	public static final int ERROR = -1;
 		
-	/** ë¡œê·¸ì¸ ê´€ë ¨ ë©”ì„œë“œ*/
+	/** ·Î±×ÀÎ °ü·Ã ¸Ş¼­µå*/
 	public int memberLogin(String userid, String userpwd){
 		try{
 			conn = yb.db.YB_DB.getConn();
@@ -49,7 +49,7 @@ public class MemberDAO {
 		}
 	}
 	
-	/** ë¡œê·¸ì¸ ì„±ê³µ íšŒì›ì •ë³´ ê°€ì ¸ì˜¤ê¸° ë©”ì„œë“œ*/
+	/** ·Î±×ÀÎ ¼º°ø ½Ã À¯Àú Á¤º¸ °¡Á®¿À±â ¸Ş¼­µå */
 	public String getUserInfo(String userid){
 		try{
 			conn = yb.db.YB_DB.getConn();
