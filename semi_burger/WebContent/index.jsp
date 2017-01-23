@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=UTF-8">
+<meta charset=UTF-8>
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="css/mainLayout.css">
 </head>
