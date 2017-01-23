@@ -2,13 +2,6 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset=UTF-8>
-<title>Yong Burger</title>
-<link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css" >
-</head>
-<body>
-<%@include file="/header.jsp"%>
 <%
 	if(session.getAttribute("sid")==null){
 %>
@@ -19,6 +12,14 @@
 <%
 	}
 %>
+
+<head>
+<meta charset=UTF-8>
+<title>Yong Burger</title>
+<link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css" >
+</head>
+<body>
+<%@include file="/header.jsp"%>
 	<section>
 		<article>
 			<table>
