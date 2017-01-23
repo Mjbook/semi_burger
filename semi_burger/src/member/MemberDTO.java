@@ -3,7 +3,7 @@ package member;
 public class MemberDTO {
 	private int member_no;
 	private String id;
-	private String paddwd;
+	private String passwd;
 	private String name;
 	private String birth;
 	private String cellphone;
@@ -16,12 +16,12 @@ public class MemberDTO {
 		 
 	}
 	
-	public MemberDTO(int member_no, String id, String paddwd, String name, String birth, String cellphone, String email,
+	public MemberDTO(int member_no, String id, String passwd, String name, String birth, String cellphone, String email,
 			String address, int discount, String grade) {
 		super();
 		this.member_no = member_no;
 		this.id = id;
-		this.paddwd = paddwd;
+		this.passwd = passwd;
 		this.name = name;
 		this.birth = birth;
 		this.cellphone = cellphone;
@@ -47,12 +47,12 @@ public class MemberDTO {
 		this.id = id;
 	}
 
-	public String getPaddwd() {
-		return paddwd;
+	public String getPasswd() {
+		return passwd;
 	}
 
-	public void setPaddwd(String paddwd) {
-		this.paddwd = paddwd;
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
 	}
 
 	public String getName() {
@@ -110,7 +110,5 @@ public class MemberDTO {
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
-	
-	
-
+		
 }

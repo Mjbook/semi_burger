@@ -2,19 +2,16 @@
     pageEncoding="UTF-8"%>
     
 <header>
-<style>
-	
-</style>
 <%
 	String sname = (String)session.getAttribute("sname");
 	
 	if(sname==null){
 		%><!-- 로그인 전 -->
-		<p><a href="/semi_burger/member/login.jsp">로그인</a> | 회원가입 </p> 						
+		<p><a href="/semi_burger/member/login.jsp">로그인</a> | <a href="/semi_burger/member/join.jsp"> 회원가입</a> </p> 						
 		<%
 	} else {
 		%> <!-- 로그인 후 -->
-		<p><a> <%=sname %> 님 로그인 중</a> | <a href="/semi_burger/member/logout.jsp"> 로그아웃 </a></p>			
+		<p><a> <%=sname %> 님 로그인 중</a> | <a href="/semi_burger/member/updateinfo.jsp"> 정보 수정</a> | <a href="/semi_burger/member/logout.jsp"> 로그아웃</a></p>			
 		<%
 	}
 %>
@@ -32,13 +29,10 @@
 				<li>m1</li>
 				<li>me2</li>
 				<li>men3</li>
-				<li>men4</li>
-				<li>men5</li>
-				<li>men6</li>
 			</ul></li>
-			<li><a href="/semi_burger/member/order.jsp">주문</a></li>	
+			<li><a href="#">주문</a></li>	
 			<li>My Burger<ul class="menu">
-				<li><a href="/semi_burger/member/orderCheck.jsp">주문 조회</a></li>
+				<li><a href="/semi_burger/orderCheck.jsp">주문 조회</a></li>
 				<li>myB</li>
 			</ul></li>	
 		</ol>
