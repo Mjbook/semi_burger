@@ -29,13 +29,6 @@
 	width:250px;
 }
 </style>
-<script>
-function addMenu(){
-	#m.value="3000";
-	#n.value="3000";
-	#p.value="3000";
-}
-</script>
 </head>
 <body>
 <%
