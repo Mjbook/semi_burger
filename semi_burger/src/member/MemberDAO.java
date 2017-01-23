@@ -11,7 +11,39 @@ public class MemberDAO {
 	public static final int NOT_PWD = 2;
 	public static final int LOGIN_OK = 3;
 	public static final int ERROR = -1;
-		
+	
+	
+	/** 회원가입 관련 메서드*/
+	public int memberJoin(MemberDTO dto){
+		try{
+			conn = yb.db.YB_DB.getConn();
+			
+			String sql = "insert into member values(member_seq.nextval, ?, ?, ?, ?, ?, ?, ?, 0, 'D')";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, dto.getId());
+			ps.setString(2, dto.getPasswd());
+			ps.setString(3, dto.getName());
+			ps.setString(4, dto.getBirth());
+			ps.setString(5, dto.getCellphone());
+			ps.setString(6, dto.getEmail());
+			ps.setString(7, dto.getAddress());
+			
+			int count = ps.executeUpdate();
+			
+			return count;
+			
+		} catch(Exception e){
+			e.printStackTrace();
+			return ERROR;
+		} finally{
+			try{
+				if(ps!=null) ps.close();
+				if(conn!=null) conn.close();				
+			} catch(Exception e2){}
+		}
+	}
+	
 	/** 로그인 관련 메서드*/
 	public int memberLogin(String userid, String userpwd){
 		try{
@@ -77,6 +109,22 @@ public class MemberDAO {
 			} catch(Exception e2){ }
 		}
 		
+	}
+	
+	/** 회원정보 수정*/
+	public int UpdateInfo(){
+		try{
+			conn = yb.db.YB_DB.getConn();
+			
+			
+		} catch(Exception e){
+			e.printStackTrace();
+			return ERROR;
+		} finally{
+			try{
+				
+			} catch(Exception e2){}
+		}
 	}
 
 }

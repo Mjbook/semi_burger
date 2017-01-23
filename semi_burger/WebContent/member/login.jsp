@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+href="/semi_burger/css/mainLayout.css">
 <style>
 	fieldset{
 		width: 250px;
@@ -13,6 +15,7 @@
 </style>
 </head>
 <body>
+<%@ include file="/header.jsp" %>
  
 <section>
 	<fieldset>
@@ -27,12 +30,13 @@
 		  	<td> </td>
 		  </tr>	
 		  <tr>
-		  	<td colspan="2"> 회원가입 | 아이디,비밀번호 찾기 </td>		  	
+		  	<td colspan="2"> 아이디,비밀번호 찾기 </td>		  	
 		  </tr>		
 		</table>
 	</form>
 	</fieldset>
 </section>	
 
+<%@ include file="/footer.jsp" %>
 </body>
 </html>

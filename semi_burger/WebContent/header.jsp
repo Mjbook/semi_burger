@@ -2,19 +2,17 @@
     pageEncoding="UTF-8"%>
     
 <header>
-<style>
-	
-</style>
 <%
 	String sname = (String)session.getAttribute("sname");
 	
 	if(sname==null){
 		%><!-- 로그인 전 -->
-		<p><a href="/semi_burger/member/login.jsp">로그인</a> | 회원가입 </p> 						
+		<p><a href="/semi_burger/member/login.jsp">로그인</a> | <a href="/semi_burger/member/join.jsp"> 회원가입</a> </p> 						
 		<%
 	} else {
 		%> <!-- 로그인 후 -->
-		<p><a> <%=sname %> 님 로그인 중</a> | <a href="/semi_burger/member/logout.jsp"> 로그아웃 </a></p>			
+		<p><a> <%=sname %> 님 로그인 중</a> | <a href="/semi_burger/member/updateinfo.jsp"> 정보 수정</a> 
+			  | <a href="/semi_burger/member/logout.jsp"> 로그아웃</a></p>			
 		<%
 	}
 %>
