@@ -5,6 +5,7 @@
 <%@page import="java.util.*" %>
 <jsp:useBean id="bmdao" class="yb.burger.BurgerDAO"/>
 <jsp:useBean id="bmdto" class="yb.burger.BurgerDTO"/>
+<jsp:useBean id="odto" class="yb.order_list.Order_listDTO" scope="session"/>
 <html>
 <%	request.setCharacterEncoding("utf-8");
 	if(session.getAttribute("sid")==null){

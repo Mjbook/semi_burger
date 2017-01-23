@@ -3,6 +3,7 @@ import java.sql.*;
 public class Order_listDTO {
 	
 	private int order_no;
+	private int order_group;
 	private String item_name;
 	private int item_count;
 	private Date order_date;
@@ -20,6 +21,15 @@ public class Order_listDTO {
 	public void setOrder_no(int order_no) {
 		this.order_no = order_no;
 	}
+	
+	public int getOrder_group() {
+		return order_group;
+	}
+
+	public void setOrder_group(int order_group) {
+		this.order_group = order_group;
+	}
+
 	public String getItem_name() {
 		return item_name;
 	}
