@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="utf-8"%>
 <!DOCTYPE >
 <html>
 <head>
 <style>
 #footer {
+
    background: #222;
    padding: 20px 0;
 }
