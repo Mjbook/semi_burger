@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 
 <!DOCTYPE html>
 <html>
@@ -29,6 +28,12 @@ href="/semi_burger/css/mainLayout.css">
 <body>
 <%@ include file="/header.jsp" %>
 
+<%
+	request.setCharacterEncoding("utf-8");
+	
+	String sid = (String)session.getId();
+%>
+
 <section>
 	<form name="join" action="join_ok.jsp" method="post">
 		<h1> 회원가입 </h1>
@@ -38,7 +43,7 @@ href="/semi_burger/css/mainLayout.css">
 			<tbody>
 				<tr>
 					<th> ID </th>
-					<td> <input type="text" name="id"> </td>
+					<td> <input type="text" name="id" value="<%= sid%>" readonly > </td>
 				</tr>
 				<tr>
 					<th> Password </th>

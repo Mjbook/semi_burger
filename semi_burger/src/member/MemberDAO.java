@@ -112,11 +112,24 @@ public class MemberDAO {
 	}
 	
 	/** 회원정보 수정*/
-	public int UpdateInfo(){
+	public int UpdateInfo(MemberDTO dto){
 		try{
 			conn = yb.db.YB_DB.getConn();
 			
-			String sql = "";
+			String sql = "update member set passwd=?, name=?, birth=?, cellphone=?, email=?, address=?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, dto.getPasswd());
+			ps.setString(2, dto.getName());
+			ps.setString(3, dto.getBirth());
+			ps.setString(4, dto.getCellphone());
+			ps.setString(5, dto.getEmail());
+			ps.setString(6, dto.getAddress());
+			
+			int count = ps.executeUpdate();
+			
+			return count;
+			
 		} catch(Exception e){
 			e.printStackTrace();
 			return ERROR;
