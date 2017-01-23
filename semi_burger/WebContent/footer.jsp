@@ -3,31 +3,6 @@
 <!DOCTYPE >
 <html>
 <head>
-<style>
-#footer {
-
-   background: #222;
-   padding: 20px 0;
-}
-
-.footer_wrap {
-   width: 1100px;
-   margin: 0 auto;
-}
-
-.footer_wrap p {
-   color: #fff;
-   font-size: 13px;
-   font-weight: 400;
-   text-align: center;
-   line-height: 1.5;
-}
-
-footer {
-   display: block;
-}
-</style>
-
 </head>
 <body>
    <footer id="footer">
