@@ -2,11 +2,12 @@
 	pageEncoding="UTF-8" import="java.util.*"%>
 <%@ page import="board.notice.*"%>
 <jsp:useBean id="bdao" class="board.notice.noticeDAO" />
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%
+	int idx = Integer.parseInt(request.getParameter("idx"));
 	int totalCnt = bdao.getTotalCnt();//총 게시물 수
 	int listSize = 10;//보여줄 리스트 수
 	int pageSize = 5;//보여줄 페이지 수
@@ -25,31 +26,31 @@
 %>
 </head>
 
-<body>
+<body >
+
 	<div>
-
 		<div>
-			<div>
-				<form action="noticeWrite_ok.jsp">
-					<h1>공지사항 상세 페이지</h1>
-					<div class="notice_view">
-						<div>
+			<form action="noticeUpdate_ok.jsp">
+				<h1>공지사항 상세 페이지</h1>
+				<div class="notice_view">
+					<div class="notice_tit">
 
-							<p>
-								<input type="text" name="subject" placeholder="제목을 입력하세요." />
-							</p>
-						</div>
-						<div class="notice_cts">
-							<textarea name="content" placeholder="내용을 입력하세요."></textarea>
-						</div>
+						<p class="tit">
+							<input type="text" name="subject" placeholder="제목을 입력하세요." />
+						</p>
 					</div>
-					<div>
-						<a href="notice.jsp">취소</a> <input type="submit" value="완료">
+					<div class="notice_cts">
+						<textarea name="content" placeholder="내용을 입력하세요."></textarea>
 					</div>
-				</form>
-			</div>
+				</div>
+				<div>
+					<a href="notice.html">취소</a> <input type="hidden" name="notice_no"
+						value=<%=idx%> /> <input type="submit" value="완료"
+						class="btn_type_02" />
+				</div>
+			</form>
 		</div>
 	</div>
-<%@include file="../footer.jsp"%>
+	<%@include file="../../footer.jsp" %>
 </body>
 </html>
