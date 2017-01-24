@@ -7,15 +7,10 @@
 <jsp:useBean id="sdao" class="yb.burger.SideDAO"/>
 
 <%
-ArrayList<SideDTO> al=sdao.SideMenu(sdto);
+ArrayList<SideDTO> al2=sdao.SideMenu(sdto);
 
 %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset=UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/mainLayout.css">
+
 <script>
 function side_up(){
 	window.open("side_up.jsp","side_up","top=300,left=400,width=350,height=250");
@@ -29,29 +24,25 @@ function side_delete(){
 
 </script>
 
-</head>
-<body>
-<%@include file="../header.jsp" %>
-<section>
 	<article>
 		<form name="sideMenu">
 			<table border="1">
 				<tr>
 				<%
-				for(int i=1;i<al.size();i++){
+				for(int i=1;i<al2.size();i++){ 
 					%>
-					<th><img src="side_img/<%=al.get(i).getSideitem_img_src()%>" width="300" height="260"></th>
+					<th><img src="side_img/<%=al2.get(i).getSideitem_img_src()%>" width="300" height="260"></th>
 					<td align="center" width="300" height="260">
-					<%=al.get(i).getSideitem_name() %>
+					<%=al2.get(i).getSideitem_name() %>
 					<br><br><br>
-					<%=al.get(i).getSideitem_pay()+"원" %>
+					<%=al2.get(i).getSideitem_pay()+"원" %>
 					<br><br><br>
 					<input type="button" name="orderMenu" value="주문하기">
 					<input type="button" name="savaMenu" value="담기">
 					</td>
 					
 					<%
-					if(i%2==0&&i!=al.size()){
+					if(i%2==0&&i!=al2.size()){
 					%>
 					</tr><tr>
 					<%
@@ -68,8 +59,3 @@ function side_delete(){
 			</table>
 		</form>
 	</article>
-</section>
-<hr>
-<%@include file="../footer.jsp" %>
-</body>
-</html>

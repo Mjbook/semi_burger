@@ -116,6 +116,7 @@ for(int i=0;i<arr_bdto.size();i++){
 <%@include file="../header.jsp" %>
 <section>
 	<article>
+	<h2>햄버거 메뉴</h2>
 		<form name="burgerMenu">
 			<table border="1">
 				<tr>
@@ -223,11 +224,13 @@ for(int i=0;i<arr_bdto.size();i++){
 						<input type="button" value="다시 담기" onclick="javascript:resetMenu()">
 					</td>
 				</tr>
-				</tfoot>
+				</tfoot> 
 			</table>
 		</form>
 		</article>
-	
+		<hr>
+		<h2 id="side">사이드 메뉴</h2>
+<%@include file="/sideMenu/sideMenu.jsp" %>	
 </section>
 <hr>
 <%@include file="../footer.jsp" %>
