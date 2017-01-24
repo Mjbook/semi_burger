@@ -142,5 +142,27 @@ public class MemberDAO {
 			} catch(Exception e2){}
 		}
 	}
+	
+	/** 회원정보 삭제*/
+	public int Delmember(){
+		try{
+			
+		} catch(Exception e){
+			e.printStackTrace();
+			return ERROR;
+		} finally{
+			try{
+				
+			} catch(Exception e2){}
+		}
+	}
 
+	
+	
+	
+	
+	
+	
+	
+	
 }

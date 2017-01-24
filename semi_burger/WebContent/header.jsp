@@ -11,7 +11,7 @@
 		<%
 	} else {
 		%> <!-- 로그인 후 -->
-		<p><a> <%=sname %> 님 로그인 중</a> | <a href="/semi_burger/member/updateinfo.jsp"> 정보 수정</a> | <a href="/semi_burger/member/logout.jsp"> 로그아웃</a></p>			
+		<p><a> <%=sname %> 님 로그인 중</a> | <a href="/semi_burger/member/updateinfo.jsp?"> 정보 수정</a> | <a href="/semi_burger/member/logout.jsp"> 로그아웃</a></p>			
 		<%
 	}
 %>

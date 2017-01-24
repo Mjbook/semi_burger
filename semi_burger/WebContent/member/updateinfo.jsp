@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+    
+<%@ page import="member.*" %>
+<%@ page import="java.util.*" %>
 <jsp:useBean id="mdao" class="member.MemberDAO" scope="session"/>    
 
 <!DOCTYPE html>
@@ -27,15 +29,13 @@ href="/semi_burger/css/mainLayout.css">
 	}
 </style>
 </head>
-<body>
-<%@ include file="/header.jsp" %>
-
 <%
 	request.setCharacterEncoding("utf-8");
-
-	String sid = (String)session.getAttribute("sid");
 	
+	String sid = (String)session.getAttribute("sid");
 %>
+<body>
+<%@ include file="/header.jsp" %>
 
 <section>
 	<form name="updateinfo" action="updateinfo_ok.jsp" method="post">
@@ -73,7 +73,7 @@ href="/semi_burger/css/mainLayout.css">
 					<td> <input type="text" name="address"> </td>
 				</tr>
 				<tr>
-					<td class="button" colspan="2"> <input type=submit value="수정하기"> <input type="reset" value="다시작성"> </td>
+					<td class="button" colspan="2"> <input type=submit value="수정하기"> <input type="submit" value="탈퇴하기" onclick="delete.jsp"> </td>
 				</tr>			
 			</tbody>
 		</table>
