@@ -146,17 +146,17 @@ public class MemberDAO {
 	}
 	
 	/** 회원정보 삭제*/
-	public int DelMember(String userid){
+	public int DelMember(MemberDTO dto){
 		try{
 			conn = yb.db.YB_DB.getConn();
 			
 			String sql = "delete from member where id=?";
 			
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, userid);
+			ps.setString(1, dto.getId());
 			
 			int count = ps.executeUpdate();
-			
+						
 			return count;
 			
 		} catch(Exception e){
