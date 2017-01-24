@@ -173,7 +173,7 @@ for(int i=0;i<arr_bdto.size();i++){
 		</form>
 		</article>
 		<article>
-		<form name="orderlist" action="orderList_ok.jsp">
+		<form name="orderlist" action="/order/orderList_ok.jsp">
 			<table id="orderlist">
 				<thead>
 				<tr>

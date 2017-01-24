@@ -9,17 +9,7 @@
 <jsp:useBean id="odao" class="yb.order_list.Order_listDAO"/>
 <jsp:useBean id="odto" class="yb.order_list.Order_listDTO" scope="session"/>
 <html>
-<%	request.setCharacterEncoding("utf-8");
-	if(session.getAttribute("sid")==null){
-%>
-<script>
-	window.alert('로그인 먼저 부탁드립니다.');
-	location.href='/semi_burger/index.jsp';
-</script>		
-<%
-	}	
-%>
-
+<%	request.setCharacterEncoding("utf-8");%>
 <head>
 <meta charset=UTF-8>
 <title>Yong Burger</title>
@@ -112,7 +102,7 @@ for(int i=0;i<arr_bdto.size();i++){
 <%@include file="/header.jsp"%>
 	<section>
 		<article>
-		<form name="select" action="order.jsp" method="post">
+		<form name="select" action="order.jsp" method="get">
 			<table>
 		<%
 			for(int i=0;i<arr_bdto.size();i++){
@@ -148,7 +138,7 @@ for(int i=0;i<arr_bdto.size();i++){
 			<table id="orderlist">
 				<thead>
 				<tr>
-					<th colspan="4"><%=session.getAttribute("sid")+"님의 주문서" %></th>
+					<th colspan="4"><%=session.getAttribute("sid")==null?"고객":session.getAttribute("sid")%>님의 주문서</th>
 				</tr>
 				</thead>
 
