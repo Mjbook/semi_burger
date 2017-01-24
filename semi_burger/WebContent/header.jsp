@@ -28,7 +28,7 @@
 			</li>
 			<li>메뉴<ul class="menu">
 				<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp">햄버거</a></li>
-				<li><a href="/semi_burger/sidMenu/sideMenu.jsp">사이드</a></li>
+				<li><a href="/semi_burger/sideMenu/sideMenu.jsp">사이드</a></li>
 				<li>이벤트 메뉴</li>
 				<li>내가 만드는 햄버거</li>
 				<li>재료 원산지 표기</li>
