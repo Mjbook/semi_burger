@@ -50,7 +50,7 @@ public class Order_listDAO {
 			ps.setString(3, user);
 			ps.setString(4, total_pay);
 			
-			
+			int count=ps.executeUpdate();
 			
 			
 		} catch (Exception e) {
