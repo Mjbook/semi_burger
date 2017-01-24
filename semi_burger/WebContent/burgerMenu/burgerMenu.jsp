@@ -177,7 +177,7 @@ for(int i=0;i<arr_bdto.size();i++){
 			<table id="orderlist">
 				<thead>
 				<tr>
-					<th colspan="4"><%=session.getAttribute("sid")+"님의 주문서" %></th>
+					<th colspan="4"><%=session.getAttribute("sid")==null?"고객":session.getAttribute("sid")%>님의 주문서</th>
 				</tr>
 				</thead>
 
