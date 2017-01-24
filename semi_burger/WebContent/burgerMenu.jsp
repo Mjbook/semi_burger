@@ -20,6 +20,9 @@ ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 function burger_up(){
 	window.open("burger_up.jsp","burger_up","top=300,left=400,width=350,height=250");
 }
+function burger_reload(){
+	window.open("burger_reload.jsp","burger_reload","top=300,left=400,width=350,height=250");
+}
 </script>
 
 </head>
@@ -51,7 +54,12 @@ function burger_up(){
 					}
 				}
 				%>
+				<tr>
+				<td colspan="4" align="right">
 				<input type="button" value="메뉴등록" onclick="burger_up()">
+				<input type="button" value="메뉴수정" onclick="burger_reload()">
+				</td>
+				</tr>
 			</table>
 		</form>
 	</article>

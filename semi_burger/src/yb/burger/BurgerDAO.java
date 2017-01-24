@@ -77,6 +77,32 @@ public class BurgerDAO {
 		}
 	}
 	
+	/**메뉴수정 메서드*/
+	public int burgerReLoad(int item_num,String item_name,String item_pay,int item_count,String item_img_src){
+		try{
+			conn=yb.db.YB_DB.getConn();
+			String sql="update burger set item_name=?,item_pay=?,item_count=?,item_img_src=? where item_num=?";
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, item_name);
+			ps.setString(2, item_pay);
+			ps.setInt(3, item_count);
+			ps.setString(4, item_img_src);
+			ps.setInt(5, item_num);
+			int count=ps.executeUpdate();
+			
+			return count;
+		}catch(Exception e){
+			e.printStackTrace();
+			return -1;
+		}finally{
+			try{
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			}catch(Exception e2){
+				
+			}
+		}
+	}
 	
 }
 
