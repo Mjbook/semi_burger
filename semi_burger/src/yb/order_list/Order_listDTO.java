@@ -12,7 +12,7 @@ public class Order_listDTO {
 	private String order_user;
 	private String total_pay;
 	private ArrayList<Order_listDTO> odtos;//db에는 없는 변수
-	
+	 
 	public Order_listDTO(){
 		odtos=new ArrayList<Order_listDTO>();
 	}

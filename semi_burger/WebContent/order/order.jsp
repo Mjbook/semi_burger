@@ -147,7 +147,7 @@ for(int i=0;i<arr_bdto.size();i++){
 						String menu=arr_odto.get(i).getItem_name();
 						int num=arr_odto.get(i).getItem_count();
 						String price=arr_odto.get(i).getTotal_pay();
-						%>
+						%> 
 						<tr>
 							<td><%=menu%></td>
 							<td><%=num %></td>
