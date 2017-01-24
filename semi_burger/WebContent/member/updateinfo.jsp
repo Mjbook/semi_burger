@@ -73,7 +73,7 @@ href="/semi_burger/css/mainLayout.css">
 					<td> <input type="text" name="address"> </td>
 				</tr>
 				<tr>
-					<td class="button" colspan="2"> <input type=submit value="수정하기"> <input type="submit" value="탈퇴하기" onclick="delete.jsp"> </td>
+					<td class="button" colspan="2"> <input type=submit value="수정하기"> <input type="button" value="탈퇴하기" onclick="delete.jsp"> </td>
 				</tr>			
 			</tbody>
 		</table>

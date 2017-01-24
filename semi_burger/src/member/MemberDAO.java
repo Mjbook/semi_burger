@@ -3,6 +3,8 @@ package member;
 import java.sql.*;
 import java.util.*;
 
+import yb.db.YB_DB;
+
 public class MemberDAO {
 	Connection conn;
 	PreparedStatement ps;
@@ -144,16 +146,26 @@ public class MemberDAO {
 	}
 	
 	/** 회원정보 삭제*/
-	public int Delmember(){
+	public int DelMember(String userid){
 		try{
+			conn = yb.db.YB_DB.getConn();
 			
+			String sql = "delete from member where id=?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, userid);
+			
+			int count = ps.executeUpdate();
+			
+			return count;
 			
 		} catch(Exception e){
 			e.printStackTrace();
 			return ERROR;
 		} finally{
 			try{
-				
+				if(ps!=null) ps.close();
+				if(conn!=null) conn.close();				
 			} catch(Exception e2){}
 		}
 	}
