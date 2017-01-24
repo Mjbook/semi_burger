@@ -33,7 +33,6 @@
 				<li>내가 만드는 햄버거</li>
 				<li>재료 원산지 표기</li>
 			</ul></li>
-			<li><a href="/semi_burger/order/order.jsp">주문</a></li>	
 			<li>My Burger<ul class="menu">
 				<li><a href="/semi_burger/order/orderCheck.jsp">주문 조회</a></li>
 				<li>myB</li>

@@ -10,7 +10,7 @@
 <jsp:useBean id="odto" class="yb.order_list.Order_listDTO" scope="session"/>
 
 <%
-
+request.setCharacterEncoding("utf-8");
 ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 
 %>
@@ -31,7 +31,7 @@ ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 </style>
 <script>
 function resetMenu(){
-	location.href="order.jsp?re=1"
+	location.href="burgerMenu.jsp?re=1"
 }
 function burger_up(){
 	window.open("burger_up.jsp","burger_up","top=300,left=400,width=350,height=250");
@@ -84,14 +84,8 @@ for(int i=0;i<arr_bdto.size();i++){
 for(int i=0;i<arr_bdto.size();i++){
 	String select_menu=request.getParameter("m"+i+"_check");
 	String num_s=request.getParameter("m"+i);
-	if(num_s!=null){
-	%>
-		<script>
-		document.burgerMenu.m<%=i%>.value=<%=num_s%>;
-		</script>	
-	<%
-	}
-	if(select_menu!=null&&select_menu.equals("true")){
+	
+	if(select_menu!=null&&select_menu.equals("true")){ //주문 추가
 		burgerdto=arr_bdto.get(i);
 		String name=burgerdto.getItem_name();
 		int num=Integer.parseInt(num_s);
@@ -107,9 +101,8 @@ for(int i=0;i<arr_bdto.size();i++){
 			odto.addOdtos(temp);
 		}
 	}
-	
 }
-
+%>
 %>
 </head>
 <body>
@@ -117,7 +110,7 @@ for(int i=0;i<arr_bdto.size();i++){
 <section>
 	<article>
 	<h2>햄버거 메뉴</h2>
-		<form name="burgerMenu">
+		<form name="burgerMenu" method="post">
 			<table border="1">
 				<tr>
 				<%
@@ -135,7 +128,7 @@ for(int i=0;i<arr_bdto.size();i++){
 					<%=al.get(i).getItem_pay()+"원" %>
 					<br><br><br>
 					
-					<select name="m<%=i %>">
+					<select name="m<%=i%>">
 					<%
 						for(int j=0;j<=100;j++){
 							%>
@@ -151,30 +144,50 @@ for(int i=0;i<arr_bdto.size();i++){
 				<%
 				}
 				%>
-				
 				<%
-				if(session.getAttribute("sid")!=null){
 				String sid=(String)session.getAttribute("sid");
-				
-				if(sid.equals("admin")){
-					%>
-					<tr>
-					<td colspan="4" align="right" width="600">
-					<input type="button" value="메뉴등록" onclick="burger_up()">
-					<input type="button" value="메뉴수정" onclick="burger_reload()">
-					<input type="button" value="메뉴삭제" onclick="burger_delete()">
-					</td>
-					</tr>
-					<% 
-				}
-					
+				if(sid!=null){
+					if(sid.equals("admin")){
+						%>
+						<tr>
+						<td colspan="4" align="right" width="600">
+						<input type="button" value="메뉴등록" onclick="burger_up()">
+						<input type="button" value="메뉴수정" onclick="burger_reload()">
+						<input type="button" value="메뉴삭제" onclick="burger_delete()">
+						</td>
+						</tr>
+						<% 
+					}	
 				}
 				 %>
 			</table>
 		</form>
+<%		
+		for(int i=0;i<arr_bdto.size();i++){
+			String select_menu=request.getParameter("m"+i+"_check");
+			String num_s=request.getParameter("m"+i);
+			if(num_s!=null){ //주문 후 주문 안 한 메뉴 수량 표시
+			%>
+				<script>
+				document.burgerMenu.m<%=i%>.value=<%=num_s%>;
+				</script>	
+			<%
+			}
+			
+			if(select_menu!=null&&select_menu.equals("true")){
+			%><!-- 주문한 메뉴 수량 0으로 설정 -->
+				<script>
+				document.burgerMenu.m<%=i%>.value="0";
+				</script>	
+			<%
+			}
+		}
+%>
 		</article>
+		
 		<article>
-		<form name="orderlist" action="/order/orderList.jsp">
+		
+		<form name="orderlist" action="/semi_burger/order/orderList.jsp">
 			<table id="orderlist">
 				<thead>
 				<tr>
@@ -205,7 +218,7 @@ for(int i=0;i<arr_bdto.size();i++){
 								<td><%=menu%></td>
 								<td><%=num %></td>
 								<td><%=order_price%></td>
-								<td><a href="order.jsp?delorder=<%=i%>">취소</a></td>
+								<td><a href="burgerMenu.jsp?delorder=<%=i%>">취소</a></td>
 							</tr>
 							<%
 						}

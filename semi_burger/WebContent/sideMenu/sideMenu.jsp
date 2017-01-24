@@ -1,7 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%--
 <%@ page import="java.util.*" %>
 <%@ page import="yb.burger.*" %>
+--%>
 <jsp:useBean id="sdto" class="yb.burger.SideDTO"/>
 <jsp:setProperty property="*" name="sdto"/>
 <jsp:useBean id="sdao" class="yb.burger.SideDAO"/>
@@ -13,13 +15,13 @@ ArrayList<SideDTO> al2=sdao.SideMenu(sdto);
 
 <script>
 function side_up(){
-	window.open("side_up.jsp","side_up","top=300,left=400,width=350,height=250");
+	window.open("/semi_burger/sideMenu/side_up.jsp","side_up","top=300,left=400,width=350,height=250");
 }
 function side_reload(){
-	window.open("side_reload.jsp","side_reload","top=300,left=400,width=350,height=250");
+	window.open("/semi_burger/sideMenu/side_reload.jsp","side_reload","top=300,left=400,width=350,height=250");
 }
 function side_delete(){
-	window.open("side_delete.jsp","side_delete","top=300,left=400,width=350,height=250");
+	window.open("/semi_burger/sideMenu/side_delete.jsp","side_delete","top=300,left=400,width=350,height=250");
 }
 
 </script>
@@ -49,13 +51,22 @@ function side_delete(){
 					}
 				}
 				%>
-				<tr>
-				<td colspan="4" align="right" width="600">
-				<input type="button" value="메뉴등록" onclick="side_up()">
-				<input type="button" value="메뉴수정" onclick="side_reload()">
-				<input type="button" value="메뉴삭제" onclick="side_delete()">
-				</td>
-				</tr>
+				<%
+				//burgerMenu.jsp에 있는 sid 사용함
+				if(sid!=null){
+					if(sid.equals("admin")){
+					%>
+					<tr>
+					<td colspan="4" align="right" width="600">
+					<input type="button" value="메뉴등록" onclick="side_up()">
+					<input type="button" value="메뉴수정" onclick="side_reload()">
+					<input type="button" value="메뉴삭제" onclick="side_delete()">
+					</td>
+					</tr>
+					<%
+					}
+				}
+				%>
 			</table>
 		</form>
 	</article>
