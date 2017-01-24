@@ -2,24 +2,24 @@ package yb.burger;
 import java.util.*;
 import java.util.Date;
 import java.sql.*;
-public class BurgerDAO {
-	
+
+public class SideDAO {
 	private ResultSet rs;
 	private PreparedStatement ps;
 	private Connection conn;
 	
-	public BurgerDAO() {
-		System.out.println("burgerDAO");
+	public SideDAO() {
+		System.out.println("SideDAO");
 	}
 	
 	/**메뉴 출력관련 메서드*/
-	public ArrayList<BurgerDTO> burgerMenu(BurgerDTO bdto){
+	public ArrayList<SideDTO> SideMenu(SideDTO sdto){
 		try{
 			conn=yb.db.YB_DB.getConn();
-			String sql="select * from burger";
+			String sql="select * from side";
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
-			ArrayList<BurgerDTO> al=new ArrayList<BurgerDTO>();
+			ArrayList<SideDTO> al=new ArrayList<SideDTO>();
 			
 			while(rs.next()){
 				int item_key=rs.getInt("item_key");
@@ -31,8 +31,8 @@ public class BurgerDAO {
 				Date item_event_finish=rs.getDate("item_event_finish");
 				String item_img_src=rs.getString("item_img_src");
 				
-				BurgerDTO burgerdto= new BurgerDTO(item_key, item_num, item_name, item_pay, item_count, item_event_start, item_event_finish, item_img_src);
-				al.add(burgerdto);
+				SideDTO sidedto= new SideDTO(item_key, item_num, item_name, item_pay, item_count, item_event_start, item_event_finish, item_img_src);
+				al.add(sidedto);
 			}	
 			return al;
 		}catch(Exception e){
@@ -50,10 +50,10 @@ public class BurgerDAO {
 	}
 	
 	/**메뉴등록관련 메서드*/
-	public int burgerUPLoad(int item_num,String item_name,String item_pay,int item_count,String item_img_src){
+	public int sideUPLoad(int item_num,String item_name,String item_pay,int item_count,String item_img_src){
 		try{
 			conn=yb.db.YB_DB.getConn();
-			String sql="insert into burger values(burger_seq.nextval,?,?,?,?,sysdate,sysdate+14,?)";
+			String sql="insert into side values(side_seq.nextval,?,?,?,?,sysdate,sysdate+14,?)";
 			ps=conn.prepareStatement(sql);
 			ps.setInt(1, item_num);
 			ps.setString(2, item_name);
@@ -78,10 +78,10 @@ public class BurgerDAO {
 	}
 	
 	/**메뉴수정 메서드*/
-	public int burgerReLoad(int item_num,String item_name,String item_pay,int item_count,String item_img_src){
+	public int sideReLoad(int item_num,String item_name,String item_pay,int item_count,String item_img_src){
 		try{
 			conn=yb.db.YB_DB.getConn();
-			String sql="update burger set item_name=?,item_pay=?,item_count=?,item_img_src=? where item_num=?";
+			String sql="update side set item_name=?,item_pay=?,item_count=?,item_img_src=? where item_num=?";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, item_name);
 			ps.setString(2, item_pay);
@@ -105,10 +105,10 @@ public class BurgerDAO {
 	}
 	
 	/**메뉴삭제 메서드*/
-	public int burgerDelete(int item_num){
+	public int sideDelete(int item_num){
 		try{
 			conn=yb.db.YB_DB.getConn();
-			String sql="delete from burger where item_num=?";
+			String sql="delete from side where item_num=?";
 			ps=conn.prepareStatement(sql);
 			ps.setInt(1, item_num);
 			int count=ps.executeUpdate();
@@ -127,7 +127,6 @@ public class BurgerDAO {
 		}
 	}
 	
+	
+	
 }
-
-
-

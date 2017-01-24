@@ -31,7 +31,7 @@ function burger_delete(){
 
 </head>
 <body>
-<%@include file="header.jsp" %>
+<%@include file="../header.jsp" %>
 <section>
 	<article>
 		<form name="burgerMenu">
@@ -70,6 +70,6 @@ function burger_delete(){
 	</article>
 </section>
 <hr>
-<%@include file="footer.jsp" %>
+<%@include file="../footer.jsp" %>
 </body>
 </html>
