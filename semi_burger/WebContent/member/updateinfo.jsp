@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<jsp:useBean id="mdao" class="member.MemberDAO" scope="session"/>    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,12 +32,13 @@ href="/semi_burger/css/mainLayout.css">
 
 <%
 	request.setCharacterEncoding("utf-8");
+
+	String sid = (String)session.getAttribute("sid");
 	
-	String sid = (String)session.getId();
 %>
 
 <section>
-	<form name="join" action="join_ok.jsp" method="post">
+	<form name="updateinfo" action="updateinfo_ok.jsp" method="post">
 		<h1> 회원가입 </h1>
 		<table>
 			<thead>
@@ -55,19 +58,11 @@ href="/semi_burger/css/mainLayout.css">
 				</tr>
 				<tr>
 					<th> 생년월일 </th>
-					<td rowspan="2"> <input type="text" name="birth"> </td>
-				</tr>
-				<tr>
-					<th> (ex: 170123) </th>
-					<td> </td>
+					<td> <input type="text" name="birth" placeholder=" ex: 170123"> </td>
 				</tr>
 				<tr>
 					<th> 핸드폰 번호 </th>
-					<td rowspan="2"> <input type="text" name="cellphone"> </td>
-				</tr>
-				<tr>
-					<th> (ex: 01012345678) </th>
-					<td> </td>
+					<td> <input type="text" name="cellphone" placeholder=" ex: 01012345678"> </td>
 				</tr>
 				<tr>
 					<th> E-mail </th>
@@ -78,7 +73,7 @@ href="/semi_burger/css/mainLayout.css">
 					<td> <input type="text" name="address"> </td>
 				</tr>
 				<tr>
-					<td class="button" colspan="2"> <input type=submit value="가입하기"> <input type="reset" value="다시작성"> </td>
+					<td class="button" colspan="2"> <input type=submit value="수정하기"> <input type="reset" value="다시작성"> </td>
 				</tr>			
 			</tbody>
 		</table>

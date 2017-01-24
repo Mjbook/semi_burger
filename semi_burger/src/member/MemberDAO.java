@@ -1,6 +1,7 @@
 package member;
 
 import java.sql.*;
+import java.util.*;
 
 public class MemberDAO {
 	Connection conn;
@@ -95,7 +96,7 @@ public class MemberDAO {
 			
 			rs.next();
 			
-			return rs.getString("name");		
+			return rs.getString("name");
 			
 		} catch(Exception e){
 			e.printStackTrace();
@@ -116,7 +117,7 @@ public class MemberDAO {
 		try{
 			conn = yb.db.YB_DB.getConn();
 			
-			String sql = "update member set passwd=?, name=?, birth=?, cellphone=?, email=?, address=?";
+			String sql = "update member set passwd=?, name=?, birth=?, cellphone=?, email=?, address=? where id=?";
 			
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, dto.getPasswd());
@@ -125,6 +126,7 @@ public class MemberDAO {
 			ps.setString(4, dto.getCellphone());
 			ps.setString(5, dto.getEmail());
 			ps.setString(6, dto.getAddress());
+			ps.setString(7, dto.getId());
 			
 			int count = ps.executeUpdate();
 			
@@ -135,7 +137,8 @@ public class MemberDAO {
 			return ERROR;
 		} finally{
 			try{
-				
+				if(ps!=null) ps.close();
+				if(conn!=null) conn.close();				
 			} catch(Exception e2){}
 		}
 	}
