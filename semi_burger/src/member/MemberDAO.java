@@ -147,6 +147,7 @@ public class MemberDAO {
 	public int Delmember(){
 		try{
 			
+			
 		} catch(Exception e){
 			e.printStackTrace();
 			return ERROR;
