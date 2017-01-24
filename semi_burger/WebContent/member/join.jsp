@@ -48,19 +48,11 @@ href="/semi_burger/css/mainLayout.css">
 				</tr>
 				<tr>
 					<th> 생년월일 </th>
-					<td rowspan="2"> <input type="text" name="birth"> </td>
-				</tr>
-				<tr>
-					<th> (ex: 170123) </th>
-					<td> </td>
+					<td> <input type="text" name="birth" placeholder=" ex: 170123"> </td>
 				</tr>
 				<tr>
 					<th> 핸드폰 번호 </th>
-					<td rowspan="2"> <input type="text" name="cellphone"> </td>
-				</tr>
-				<tr>
-					<th> (ex: 01012345678) </th>
-					<td> </td>
+					<td> <input type="text" name="cellphone" placeholder=" ex: 01012345678"> </td>
 				</tr>
 				<tr>
 					<th> E-mail </th>

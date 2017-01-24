@@ -4,6 +4,10 @@
 <html>
 <head>
 <meta charset=UTF-8">
+
+<%
+request.setCharacterEncoding("UTF-8");
+%>
 <title>Insert title here</title>
 </head>
 <body>
@@ -12,7 +16,7 @@
 	
 		<fieldset>
 			<legend align="center">버거 메뉴 등록하기</legend>
-			<form name="burger_up" action="burger_up_ok.jsp" method="post" enctype="multipart/form-data">
+			<form name="burger_up" action="burger_up_ok.jsp">
 			<table>
 				<tr>
 					<th>버거번호:</th>
@@ -32,11 +36,10 @@
 				</tr>
 				<tr>
 					<th>판매종료일자:</th>
-					<td><input type="text" name="item_event_finish" value="2017-01-23">
-					</td>
+					<td>등록일로부터 14일</td>
 				</tr>
 				<tr>
-				<input type="text" name="item_img_src">
+				<input type="file" name="item_img_src">
 				</tr>
 				<tr>
 					<td colspan="2"><input type="reset" value="다시작성">

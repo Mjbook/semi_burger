@@ -1,6 +1,7 @@
 package member;
 
 import java.sql.*;
+import java.util.*;
 
 public class MemberDAO {
 	Connection conn;
@@ -95,7 +96,7 @@ public class MemberDAO {
 			
 			rs.next();
 			
-			return rs.getString("name");		
+			return rs.getString("name");
 			
 		} catch(Exception e){
 			e.printStackTrace();
@@ -109,20 +110,35 @@ public class MemberDAO {
 			} catch(Exception e2){ }
 		}
 		
-	}
+	} 
 	
 	/** 회원정보 수정*/
-	public int UpdateInfo(){
+	public int UpdateInfo(MemberDTO dto){
 		try{
 			conn = yb.db.YB_DB.getConn();
 			
-			String sql = "";
+			String sql = "update member set passwd=?, name=?, birth=?, cellphone=?, email=?, address=? where id=?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, dto.getPasswd());
+			ps.setString(2, dto.getName());
+			ps.setString(3, dto.getBirth());
+			ps.setString(4, dto.getCellphone());
+			ps.setString(5, dto.getEmail());
+			ps.setString(6, dto.getAddress());
+			ps.setString(7, dto.getId());
+			
+			int count = ps.executeUpdate();
+			
+			return count; 
+			
 		} catch(Exception e){
 			e.printStackTrace();
 			return ERROR;
 		} finally{
 			try{
-				
+				if(ps!=null) ps.close();
+				if(conn!=null) conn.close();				
 			} catch(Exception e2){}
 		}
 	}

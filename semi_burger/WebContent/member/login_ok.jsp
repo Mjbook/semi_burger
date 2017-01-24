@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <%@ page import="java.sql.*" %>
-
+<%@ page import="java.util.*" %>
+<%@ page import="member.*" %>
+	
 <jsp:useBean id="mdao" class="member.MemberDAO" scope="session"/>
 
 <%
@@ -15,9 +18,9 @@
 	if(result==mdao.LOGIN_OK){
 		
 		String username = mdao.getUserInfo(userid);
-		
+				
 		session.setAttribute("sid", userid);
-		session.setAttribute("sname", username);
+		session.setAttribute("sname", username);		
 		
 		%>
 		<script>

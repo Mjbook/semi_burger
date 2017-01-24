@@ -5,6 +5,7 @@
 <jsp:useBean id="burgerdto" class="yb.burger.BurgerDTO"/>
 <jsp:setProperty property="*" name="burgerdto"/>
 <jsp:useBean id="burgerdao" class="yb.burger.BurgerDAO"/>
+
 <%
 ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 

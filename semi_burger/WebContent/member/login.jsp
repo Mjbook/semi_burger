@@ -10,6 +10,7 @@ href="/semi_burger/css/mainLayout.css">
 <style>
 	fieldset{
 		width: 250px;
+		margin: 0px auto;
 		border-spacing: 0px;
 	}
 </style>
@@ -18,6 +19,7 @@ href="/semi_burger/css/mainLayout.css">
 <%@ include file="/header.jsp" %>
  
 <section>
+<br>
 	<fieldset>
 	<form name="login" action="login_ok.jsp" method="post">
 		<table>
@@ -35,6 +37,7 @@ href="/semi_burger/css/mainLayout.css">
 		</table>
 	</form>
 	</fieldset>
+<br>
 </section>	
 
 <%@ include file="/footer.jsp" %>
