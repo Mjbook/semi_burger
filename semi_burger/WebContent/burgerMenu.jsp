@@ -28,22 +28,23 @@ function burger_up(){
 <section>
 	<article>
 		<form name="burgerMenu">
-			<table border="1" width="300" height="250" >
+			<table border="1">
 				<tr>
 				<%
 				for(int i=1;i<al.size();i++){
 					%>
 					<th><img src="burger_img/<%=al.get(i).getItem_img_src()%>" width="300" height="260"></th>
-					<td width="300" height="260">
+					<td align="center" width="250" height="260">
 					<%=al.get(i).getItem_name()%>
-					<br><br>
-					<%=al.get(i).getItem_pay() %>
 					<br><br><br>
-					<input type="button" name="order" value="주문하기">
+					<%=al.get(i).getItem_pay()+"원" %>
+					<br><br><br>
+					<input type="button" name="orderMenu" value="주문하기">
+					<input type="button" name="savaMenu" value="담기">
 					</td>
 					
 					<%
-					if(i%4==0&&i!=al.size()){
+					if(i%2==0&&i!=al.size()){
 					%>
 					</tr><tr>
 					<%
