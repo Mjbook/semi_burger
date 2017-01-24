@@ -24,7 +24,6 @@ public class noticeDAO {
 			
 		try{
 			conn=yb.db.YB_DB.getConn();
-			//String sql = "select * from JSP_notice order by idx desc";
 			String sql="SELECT * FROM  NOTICE_BOARD ORDER BY NOTICE_NO DESC";
 				ps=conn.prepareStatement(sql);
 				rs=ps.executeQuery();
@@ -39,9 +38,7 @@ public class noticeDAO {
 					bdto.setContent(rs.getString("content"));
 					bdto.setInsert_date(rs.getDate("insert_date"));
 					bdto.setBoard_count(rs.getInt("board_count"));
-					
 					arr.add(bdto);
-											
 				} return arr;
 				
 
@@ -89,7 +86,6 @@ public class noticeDAO {
 			String sql = "insert into NOTICE_BOARD values(notice_seq.nextval,'admin',?,?,sysdate,0)";
 
 			ps = conn.prepareStatement(sql);		
-		//	ps.setString(1, dto.getName());  �������� ���̵�������
 			ps.setString(1, dto.getSubject());
 			ps.setString(2, dto.getContent());
 			int count = ps.executeUpdate();		
