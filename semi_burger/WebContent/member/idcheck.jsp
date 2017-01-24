@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+Yong Burger 소개
+
+HOME > Yong Burger 소개
 
 </body>
 </html>
