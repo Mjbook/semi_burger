@@ -44,6 +44,9 @@ public class Order_listDTO {
 	public void setItem_count(int item_count) {
 		this.item_count = item_count;
 	}
+	public void addItem_count(int item_count) {
+		this.item_count += item_count;
+	}
 	public java.sql.Date getOrder_date() {
 		return order_date;
 	}
@@ -75,6 +78,10 @@ public class Order_listDTO {
 
 	public void addOdtos(Order_listDTO odto) {
 		odtos.add(odto);
+	}
+	
+	public void clearOdtos(){
+		this.odtos.clear();
 	}
 	
 }
