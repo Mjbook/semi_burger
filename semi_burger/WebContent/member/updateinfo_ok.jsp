@@ -8,7 +8,7 @@
 <jsp:setProperty property="*" name="mdto"/>
 
 <%
-	String id = request.getParameter("id");
+	String id = request.getParameter("id"); 
 	int result = mdao.UpdateInfo(mdto);
 
 	if(result>0){

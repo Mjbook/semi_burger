@@ -19,7 +19,7 @@
 		
 		String username = mdao.getUserInfo(userid);
 				
-		session.setAttribute("sid", userid);
+		session.setAttribute("sid", userid); 
 		session.setAttribute("sname", username);		
 		
 		%>
