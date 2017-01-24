@@ -1,18 +1,20 @@
 package yb.order_list;
 import java.sql.*;
+import java.util.*;
 public class Order_listDTO {
 	
 	private int order_no;
-	private int order_group;
+	private int order_group;//db에는 없는 변수
 	private String item_name;
 	private int item_count;
-	private Date order_date;
+	private java.sql.Date order_date;
 	private String order_shop;
 	private String order_user;
 	private String total_pay;
+	private ArrayList<Order_listDTO> odtos;//db에는 없는 변수
 	
 	public Order_listDTO(){
-		
+		odtos=new ArrayList<Order_listDTO>();
 	}
 	
 	public int getOrder_no() {
@@ -42,10 +44,10 @@ public class Order_listDTO {
 	public void setItem_count(int item_count) {
 		this.item_count = item_count;
 	}
-	public Date getOrder_date() {
+	public java.sql.Date getOrder_date() {
 		return order_date;
 	}
-	public void setOrder_date(Date order_date) {
+	public void setOrder_date(java.sql.Date order_date) {
 		this.order_date = order_date;
 	}
 	public String getOrder_shop() {
@@ -66,6 +68,13 @@ public class Order_listDTO {
 	public void setTotal_pay(String total_pay) {
 		this.total_pay = total_pay;
 	}
-	
+
+	public ArrayList<Order_listDTO> getOdtos() {
+		return odtos;
+	}
+
+	public void addOdtos(Order_listDTO odto) {
+		odtos.add(odto);
+	}
 	
 }
