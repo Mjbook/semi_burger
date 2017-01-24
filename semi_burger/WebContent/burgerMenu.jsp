@@ -18,7 +18,7 @@ ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 <link rel="stylesheet" type="text/css" href="css/mainLayout.css">
 <script>
 function burger_up(){
-	window.open("burger_up.jsp","burger_up","top=300,left=400,width=400,height=300");
+	window.open("burger_up.jsp","burger_up","top=300,left=400,width=350,height=250");
 }
 </script>
 
@@ -28,26 +28,29 @@ function burger_up(){
 <section>
 	<article>
 		<form name="burgerMenu">
-			<table border="1" width="550" height="500" >
-			<tbody>
+			<table border="1" width="300" height="250" >
 				<tr>
 				<%
-				for(int i=0;i<al.size();i++){
+				for(int i=1;i<al.size();i++){
 					%>
-					<th><img src="burger_img/<%=al.get(i).getItem_img_src()%>" width="300" height="300"></th>
-					<td><%=al.get(i).getItem_name()%></td>
+					<th><img src="burger_img/<%=al.get(i).getItem_img_src()%>" width="300" height="260"></th>
+					<td width="300" height="260">
+					<%=al.get(i).getItem_name()%>
+					<br><br>
+					<%=al.get(i).getItem_pay() %>
+					<br><br><br>
+					<input type="button" name="order" value="주문하기">
+					</td>
+					
 					<%
-					if(i%4==0&&i!=16){
+					if(i%4==0&&i!=al.size()){
 					%>
 					</tr><tr>
 					<%
 					}
 				}
 				%>
-				</tbody>
-				<tfoot>
 				<input type="button" value="메뉴등록" onclick="burger_up()">
-				</tfoot>
 			</table>
 		</form>
 	</article>
