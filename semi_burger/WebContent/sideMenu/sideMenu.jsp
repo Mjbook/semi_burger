@@ -15,7 +15,7 @@ ArrayList<SideDTO> al=sdao.SideMenu(sdto);
 <head>
 <meta charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/mainLayout.css">
+<link rel="stylesheet" type="text/css" href="../css/mainLayout.css">
 <script>
 function side_up(){
 	window.open("side_up.jsp","side_up","top=300,left=400,width=350,height=250");
@@ -40,11 +40,11 @@ function side_delete(){
 				<%
 				for(int i=1;i<al.size();i++){
 					%>
-					<th><img src="side_img/<%=al.get(i).getItem_img_src()%>" width="300" height="260"></th>
+					<th><img src="side_img/<%=al.get(i).getSideitem_img_src()%>" width="300" height="260"></th>
 					<td align="center" width="300" height="260">
-					<%=al.get(i).getItem_name()%>
+					<%=al.get(i).getSideitem_name() %>
 					<br><br><br>
-					<%=al.get(i).getItem_pay()+"원" %>
+					<%=al.get(i).getSideitem_pay()+"원" %>
 					<br><br><br>
 					<input type="button" name="orderMenu" value="주문하기">
 					<input type="button" name="savaMenu" value="담기">

@@ -29,9 +29,9 @@ String sideitem_count_s=request.getParameter("sideitem_count");
 int sideitem_count=Integer.parseInt(sideitem_count_s);
 
 String sideitem_img_src=request.getParameter("sideitem_img_src");
-int result=sdao.sideUPLoad(sideitem_num, sideitem_name, sideitem_pay, sideitem_count, sideitem_img_src);
+int result=sdao.sideReLoad(sideitem_num, sideitem_name, sideitem_pay, sideitem_count, sideitem_img_src);
 
-String msg=result>0?"등록되었습니다.":"등록에 실패하였습니다.";
+String msg=result>0?"수정되었습니다.":"수정에 실패하였습니다.";
 %>
 <script>
 window.alert('<%=msg%>');

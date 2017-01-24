@@ -8,14 +8,13 @@
 
 <%
 ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
-
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="css/mainLayout.css">
+<link rel="stylesheet" type="text/css" href="../css/mainLayout.css">
 <script>
 function burger_up(){
 	window.open("burger_up.jsp","burger_up","top=300,left=400,width=350,height=250");
