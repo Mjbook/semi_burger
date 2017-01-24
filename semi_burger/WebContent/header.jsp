@@ -20,8 +20,8 @@
 			<li><a href="/semi_burger/index.jsp">Home</a></li>
 			<li><a>소개</a>
 			<ul class="menu">
-				<li>YONG STORY</li>
-				<li>CEO 인사말</li>
+				<li> <a>YONG STORY</a> </li>
+				<li> <a>CEO 인사말</a> </li>
 				<li>찾아오시는 길</li>
 				<li>매장 검색</li>
 			</ul>
