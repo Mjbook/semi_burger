@@ -224,7 +224,7 @@ for(int i=0;i<arr_bdto.size();i++){
 						<input type="button" value="다시 담기" onclick="javascript:resetMenu()">
 					</td>
 				</tr>
-				</tfoot>
+				</tfoot> 
 			</table>
 		</form>
 		</article>
