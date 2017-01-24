@@ -104,6 +104,29 @@ public class BurgerDAO {
 		}
 	}
 	
+	/**메뉴삭제 메서드*/
+	public int burgerDelete(int item_num){
+		try{
+			conn=yb.db.YB_DB.getConn();
+			String sql="delete from burger where item_num=?";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, item_num);
+			int count=ps.executeUpdate();
+			
+			return count;
+		}catch(Exception e){
+			e.printStackTrace();
+			return -1;
+		}finally{
+			try{
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			}catch(Exception e2){
+				
+			}
+		}
+	}
+	
 }
 
 

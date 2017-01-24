@@ -23,6 +23,10 @@ function burger_up(){
 function burger_reload(){
 	window.open("burger_reload.jsp","burger_reload","top=300,left=400,width=350,height=250");
 }
+function burger_delete(){
+	window.open("burger_delete.jsp","burger_delete","top=300,left=400,width=350,height=250");
+}
+
 </script>
 
 </head>
@@ -37,7 +41,7 @@ function burger_reload(){
 				for(int i=1;i<al.size();i++){
 					%>
 					<th><img src="burger_img/<%=al.get(i).getItem_img_src()%>" width="300" height="260"></th>
-					<td align="center" width="250" height="260">
+					<td align="center" width="300" height="260">
 					<%=al.get(i).getItem_name()%>
 					<br><br><br>
 					<%=al.get(i).getItem_pay()+"원" %>
@@ -55,9 +59,10 @@ function burger_reload(){
 				}
 				%>
 				<tr>
-				<td colspan="4" align="right">
+				<td colspan="4" align="right" width="600">
 				<input type="button" value="메뉴등록" onclick="burger_up()">
 				<input type="button" value="메뉴수정" onclick="burger_reload()">
+				<input type="button" value="메뉴삭제" onclick="burger_delete()">
 				</td>
 				</tr>
 			</table>
