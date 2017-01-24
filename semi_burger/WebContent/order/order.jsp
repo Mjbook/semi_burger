@@ -55,7 +55,7 @@ for(int i=0;i<arr.size();i++){
 			window.alert('주문 수량을 다시 확인해 주세요.');
 			return;
 		}
-		location.href='/semi_burger/member/order.jsp?menu='+<%=i%>+'&no='+no;
+		location.href='/semi_burger/order/order.jsp?menu='+<%=i%>+'&no='+no;
 	}
 </script>
 <%
