@@ -46,7 +46,7 @@ if(arr==null){
 }
 for(int i=0;i<arr.size();i++){
 %>
-	<script>
+<script>
 	function add<%=i%>(menu){
 		no=document.select.m<%=i%>.value;
 		document.select.m<%=i%>.value=0;
@@ -55,7 +55,8 @@ for(int i=0;i<arr.size();i++){
 			window.alert('주문 수량을 다시 확인해 주세요.');
 			return;
 		}
-		location.href='/semi_burger/member/order.jsp?menu='+<%=i%>+'&no='+no;
+		document.select.m<%=i%>_check.value=1;
+		document.select.submit();
 	}
 </script>
 <%
@@ -68,7 +69,7 @@ for(int i=0;i<arr.size();i++){
 <%@include file="/header.jsp"%>
 	<section>
 		<article>
-		<form name="select">
+		<form id="select" action="order.jsp">
 			<table>
 		<%
 			for(int i=0;i<arr.size();i++){
@@ -78,7 +79,10 @@ for(int i=0;i<arr.size();i++){
 					<td><%=bmdto.getItem_name()%></td>
 					<td><%=bmdto.getItem_pay()+"원"%></td>
 					<td><input name="m<%=i %>" type="number" min="0"></td>
-					<td><input type="button" value="추가" onclick="add<%=i%>(<%=i%>)"></td>
+					<td>
+						<input type="hidden" name="m<%=i %>_check" value="0">
+						<input type="button" value="추가" onclick="javascript:add<%=i%>(<%=i%>)">
+					</td>
 				</tr>
 			
 		<%
