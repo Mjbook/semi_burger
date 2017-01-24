@@ -37,11 +37,12 @@ public class Order_listDAO {
 	}
 	
 	/**고객 주문 입력 메서드*/
-	public void orderMenu(){
+	public void orderMenu(Order_listDTO odto){
 		try {
 			getConn();
 			String sql="insert into order_list values(order_list_seq.nextval,?,?,sysdate,'본점',?,?)";
 			ps=conn.prepareStatement(sql);
+			ps.set
 			
 			
 		} catch (Exception e) {
