@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
 <%@page import="board.board.notice.QA.*" %>
 <jsp:useBean id="bdao" class="board.board.notice.QA.QADAO" scope="session"/>
 <%
@@ -26,7 +25,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/mainLayout.css">
 </head>
 <body>	
 	<section>
@@ -41,7 +39,7 @@
 			</tr>
 			<tr>
 				<th>작성자</th>
-				<td><%=dto.getName()%></td> 
+				<td><%=dto.getName()%></td>
 				<th>조회수</th>
 				<td><%=dto.getContent() %></td>
 			</tr>
@@ -58,7 +56,7 @@
 			</tr>
 			<tr>
 				<td colspan="4" align="center">
-				목록보기 | <a href="bbsReWrite.jsp?subject=<%=dto.getSubject()%>&rep=<%=dto.getRef()%>&lev=<%=dto.getLev()%>&sunbun=<%=dto.getSunbun()%>">답변쓰기</a>
+				목록보기 | <a href="QAReWrite.jsp?subject=<%=dto.getSubject()%>&rep=<%=dto.getRef()%>&lev=<%=dto.getLev()%>&sunbun=<%=dto.getSunbun()%>">답변쓰기</a>
 			</tr>
 			</table>
 		</article>
