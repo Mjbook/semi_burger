@@ -31,7 +31,7 @@ public class QADAO {
 	}
 
 	// 게시물 작성  작성 관련 
-	public int qna_board(QADTO dto)  {
+	public int QAWrite(QADTO dto)  {
 		try {
 
 			conn=yb.db.YB_DB.getConn();
@@ -78,7 +78,7 @@ public class QADAO {
 		}
 	}
 	// 답변 글 쓰기 관련
-	public int bbsReWrite(QADTO dto) {
+	public int QAReWrite(QADTO dto) {
 		try {
 			conn=yb.db.YB_DB.getConn();
 			updateSun(dto.getRef(), dto.getSunbun());

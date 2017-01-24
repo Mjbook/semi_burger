@@ -7,7 +7,9 @@
 <jsp:useBean id="burgerdao" class="yb.burger.BurgerDAO"/>
 
 <%
+
 ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
+
 %>
 <!DOCTYPE html>
 <html>
@@ -37,7 +39,12 @@ function burger_delete(){
 			<table border="1">
 				<tr>
 				<%
-				for(int i=1;i<al.size();i++){
+				for(int i=0;i<al.size();i++){
+					if(i%2==0&&i!=al.size()&&i!=0){
+					%>
+						</tr><tr>
+					<%
+					}
 					%>
 					<th><img src="burger_img/<%=al.get(i).getItem_img_src()%>" width="300" height="260"></th>
 					<td align="center" width="300" height="260">
@@ -48,22 +55,28 @@ function burger_delete(){
 					<input type="button" name="orderMenu" value="주문하기">
 					<input type="button" name="savaMenu" value="담기">
 					</td>
-					
-					<%
-					if(i%2==0&&i!=al.size()){
-					%>
-					</tr><tr>
-					<%
-					}
+				<%
 				}
 				%>
-				<tr>
-				<td colspan="4" align="right" width="600">
-				<input type="button" value="메뉴등록" onclick="burger_up()">
-				<input type="button" value="메뉴수정" onclick="burger_reload()">
-				<input type="button" value="메뉴삭제" onclick="burger_delete()">
-				</td>
-				</tr>
+				
+				<%
+				if(session.getAttribute("sid")!=null){
+				String sid=(String)session.getAttribute("sid");
+				
+				if(sid.equals("admin")){
+					%>
+					<tr>
+					<td colspan="4" align="right" width="600">
+					<input type="button" value="메뉴등록" onclick="burger_up()">
+					<input type="button" value="메뉴수정" onclick="burger_reload()">
+					<input type="button" value="메뉴삭제" onclick="burger_delete()">
+					</td>
+					</tr>
+					<% 
+				}
+					
+				}
+				 %>
 			</table>
 		</form>
 	</article>
