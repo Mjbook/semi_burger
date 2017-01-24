@@ -12,7 +12,7 @@ public class BurgerDTO {
 	private String item_img_src;
 	
 	public BurgerDTO() {
-		System.out.println("burgerDTO»ý¼º");
+		System.out.println("burgerDTO");
 	}
 	
 	public BurgerDTO(int item_key, int item_num, String item_name, String item_pay, int item_count,

@@ -12,7 +12,7 @@ public class BurgerDAO {
 		System.out.println("burgerDAO");
 	}
 	
-	/**¹ö°Å¸Ş´º ¸Ş¼­µå*/
+	/**ë©”ë‰´ ì¶œë ¥ê´€ë ¨ ë©”ì„œë“œ*/
 	public ArrayList<BurgerDTO> burgerMenu(BurgerDTO bdto){
 		try{
 			conn=yb.db.YB_DB.getConn();
@@ -49,22 +49,28 @@ public class BurgerDAO {
 		}
 	}
 	
-	/**¹ö°Åµî·Ï ¸Ş¼­µå*/
-	public int burgerUPLoad(String item_name,String item_pay,int item_count,Date item_event_finish,String item_img_src){
+	/**ë©”ë‰´ë“±ë¡ê´€ë ¨ ë©”ì„œë“œ*/
+	public int burgerUPLoad(int item_num,String item_name,String item_pay,int item_count,String item_img_src){
 		try{
 			conn=yb.db.YB_DB.getConn();
-			String sql="insert into burger values(burger_shop_seq.nextval,?,?,?,?,sysdate,?,?)";
+			String sql="insert into burger values(burger_shop_seq.nextval,?,?,?,?,sysdate,sysdate+14,?)";
 			ps=conn.prepareStatement(sql);
-			ps.setString(1, "item_num");
+			ps.setInt(1, item_num);
 			ps.setString(2, item_name);
 			ps.setString(3, item_pay);
 			ps.setInt(4, item_count);
-			java.sql.Date item_event_finish = ps.setDate(5,item_event_finish);
-		}catch(Exception e){
+			ps.setString(5, item_img_src);
 			
+			int count=ps.executeUpdate();
+			
+			return count;
+		}catch(Exception e){
+			e.printStackTrace();
+			return -1;
 		}finally{
 			try{
-				
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
 			}catch(Exception e2){
 				
 			}
