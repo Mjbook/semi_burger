@@ -20,7 +20,7 @@
 			<li><a href="/semi_burger/index.jsp">Home</a></li>
 			<li><a>소개</a>
 			<ul class="menu">
-				<li> <a>YONG STORY</a> </li>
+				<li> <a href="/semi_burger/story.jsp">YONG STORY</a> </li>
 				<li> <a>CEO 인사말</a> </li>
 				<li>찾아오시는 길</li>
 				<li>매장 검색</li>
@@ -58,7 +58,7 @@
 				%>				
 				<li> <a href="/semi_burger/member/login.jsp">로그인</a> </li>
 				<li> <a href="/semi_burger/member/join.jsp"> 회원가입</a> </li>
-				<li> <a> 아이디/비밀번호 찾기 </a> </li>
+				<li> <a> ID/PW 찾기 </a> </li>
 				<%
 				} else{
 				%>
