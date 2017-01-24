@@ -167,7 +167,7 @@ public class QADAO {
 		}catch(Exception e) {
 			e.printStackTrace();
 			return null;
-		}finally {
+		}finally { 
 			try {
 				if(rs!=null)rs.close();
 				if(ps!=null)ps.close();
