@@ -7,7 +7,9 @@
 <jsp:useBean id="burgerdao" class="yb.burger.BurgerDAO"/>
 
 <%
+
 ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
+
 %>
 <!DOCTYPE html>
 <html>
@@ -56,6 +58,8 @@ function burger_delete(){
 					<%
 					}
 				}
+				String sid=(String)session.getAttribute("sid");
+				if(sid=="admin"){
 				%>
 				<tr>
 				<td colspan="4" align="right" width="600">
@@ -64,6 +68,9 @@ function burger_delete(){
 				<input type="button" value="메뉴삭제" onclick="burger_delete()">
 				</td>
 				</tr>
+				<% 
+				}
+				 %>
 			</table>
 		</form>
 	</article>
