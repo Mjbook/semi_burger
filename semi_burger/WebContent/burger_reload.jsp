@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset=UTF-8">
-
 <%
 request.setCharacterEncoding("UTF-8");
 %>
@@ -15,8 +14,8 @@ request.setCharacterEncoding("UTF-8");
 	<article>
 	
 		<fieldset>
-			<legend align="center">버거 메뉴 등록하기</legend>
-			<form name="burger_up" action="burger_up_ok.jsp">
+			<legend align="center">버거 메뉴 수정하기</legend>
+			<form name="burger_up" action="burger_reload_ok.jsp">
 			<table>
 				<tr>
 					<th>버거번호:</th>
@@ -33,10 +32,6 @@ request.setCharacterEncoding("UTF-8");
 				<tr>
 					<th>수량:</th>
 					<td><input type="text" name="item_count"></td>
-				</tr>
-				<tr>
-					<th>판매종료일자:</th>
-					<td>등록일로부터 14일</td>
 				</tr>
 				<tr>
 				<input type="file" name="item_img_src">

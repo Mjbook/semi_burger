@@ -5,6 +5,7 @@
 <jsp:useBean id="burgerdto" class="yb.burger.BurgerDTO"/>
 <jsp:setProperty property="*" name="burgerdto"/>
 <jsp:useBean id="burgerdao" class="yb.burger.BurgerDAO"/>
+
 <%
 ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 
@@ -14,35 +15,51 @@ ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 <head>
 <meta charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/mainLayout.css">
 <script>
 function burger_up(){
-	window.open("burger_up.jsp","burger_up","top=300,left=400,width=400,height=300");
+	window.open("burger_up.jsp","burger_up","top=300,left=400,width=350,height=250");
+}
+function burger_reload(){
+	window.open("burger_reload.jsp","burger_reload","top=300,left=400,width=350,height=250");
 }
 </script>
+
 </head>
 <body>
-
+<%@include file="header.jsp" %>
 <section>
 	<article>
 		<form name="burgerMenu">
-			<table border="1" width="550" height="500" >
+			<table border="1">
 				<tr>
 				<%
-				for(int i=0;i<al.size();i++){
+				for(int i=1;i<al.size();i++){
 					%>
-					<th><img src="burger_img/<%=al.get(i).getItem_img_src()%>" width="300" height="300"></th>
-					<td><%=al.get(i).getItem_name()%></td>
+					<th><img src="burger_img/<%=al.get(i).getItem_img_src()%>" width="300" height="260"></th>
+					<td align="center" width="250" height="260">
+					<%=al.get(i).getItem_name()%>
+					<br><br><br>
+					<%=al.get(i).getItem_pay()+"원" %>
+					<br><br><br>
+					<input type="button" name="orderMenu" value="주문하기">
+					<input type="button" name="savaMenu" value="담기">
+					</td>
+					
 					<%
-					if(i%4==0&&i!=16){
+					if(i%2==0&&i!=al.size()){
 					%>
 					</tr><tr>
 					<%
 					}
 				}
 				%>
-				<tfoot>
+				<tr>
+				<td colspan="4" align="right">
 				<input type="button" value="메뉴등록" onclick="burger_up()">
-				</tfoot>
+				<input type="button" value="메뉴수정" onclick="burger_reload()">
+				</td>
+				</tr>
 			</table>
 		</form>
 	</article>

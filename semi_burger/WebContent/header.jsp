@@ -20,21 +20,31 @@
 			<li><a href="/semi_burger/index.jsp">Home</a></li>
 			<li><a>소개</a>
 			<ul class="menu">
-				<li>so1</li>
-				<li>so2</li>
-				<li>so3</li>
+				<li>YONG STORY</li>
+				<li>CEO 인사말</li>
+				<li>찾아오시는 길</li>
+				<li>매장 검색</li>
 			</ul>
 			</li>
 			<li>메뉴<ul class="menu">
-				<li>m1</li>
-				<li>me2</li>
-				<li>men3</li>
+				<li>햄버거</li>
+				<li>사이드</li>
+				<li>이벤트 메뉴</li>
+				<li>내가 만드는 햄버거</li>
+				<li>재료 원산지 표기</li>
 			</ul></li>
 			<li><a href="/semi_burger/order/order.jsp">주문</a></li>	
 			<li>My Burger<ul class="menu">
 				<li><a href="/semi_burger/order/orderCheck.jsp">주문 조회</a></li>
 				<li>myB</li>
 			</ul></li>	
+				<li>커뮤니티<ul class="menu">
+				<li><a href="/semi_burger/board/notice.jsp">공지사항</a></li>
+				<li>창업 문의</li>
+				<li>고객의 소리</li>
+				<li>내가 만든 햄버거</li>
+				<li>이벤트</li>
+			</ul></li>
 		</ol>
 	</nav>
 </header>

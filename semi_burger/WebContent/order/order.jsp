@@ -3,8 +3,9 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@page import="java.util.*" %>
-<jsp:useBean id="bmdao" class="yb.burger.BurgerDAO"/>
-<jsp:useBean id="bmdto" class="yb.burger.BurgerDTO"/>
+<%@page import="yb.order_list.*" %>
+<jsp:useBean id="bdao" class="yb.burger.BurgerDAO"/>
+<jsp:useBean id="bdto" class="yb.burger.BurgerDTO"/>
 <jsp:useBean id="odto" class="yb.order_list.Order_listDTO" scope="session"/>
 <html>
 <%	request.setCharacterEncoding("utf-8");
@@ -15,7 +16,7 @@
 	location.href='/semi_burger/index.jsp';
 </script>		
 <%
-	}
+	}	
 %>
 
 <head>
@@ -31,12 +32,11 @@
 }
 </style>
 <%
-	ArrayList<BurgerDTO> arr=bmdao.burgerMenu(bmdto);
-	String choice=request.getParameter("1");
-	System.out.print(choice);
+	ArrayList<BurgerDTO> arr_bdto=bdao.burgerMenu(bdto);
+	
 %>
 <%
-if(arr==null){
+if(arr_bdto==null){
 %>
 <script>
 	window.alert('메뉴 준비중');
@@ -44,43 +44,68 @@ if(arr==null){
 </script><%
 	return;
 }
-for(int i=0;i<arr.size();i++){
+for(int i=0;i<arr_bdto.size();i++){
 %>
 <script>
 	function add<%=i%>(menu){
 		no=document.select.m<%=i%>.value;
-		document.select.m<%=i%>.value=0;
-		no=Math.trunc(no);
 		if(no<=0){
 			window.alert('주문 수량을 다시 확인해 주세요.');
 			return;
 		}
-		document.select.m<%=i%>_check.value=1;
+		document.select.m<%=i%>_check.value="true";
 		document.select.submit();
 	}
 </script>
 <%
 }
 %>
+<%
+for(int i=0;i<arr_bdto.size();i++){
+	String select_menu=request.getParameter("m"+i+"_check");
+	String num_s=request.getParameter("m"+i);
+	if(select_menu!=null&&select_menu.equals("true")){
+		bdto=arr_bdto.get(i);
+		String name=bdto.getItem_name();
+		int num=Integer.parseInt(num_s);
+		int price=Integer.parseInt(bdto.getItem_pay());
+		int total=num*price;
+		Order_listDTO temp=new Order_listDTO();
+		temp.setItem_name(name);
+		temp.setItem_count(num);
+		temp.setTotal_pay(Integer.toString(total));
+		odto.addOdtos(temp);
+	}
+	
+}
 
+
+%>
 </head>
 <body>
 
 <%@include file="/header.jsp"%>
 	<section>
 		<article>
-		<form id="select" action="order.jsp">
+		<form name="select" action="order.jsp" method="post">
 			<table>
 		<%
-			for(int i=0;i<arr.size();i++){
-				bmdto=arr.get(i);
-		%>	
-				<tr>
-					<td><%=bmdto.getItem_name()%></td>
-					<td><%=bmdto.getItem_pay()+"원"%></td>
-					<td><input name="m<%=i %>" type="number" min="0"></td>
+			for(int i=0;i<arr_bdto.size();i++){
+				bdto=arr_bdto.get(i);
+		%>		<tr>
+					<td><%=bdto.getItem_name()%></td>
+					<td><%=bdto.getItem_pay()+"원"%></td>
+					<td><select name="m<%=i %>">
+					<%
+						for(int j=0;j<=100;j++){
+							%>
+							<option value="<%=j%>"><%=j %></option>
+							<%
+						}
+					%>
+					</select></td>
 					<td>
-						<input type="hidden" name="m<%=i %>_check" value="0">
+						<input type="hidden" name="m<%=i %>_check" value="false">
 						<input type="button" value="추가" onclick="javascript:add<%=i%>(<%=i%>)">
 					</td>
 				</tr>
@@ -94,7 +119,7 @@ for(int i=0;i<arr.size();i++){
 		</article>
 		
 		<article>
-		<form name="order">
+		<form name="orderlist">
 			<table id="orderlist">
 				<thead>
 				<tr>
@@ -115,8 +140,23 @@ for(int i=0;i<arr.size();i++){
 				</tfoot>
 				
 				<tbody>
-					<tr>
-					</tr>
+				<%
+					ArrayList<Order_listDTO> arr_odto=odto.getOdtos();
+					if(arr_odto!=null&&(arr_odto.size()>0)){
+						for(int i=0;i<arr_odto.size();i++){	
+						String menu=arr_odto.get(i).getItem_name();
+						int num=arr_odto.get(i).getItem_count();
+						String price=arr_odto.get(i).getTotal_pay();
+						%> 
+						<tr>
+							<td><%=menu%></td>
+							<td><%=num %></td>
+							<td><%=price%></td>
+						</tr>
+						<%
+						}
+					}
+				%>
 				</tbody>
 			</table>
 		</form>
