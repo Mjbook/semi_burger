@@ -50,15 +50,16 @@ public class BurgerDAO {
 	}
 	
 	/**메뉴등록관련 메서드*/
-	public int burgerUPLoad(String item_name,String item_pay,int item_count,String item_img_src){
+	public int burgerUPLoad(int item_num,String item_name,String item_pay,int item_count,String item_img_src){
 		try{
 			conn=yb.db.YB_DB.getConn();
 			String sql="insert into burger values(burger_shop_seq.nextval,?,?,?,?,sysdate,sysdate+14,?)";
 			ps=conn.prepareStatement(sql);
-			ps.setString(1, "item_num");
+			ps.setInt(1, item_num);
 			ps.setString(2, item_name);
 			ps.setString(3, item_pay);
 			ps.setInt(4, item_count);
+			ps.setString(5, item_img_src);
 			
 			int count=ps.executeUpdate();
 			

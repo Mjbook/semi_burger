@@ -29,7 +29,8 @@ String item_count_s=request.getParameter("item_count");
 int item_count=Integer.parseInt(item_count_s);
 
 String item_img_src=request.getParameter("item_img_src");
-int result=burgerdao.burgerUPLoad(item_num,item_name, item_pay, item_count, item_img_src);
+int result=burgerdao.burgerUPLoad(item_num, item_name, item_pay, item_count, item_img_src);
+
 String msg=result>0?"등록되었습니다.":"등록에 실패하였습니다.";
 %>
 <script>

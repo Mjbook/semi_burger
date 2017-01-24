@@ -15,18 +15,21 @@ ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 <head>
 <meta charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/mainLayout.css">
 <script>
 function burger_up(){
 	window.open("burger_up.jsp","burger_up","top=300,left=400,width=400,height=300");
 }
 </script>
+
 </head>
 <body>
-
+<%@include file="header.jsp" %>
 <section>
 	<article>
 		<form name="burgerMenu">
 			<table border="1" width="550" height="500" >
+			<tbody>
 				<tr>
 				<%
 				for(int i=0;i<al.size();i++){
@@ -41,6 +44,7 @@ function burger_up(){
 					}
 				}
 				%>
+				</tbody>
 				<tfoot>
 				<input type="button" value="메뉴등록" onclick="burger_up()">
 				</tfoot>
