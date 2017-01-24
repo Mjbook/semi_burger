@@ -11,7 +11,7 @@
 		<%
 	} else {
 		%> <!-- 로그인 후 -->
-		<p><a> <%=sname %> 님 로그인 중</a> | <a href="/semi_burger/member/updateinfo.jsp"> 정보 수정</a> | <a href="/semi_burger/member/logout.jsp"> 로그아웃</a></p>			
+		<p><a> <%=sname %> 님 로그인 중</a> | <a href="/semi_burger/member/logout.jsp"> 로그아웃</a></p>			
 		<%
 	}
 %>
@@ -45,6 +45,34 @@
 				<li>내가 만든 햄버거</li>
 				<li>이벤트</li>
 			</ul></li>
+			<%	if(sname==null){
+					%>
+					<li> &nbsp;&nbsp;<ul class="menu">
+					<%
+				}else{
+					%>			
+					<li> <%= sname%>님<ul class="menu">
+					<%
+				}
+				if(sname==null){
+				%>				
+				<li> <a href="/semi_burger/member/login.jsp">로그인</a> </li>
+				<li> <a href="/semi_burger/member/join.jsp"> 회원가입</a> </li>
+				<li> <a> 아이디/비밀번호 찾기 </a> </li>
+				<%
+				} else{
+				%>
+				<li> <a href="/semi_burger/member/updateinfo.jsp?"> 정보 수정</a> </li>
+				<li> <a href="/semi_burger/member/delete.jsp"> 탈퇴하기</a> </li>
+				<li> <a href="/semi_burger/member/logout.jsp"> 로그아웃</a> </li>
+			</ul></li>
+				<%
+				}
+			%>
+				
+				
+				
+			
 		</ol>
 	</nav>
 </header>
