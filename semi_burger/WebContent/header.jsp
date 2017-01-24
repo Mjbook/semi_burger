@@ -30,9 +30,9 @@
 				<li>me2</li>
 				<li>men3</li>
 			</ul></li>
-			<li><a href="/semi_burger/member/order.jsp">주문</a></li>	
+			<li><a href="/semi_burger/order.jsp">주문</a></li>	
 			<li>My Burger<ul class="menu">
-				<li><a href="/semi_burger/member/orderCheck.jsp">주문 조회</a></li>
+				<li><a href="/semi_burger/orderCheck.jsp">주문 조회</a></li>
 				<li>myB</li>
 			</ul></li>	
 		</ol>
