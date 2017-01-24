@@ -157,7 +157,7 @@ public class MemberDAO {
 			
 			int count = ps.executeUpdate();
 			
-			return count; 
+			return count;
 			
 		} catch(Exception e){
 			e.printStackTrace();

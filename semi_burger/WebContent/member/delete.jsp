@@ -13,5 +13,5 @@
 %>
 <script>
 	window.alert('<%= msg%>');
-	location.href='/semi_burger/index.jsp'; 
+	location.href='/semi_burger/index.jsp';
 </script>

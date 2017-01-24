@@ -49,7 +49,7 @@ href="/semi_burger/css/mainLayout.css">
 					<td> <input type="text" name="id" value="<%= sid%>" readonly > </td>
 				</tr>
 				<tr>
-					<th> Password </th> 
+					<th> Password </th>
 					<td> <input type="password" name="passwd"> </td>
 				</tr>
 				<tr>

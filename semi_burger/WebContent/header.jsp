@@ -60,7 +60,7 @@
 				<li> <a href="/semi_burger/member/join.jsp"> 회원가입</a> </li>
 				<li> <a> 아이디/비밀번호 찾기 </a> </li>
 				<%
-				} else{ 
+				} else{
 				%>
 				<li> <a href="/semi_burger/member/updateinfo.jsp?"> 정보 수정</a> </li>
 				<li> <a href="/semi_burger/member/delete.jsp"> 탈퇴하기</a> </li>
