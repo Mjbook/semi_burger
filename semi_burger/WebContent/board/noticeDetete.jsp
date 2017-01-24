@@ -15,6 +15,6 @@ int result=bdao.noticeDelete(idx);
 String msg=result>0?"삭제 성공!":"삭제 실패!";
 %>
 <script>
-window.alert('<%=msg %>');
+window.alert('<%=msg%>');
 location.href='notice.jsp';
 </script>
