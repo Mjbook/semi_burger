@@ -46,11 +46,22 @@ function burger_delete(){
 <%	
 if(request.getParameter("re")!=null){
 	odto.clearOdtos();
+	%>
+	<script>
+	location.href='burgerMenu.jsp';
+	</script>
+	<%
 }
 if(request.getParameter("delorder")!=null){
 	String temp_s=request.getParameter("delorder");
 	int temp=Integer.parseInt(temp_s);
 	odto.getOdtos().remove(temp);
+	%>
+	<script>
+	location.href='burgerMenu.jsp';
+	</script>
+	<%
+	
 }
 	ArrayList<BurgerDTO> arr_bdto=burgerdao.burgerMenu(burgerdto);
 	
