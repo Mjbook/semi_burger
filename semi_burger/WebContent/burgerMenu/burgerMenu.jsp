@@ -111,10 +111,9 @@ for(int i=0;i<arr_bdto.size();i++){
 	//햄버거
 	String select_menu=request.getParameter("m"+i+"_check");
 	String num_s=request.getParameter("m"+i);
-	
 	//사이드
-		String select_smenu=request.getParameter("s"+i+"_check");
-		String num_ss=request.getParameter("s"+i);
+	String select_smenu=request.getParameter("s"+i+"_check");
+	String num_ss=request.getParameter("s"+i);
 	
 	if(select_menu!=null&&select_menu.equals("true")){ //주문 추가
 		burgerdto=arr_bdto.get(i);
