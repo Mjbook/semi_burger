@@ -88,19 +88,49 @@ for(int i=0;i<arr_bdto.size();i++){
 		document.burgerMenu.m<%=i%>_check.value="true";
 		document.burgerMenu.submit();
 	}
+	function addside<%=i%>(menu){
+		no=document.sideMenu.s<%=i%>.value;
+		if(no<=0){
+			window.alert('주문 수량을 다시 확인해 주세요.');
+			return;
+		}
+		document.sideMenu.s<%=i%>_check.value="true";
+		document.sideMenu.submit();
+	}
 </script>
 <%
 }
 %>
 <%
 for(int i=0;i<arr_bdto.size();i++){
+	
+	//햄버거
 	String select_menu=request.getParameter("m"+i+"_check");
 	String num_s=request.getParameter("m"+i);
+	
+	//사이드
+		String select_smenu=request.getParameter("s"+i+"_check");
+		String num_ss=request.getParameter("s"+i);
 	
 	if(select_menu!=null&&select_menu.equals("true")){ //주문 추가
 		burgerdto=arr_bdto.get(i);
 		String name=burgerdto.getItem_name();
 		int num=Integer.parseInt(num_s);
+		String price=burgerdto.getItem_pay();
+		Order_listDTO temp=new Order_listDTO();
+		temp.setItem_name(name);
+		int check_menu=odao.checkMenu(name,odto);
+		if(check_menu>=0){
+			odto.getOdtos().get(check_menu).addItem_count(num);
+		}else{
+			temp.setItem_count(num);
+			temp.setTotal_pay(price);
+			odto.addOdtos(temp);
+		}
+	}else if(select_smenu!=null&&select_smenu.equals("true")){ //side 주문 추가
+		burgerdto=arr_bdto.get(i);
+		String name=burgerdto.getItem_name();
+		int num=Integer.parseInt(num_ss);
 		String price=burgerdto.getItem_pay();
 		Order_listDTO temp=new Order_listDTO();
 		temp.setItem_name(name);
@@ -178,6 +208,10 @@ for(int i=0;i<arr_bdto.size();i++){
 		for(int i=0;i<arr_bdto.size();i++){
 			String select_menu=request.getParameter("m"+i+"_check");
 			String num_s=request.getParameter("m"+i);
+			//side 주문 수량 보존
+			String select_smenu=request.getParameter("s"+i+"_check");
+			String num_ss=request.getParameter("s"+i);
+			
 			if(num_s!=null){ //주문 후 주문 안 한 메뉴 수량 표시
 			%>
 				<script>
@@ -193,12 +227,33 @@ for(int i=0;i<arr_bdto.size();i++){
 				</script>	
 			<%
 			}
+			
+			
+			if(num_ss!=null){ //주문 후 주문 안 한 메뉴 수량 표시
+			%>
+				<script>
+				document.sideMenu.s<%=i%>.value=<%=num_ss%>;
+				</script>	
+			<%
+			}
+			
+			if(select_smenu!=null&&select_smenu.equals("true")){
+			%><!-- 주문한 메뉴 수량 0으로 설정 -->
+				<script>
+				document.sideMenu.s<%=i%>.value="0";
+				</script>	
+			<%
+			}
+		
 		}
 %>
 		</article>
+		<br>
+		<hr>
+		<h2 id="side"><br>사이드 메뉴</h2>
+		<%@include file="/sideMenu/sideMenu.jsp" %>	
 		
 		<article>
-		
 		<form name="orderlist" action="/semi_burger/order/orderList.jsp">
 			<table id="orderlist">
 				<thead>
@@ -253,11 +308,7 @@ for(int i=0;i<arr_bdto.size();i++){
 			</table>
 		</form>
 		</article>
-		<br>
-		<hr>
-		
-		<h2 id="side"><br>사이드 메뉴</h2>
-<%@include file="/sideMenu/sideMenu.jsp" %>	
+
 </section>
 <hr>
 <%@include file="../footer.jsp" %>

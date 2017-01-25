@@ -16,7 +16,7 @@ public class SideDAO {
 	public ArrayList<SideDTO> SideMenu(SideDTO sdto){
 		try{
 			conn=yb.db.YB_DB.getConn();
-			String sql="select * from side";
+			String sql="select * from side order by sideitem_key desc";
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
 			ArrayList<SideDTO> al=new ArrayList<SideDTO>();

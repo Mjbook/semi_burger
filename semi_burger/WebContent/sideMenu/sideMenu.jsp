@@ -31,7 +31,12 @@ function side_delete(){
 			<table border="1">
 				<tr>
 				<%
-				for(int i=1;i<al2.size();i++){ 
+				for(int i=0;i<al2.size();i++){
+					if(i%2==0&&i!=al2.size()){
+					%>
+					</tr><tr>
+					<%
+					}
 					%>
 					<th><img src="../side_img/<%=al2.get(i).getSideitem_img_src()%>" width="300" height="260"></th>
 					<td align="center" width="300" height="260">
@@ -39,7 +44,7 @@ function side_delete(){
 					<br><br><br>
 					<%=al2.get(i).getSideitem_pay()+"원" %>
 					<br><br><br>
-					<select name="m<%=i%>">
+					<select name="s<%=i%>">
 					<%
 						for(int j=0;j<=100;j++){
 							%>
@@ -49,16 +54,11 @@ function side_delete(){
 						}
 					%>
 					</select>
-					<input type="hidden" name="m<%=i %>_check" value="false">
-					<input type="button" value="담기" onclick="javascript:add<%=i%>(<%=i%>)">
+					<input type="hidden" name="s<%=i %>_check" value="false">
+					<input type="button" value="담기" onclick="javascript:addside<%=i%>(<%=i%>)">
 					</td>
 					
-					<%
-					if(i%2==0&&i!=al2.size()){
-					%>
-					</tr><tr>
-					<%
-					}
+				<%
 				}
 				%>
 				<%
