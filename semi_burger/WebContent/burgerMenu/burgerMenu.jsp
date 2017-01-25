@@ -253,8 +253,10 @@ for(int i=0;i<arr_bdto.size();i++){
 			</table>
 		</form>
 		</article>
+		<br>
 		<hr>
-		<h2 id="side">사이드 메뉴</h2>
+		
+		<h2 id="side"><br>사이드 메뉴</h2>
 <%@include file="/sideMenu/sideMenu.jsp" %>	
 </section>
 <hr>
