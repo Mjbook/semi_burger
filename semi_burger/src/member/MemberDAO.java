@@ -47,6 +47,36 @@ public class MemberDAO {
 		}
 	}
 	
+	/** 아이디 중복 체크 관련 메서드*/
+	public boolean idcheck(String userid){
+		try{
+			conn = yb.db.YB_DB.getConn();
+			
+			String sql = "select id from member where id=?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, userid);
+			
+			rs = ps.executeQuery();
+			
+			if(rs.next()){
+				return true;
+			}			
+			return false;
+			
+		} catch(Exception e){
+			e.printStackTrace();
+			return false;
+		} finally{
+			try{
+				if(rs!=null) rs.close();
+				if(ps!=null) ps.close();
+				
+				if(conn!=null) conn.close();				
+			} catch(Exception e2){}
+		}
+	}
+	
 	/** 로그인 관련 메서드*/
 	public int memberLogin(String userid, String userpwd){
 		try{
@@ -113,7 +143,34 @@ public class MemberDAO {
 		}
 		
 	} 
-	
+	/**회원 주소 가져오기 메서드*/
+	public String getUserAddr(String userid){
+		try{
+			conn = yb.db.YB_DB.getConn();
+			
+			String sql = "select * from member where id=?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, userid);
+			
+			rs = ps.executeQuery();
+			
+			rs.next();
+			
+			return rs.getString("address");
+			
+		} catch(Exception e){
+			e.printStackTrace();
+			return null;			
+		} finally{
+			try{
+				if(rs!=null) rs.close();
+				if(ps!=null) ps.close();
+				if(conn!=null) conn.close();				
+			} catch(Exception e2){ }
+		}
+		
+	} 
 	/** 회원정보 수정*/
 	public int UpdateInfo(MemberDTO dto){
 		try{

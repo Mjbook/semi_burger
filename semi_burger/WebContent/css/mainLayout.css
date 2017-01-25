@@ -1,16 +1,25 @@
 @CHARSET "UTF-8";
 body{
 	width: 1000px;
-	margin: 0px auto;
+	margin: 120px auto;
 }
 header{
+	
 	width:1000px;
+}
+#headerback{
+	top:0px;
+	width:1000px;
+	position: fixed;
+	background: white;
 	
 }
 header p{
 	text-align:right;
+	
 }
 header nav{
+	
 	height:50px;
 	border-bottom: 2px solid #800000;
 }

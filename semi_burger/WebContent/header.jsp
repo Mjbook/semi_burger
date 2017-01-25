@@ -2,6 +2,13 @@
     pageEncoding="UTF-8"%>
     
 <header>
+<script>
+	function game() {
+		window.open('/semi_burger/game/test/index.html','gameopoup','width=1000,height=700');
+	}
+
+</script>
+<div id="headerback">
 <%
 	String sname = (String)session.getAttribute("sname");
 	
@@ -23,7 +30,7 @@
 				<li> <a href="/semi_burger/story.jsp">YONG STORY</a> </li>
 				<li> <a>CEO 인사말</a> </li>
 				<li>찾아오시는 길</li>
-				<li>매장 검색</li>
+				<li><a href="javascript:game()">매장 검색</a></li>
 			</ul>
 			</li>
 			<li>메뉴<ul class="menu">
@@ -74,4 +81,5 @@
 			
 		</ol>
 	</nav>
+	</div>
 </header>

@@ -33,14 +33,24 @@ function side_delete(){
 				<%
 				for(int i=1;i<al2.size();i++){ 
 					%>
-					<th><img src="side_img/<%=al2.get(i).getSideitem_img_src()%>" width="300" height="260"></th>
+					<th><img src="../side_img/<%=al2.get(i).getSideitem_img_src()%>" width="300" height="260"></th>
 					<td align="center" width="300" height="260">
 					<%=al2.get(i).getSideitem_name() %>
 					<br><br><br>
 					<%=al2.get(i).getSideitem_pay()+"원" %>
 					<br><br><br>
-					<input type="button" name="orderMenu" value="주문하기">
-					<input type="button" name="savaMenu" value="담기">
+					<select name="m<%=i%>">
+					<%
+						for(int j=0;j<=100;j++){
+							%>
+
+							<option value="<%=j%>"><%=j %></option>
+							<%
+						}
+					%>
+					</select>
+					<input type="hidden" name="m<%=i %>_check" value="false">
+					<input type="button" value="담기" onclick="javascript:add<%=i%>(<%=i%>)">
 					</td>
 					
 					<%
