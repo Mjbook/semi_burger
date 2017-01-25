@@ -9,7 +9,7 @@
 <body>
 	<section>
 		<article>
-			<h2>자유 게시판 답변 글쓰기</h2>
+			<h2>답 변 글 </h2>
 			<form name="bbsReWrite" action="bbsReWrite_ok.jsp">
 			<%
 				String subject = request.getParameter("subject");

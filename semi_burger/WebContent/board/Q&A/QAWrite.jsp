@@ -9,7 +9,7 @@
 <body>
 	<section>
 		<article>
-			<h2>자유 게시판 글쓰기</h2>
+			<h2> 문 의 사 항 </h2>
 			<form name="QAWrite" action="QAWrite_ok.jsp">
 			<table>
 				<tr>

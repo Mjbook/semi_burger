@@ -8,6 +8,8 @@ public class QADAO {
 	private PreparedStatement ps;
 	private ResultSet rs;
 
+	// 쿼리 전부다 수정 해야 될 필요요가 있음.
+	
 	// ref 최대값 구하기 ( 답변 글 사용 )
 	public int getMaxRef() {
 		try {
