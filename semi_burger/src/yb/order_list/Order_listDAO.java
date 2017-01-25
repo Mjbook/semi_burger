@@ -38,7 +38,7 @@ public class Order_listDAO {
 	}
 	
 	/**고객 최종 주문 메서드*/
-	public int orderMenu(Order_listDTO odto,String user){
+	public int orderMenu(Order_listDTO odto,String sid){
 		try {
 			getConn();
 			ArrayList<Order_listDTO> arr=odto.getOdtos();
@@ -60,7 +60,7 @@ public class Order_listDAO {
 				ps.setString(1, item_name);
 				ps.setInt(2, item_count);
 				ps.setString(3, "본점");
-				ps.setString(4, user);
+				ps.setString(4, sid);
 				ps.setString(5, total_pay);
 				
 				count+=ps.executeUpdate();
