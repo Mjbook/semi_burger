@@ -61,8 +61,7 @@ public class MemberDAO {
 			
 			if(rs.next()){
 				return true;
-			}
-			
+			}			
 			return false;
 			
 		} catch(Exception e){

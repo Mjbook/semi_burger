@@ -15,17 +15,23 @@ href="/semi_burger/css/mainLayout.css">
 		width: 550px;
 		margin: 0px auto;
 		border: 1px double darkgray;
+		border-spacing: 0px;
+		border-collapse: 0px;
 	}
 	th{
 		float: right;
 	}
+	td{
+		width: 170px;
+	}
 	.button{
 		text-align:center;
 	}
+	
 </style>
 <script>
 	function idcheck(){
-		window.open('idcheck.jsp','idcheck','width=400, height=200');
+		window.open('idcheck.jsp','idcheck','width=340, height=50');
 	}
 </script>
 </head>
@@ -40,42 +46,42 @@ href="/semi_burger/css/mainLayout.css">
 			</thead>
 			<tbody>
 				<tr>
-					<th> ID </th>
-					<td> <input type="text" name="id"> </td>
-					<td> <input type="submit" value="중복확인" onclick="idcheck()"> </td>
+					<th> ID&nbsp; </th>
+					<td> <input type="text" name="id" readonly> </td>
+					<td> <input type="button" value="중복확인" onclick="idcheck()"> </td>
 				</tr>
 				<tr>
-					<th> Password </th>
+					<th> Password&nbsp; </th>
 					<td> <input type="password" name="passwd"> </td>
 					<td> </td>
 				</tr>
 				<tr>
-					<th> 이름 </th>
+					<th> 이름&nbsp; </th>
 					<td> <input type="text" name="name"> </td>
 					<td> </td>
 				</tr>
 				<tr>
-					<th> 생년월일 </th>
+					<th> 생년월일&nbsp; </th>
 					<td> <input type="text" name="birth" placeholder=" ex: 170123"> </td>
 					<td> </td>
 				</tr>
 				<tr>
-					<th> 핸드폰 번호 </th>
+					<th> 핸드폰 번호&nbsp; </th>
 					<td> <input type="text" name="cellphone" placeholder=" ex: 01012345678"> </td>
 					<td> </td>
 				</tr>
 				<tr>
-					<th> E-mail </th>
+					<th> E-mail&nbsp; </th>
 					<td> <input type="text" name="email"> </td>
 					<td> </td>
 				</tr>
 				<tr>
-					<th> 주소 </th>
+					<th> 주소&nbsp; </th>
 					<td> <input type="text" name="address"> </td>
 					<td> </td>
 				</tr>
 				<tr>
-					<td class="button" colspan="2"> <input type=submit value="가입하기"> <input type="reset" value="다시작성"> </td>
+					<td class="button" colspan="3"> <input type=submit value="가입하기"> <input type="reset" value="다시작성"> </td>
 				</tr>			
 			</tbody>
 		</table>
