@@ -64,6 +64,7 @@ public class Order_listDAO {
 				ps.setString(5, total_pay);
 				
 				count+=ps.executeUpdate();
+				if(ps!=null)ps.close();
 			}
 			return count;
 			
@@ -72,7 +73,8 @@ public class Order_listDAO {
 			return ORDER_ERROR;
 		}finally {
 			try {
-				
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
 			} catch (Exception e2) {}
 		}
 	}

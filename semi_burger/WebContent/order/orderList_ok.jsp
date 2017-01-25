@@ -8,22 +8,23 @@
 <%
 ArrayList<Order_listDTO> arr=odto.getOdtos();
 String sid=(String)session.getAttribute("sid");
+String msg="";
 if(sid==null){
 	sid="guest_";
+	msg="비회원은 주문조회가 불가능합니다.";
 }
 int result=0;
-for(int i=0;i<arr.size();i++){
-	Order_listDTO temp=arr.get(i);
-	result=odao.orderMenu(temp, sid, request.getParameter("addr"));
-}
+
+result=odao.orderMenu(odto, sid, request.getParameter("addr"));
+
 %>
 <%
 if(result>0){
 	odto.clearOdtos();
 %>
 	<script>
-		window.alert('주문이 완료 되었습니다.');
-		location.href="/semi_burger/order/orderCheck.jsp"
+		window.alert('<%=msg%>\n'+'주문이 완료 되었습니다.');
+		location.href="/semi_burger/index.jsp"
 	</script>	
 <%
 }else{
