@@ -9,6 +9,10 @@
 <jsp:useBean id="odao" class="yb.order_list.Order_listDAO"/>
 <jsp:useBean id="odto" class="yb.order_list.Order_listDTO" scope="session"/>
 
+<jsp:useBean id="sidedto" class="yb.burger.SideDTO"/>
+<jsp:setProperty property="*" name="sidedto"/>
+<jsp:useBean id="sidedao" class="yb.burger.SideDAO"/>
+
 <%
 request.setCharacterEncoding("utf-8");
 ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
@@ -64,7 +68,7 @@ if(request.getParameter("delorder")!=null){
 	
 }
 	ArrayList<BurgerDTO> arr_bdto=burgerdao.burgerMenu(burgerdto);
-	
+	ArrayList<SideDTO> arr_sdto=sidedao.SideMenu(sidedto);
 %>
 <%
 if(arr_bdto==null){
@@ -128,10 +132,10 @@ for(int i=0;i<arr_bdto.size();i++){
 			odto.addOdtos(temp);
 		}
 	}else if(select_smenu!=null&&select_smenu.equals("true")){ //side 주문 추가
-		burgerdto=arr_bdto.get(i);
-		String name=burgerdto.getItem_name();
+		sidedto=arr_sdto.get(i);
+		String name=sidedto.getSideitem_name();
 		int num=Integer.parseInt(num_ss);
-		String price=burgerdto.getItem_pay();
+		String price=sidedto.getSideitem_pay();
 		Order_listDTO temp=new Order_listDTO();
 		temp.setItem_name(name);
 		int check_menu=odao.checkMenu(name,odto);
