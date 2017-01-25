@@ -261,7 +261,7 @@ public class MemberDAO {
 		}
 	}
 	
-	/** 회원정보 삭제*/
+	/** 회원 탈퇴*/
 	public int DelMember(MemberDTO dto){
 		try{
 			conn = yb.db.YB_DB.getConn();

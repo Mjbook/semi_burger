@@ -21,7 +21,7 @@
 <body>
 
 <section>
-	<form name="pwdfind" action="pwdfind_ok.jsp">
+	<form name="pwdfind" action="pwdfind_ok.jsp" method="post">
 		<div> 아이디를 입력해주세요 </div>
 		<br>
 			<fieldset>
