@@ -39,8 +39,18 @@ function side_delete(){
 					<br><br><br>
 					<%=al2.get(i).getSideitem_pay()+"원" %>
 					<br><br><br>
-					<input type="button" name="orderMenu" value="주문하기">
-					<input type="button" name="savaMenu" value="담기">
+					<select name="m<%=i%>">
+					<%
+						for(int j=0;j<=100;j++){
+							%>
+
+							<option value="<%=j%>"><%=j %></option>
+							<%
+						}
+					%>
+					</select>
+					<input type="hidden" name="m<%=i %>_check" value="false">
+					<input type="button" value="담기" onclick="javascript:add<%=i%>(<%=i%>)">
 					</td>
 					
 					<%

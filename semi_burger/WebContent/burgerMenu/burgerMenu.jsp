@@ -61,7 +61,8 @@ if(arr_bdto==null){
 <script>
 	window.alert('메뉴 준비중');
 	location.href='/semi_burger/index.jsp';
-</script><%
+</script>
+<%
 	return;
 }
 for(int i=0;i<arr_bdto.size();i++){
@@ -102,7 +103,6 @@ for(int i=0;i<arr_bdto.size();i++){
 		}
 	}
 }
-%>
 %>
 </head>
 <body>
