@@ -31,7 +31,7 @@ href="/semi_burger/css/mainLayout.css">
 </style>
 <script>
 	function idcheck(){
-		window.open('idcheck.jsp','idcheck','width=340, height=50');
+		window.open('idcheck.jsp','idcheck','width=340, height=50, left=420, top=250');
 	}
 </script>
 </head>
@@ -45,6 +45,9 @@ href="/semi_burger/css/mainLayout.css">
 			<thead>
 			</thead>
 			<tbody>
+				<tr>
+		  			<td> &nbsp; </td>
+		  		</tr>
 				<tr>
 					<th> ID&nbsp; </th>
 					<td> <input type="text" name="id" readonly> </td>
@@ -81,8 +84,14 @@ href="/semi_burger/css/mainLayout.css">
 					<td> </td>
 				</tr>
 				<tr>
+		  			<td> &nbsp; </td>
+		  		</tr>
+				<tr>
 					<td class="button" colspan="3"> <input type=submit value="가입하기"> <input type="reset" value="다시작성"> </td>
-				</tr>			
+				</tr>
+				<tr>
+		  			<td> &nbsp; </td>
+		  		</tr>		
 			</tbody>
 		</table>
 		<br>

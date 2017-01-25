@@ -77,6 +77,39 @@ public class MemberDAO {
 		}
 	}
 	
+	/** 아이디 찾기 관련 메서드*/
+	public String idfind(String name, String cell){
+		try{
+			conn = yb.db.YB_DB.getConn();
+			
+			String sql = "select id from member where name=? and cellphone=?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, name);
+			ps.setString(2, cell);
+			
+			rs = ps.executeQuery();
+			String id=null;
+			
+			if(rs.next()){
+				id = rs.getString("id");
+			}
+			
+			return id;
+			
+		} catch(Exception e){
+			e.printStackTrace();
+			return null;
+		} finally{
+			try{
+				if(rs!=null) rs.close();
+				if(ps!=null) ps.close();
+				
+				if(conn!=null) conn.close();				
+			} catch(Exception e2){}
+		}
+	}
+	
 	/** 로그인 관련 메서드*/
 	public int memberLogin(String userid, String userpwd){
 		try{

@@ -9,7 +9,7 @@
 href="/semi_burger/css/mainLayout.css">
 <style>
 	fieldset{
-		width: 250px;
+		width: 260px;
 		margin: 0px auto;
 		border-spacing: 0px;
 	}
@@ -18,6 +18,11 @@ href="/semi_burger/css/mainLayout.css">
 	}
 
 </style>
+<script>
+	function idfind(){
+		window.open('idfind.jsp','idfind','width=360, height=170, left=420, top=250');
+	}
+</script>
 </head>
 <body>
 <%@ include file="/header.jsp" %>
@@ -27,6 +32,9 @@ href="/semi_burger/css/mainLayout.css">
 	<fieldset>
 	<form name="login" action="login_ok.jsp" method="post">
 		<table>
+		  <tr>
+		  	<td> &nbsp; </td>
+		  </tr>
 		  <tr>	
 			<td> <input type="text" name="id" placeholder="아이디"> </td>
 			<td rowspan="2"> <input type="submit" value="로그인" style="height:48px;"> </td>
@@ -38,8 +46,11 @@ href="/semi_burger/css/mainLayout.css">
 		  <tr>
 		  	<td colspan="2"> <input type="checkbox" value="on" style="float:left;"> ID 기억하기 
 		  					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		  					<a href="#">ID,PW 찾기</a> </td>	  	
+		  					<a href="javascript:idfind()">ID</a> / <a href="#">PW 찾기</a> </td>	  	
 		  </tr>		
+		  <tr>
+		 	<td> &nbsp; </td>
+		  </tr>
 		</table>
 	</form>
 	</fieldset>
