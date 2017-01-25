@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="yb.burger.*" %>
-<%@ page import="yb.order_list.*" %>
+<%@ page import="yb.order_list.*"  %>
 <jsp:useBean id="burgerdto" class="yb.burger.BurgerDTO"/>
 <jsp:setProperty property="*" name="burgerdto"/>
 <jsp:useBean id="burgerdao" class="yb.burger.BurgerDAO"/>
