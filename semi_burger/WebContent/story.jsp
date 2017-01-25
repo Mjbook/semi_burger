@@ -11,6 +11,10 @@ href="/semi_burger/css/mainLayout.css">
 <body>
 <%@ include file="/header.jsp" %>
 
+Yong Burger 소개
+
+HOME > Yong Burger 소개
+
 <%@ include file="/footer.jsp" %>
 </body>
 </html>
