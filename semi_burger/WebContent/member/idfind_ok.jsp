@@ -18,8 +18,8 @@
 		opener.location.href='login.jsp';
 		window.self.close();
 	}
-	function pwfind(){
-		opener.location.href='pwfind.jsp';
+	function pwdfind(){
+		opener.location.href='pwdfind.jsp';
 		window.self.close();
 	}
 	function rejoin(){
@@ -48,7 +48,7 @@
 		<br>
 			<div class="button">
 			<input type="button" value="로그인 하기" onclick="relogin()">
-			<input type="button" value="비밀번호 찾기" onclick="pwfind()">
+			<input type="button" value="비밀번호 찾기" onclick="pwdfind()">
 			</div>	
 		<%
 	} else{

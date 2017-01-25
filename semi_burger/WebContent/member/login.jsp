@@ -22,6 +22,9 @@ href="/semi_burger/css/mainLayout.css">
 	function idfind(){
 		window.open('idfind.jsp','idfind','width=360, height=170, left=420, top=250');
 	}
+	function pwdfind(){
+		window.open('pwdfind.jsp','pwdfind','width=360, height=170, left=420, top=250');
+	}
 </script>
 </head>
 <body>
@@ -46,7 +49,7 @@ href="/semi_burger/css/mainLayout.css">
 		  <tr>
 		  	<td colspan="2"> <input type="checkbox" value="on" style="float:left;"> ID 기억하기 
 		  					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		  					<a href="javascript:idfind()">ID</a> / <a href="#">PW 찾기</a> </td>	  	
+		  					<a href="javascript:idfind()">ID</a> / <a href="javascript:pwdfind()">PW 찾기</a> </td>	  	
 		  </tr>		
 		  <tr>
 		 	<td> &nbsp; </td>
