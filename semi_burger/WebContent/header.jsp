@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <header>
+<div id="headerback">
 <%
 	String sname = (String)session.getAttribute("sname");
 	
@@ -74,4 +75,5 @@
 			
 		</ol>
 	</nav>
+	</div>
 </header>
