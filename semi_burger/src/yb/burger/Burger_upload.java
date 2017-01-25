@@ -42,7 +42,14 @@ public class Burger_upload {
 		this.imgname = imgname;
 	}
 	
-	
+	public void userFolderExists(){
+		File f=new File(USERS_HOME+"/"+user);
+		
+		if(!f.exists()){//파일이 있냐?
+			f.mkdir();//없으면 폴더를 만들어라
+		}		
+		
+	}
 
 	
 }

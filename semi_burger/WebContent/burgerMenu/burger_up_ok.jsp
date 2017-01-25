@@ -14,7 +14,7 @@ request.setCharacterEncoding("UTF-8");
 
 String savepath=burger_img.USERS_HOME+"/"+burger_img.getCrpath();
 try{
-	MultipartRequest mr=new MultipartRequest(request,savepath,burger_img.getImgname());
+	MultipartRequest mr=new MultipartRequest(request,savepath,burger_img.getImgname(),"utf-8");
 }catch(Exception e){
 }
 
@@ -36,6 +36,7 @@ String msg=result>0?"등록되었습니다.":"등록에 실패하였습니다.";
 <script>
 window.alert('<%=msg%>');
 window.close();
-location.href='burgerMenu.jsp';
+location.href='burgerMenu.jsp?src=<%=burger_img.getCrpath()%>';
+window.self.close();
 opener.location.reload();
 </script>
