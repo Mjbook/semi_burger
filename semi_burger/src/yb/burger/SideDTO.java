@@ -14,7 +14,7 @@ public class SideDTO {
 	private String sideitem_img_src;
 	
 	public SideDTO() {
-		System.out.println("sideDTO");
+		
 	}
 
 	public SideDTO(int sideitem_key, int sideitem_num, String sideitem_name, String sideitem_pay, int sideitem_count,
