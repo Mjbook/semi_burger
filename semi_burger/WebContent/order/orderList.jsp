@@ -22,7 +22,7 @@
 		%>
 		<script>
 		window.alert('메뉴를 선택하세요');
-		location.href="/semiburger/burgerMenu/burgerMenu.jsp";
+		location.href="/semi_burger/burgerMenu/burgerMenu.jsp";
 		</script>
 		<%
 	}
