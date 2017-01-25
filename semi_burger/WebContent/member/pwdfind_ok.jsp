@@ -13,7 +13,7 @@
 <%
 	String id = request.getParameter("id");
 	String pwd = request.getParameter("passwd");
-	//pwd 값을 받은게 없으므로 오류남
+	//pwd 값을 받은게 없으므로 오류남....
 	
 	int result = mdao.pwdfind(pwd, id);
 %>
