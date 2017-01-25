@@ -1,17 +1,16 @@
 package yb.order_list;
-import java.sql.*;
+import java.sql.*;//DATEìœ„í•´ì„œ importí•¨
 import java.util.*;
 public class Order_listDTO {
 	
 	private int order_no;
-	private int order_group;//db¿¡´Â ¾ø´Â º¯¼ö
 	private String item_name;
 	private int item_count;
 	private java.sql.Date order_date;
 	private String order_shop;
 	private String order_user;
 	private String total_pay;
-	private ArrayList<Order_listDTO> odtos;//db¿¡´Â ¾ø´Â º¯¼ö
+	private ArrayList<Order_listDTO> odtos;//dbì— ì—†ëŠ” ë³€ìˆ˜
 	 
 	public Order_listDTO(){
 		odtos=new ArrayList<Order_listDTO>();
@@ -22,14 +21,6 @@ public class Order_listDTO {
 	}
 	public void setOrder_no(int order_no) {
 		this.order_no = order_no;
-	}
-	
-	public int getOrder_group() {
-		return order_group;
-	}
-
-	public void setOrder_group(int order_group) {
-		this.order_group = order_group;
 	}
 
 	public String getItem_name() {

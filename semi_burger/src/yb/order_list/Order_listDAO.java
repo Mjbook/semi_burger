@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Order_listDAO {
 	
+	public static final int ORDER_ERROR=-100;
 	private Connection conn;
 	private PreparedStatement ps;
 	private ResultSet rs;
@@ -13,7 +14,7 @@ public class Order_listDAO {
 		
 	}
 	
-	/**Connection ¸Ş¼­µå*/
+	/**Connection ê°€ì ¸ì˜¤ê¸°*/
 	public void getConn(){
 		try {
 			conn=yb.db.YB_DB.getConn();
@@ -22,7 +23,7 @@ public class Order_listDAO {
 		}
 	}
 	
-	/**ÁÖ¹®½Ã ¸Ş´º ¼ö·® Ãß°¡½Ã ¸Ş´º ÀÌ¸§ È®ÀÎ ¸Ş¼­µå*/
+	/**ì£¼ë¬¸ ì¶”ê°€ì‹œ ì¤‘ë³µë˜ëŠ” ë©”ë‰´ ë²ˆí˜¸ ë°˜í™˜ ë©”ì„œë“œ*/
 	public int checkMenu(String menu_name,Order_listDTO odto){
 		ArrayList<Order_listDTO> arr=odto.getOdtos();
 		if(arr!=null){
@@ -36,25 +37,39 @@ public class Order_listDAO {
 			return -1;
 	}
 	
-	/**°í°´ ÁÖ¹® ÀÔ·Â ¸Ş¼­µå*/
-	public void orderMenu(Order_listDTO odto,String user){
+	/**ê³ ê° ìµœì¢… ì£¼ë¬¸ ë©”ì„œë“œ*/
+	public int orderMenu(Order_listDTO odto,String user){
 		try {
 			getConn();
-			String sql="insert into order_list values(order_list_seq.nextval,?,?,sysdate,'º»Á¡',?,?)";
+			ArrayList<Order_listDTO> arr=odto.getOdtos();
+			
+			String sql="insert into order_list values(order_list_seq.nextval,?,?,sysdate,?,?,?)";
 			ps=conn.prepareStatement(sql);
-			String item_name=odto.getItem_name();
-			int item_count=odto.getItem_count();
-			String total_pay="";
-			ps.setString(1, item_name);
-			ps.setInt(2, item_count);
-			ps.setString(3, user);
-			ps.setString(4, total_pay);
 			
-			int count=ps.executeUpdate();
-			
+			if(arr.size()<=0)return ORDER_ERROR;
+			int count=0;
+			for(int i=0;i<arr.size();i++){
+				Order_listDTO temp=arr.get(i);
+				
+				String item_name=temp.getItem_name();
+				int item_count=temp.getItem_count();
+				String price=temp.getTotal_pay();//1ê°œë‹¹ ê°€ê²©
+				int total_price=Integer.parseInt(price)*item_count;
+				String total_pay=Integer.toString(total_price);
+				
+				ps.setString(1, item_name);
+				ps.setInt(2, item_count);
+				ps.setString(3, "ë³¸ì ");
+				ps.setString(4, user);
+				ps.setString(5, total_pay);
+				
+				count+=ps.executeUpdate();
+			}
+			return count;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			return ORDER_ERROR;
 		}finally {
 			try {
 				

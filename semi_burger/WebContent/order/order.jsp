@@ -1,3 +1,4 @@
+<!-- 사용안하는 jsp -->
 <%@page import="yb.burger.BurgerDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
