@@ -38,17 +38,17 @@ public class Order_listDAO {
 	}
 	
 	/**고객 최종 주문 메서드*/
-	public int orderMenu(Order_listDTO odto,String sid){
+	public int orderMenu(Order_listDTO odto,String sid, String addr){
 		try {
 			getConn();
 			ArrayList<Order_listDTO> arr=odto.getOdtos();
-			
-			String sql="insert into order_list values(order_list_seq.nextval,?,?,sysdate,?,?,?)";
-			ps=conn.prepareStatement(sql);
-			
 			if(arr.size()<=0)return ORDER_ERROR;
+			
 			int count=0;
 			for(int i=0;i<arr.size();i++){
+				String sql="insert into order_list values(order_list_seq.nextval,?,?,sysdate,?,?,?)";
+				ps=conn.prepareStatement(sql);
+				
 				Order_listDTO temp=arr.get(i);
 				
 				String item_name=temp.getItem_name();
@@ -59,7 +59,7 @@ public class Order_listDAO {
 				
 				ps.setString(1, item_name);
 				ps.setInt(2, item_count);
-				ps.setString(3, "본점");
+				ps.setString(3, addr);
 				ps.setString(4, sid);
 				ps.setString(5, total_pay);
 				

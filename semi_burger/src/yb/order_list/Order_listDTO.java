@@ -7,7 +7,7 @@ public class Order_listDTO {
 	private String item_name;
 	private int item_count;
 	private java.sql.Date order_date;
-	private String order_shop;
+	private String order_shop; //고객 주문 주소로 사용함
 	private String order_user;
 	private String total_pay;
 	private ArrayList<Order_listDTO> odtos;//db에 없는 변수

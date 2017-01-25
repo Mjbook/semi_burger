@@ -8,10 +8,13 @@
 <%
 ArrayList<Order_listDTO> arr=odto.getOdtos();
 String sid=(String)session.getAttribute("sid");
+if(sid==null){
+	sid="guest_";
+}
 int result=0;
 for(int i=0;i<arr.size();i++){
 	Order_listDTO temp=arr.get(i);
-	result=odao.orderMenu(temp, sid);
+	result=odao.orderMenu(temp, sid, request.getParameter("addr"));
 }
 %>
 <%

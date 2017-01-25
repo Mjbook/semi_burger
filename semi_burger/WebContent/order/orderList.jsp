@@ -36,7 +36,9 @@
 String addr="";
 if(sid!=null){
 	addr=mdao.getUserAddr(sid);
-}					
+}else{
+	sid="guest";
+}
 %>
 <body>
 <%@include file="/header.jsp"%>
@@ -57,8 +59,12 @@ if(sid!=null){
 		
 		<tfoot>
 			<tr>
+				<th>주문자</th>
+				<td colspan="4"><input type="text" name="name" value="<%=sid%>" disabled="disabled"></td>
+			</tr>
+			<tr>
 				<th>배달 수령 주소</th>
-				<td colspan="4"><input type="text" name="addr" value="<%=addr%>"></td>
+				<td colspan="4"><input type="text" name="addr" value="<%=addr%>" required="required"></td>
 			</tr>
 			<tr>
 				<td colspan="5" align="center"><input type="submit" value="주문하기"></td>
