@@ -46,11 +46,19 @@
 						int num=temp.getItem_count();
 						String price=temp.getTotal_pay();
 						java.sql.Date date=temp.getOrder_date();
-						
-						
-						
-						
-						
+						int m=date.getMonth()+1;
+						int d=date.getDate();
+						int h=date.getHours();
+					%>
+					<tr>
+						<th>주문번호</th>
+						<th><%=menu %></th>
+						<th><%=num %></th>
+						<th><%=price %></th>
+						<th><%=m+"-"+d+"\n"+h+"시"%></th>
+					</tr>
+					
+					<%		
 					}
 					
 					%>
