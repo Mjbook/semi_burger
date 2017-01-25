@@ -11,6 +11,8 @@
 <title>Insert title here</title>
 </head>
 <%
+	request.setCharacterEncoding("utf-8");
+
 	String id = request.getParameter("id");
 	String pwd = request.getParameter("passwd");
 	//pwd 값을 받은게 없으므로 오류남....

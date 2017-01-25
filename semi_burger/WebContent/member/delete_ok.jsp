@@ -10,8 +10,7 @@
 
 	String sid = (String)session.getAttribute("sid");
 	
-	int result = mdao.DelMember(mdto);
-	//result 값이 0이 나옴
+	int result = mdao.DelMember(mdto); 
 	
 	if(result>0){
 		%>
@@ -23,7 +22,7 @@
 	} else{
 		%>
 		<script>
-			window.alert('<%=result%>'); 
+			window.alert('<%=result%>');
 			location.href='/semi_burger/index.jsp';
 		</script>
 		<%
