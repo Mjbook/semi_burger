@@ -1,6 +1,7 @@
 package yb.order_list;
 
 import java.sql.*;
+import java.sql.Date;
 import java.util.*;
 
 public class Order_listDAO {
@@ -77,5 +78,42 @@ public class Order_listDAO {
 				if(conn!=null)conn.close();
 			} catch (Exception e2) {}
 		}
+	}
+	
+	/**주문 조회*/
+	public ArrayList<Order_listDTO> getOrderList(String sid){
+		try {
+			getConn();
+			String sql="select * from order_list where order_user=? order by order_no";
+			ps=conn.prepareStatement(sql);	
+			ps.setString(1, sid);
+			rs=ps.executeQuery();
+			
+			ArrayList<Order_listDTO> odtos=new ArrayList<Order_listDTO>();
+			if(rs.next()){
+				do{
+					String item_name=rs.getString("item_name");
+					int item_count=rs.getInt("item_count");
+					String order_place=rs.getString("order_shop");//주문자 주소
+					String total_pay=rs.getString("total_pay");
+					Date date=rs.getDate("order_date");
+					
+					Order_listDTO temp=new Order_listDTO(item_name, item_count, date, order_place, sid, total_pay);
+					odtos.add(temp);
+				}while(rs.next());
+			}
+			
+			return odtos;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally {
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e2) {}
+		}
+		
 	}
 }

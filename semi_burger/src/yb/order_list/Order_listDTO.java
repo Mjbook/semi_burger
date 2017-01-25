@@ -1,5 +1,6 @@
 package yb.order_list;
 import java.sql.*;//DATE위해서 import함
+import java.sql.Date;
 import java.util.*;
 public class Order_listDTO {
 	
@@ -16,6 +17,21 @@ public class Order_listDTO {
 		odtos=new ArrayList<Order_listDTO>();
 	}
 	
+	
+	
+	public Order_listDTO(String item_name, int item_count, Date order_date, String order_shop, String order_user,
+			String total_pay) {
+		super();
+		this.item_name = item_name;
+		this.item_count = item_count;
+		this.order_date = order_date;
+		this.order_shop = order_shop;
+		this.order_user = order_user;
+		this.total_pay = total_pay;
+	}
+
+
+
 	public int getOrder_no() {
 		return order_no;
 	}

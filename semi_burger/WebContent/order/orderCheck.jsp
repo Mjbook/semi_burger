@@ -1,9 +1,14 @@
+<%@page import="yb.order_list.Order_listDTO"%>
+<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="odao" class="yb.order_list.Order_listDAO"/>
+<jsp:useBean id="odto" class="yb.order_list.Order_listDTO" scope="session"/>
 <!DOCTYPE html>
 <html>
 <%
-	if(session.getAttribute("sid")==null){
+	String sid=(String)session.getAttribute("sid");
+	if(sid==null||sid.equals("")){
 %>
 <script>
 	window.alert('로그인 먼저 부탁드립니다.');
@@ -26,10 +31,29 @@
 				<tbody>
 					<tr>
 						<th>주문 번호</th>
-						<th>주문 메뉴</th>
-						<th>주문상태</th>
+						<th>메뉴</th>
+						<th>주문 수량</th>
+						<th>메뉴 가격</th>
 						<th>주문 일시</th>
 					</tr>
+					<%
+					ArrayList<Order_listDTO> arr_odto=odao.getOrderList(sid);
+					int total_price=0;
+					for(int i=0;i<arr_odto.size();i++){
+						Order_listDTO temp=arr_odto.get(i);
+						
+						String menu=temp.getItem_name();
+						int num=temp.getItem_count();
+						String price=temp.getTotal_pay();
+						java.sql.Date date=temp.getOrder_date();
+						
+						
+						
+						
+						
+					}
+					
+					%>
 				</tbody>
 			</table>
 		</article>
