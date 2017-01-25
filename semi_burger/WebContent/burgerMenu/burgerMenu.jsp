@@ -247,7 +247,7 @@ for(int i=0;i<arr_bdto.size();i++){
 				</script>	
 			<%
 			}
-		
+		 
 		}
 %>
 		</article>
