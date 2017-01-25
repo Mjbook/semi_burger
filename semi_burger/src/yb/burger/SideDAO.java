@@ -9,7 +9,7 @@ public class SideDAO {
 	private Connection conn;
 	
 	public SideDAO() {
-		System.out.println("SideDAO");
+		
 	}
 	
 	/**메뉴 출력관련 메서드*/

@@ -9,7 +9,7 @@ public class BurgerDAO {
 	private Connection conn;
 	
 	public BurgerDAO() {
-		System.out.println("burgerDAO");
+	
 	}
 	
 	/**메뉴 출력관련 메서드*/
