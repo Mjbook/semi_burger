@@ -118,6 +118,7 @@ for(int i=0;i<arr_bdto.size();i++){
 </head>
 <body>
 <%@include file="../header.jsp" %>
+
 <section>
 	<article>
 	<h2>햄버거 메뉴</h2>
@@ -132,8 +133,8 @@ for(int i=0;i<arr_bdto.size();i++){
 					<%
 					}
 					%>
-					<th><img src="burger_img/<%=al.get(i).getItem_img_src()%>" width="300" height="260"></th>
-					<td align="center" width="300" height="260">
+					<th><img src="../burger_img/<%=al.get(i).getItem_img_src()%>" width="300" height="260"></th>
+					<td align="center" width="200" height="260">
 					<%=al.get(i).getItem_name()%>
 					<br><br><br>
 					<%=al.get(i).getItem_pay()+"원" %>

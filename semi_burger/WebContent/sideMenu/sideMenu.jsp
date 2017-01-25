@@ -33,7 +33,7 @@ function side_delete(){
 				<%
 				for(int i=1;i<al2.size();i++){ 
 					%>
-					<th><img src="side_img/<%=al2.get(i).getSideitem_img_src()%>" width="300" height="260"></th>
+					<th><img src="../side_img/<%=al2.get(i).getSideitem_img_src()%>" width="300" height="260"></th>
 					<td align="center" width="300" height="260">
 					<%=al2.get(i).getSideitem_name() %>
 					<br><br><br>
