@@ -12,8 +12,16 @@
  <!--
   #container {min-height: 80%; maring-top: -100px; }
    * html #container {height: 100%;}
+   
   #container #content {padding: 100px 0 ; }
   
+  #bmenu{
+	position: fixed;
+	top:200px;
+	left:100px;
+	width:250px;
+	text-align:center;
+}
 table {
 	width: 100%;
 	margin: 0px auto;
@@ -55,8 +63,23 @@ table td {
 
 	<%@include file="/header.jsp" %>
 	
+	<div id="bmenu">
+			<h2>커뮤니티</h2>
+			<ul>
+				<li><a href="#"><img src="/semi_burger/img/notice.jpg" /></a></li>
+				<li><a href="#">창업문의</a></li>
+				<li><a href="#">고객의 소리</a></li>
+				<li><a href="#">내가 만든 햄버거</a></li>
+				<li><a href="#">이벤트</a></li>
+			</ul>
+	</div>
+	
+	
 <h2>공지 사항</h2>
 <div id="container">
+	
+
+
    <div id="content">
    
    <table >
