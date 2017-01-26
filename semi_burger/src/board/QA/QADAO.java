@@ -1,4 +1,4 @@
-package board.board.notice.QA;
+package board.QA;
 
 import java.sql.*;
 import java.util.*;
@@ -35,16 +35,18 @@ public class QADAO {
 	// 게시물 작성  작성 관련 
 	public int QAWrite(QADTO dto)  {
 		try {
-
+			
+			
 			conn=yb.db.YB_DB.getConn();
 			int maxref=getMaxRef();
-			String sql="INSERT INTO QNA_BOARD VALUES(qna_board_seq.nextval,?,?,?,sysdate,0,?,0,0)";
+			String sql="INSERT INTO QNA_BOARD VALUES(qna_board_seq.nextval,?,?,?,sysdate,0,?,0,0,?)";
 
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, dto.getName());
 			ps.setString(2, dto.getSubject());
 			ps.setString(3, dto.getContent());
 			ps.setInt(4,  maxref+1);
+			ps.setString(5, dto.getPwd());
 
 			int count=ps.executeUpdate();
 			return count;
@@ -84,7 +86,7 @@ public class QADAO {
 		try {
 			conn=yb.db.YB_DB.getConn();
 			updateSun(dto.getRef(), dto.getSunbun());
-			String sql="INSERT INTO QNA_BOARD VALUES(QNA_BOARD_SEQ.NEXTVAL,?,?,?,sysdate,0,?,?,?)";
+			String sql="INSERT INTO QNA_BOARD VALUES(QNA_BOARD_SEQ.NEXTVAL,?,?,?,sysdate,0,?,?,?,?)";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, dto.getName());
 			ps.setString(2, dto.getSubject());
@@ -92,6 +94,7 @@ public class QADAO {
 			ps.setInt(4, dto.getRef());
 			ps.setInt(5, dto.getLev()+1);
 			ps.setInt(6, dto.getSunbun()+1);
+			ps.setString(7, dto.getPwd());
 			int count = ps.executeUpdate();
 			return count;
 		}catch(Exception e) {
@@ -108,11 +111,12 @@ public class QADAO {
 
 	// 목록 관련 
 	public ArrayList<QADTO> QAList( int cp, int ls) {
+		
 		try {
 			conn=yb.db.YB_DB.getConn();
 			String sql="select * from "+
 					"(select rownum as rnum, a.* from "+ 
-					"(select * from QNA_BOARD order by ref desc,sunbun asc)a)b "+
+					"(select * from QNA_BOARD order by ref desc,sunbun asc, lev asc)a)b "+
 					"where rnum>=("+cp+"-1)*"+ls+"+1 and rnum<="+cp+"*"+ls;
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
@@ -123,7 +127,7 @@ public class QADAO {
 				String name=rs.getString("name");
 				String subject=rs.getString("subject");
 				String content=rs.getString("content");
-				java.sql.Date insert_date=rs.getDate("noard_count");
+				java.sql.Date insert_date=rs.getDate("insert_date");
 				int board_count=rs.getInt("board_count");
 				int ref=rs.getInt("ref");
 				int lev=rs.getInt("lev");
@@ -148,7 +152,7 @@ public class QADAO {
 	public QADTO QAContent(int qna_no) {
 		try {
 			conn=yb.db.YB_DB.getConn();
-			String sql="select * from jsp_bbs1 where qna_no=?";
+			String sql="select * from QNA_BOARD where qna_no=?";
 			ps=conn.prepareStatement(sql);
 			ps.setInt(1, qna_no);
 			rs=ps.executeQuery();

@@ -45,9 +45,9 @@
 				<li>myB</li>
 			</ul></li>	
 				<li>커뮤니티<ul class="menu">
-				<li><a href="/semi_burger/board/notice.jsp">공지사항</a></li>
+				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
 				<li><a href="">창업 문의</a></li>
-				<li><a href="">고객의 소리</a></li>
+				<li><a href="/semi_burger/board/QnA/QAList.jsp">Q&A</a></li>
 				<li><a href="">내가 만든 햄버거</a></li>
 				<li><a href="">이벤트</a></li>
 			</ul></li>

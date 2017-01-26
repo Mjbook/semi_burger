@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@page import="java.util.*" %>
 <% request.setCharacterEncoding("UTF-8");
+
 int idx = Integer.parseInt(request.getParameter("idx"));
 
 %>
@@ -12,7 +13,7 @@ int idx = Integer.parseInt(request.getParameter("idx"));
 <%
 
 int result=bdao.noticeDelete(idx);
-String msg=result>0?"삭제 성공!":"삭제 실패!";
+String msg=result > 0 ? "삭제 성공!":"삭제 실패!";
 %>
 <script>
 window.alert('<%=msg%>');

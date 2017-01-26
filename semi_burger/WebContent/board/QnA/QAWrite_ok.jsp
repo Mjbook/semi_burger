@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
-<jsp:useBean id="bdto" class="board.board.notice.QA.QADTO" scope="page"/>
+<jsp:useBean id="bdto" class="board.QA.QADTO" scope="page"/>
 <jsp:setProperty property="*" name="bdto"/>
-<jsp:useBean id="bdao" class="board.board.notice.QA.QADAO" scope="session"/>
+<jsp:useBean id="bdao" class="board.QA.QADAO" scope="session"/>
 
 <%
 int result=bdao.QAWrite(bdto);

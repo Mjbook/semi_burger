@@ -105,6 +105,8 @@ public class noticeDAO {
 	/**본문 관련 메서드*/
 	public noticeDTO noticeContent(int idx){
 		
+		noticeCount(idx); // 조회수 1 증가
+		
 		try {
 			conn=yb.db.YB_DB.getConn();
 			String sql="SELECT * FROM  NOTICE_BOARD WHERE NOTICE_NO=?";
@@ -184,7 +186,27 @@ public class noticeDAO {
 			}	
 		}
 	
-	
+	public void noticeCount(int idx) {
+		try{
+			conn=yb.db.YB_DB.getConn();
+			String sql = "UPDATE NOTICE_BOARD SET BOARD_COUNT =  BOARD_COUNT + 1 WHERE NOTICE_NO = ?";
+
+			ps = conn.prepareStatement(sql);		
+			ps.setInt(1, idx);
+			ps.executeUpdate();		
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			}catch(Exception e2){}
+		}	
+		
+		
+		
+	}
 	
 	
 	

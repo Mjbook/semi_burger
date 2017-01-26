@@ -1,20 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
-<%@page import="board.board.notice.QA.*"%>
-<jsp:useBean id="bdao" class="board.board.notice.QA.QADAO" scope="session"/>
+<%@page import="board.QA.*"%>
+<jsp:useBean id="bdao" class="board.QA.QADAO" scope="session"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <title>Insert title here</title>
 <style>
-h2 {
-	text-align: center;
-}
-
+ #container {min-height: 80%; maring-top: -100px; }
+   * html #container {height: 100%;}
+  #container #content {padding: 100px 0 ; }
+  
 table {
-	width: 550px;
+	width: 100%;
 	margin: 0px auto;
 	border-top: 2px double darkblue;
 	border-bottom: 2px double darkblue;
@@ -24,6 +25,16 @@ table {
 table th {
 	background: skyblue;
 }
+
+table td {
+	text-align: center;
+}  
+
+#su{
+	text-align: left;
+
+}
+
 </style>
 </head>
 <%
@@ -46,9 +57,11 @@ if(cp%pageSize==0) {
 }
 %>
 <body>
-	<section>
-		<article>
-			<h2>자 유 게 시 판</h2>
+<%@include file="/header.jsp" %>
+
+			<h2>QNA</h2>
+<div id="container">
+   <div id="content">
 			<table>
 				<thead>
 					<tr>
@@ -95,10 +108,10 @@ if(cp%pageSize==0) {
 								%>
 					<tr>
 						<td><%=arr.get(i).getQna_no()%></td>
-						<td>
+						<td id="su">
 						<%
 							for(int z=0; z<arr.get(i).getLev(); z++) {
-								out.print("&nbsp;&nbsp;");
+								out.print("&nbsp;&nbsp;&nbsp;&nbsp;");
 							}
 						%>
 						<a href="QAContent.jsp?idx=<%=arr.get(i).getQna_no()%>"><%=arr.get(i).getSubject() %></a></td>
@@ -111,10 +124,10 @@ if(cp%pageSize==0) {
 					%>
 				</tbody>
 			</table>
-
-		</article>
-
-	</section>
-	<%@ include file="../../footer.jsp"%>
+   
+   </div>
+</div>
+	
+	<%@include file="/footer.jsp" %>
 </body>
 </html>

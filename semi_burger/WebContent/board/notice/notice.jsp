@@ -5,7 +5,32 @@
 <!DOCTYPE>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Yong Burger</title>
+<link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
+<style type="text/css">
+ <!--
+  #container {min-height: 80%; maring-top: -100px; }
+   * html #container {height: 100%;}
+  #container #content {padding: 100px 0 ; }
+  
+table {
+	width: 100%;
+	margin: 0px auto;
+	border-top: 2px double darkblue;
+	border-bottom: 2px double darkblue;
+	border-spacing: 0px;
+}
+
+table th {
+	background: skyblue;
+}
+
+table td {
+	text-align: center;
+}  
+  
+ </style>
 <%
 	int totalCnt = bdao.getTotalCnt();//총 게시물 수
 	int listSize = 10;//보여줄 리스트 수
@@ -23,69 +48,82 @@
 	if (cp % pageSize == 0)
 		userGroup--;
 %>
+
+
 </head>
 <body>
-	<section>
-		<div>
-			<h2>커뮤니티</h2>
-			<ul>
-				<li><a href="#">공지사항</a></li>
-				<li><a href="#">창업문의</a></li>
-				<li><a href="#">고객의 소리</a></li>
-				<li><a href="#">내가 만든 햄버거</a></li>
-				<li><a href="#">이벤트</a></li>
-			</ul>
-		</div>
-		<hr>
 
-		<div>
-			<span></span>
-			<ul>
-				<li>Home</li>
-				<li>></li>
-				<li>메뉴소개</li>
-				<li>></li>
-				<li>공지사항</li>
-			</ul>
-			<h3>공지사항</h3>
-			<div>
-				<div">
-
-					<h2>제목&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;작성일</h2>
-
-					<div>
-						<ul>
+	<%@include file="/header.jsp" %>
+	
+<h2>공지 사항</h2>
+<div id="container">
+   <div id="content">
+   
+   <table >
+				<thead>
+					<tr>
+						<th>순번</th>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>조회수</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<td colspan="3" align="center">
 							<%
-								ArrayList<noticeDTO> adto = bdao.noticeList(cp, listSize);
-								if (adto == null || adto.size() == 0) {
-							%>
-							<li>조회된 결과가 없습니다.</li>
+						if(userGroup!=0) {
+							%><a href="QAList.jsp?cp=<%=(userGroup-1)*pageSize+pageSize%>">&lt;&lt;</a>
 							<%
-								} else {
-									for (int i = 0; i < adto.size(); i++) {
-							%>
-
-							<li><a
-								href="noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><%=adto.get(i).getSubject()%></a>
-								<span class="date"><%=adto.get(i).getInsert_date()%></span></li>
-
-							<%
+							 }
+						for(int i=userGroup*pageSize+1; i<=userGroup*pageSize+pageSize; i++) {
+							%> &nbsp;&nbsp;<a href="QAList.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
+							if(i==totalPage) {
+								break;
 								}
-								}
+							}
+						if(userGroup!=((totalPage/pageSize)-(totalPage%pageSize==0?1:0))) {
+							%> <a href="QAList.jsp?cp=<%=((userGroup+1)*pageSize+1)%>">&gt;
+								&gt;</a> <%
+							}
+						%>
+						</td>
+						<% if("관리자".equals(sname)) { %>
+							<td><a href="noticeWrite.jsp">글쓰기</a></td>
+						<% } %>
+					</tr>
+				</tfoot>
+				<tbody>
+					<%
+					ArrayList<noticeDTO> adto = bdao.noticeList(cp, listSize);
+					if (adto == null || adto.size() == 0) {
 							%>
-						</ul>
+					<tr>
+						<td colspan="4" align="center">등록된 게시글이 없습니다.</td>
+					</tr>
+					<%
+					} else {
+						for (int i = 0; i < adto.size(); i++) {
+								%>
+					<tr>
+						<td><%=adto.get(i).getNotice_no()%></td>
+						<td>
+						
+						<a href="noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><%=adto.get(i).getSubject() %></a></td>
+						<td><%=adto.get(i).getInsert_date()%></td>
+						<td><%=adto.get(i).getBoard_count() %></td>
+					</tr>
+					<%
+							}
+						}
+					%>
+				</tbody>
+			</table>
+   
+   </div>
+</div>
 
-					</div>
-					<div>
-						<a href="noticeWrite.jsp">글쓰기</a>
-					</div>
+	<%@include file="/footer.jsp" %>
 
-				</div>
-			</div>
-		</div>
-
-	</section>
-
-	<%@include file="../../footer.jsp"%>
 </body>
-</html>
+</html>				

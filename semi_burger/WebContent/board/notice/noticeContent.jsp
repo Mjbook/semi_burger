@@ -23,31 +23,77 @@ if(dto==null){
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Yong Burger</title>
+<link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
+<style type="text/css">
+ <!--
+  #container {min-height: 80%; maring-top: -100px; }
+   * html #container {height: 100%;}
+  #container #content {padding: 100px 0 ; }
+  
+table {
+	width: 100%;
+	margin: 0px auto;
+	border-top: 2px double darkblue;
+	border-bottom: 2px double darkblue;
+	border-spacing: 0px;
+}
+
+table th {
+	background: skyblue;
+}
+
+table td {
+	text-align: center;
+}  
+  
+ </style>
 </head>
 <body>
+	<%@include file="/header.jsp" %>
 	
-<div>
-	<div class="notice_grp">
-	<br>
-		<div class="notice_view">
-			<div class="notice_tit">
-				<p class="tit"><%=dto.getSubject() %></p>
-				<span class="date"><%=dto.getInsert_date() %></span>
-			</div>
-			<div class="notice_cts">
-				<p>
-				<%=dto.getContent() %>
-				</p>
-			</div>
-		</div>	
-		<div class="btn_align_02">
-			<a href="noticeUpdate.jsp?idx=<%=dto.getNotice_no()%>">수정</a>
-			<a href="noticeDelete.jsp?idx=<%=dto.getNotice_no()%>">삭제</a>
-			<a href="notice.jsp">목록</a>
-		</div>	
-	</div>
+<h2>공지 사항</h2>
+<div id="container">
+   <div id="content">	
+ <table border="1" bordercolor="blue" width="550" cellspacing="0">
+			<tr>
+				<th>번호</th>
+				<td><%=dto.getNotice_no()%></td>
+				<th>작성 날짜</th>
+				<td><%=dto.getInsert_date() %></td>
+			</tr>
+			<tr>
+				<th>작성자</th>
+				<td><%=dto.getName()%></td>
+				<th>조회수</th>
+				<td><%=dto.getBoard_count() %></td>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td colspan="3" align="left">
+				<%=dto.getSubject() %>
+				</td>
+			</tr>
+			<tr height="250">
+					<td colspan="4" align="left" valign="top">
+						<%=dto.getContent().replaceAll("\n", "<br>") %>
+					</td>
+			</tr>
+			<tr>
+			<td>
+				<% if("관리자".equals(sname)) { %>
+				<a href="noticeUpdate.jsp?idx=<%=dto.getNotice_no()%>&sub=<%=dto.getSubject()%>&con=<%=dto.getContent().replaceAll("\n", "<br>") %>">수정</a>
+				<a href="noticeDelete.jsp?idx=<%=dto.getNotice_no()%>">삭제</a>
+				<%} %>
+				<a href="notice.jsp">목록</a>
+		    </td>
+			</tr>
+			</table>
+   
+   </div>
 </div>
-<%@include file="../../footer.jsp" %>
+
+	<%@include file="/footer.jsp" %>
+
 </body>
-</html>
+</html>				

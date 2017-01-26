@@ -1,4 +1,4 @@
-package board.board.notice.QA;
+package board.QA;
 
 import java.sql.*;
 
@@ -13,6 +13,17 @@ public class QADTO {
 	private int ref;
 	private int lev;
 	private int sunbun;
+	private String pwd;
+	
+	
+	public String getPwd() {
+		return pwd;
+	}
+
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}
+
 	
 	public QADTO() {
 	}
