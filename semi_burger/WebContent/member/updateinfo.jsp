@@ -33,13 +33,8 @@ href="/semi_burger/css/mainLayout.css">
 	request.setCharacterEncoding("utf-8");
 	
 	String sid = (String)session.getAttribute("sid");
-	String name = "A";
 	
 	ArrayList<MemberDTO> arr = mdao.getUserInfo(sid);
-	for(int i=0;i<arr.size();i++){
-		name = arr.get(i).getName();
-		
-	}
 %>
 <body>
 <%@ include file="/header.jsp" %>
@@ -50,6 +45,9 @@ href="/semi_burger/css/mainLayout.css">
 		<table>
 			<thead>
 			</thead>
+			<%
+				for(int i=0;i<arr.size();i++){
+					%>
 			<tbody>
 				<tr>
 					<th> ID </th>
@@ -61,26 +59,28 @@ href="/semi_burger/css/mainLayout.css">
 				</tr>
 				<tr>
 					<th> 이름 </th>
-					<td> <input type="text" name="name" value="<%= name%>"> </td>
+					<td> <input type="text" name="name" value="<%= arr.get(i).getName()%>"> </td>
 				</tr>
 				<tr>
 					<th> 생년월일 </th>
-					<td> <input type="text" name="birth" placeholder=" ex: 170123"> </td>
+					<td> <input type="text" name="birth" placeholder=" ex: 170123" value="<%= arr.get(i).getBirth()%>"> </td>
 				</tr>
 				<tr>
 					<th> 핸드폰 번호 </th>
-					<td> <input type="text" name="cellphone" placeholder=" ex: 01012345678"> </td>
+					<td> <input type="text" name="cellphone" placeholder=" ex: 01012345678" value="<%= arr.get(i).getCellphone()%>"> </td>
 				</tr>
 				<tr>
 					<th> E-mail </th>
-					<td> <input type="text" name="email"> </td>
+					<td> <input type="text" name="email" value="<%= arr.get(i).getEmail()%>"> </td>
 				</tr>
 				<tr>
 					<th> 주소 </th>
-					<td> <input type="text" name="address"> </td>
+					<td> <input type="text" name="address" value="<%= arr.get(i).getAddress()%>"> </td>
 				</tr>
+					<%
+				} %>
 				<tr>
-					<td class="button" colspan="2"> <input type=submit value="수정하기"> <input type="button" value="탈퇴하기" onclick="delete.jsp"> </td>
+					<td class="button" colspan="2"> <input type=submit value="수정하기"> <input type="reset" value="다시작성"> </td>
 				</tr>			
 			</tbody>
 		</table>
