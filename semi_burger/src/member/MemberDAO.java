@@ -174,7 +174,7 @@ public class MemberDAO {
 	}
 	
 	/** 로그인 성공 회원정보 가져오기 메서드*/
-	public String getUserInfo(String userid){
+	public String getUserId(String userid){
 		try{
 			conn = yb.db.YB_DB.getConn();
 			
@@ -264,14 +264,14 @@ public class MemberDAO {
 	}
 	
 	/** 회원 탈퇴*/
-	public int DelMember(String id){
+	public int DelMember(String userid){
 		try{
 			conn = yb.db.YB_DB.getConn();
 			
 			String sql = "delete from member where id=?";
 			
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, id);
+			ps.setString(1, userid);
 			
 			int count = ps.executeUpdate();
 						
@@ -287,6 +287,52 @@ public class MemberDAO {
 			} catch(Exception e2){}
 		}
 	}
+	
+	/** 회원 정보 가져오기*/
+	public ArrayList<MemberDTO> getUserInfo(String userid){
+		try{
+			conn = yb.db.YB_DB.getConn();
+			
+			String sql = "select * from member where id=?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, userid);
+			
+			rs = ps.executeQuery();
+			
+			ArrayList<MemberDTO> arr = new ArrayList<MemberDTO>();
+			
+			if(rs.next()){
+				int member_no = rs.getInt("member_id");
+				String id = rs.getString("id");
+				String passwd = rs.getString("passwd");
+				String name = rs.getString("name");
+				String birth = rs.getString("birth");
+				String cellphone = rs.getString("cellphone");
+				String email = rs.getString("email");
+				String address = rs.getString("address");
+				int discount = rs.getInt("discount");
+				String grade = rs.getString("grade");
+				
+				MemberDTO dto = new MemberDTO(member_no, id, passwd, name, birth, cellphone, email, address, discount, grade);
+				
+				arr.add(dto);				
+			}
+			return arr;
+			
+		}catch(Exception e){
+			 e.printStackTrace();
+			 return null;
+		 } finally{
+			 try{
+				 if(rs!=null) rs.close();
+				 if(ps!=null) ps.close();
+				 
+				 if(conn!=null) conn.close();				 
+			 } catch(Exception e2){}
+		 }
+	}
+	
 
 	
 	

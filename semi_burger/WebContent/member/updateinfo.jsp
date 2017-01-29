@@ -33,13 +33,20 @@ href="/semi_burger/css/mainLayout.css">
 	request.setCharacterEncoding("utf-8");
 	
 	String sid = (String)session.getAttribute("sid");
+	String name = "A";
+	
+	ArrayList<MemberDTO> arr = mdao.getUserInfo(sid);
+	for(int i=0;i<arr.size();i++){
+		name = arr.get(i).getName();
+		
+	}
 %>
 <body>
 <%@ include file="/header.jsp" %>
 
 <section>
 	<form name="updateinfo" action="updateinfo_ok.jsp" method="post">
-		<h1> 회원가입 </h1>
+		<h1> 회원정보 수정 </h1>
 		<table>
 			<thead>
 			</thead>
@@ -54,7 +61,7 @@ href="/semi_burger/css/mainLayout.css">
 				</tr>
 				<tr>
 					<th> 이름 </th>
-					<td> <input type="text" name="name"> </td>
+					<td> <input type="text" name="name" value="<%= name%>"> </td>
 				</tr>
 				<tr>
 					<th> 생년월일 </th>

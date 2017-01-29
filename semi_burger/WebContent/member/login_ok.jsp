@@ -17,7 +17,7 @@
 	
 	if(result==mdao.LOGIN_OK){
 		
-		String username = mdao.getUserInfo(userid);
+		String username = mdao.getUserId(userid);
 				
 		session.setAttribute("sid", userid);
 		session.setAttribute("sname", username);		
