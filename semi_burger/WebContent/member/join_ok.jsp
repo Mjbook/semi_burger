@@ -14,7 +14,7 @@
 		%>
 		<script>
 		window.alert('회원가입 완료. 환영합니다 ^^');
-		location.href='/semi_burger/index.jsp';
+		location.href='/semi_burger/member/login.jsp';
 		</script>
 		<%
 	} else{

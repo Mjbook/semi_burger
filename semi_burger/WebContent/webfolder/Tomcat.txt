@@ -1,6 +1,6 @@
-ÅèÄ¹ ¼³Á¤
+ï¿½ï¿½Ä¹ ï¿½ï¿½ï¿½ï¿½
 
-conf -> sever ÆÄÀÏ editplus·Î ¿­±â
+conf -> sever ï¿½ï¿½ï¿½ï¿½ editplusï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
 
@@ -12,34 +12,34 @@ conf -> sever ÆÄÀÏ editplus·Î ¿­±â
 
 
 
-1) window - È¯°æ¼³Á¤ - general - workspace - text file endcoding :  Other : UFT-8
+1) window - È¯ï¿½æ¼³ï¿½ï¿½ - general - workspace - text file endcoding :  Other : UFT-8
 
 
 
-2) Project Explorer ¿¡¼­ ¸¶¿ì½º ¿À¸¥ÂÊ - new - other - server - next - 
-  Apache - Tomcat v7.0 - next - Tomcat installation directory : ¼³Ä¡ Æú´õ ¼³Á¤ - Finish
+2) Project Explorer ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - new - other - server - next - 
+  Apache - Tomcat v7.0 - next - Tomcat installation directory : ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ - Finish
 
 
 
-3) Project Explorer ¿¡¼­ ¸¶¿ì½º ¿À¸¥ÂÊ - new - other - web - Dynamic Web Project - 
+3) Project Explorer ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - new - other - web - Dynamic Web Project - 
   name: myweb - next - next - Generate web ... Ã¼Å© 
 
 
 
-4) window - È¯°æ¼³Á¤ - web - JSP files  - editor - templates - new JSP File(HTML) 
- - edit -  <! DOCTYPE html µÚ¿¡ ¸ðµÎ Áö¿ì±â > - <meta charset="${encoding}">
+4) window - È¯ï¿½æ¼³ï¿½ï¿½ - web - JSP files  - editor - templates - new JSP File(HTML) 
+ - edit -  <! DOCTYPE html ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ > - <meta charset="${encoding}">
 
 
 
-5)  window - È¯°æ¼³Á¤ - web - JSP files - Encoding À» ¸Ç À§¿¡ UTF-8·Î ¼³Á¤
+5) window - È¯ï¿½æ¼³ï¿½ï¿½ - web - JSP files - Encoding ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ UTF-8ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
 
-6) WebContent - ¸¶¿ì½º ¿À¸¥ÂÊ - new - other - web - JSP file - ÀÌ¸§ : testA 
+6) WebContent - ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ - new - other - web - JSP file - ï¿½Ì¸ï¿½ : testA 
 
 
 
-7) window - show view - other - server - È­¸é ¿ÞÂÊ ¾Æ·¡ Modules - Ãß°¡ÇÏ±â - ÀúÀå(ÄÁÆ®·Ñ+S) - ´Ý±â - ¼­¹ö Àç»ý
+7) window - show view - other - server - È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ Modules - ï¿½ß°ï¿½ï¿½Ï±ï¿½ - ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Æ®ï¿½ï¿½+S) - ï¿½Ý±ï¿½ - ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
 
 

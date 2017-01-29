@@ -202,6 +202,7 @@ public class MemberDAO {
 		}
 		
 	} 
+	
 	/**회원 주소 가져오기 메서드*/
 	public String getUserAddr(String userid){
 		try{
@@ -230,6 +231,7 @@ public class MemberDAO {
 		}
 		
 	} 
+	
 	/** 회원정보 수정*/
 	public int UpdateInfo(MemberDTO dto){
 		try{
@@ -262,14 +264,14 @@ public class MemberDAO {
 	}
 	
 	/** 회원 탈퇴*/
-	public int DelMember(MemberDTO dto){
+	public int DelMember(String id){
 		try{
 			conn = yb.db.YB_DB.getConn();
 			
 			String sql = "delete from member where id=?";
 			
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, dto.getId());
+			ps.setString(1, id);
 			
 			int count = ps.executeUpdate();
 						

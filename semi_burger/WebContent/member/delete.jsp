@@ -2,28 +2,28 @@
     pageEncoding="UTF-8"%>
 
 <jsp:useBean id="mdao" class="member.MemberDAO" scope="session"/>
-<jsp:useBean id="mdto" class="member.MemberDTO"/> 
-<jsp:setProperty property="*" name="mdto"/>
 
 <%
 	request.setCharacterEncoding("utf-8");
 
 	String sid = (String)session.getAttribute("sid");
 	
-	int result = mdao.DelMember(mdto);
-	//result 값이 0이 나옴
+	int result = mdao.DelMember(sid);
 	
 	if(result>0){
 		%>
 		<script>
 			window.alert('탈퇴되었습니다');
+			<%
+			session.invalidate();
+			%>
 			location.href='/semi_burger/index.jsp';
 		</script>
 		<%
 	} else{
 		%>
 		<script>
-			window.alert('<%=result%>'); 
+			window.alert('<%=result%>');
 			location.href='/semi_burger/index.jsp';
 		</script>
 		<%
