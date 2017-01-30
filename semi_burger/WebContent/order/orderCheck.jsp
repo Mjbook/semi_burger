@@ -27,40 +27,70 @@
 <%@include file="/header.jsp"%>
 	<section>
 		<article>
-			<table>
+			<table border="1">
 				<tbody>
 					<tr>
-						<th>주문 번호</th>
+						<th>주문 일시</th>
 						<th>메뉴</th>
 						<th>주문 수량</th>
 						<th>메뉴 가격</th>
-						<th>주문 일시</th>
+						<th>합계</th>
 					</tr>
 					<%
 					ArrayList<Order_listDTO> arr_odto=odao.getOrderList(sid);
-					int total_price=0;
-					for(int i=0;i<arr_odto.size();i++){
-						Order_listDTO temp=arr_odto.get(i);
-						
-						String menu=temp.getItem_name();
-						int num=temp.getItem_count();
-						String price=temp.getTotal_pay();
-						java.sql.Date date=temp.getOrder_date();
-						int m=date.getMonth()+1;
-						int d=date.getDate();
-						int h=date.getHours();
-					%>
+					ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
+					if(arr_menu_num==null||arr_menu_num.size()==0){
+						%>
 					<tr>
-						<th>주문번호</th>
-						<th><%=menu %></th>
-						<th><%=num %></th>
-						<th><%=price %></th>
-						<th><%=m+"-"+d+"\n"+h+"시"%></th>
+						<td colspan="4">주문 내역이 없습니다.</td>
 					</tr>
-					
-					<%		
+						<%
+					}else{
+						int row_count=0;
+						for(int i=0;i<arr_menu_num.size();i++){
+							int row=arr_menu_num.get(i);
+							int total_price=0;
+							
+							for(int j=0;j<row;j++){
+								Order_listDTO temp=arr_odto.get(row_count);
+								
+								Date date=temp.getOrder_date();
+								String menu=temp.getItem_name();
+								int num=temp.getItem_count();
+								String price_s=temp.getTotal_pay();
+								int price=Integer.parseInt(price_s);
+								
+								//주문별 총 금액 구하기
+								
+								
+								
+						%>
+						<tr>
+						<%		if(j==0){	%>
+							<td rowspan="<%=row%>"><%=date%></td>
+						<%		}			%>
+							<td><%=menu %></td>
+							<td><%=num %></td>
+							<td><%=price/num %></td>
+						<%		if(j==0){
+									int temp_row=row_count;
+									for(int k=0;k<row;k++){
+										Order_listDTO temp1=arr_odto.get(temp_row);
+										String temp_ps=temp1.getTotal_pay();
+										int temp_p=Integer.parseInt(temp_ps);
+										total_price+=temp_p;
+										temp_row++;
+									}
+						%>
+							<td rowspan="<%=row%>"><%=total_price%></td>
+						<%		}	%>
+						</tr>
+						
+						<%		
+							row_count++;
+							}
+						}
 					}
-					
 					%>
 				</tbody>
 			</table>
