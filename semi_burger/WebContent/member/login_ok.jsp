@@ -13,6 +13,8 @@
 	String userid = request.getParameter("id");
 	String userpwd = request.getParameter("pwd");
 	
+	String checked = request.getParameter("idsave");
+	
 	int result = mdao.memberLogin(userid, userpwd);
 	
 	if(result==mdao.LOGIN_OK){
@@ -20,11 +22,21 @@
 		String username = mdao.getUserId(userid);
 				
 		session.setAttribute("sid", userid);
-		session.setAttribute("sname", username);		
+		session.setAttribute("sname", username);
+		
+		if(checked!=null && checked.equals("on")){
+			Cookie ck = new Cookie("idsave", userid);
+			ck.setMaxAge(60*60*24*30);
+			response.addCookie(ck);	
+		} else{
+			Cookie ck = new Cookie("idsave", userid);
+			ck.setMaxAge(0);
+			response.addCookie(ck);
+		}
 		
 		%>
 		<script>
-			//window.alert('로그인 성공!');
+			window.alert('<%= username%>님 어서오세요!');
 			location.href='/semi_burger/index.jsp';
 		</script>
 		<%

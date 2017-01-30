@@ -27,6 +27,19 @@ href="/semi_burger/css/mainLayout.css">
 	}
 </script>
 </head>
+<%
+	Cookie cks[] = request.getCookies();
+	
+	String idsave = "";
+	
+	if(cks!=null){
+		for(int i=0;i<cks.length;i++){
+			if(cks[i].getName().equals("idsave")){
+				idsave = cks[i].getValue();				
+			}
+		}
+	}
+%>
 <body>
 <%@ include file="/header.jsp" %>
  
@@ -39,7 +52,7 @@ href="/semi_burger/css/mainLayout.css">
 		  	<td> &nbsp; </td>
 		  </tr>
 		  <tr>	
-			<td> <input type="text" name="id" placeholder="아이디"> </td>
+			<td> <input type="text" name="id" placeholder="아이디" value="<%= idsave%>"> </td>
 			<td rowspan="2"> <input type="submit" value="로그인" style="height:48px;"> </td>
 		  </tr>
 		  <tr>
@@ -47,7 +60,7 @@ href="/semi_burger/css/mainLayout.css">
 		  	<td> </td>
 		  </tr>	
 		  <tr>
-		  	<td colspan="2"> <input type="checkbox" value="on" style="float:left;"> ID 기억하기 
+		  	<td colspan="2"> <input type="checkbox" name="idsave" value="on" <%= idsave.equals("")?"":"checked" %> style="float:left;"> ID 기억하기 
 		  					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		  					<a href="javascript:idfind()">ID</a> / <a href="javascript:pwdfind()">PW 찾기</a> </td>	  	
 		  </tr>		
