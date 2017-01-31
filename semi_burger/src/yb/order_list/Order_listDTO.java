@@ -8,6 +8,7 @@ public class Order_listDTO {
 	private String item_name;
 	private int item_count;
 	private java.sql.Date order_date;
+	private String date_hm;
 	private String order_shop; //고객 주문 주소로 사용함
 	private String order_user;
 	private String total_pay;
@@ -59,6 +60,12 @@ public class Order_listDTO {
 	}
 	public void setOrder_date(java.sql.Date order_date) {
 		this.order_date = order_date;
+	}
+	public String getDate_hm() {
+		return date_hm;
+	}
+	public void setDate_hm(String date_hm) {
+		this.date_hm = date_hm;
 	}
 	public String getOrder_shop() {
 		return order_shop;

@@ -23,6 +23,10 @@
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css" >
 </head>
+<%
+ArrayList<Order_listDTO> arr_odto=odao.getOrderList(sid);
+ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
+%>
 <body>
 <%@include file="/header.jsp"%>
 	<section>
@@ -37,8 +41,32 @@
 						<th>합계</th>
 					</tr>
 					<%
-					ArrayList<Order_listDTO> arr_odto=odao.getOrderList(sid);
-					ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
+					//1page에 5개씩 출력
+					int print_num=0;
+					int start_num=0;
+					int page_num=0;
+					
+					int row_count=0;
+					
+					if(arr_menu_num.size()>5){
+						String pn_s=request.getParameter("pn");
+						if(pn_s==null||pn_s.equals("")){
+							print_num=5;
+						}else{
+							int temp=Integer.parseInt(pn_s);
+							start_num=(temp-1)*5;
+							print_num=5*temp<arr_menu_num.size()?5+temp:arr_menu_num.size();
+							for(int i=0;i<start_num;i++){
+								row_count+=arr_menu_num.get(i);
+							}
+						}
+						
+						page_num=(arr_menu_num.size())%5==0?arr_menu_num.size()/5:arr_menu_num.size()/5+1;
+						
+					}else{
+						print_num=arr_menu_num.size();
+					}
+					
 					if(arr_menu_num==null||arr_menu_num.size()==0){
 						%>
 					<tr>
@@ -46,33 +74,32 @@
 					</tr>
 						<%
 					}else{
-						int row_count=0;
-						for(int i=0;i<arr_menu_num.size();i++){
+						
+						for(int i=start_num;i<print_num;i++){
 							int row=arr_menu_num.get(i);
 							int total_price=0;
-							
+							String address="";
 							for(int j=0;j<row;j++){
 								Order_listDTO temp=arr_odto.get(row_count);
 								
 								Date date=temp.getOrder_date();
+								String hm=temp.getDate_hm();
+								
 								String menu=temp.getItem_name();
 								int num=temp.getItem_count();
 								String price_s=temp.getTotal_pay();
 								int price=Integer.parseInt(price_s);
-								
-								//주문별 총 금액 구하기
-								
-								
-								
+								address=temp.getOrder_shop();
+						
 						%>
 						<tr>
 						<%		if(j==0){	%>
-							<td rowspan="<%=row%>"><%=date%></td>
+							<td rowspan="<%=row%>"><%=date%><br><%=hm%></td>
 						<%		}			%>
 							<td><%=menu %></td>
 							<td><%=num %></td>
 							<td><%=price/num %></td>
-						<%		if(j==0){
+						<%		if(j==0){ //주문별 총 금액 구하기
 									int temp_row=row_count;
 									for(int k=0;k<row;k++){
 										Order_listDTO temp1=arr_odto.get(temp_row);
@@ -82,19 +109,30 @@
 										temp_row++;
 									}
 						%>
-							<td rowspan="<%=row%>"><%=total_price%></td>
+							<td rowspan="<%=row%>"><%=total_price%>원</td>
 						<%		}	%>
 						</tr>
 						
 						<%		
 							row_count++;
 							}
+						%>
+						<tr>
+							<th>주소</th>
+							<td colspan="4"><%=address %></td>
+						</tr>
+						<%
 						}
 					}
 					%>
 				</tbody>
 			</table>
 		</article>
+		
+		<p><%
+		for(int i=0;i<page_num;i++){
+			%><a href="orderCheck.jsp?pn=<%=i+1%>"><%=i+1+"\t"%></a><%
+		}%></p>
 	</section>
 <%@include file="/footer.jsp"%>
 </body>

@@ -93,9 +93,15 @@ public class Order_listDAO {
 	public ArrayList<Integer> getOrderMenuNumber(String sid){
 		try {
 			getConn();
-			String sql="select count(order_user) as menu_count from order_list where order_user=? group by order_date order by order_date desc";
-			ps=conn.prepareStatement(sql);
-			ps.setString(1, sid);
+			String sql="";
+			if(sid.equals("admin")){
+				sql="select count(order_user) as menu_count from order_list group by order_date,order_user,order_shop order by order_date desc";
+				ps=conn.prepareStatement(sql);
+			}else{
+				sql="select count(order_user) as menu_count from order_list where order_user=? group by order_date,order_user,order_shop order by order_date desc";
+				ps=conn.prepareStatement(sql);
+				ps.setString(1, sid);
+			}
 			rs=ps.executeQuery();
 			
 			ArrayList<Integer> arr=new ArrayList<Integer>();
@@ -124,10 +130,16 @@ public class Order_listDAO {
 	public ArrayList<Order_listDTO> getOrderList(String sid){
 		try {
 			getConn();
+			String sql="";
+			if(sid.equals("admin")){
+				sql="select a.*,to_char(a.order_date,'hh24:mi') as hm from (order_list)a order by order_date desc,order_user,order_no";
+				ps=conn.prepareStatement(sql);	
+			}else{
+				sql="select a.*,to_char(a.order_date,'hh24:mi') as hm from (order_list)a where order_user=? order by order_date desc,order_no";
+				ps=conn.prepareStatement(sql);	
+				ps.setString(1, sid);
+			}
 			
-			String sql="select * from order_list where order_user=? order by order_date desc,order_no";
-			ps=conn.prepareStatement(sql);	
-			ps.setString(1, sid);
 			rs=ps.executeQuery();
 			
 			ArrayList<Order_listDTO> odtos=new ArrayList<Order_listDTO>();
@@ -138,8 +150,10 @@ public class Order_listDAO {
 					String order_place=rs.getString("order_shop");//주문자 주소
 					String total_pay=rs.getString("total_pay");
 					java.sql.Date date=rs.getDate("order_date");
+					String hm=rs.getString("hm");
 					
 					Order_listDTO temp=new Order_listDTO(item_name, item_count, date, order_place, sid, total_pay);
+					temp.setDate_hm(hm);
 					odtos.add(temp);
 				}while(rs.next());
 			}
