@@ -20,6 +20,7 @@ try{
 		%>
 		<script>
 		window.alert('업로드 성공!');
+		window.opener.location.reload();
 		window.self.close();
 		</script>
 		<%
