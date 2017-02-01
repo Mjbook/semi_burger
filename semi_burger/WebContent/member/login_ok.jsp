@@ -36,7 +36,7 @@
 		
 		%>
 		<script>
-			//window.alert('<%= username%>님 어서오세요!');
+			window.alert('<%= username%>님 \n어서오세요!');
 			location.href='/semi_burger/index.jsp';
 		</script>
 		<%

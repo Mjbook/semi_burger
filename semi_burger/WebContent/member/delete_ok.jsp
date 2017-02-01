@@ -23,8 +23,8 @@
 	} else{
 		%>
 		<script>
-			window.alert('<%=result%>');
-			location.href='/semi_burger/index.jsp';
+			window.alert('고객센터로 연락주세요');
+			location.href='history.back()';
 		</script>
 		<%
 	}

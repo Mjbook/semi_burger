@@ -64,21 +64,15 @@
 				%>				
 				<li> <a href="/semi_burger/member/login.jsp">로그인</a> </li>
 				<li> <a href="/semi_burger/member/join.jsp"> 회원가입</a> </li>
-				<li> <a> ID/PW 찾기 </a> </li>
 				<%
 				} else{
 				%>
 				<li> <a href="/semi_burger/member/updateinfo.jsp?"> 정보수정</a> </li>
-				<li> <a href="/semi_burger/member/delete.jsp"> 탈퇴하기</a> </li>
 				<li> <a href="/semi_burger/member/logout.jsp"> 로그아웃</a> </li>
 			</ul></li>
 				<%
 				}
-			%>
-				
-				
-				
-			
+			%>			
 		</ol>
 	</nav>
 	</div>
