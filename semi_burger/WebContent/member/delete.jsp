@@ -1,50 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.button{
+		text-align: right;
+	}
+</style>
+</head>
+<body>
+ 
+<section>
+  <fieldset>
+	  <form name="delete" action="delete_ok.jsp">
+	   	정말 탈퇴하시겠습니까? <br>
+	   	<hr>
+		<div class="button"><input type="submit" value="탈퇴하기"> 
+		<input type="button" value="취소" onclick="javascript:window.self.close()"></div>
+	  </form>
+  </fieldset>
+</section>
 
-<jsp:useBean id="mdao" class="member.MemberDAO" scope="session"/>
-
-<%
-	request.setCharacterEncoding("utf-8");
-
-	String sid = (String)session.getAttribute("sid");
-%>
-	<script>
-		var confirm_v = window.confirm('탈퇴하시겠습니까?');
-		
-		if(comfirm_v){
-			</script>
-			<%
-			int result = mdao.DelMember(sid);
-			
-			if(result>0){
-				%>
-				<script>
-				window.alert('탈퇴되었습니다');
-				<%
-				session.invalidate();
-				%>
-				location.href='/semi_burger/index.jsp';
-				</script>
-				<%	
-			} else{
-				%>
-				<script>
-				window.alert('고객센터로 문의 바랍니다');
-				location.href='/semi_burger/member/updateinfo.jsp';
-				<%
-			}
-			%>
-		} else {
-			window.alert('고객센터로 문의 바랍니다');
-			location.href='/semi_burger/member/updateinfo.jsp';
-		}
-	</script>
-
-
-
-
-
-
-
-
-
+</body>
+</html>
