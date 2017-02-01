@@ -16,14 +16,16 @@
 <script>
 function addTop(){
 	window.open('addToping.jsp','toping','width=400,height=250,left=600,top=300');
-	
+}
+function delTop(){
+	window.open('delToping.jsp','toping','width=400,height=250,left=600,top=300');
 }
 </script>
 </head>
 <body>
 <%@include file="/header.jsp"%>
 <h2>나만의 버거</h2>
-<p><a href="javascript:addTop()">토핑 추가</a></p>
+<p><a href="javascript:addTop()">토핑 추가</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:delTop()">토핑 제거</a></p>
 <section>
 <article>
 	<div class="d">그림</div>
