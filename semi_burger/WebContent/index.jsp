@@ -34,10 +34,7 @@
 		<table >
 				<thead>
 					<tr>
-						<th>순번</th>
-						<th>제목</th>
-						
-						<th>조회수</th>
+						<th align="center">공지사항</th>
 					</tr>
 				</thead>
 				<tfoot>
@@ -91,11 +88,11 @@
 	</div>
 	
 	<div style="border: 1px solid red; float: left; width: 33%;">
-		두번째 영역
+		여긴 내가 만든 시그니처 버거가 들어갈 예정
 	</div>
 	
 	<div style="border: 1px solid blue; float: left; width: 33%;">
-		세번째 영역 
+		여긴 햄버거 세일 이벤트가 들어갈 예정 
 	</div>
 	</div>
 <%@include file="footer.jsp" %>
