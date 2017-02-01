@@ -199,8 +199,7 @@ public class MemberDAO {
 				
 				if(conn!=null) conn.close();				
 			} catch(Exception e2){ }
-		}
-		
+		}		
 	} 
 	
 	/** 회원 전체 정보 가져오기*/

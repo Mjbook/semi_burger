@@ -28,16 +28,14 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
-	<img src="/semi_burger/img/indexmain.jpg" width="100%" height="400px" />
+
+	<img src="./img/main_img.jpg" width="100%" height="400px">
 	<div style="min-height: 400px; overflow: auto;">
-	<div style="border: 1px solid gold; float: left; width: 33%;">
+	<div style="border: 1px solid; float: left; width: 33%;">
 		<table >
 				<thead>
 					<tr>
-						<th>순번</th>
-						<th>제목</th>
-						
-						<th>조회수</th>
+						<th>공지사항</th>
 					</tr>
 				</thead>
 				<tfoot>
@@ -76,11 +74,8 @@
 								%>
 					<tr>
 						<td><%=adto.get(i).getNotice_no()%></td>
-						<td>
-						
+						<td colspan="2">						
 						<a href="./board/notice/noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><%=adto.get(i).getSubject() %></a></td>
-						
-						<td><%=adto.get(i).getBoard_count() %></td>
 					</tr>
 					<%
 							}
@@ -91,11 +86,11 @@
 	</div>
 	
 	<div style="border: 1px solid red; float: left; width: 33%;">
-		두번째 영역
+		여긴 내가 만든 시그니처 버거가 들어갈 예정
 	</div>
 	
 	<div style="border: 1px solid blue; float: left; width: 33%;">
-		세번째 영역 
+		여긴 햄버거 세일 이벤트가 들어갈 예정 
 	</div>
 	</div>
 <%@include file="footer.jsp" %>

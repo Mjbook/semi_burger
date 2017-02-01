@@ -15,6 +15,7 @@
 	location.href='/semi_burger/index.jsp';
 </script>		
 <%
+	return;
 	}
 %>
 
@@ -31,15 +32,7 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 <%@include file="/header.jsp"%>
 	<section>
 		<article>
-			<table border="1">
-				<tbody>
-					<tr>
-						<th>주문 일시</th>
-						<th>메뉴</th>
-						<th>주문 수량</th>
-						<th>메뉴 가격</th>
-						<th>합계</th>
-					</tr>
+			
 					<%
 					//1page에 5개씩 출력
 					int print_num=0;
@@ -67,15 +60,29 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 						print_num=arr_menu_num.size();
 					}
 					
-					if(arr_menu_num==null||arr_menu_num.size()==0){
-						%>
+
+					for(int i=start_num;i<print_num;i++){
+					%>
+				<table border="1">
+				<tbody>
+					<tr>
+						<th>주문 일시</th>
+						<th>메뉴</th>
+						<th>주문 수량</th>
+						<th>메뉴 가격</th>
+						<th>합계</th>
+					</tr>
+					<%
+						if(arr_menu_num==null||arr_menu_num.size()==0){
+					%>
 					<tr>
 						<td colspan="4">주문 내역이 없습니다.</td>
 					</tr>
-						<%
-					}else{
-						
-						for(int i=start_num;i<print_num;i++){
+					<%
+						break;
+						}else{
+							
+							
 							int row=arr_menu_num.get(i);
 							int total_price=0;
 							String address="";
@@ -123,10 +130,12 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 						</tr>
 						<%
 						}
-					}
 					%>
-				</tbody>
-			</table>
+					</tbody>
+				</table>
+				<br>
+					<%} %>
+					
 		</article>
 		
 		<p><%

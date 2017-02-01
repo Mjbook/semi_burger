@@ -10,17 +10,17 @@
 <%
 	int result = mdao.memberJoin(mdto);
 	
-	if(result>0){
+	if(result>0){	
 		%>
 		<script>
-		window.alert('회원가입 완료. 환영합니다 ^^');
+		window.alert('회원가입 완료.\n환영합니다 ^^');
 		location.href='/semi_burger/member/login.jsp';
 		</script>
 		<%
 	} else{
 		%>
 		<script>
-		window.alert('회원가입 실패 :( ');
+		window.alert('회원가입 실패 :( \n빠짐없이 입력해주세요');
 		location.href='/semi_burger/member/join.jsp';
 		</script>
 		<%

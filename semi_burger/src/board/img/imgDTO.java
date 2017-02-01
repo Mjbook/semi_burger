@@ -4,27 +4,20 @@ import java.util.Date;
 
 public class imgDTO {
 
-	private int 	img_board_no;
+	private int 	knowhow_no;
 	private String  name;
 	private String  subject;
 	private String  content;
 	private Date  insert_date;
 	private int 	board_count;
-	private String img_src;
+	private String my_img_url;
 	
 	
-	
-	public int getImg_board_no() {
-		return img_board_no;
+	public int getKnowhow_no() {
+		return knowhow_no;
 	}
-	public void setImg_board_no(int img_board_no) {
-		this.img_board_no = img_board_no;
-	}
-	public String getImg_src() {
-		return img_src;
-	}
-	public void setImg_src(String img_src) {
-		this.img_src = img_src;
+	public void setKnowhow_no(int knowhow_no) {
+		this.knowhow_no = knowhow_no;
 	}
 	public String getName() {
 		return name;
@@ -56,9 +49,15 @@ public class imgDTO {
 	public void setBoard_count(int board_count) {
 		this.board_count = board_count;
 	}
+	public String getMy_img_url() {
+		return my_img_url;
+	}
+	public void setMy_img_url(String my_img_url) {
+		this.my_img_url = my_img_url;
+	}
+	
+	
 
-	
-	
 	
 	
 }

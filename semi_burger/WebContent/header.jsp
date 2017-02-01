@@ -11,7 +11,6 @@
 <div id="headerback">
 <%
 	String sname = (String)session.getAttribute("sname");
-	
 	if(sname==null){
 		%><!-- 로그인 전 -->
 		<p><a href="/semi_burger/member/login.jsp">로그인</a> | <a href="/semi_burger/member/join.jsp"> 회원가입</a> </p> 						
@@ -48,7 +47,7 @@
 				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
 				<li><a href="">창업 문의</a></li>
 				<li><a href="/semi_burger/board/QnA/QAList.jsp">Q&A</a></li>
-				<li><a href="">내가 만든 햄버거</a></li>
+				<li><a href="/semi_burger/board/img/imgList.jsp">내가 만든 햄버거</a></li>
 				<li><a href="">이벤트</a></li>
 			</ul></li>
 			<%	if(sname==null){
@@ -64,21 +63,15 @@
 				%>				
 				<li> <a href="/semi_burger/member/login.jsp">로그인</a> </li>
 				<li> <a href="/semi_burger/member/join.jsp"> 회원가입</a> </li>
-				<li> <a> ID/PW 찾기 </a> </li>
 				<%
 				} else{
 				%>
 				<li> <a href="/semi_burger/member/updateinfo.jsp?"> 정보수정</a> </li>
-				<li> <a href="/semi_burger/member/delete.jsp"> 탈퇴하기</a> </li>
 				<li> <a href="/semi_burger/member/logout.jsp"> 로그아웃</a> </li>
 			</ul></li>
 				<%
 				}
-			%>
-				
-				
-				
-			
+			%>			
 		</ol>
 	</nav>
 	</div>

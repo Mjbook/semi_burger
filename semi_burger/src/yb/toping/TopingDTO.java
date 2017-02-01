@@ -2,17 +2,17 @@ package yb.toping;
 
 public class TopingDTO {
 	private int toping_key;
-	private int toping_num;
+	private String toping_img;
 	private String toping_name;
-	private String toping_pay;
+	private String toping_price;
 	
 	public TopingDTO() {
 
 	}
 	
-	public TopingDTO(int toping_num,String toping_name) {
-		this.toping_num=toping_num;
+	public TopingDTO(String toping_name, String toping_price) {
 		this.toping_name=toping_name;
+		this.toping_price=toping_price;
 	}
 
 	public int getToping_key() {
@@ -23,12 +23,12 @@ public class TopingDTO {
 		this.toping_key = toping_key;
 	}
 
-	public int getToping_num() {
-		return toping_num;
+	public String getToping_img() {
+		return toping_img;
 	}
 
-	public void setToping_num(int toping_num) {
-		this.toping_num = toping_num;
+	public void setToping_img(String toping_img) {
+		this.toping_img = toping_img;
 	}
 
 	public String getToping_name() {
@@ -39,13 +39,15 @@ public class TopingDTO {
 		this.toping_name = toping_name;
 	}
 
-	public String getToping_pay() {
-		return toping_pay;
+	public String getToping_price() {
+		return toping_price;
 	}
 
-	public void setToping_pay(String toping_pay) {
-		this.toping_pay = toping_pay;
+	public void setToping_price(String toping_price) {
+		this.toping_price = toping_price;
 	}
+	
+	
 	
 	
 }

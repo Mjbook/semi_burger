@@ -129,10 +129,10 @@ table td {
 						for (int i = 0; i < adto.size(); i++) {
 								%>
 					<tr>
-						<td><%=adto.get(i).getImg_board_no()%></td>
+						<td><%=adto.get(i).getKnowhow_no()%></td>
 						<td>
 						
-						<a href="imgContent.jsp?IMG_BOARD_NO=<%=adto.get(i).getImg_board_no()%>"><%=adto.get(i).getSubject() %></a></td>
+						<a href="imgContent.jsp?IMG_BOARD_NO=<%=adto.get(i).getKnowhow_no()%>"><%=adto.get(i).getSubject() %></a></td>
 						<td><%=adto.get(i).getInsert_date()%></td>
 						<td><%=adto.get(i).getBoard_count() %></td>
 					</tr>
@@ -144,7 +144,6 @@ table td {
 			</table>
    
    </div>
-   <a href="imgWrite.jsp">글쓰기</a>
 </div>
 
 	<%@include file="/footer.jsp" %>
