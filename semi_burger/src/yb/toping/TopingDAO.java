@@ -6,7 +6,7 @@ import java.io.*;
 public class TopingDAO {
 	
 	//img 저장할 경로
-	public static final String TOPING_IMG="C:/Users/user1/git/semi_burger/semi_burger/WebContent/self/toping_img";
+	public static final String TOPING_IMG="E:/semi_burger/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/semi_burger/self/toping_img";
 	
 	private Connection conn;
 	private PreparedStatement ps;
@@ -91,8 +91,8 @@ public class TopingDAO {
 	/**토핑 추가 step2 경로 저장 메서드*/
 	public int addDir(){
 		try {
-			conn=yb.db.YB_DB.getConn();
 			String dir=findDir();
+			conn=yb.db.YB_DB.getConn();
 			String sql="update toping set toping_img=? where toping_key=(select max(toping_key) from toping)";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, dir);
@@ -123,6 +123,47 @@ public class TopingDAO {
 			e.printStackTrace();
 		}finally {
 			try {
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e2) {}
+		}
+	}
+	
+	public int delToping(String name){
+		try {
+			//파일 삭제
+			conn=yb.db.YB_DB.getConn();
+			
+			String sql="select toping_img from toping where toping_name=?";
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, name);
+			rs=ps.executeQuery();
+			
+			if(rs.next()){
+				do{
+					String dir=rs.getString("toping_img");
+					File temp=new File(dir);
+					temp.delete();
+
+				}while(rs.next());
+			}
+			rs.close();
+			ps.close();
+			
+			//db삭제
+			
+			sql="delete toping where toping_name=?";
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, name);
+		
+			int result=ps.executeUpdate();
+			return result;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return -1;
+		}finally {
+			try {
+				if(rs!=null)rs.close();
 				if(ps!=null)ps.close();
 				if(conn!=null)conn.close();
 			} catch (Exception e2) {}
