@@ -13,7 +13,7 @@
 	if(result>0){
 		%>
 		<script>
-		window.alert('탈퇴되었습니다');
+		opener.window.alert('탈퇴되었습니다');
 		<%
 		session.invalidate();
 		%>
@@ -24,7 +24,7 @@
 	} else{
 		%>
 		<script>
-		window.alert('고객센터로 문의 바랍니다');
+		opener.window.alert('고객센터로 문의 바랍니다');
 		location.href='/semi_burger/member/updateinfo.jsp';
 		</script>
 		<%
