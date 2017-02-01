@@ -37,7 +37,7 @@
 				<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp">햄버거</a></li>
 				<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp#side">사이드</a></li>
 				<li>이벤트 메뉴</li>
-				<li>내가 만드는 햄버거</li>
+				<li><a href="/semi_burger/self/selfBurger.jsp">내가 만드는 햄버거</a></li>
 				<li>재료 원산지 표기</li>
 			</ul></li>
 			<li>My Burger<ul class="menu">
