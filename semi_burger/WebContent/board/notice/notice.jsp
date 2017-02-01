@@ -9,7 +9,6 @@
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
- <!--
   #container {min-height: 80%; maring-top: -100px; }
    * html #container {height: 100%;}
    
@@ -40,6 +39,7 @@ table td {
   
  </style>
 <%
+String sid=(String)session.getAttribute("sid");
 	int totalCnt = bdao.getTotalCnt();//총 게시물 수
 	int listSize = 10;//보여줄 리스트 수
 	int pageSize = 5;//보여줄 페이지 수
@@ -111,7 +111,7 @@ table td {
 							}
 						%>
 						</td>
-						<% if("관리자".equals(sname)) { %>
+						<% if("admin".equals(sid)) { %>
 							<td><a href="noticeWrite.jsp">글쓰기</a></td>
 						<% } %>
 					</tr>

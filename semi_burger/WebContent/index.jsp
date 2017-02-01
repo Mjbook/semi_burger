@@ -35,7 +35,7 @@
 		<table >
 				<thead>
 					<tr>
-						<th align="center">공지사항</th>
+						<th>공지사항</th>
 					</tr>
 				</thead>
 				<tfoot>
@@ -74,11 +74,8 @@
 								%>
 					<tr>
 						<td><%=adto.get(i).getNotice_no()%></td>
-						<td>
-						
+						<td colspan="2">						
 						<a href="./board/notice/noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><%=adto.get(i).getSubject() %></a></td>
-						
-						<td><%=adto.get(i).getBoard_count() %></td>
 					</tr>
 					<%
 							}
