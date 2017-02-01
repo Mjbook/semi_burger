@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="board.QA.*"%>
-<jsp:useBean id="bdao" class="board.QA.QADAO" scope="session"/>
+<jsp:useBean id="bdao" class="board.QA.QADAO" scope="page"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -116,7 +116,7 @@ if(cp%pageSize==0) {
 						%>
 						<a href="QAContent.jsp?idx=<%=arr.get(i).getQna_no()%>"><%=arr.get(i).getSubject() %></a></td>
 						<td><%=arr.get(i).getName()%></td>
-						<td><%=arr.get(i).getBoard_count() %></td>
+						<td><%=arr.get(i).getBoard_count()%></td>
 					</tr>
 					<%
 							}

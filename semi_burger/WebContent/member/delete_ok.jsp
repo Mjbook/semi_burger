@@ -7,25 +7,11 @@
 	request.setCharacterEncoding("utf-8");
 
 	String sid = (String)session.getAttribute("sid");
-	
+		
+	String confirm = request.getParameter("result");
 	int result = mdao.DelMember(sid);
+	%>
+	<script>
+	window.alert('<%= confirm%>');
+	</script>
 	
-	if(result>0){
-		%>
-		<script>
-			window.alert('탈퇴되었습니다');
-			<%
-			session.invalidate();
-			%>
-			location.href='/semi_burger/index.jsp';
-		</script>
-		<%
-	} else{
-		%>
-		<script>
-			window.alert('고객센터로 연락주세요');
-			location.href='history.back()';
-		</script>
-		<%
-	}
-%>
