@@ -1,27 +1,54 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+
+<jsp:useBean id="mdao" class="member.MemberDAO" scope="session"/>
+
 <%
 	request.setCharacterEncoding("utf-8");
 
 	String sid = (String)session.getAttribute("sid");
-	String result;
 %>
-<body>
-	<form name="delete" action="delete_ok.jsp">
-		<script>
-			var confirm = window.confirm('탈퇴하시겠습니까?');
-			
-			if(confirm){
-				result = confirm;
-			}
-		</script>
+	<script>
+		var confirm = window.confirm('탈퇴하시겠습니까?');
 		
-	</form>
-</body>
-</html>
+		if(comfirm){
+			<%
+			String confirm = "yes";
+			%>
+		} else {
+			<%
+			confirm = "no";
+			%>
+		}
+	</script>
+<%
+	int result = mdao.DelMember(sid);
+
+	if(result>0){
+		if(confirm.equals("yes")){
+			%>
+			<script>
+			window.alert('탈퇴되었습니다');
+			<%
+			session.invalidate();
+			%>
+			location.href='/semi_burger/index.jsp';
+			</script>
+			<%
+
+		}
+	}
+
+	%>
+
+
+
+
+
+
+
+
+
+
+
+
