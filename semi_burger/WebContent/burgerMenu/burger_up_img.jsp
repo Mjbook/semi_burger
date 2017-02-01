@@ -24,7 +24,7 @@ String item_count = request.getParameter("item_count");
 			<form name="burger_up_img" action="burger_up_img_ok.jsp" method="post" enctype="multipart/form-data">
 			<table>
 				<tr>
-				<input type="text" name="item_num" value="<%=item_num%>">
+				<input type="hidden" name="item_num" value="<%=item_num%>">
 				<input type="hidden" name="item_name" value="<%=item_name%>">
 				<input type="hidden" name="item_pay" value="<%=item_pay%>">
 				<input type="hidden" name="item_count" value="<%=item_count%>">

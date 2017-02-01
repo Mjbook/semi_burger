@@ -12,7 +12,7 @@ try{
 	
 	%>
 	<script>
-	window.alert('등록 성공!');
+	window.alert('이미지 등록 성공!');
 	window.self.close();
 	</script>
 	
@@ -20,7 +20,7 @@ try{
 }catch(Exception e){
 	%>
 	<script>
-		window.alert('업로드 실패!');
+		window.alert('이미지 등록 실패!');
 		window.self.close();
 	</script>
 	
