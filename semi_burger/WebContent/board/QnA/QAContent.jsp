@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="board.QA.*" %>
-<jsp:useBean id="bdao" class="board.QA.QADAO" scope="session"/>
+<jsp:useBean id="bdao" class="board.QA.QADAO" scope="page"/>
 <%
 	String idx_s=request.getParameter("idx");
 	if(idx_s==null || idx_s.equals("")) {
