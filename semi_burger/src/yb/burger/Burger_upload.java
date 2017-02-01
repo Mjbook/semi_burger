@@ -48,7 +48,7 @@ public class Burger_upload {
 		if(!f.exists()){//파일이 있냐?
 			f.mkdir();//없으면 폴더를 만들어라
 		}		
-		
+		imgname=1024*1024*10*100;
 	}
 
 	

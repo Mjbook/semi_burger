@@ -8,7 +8,6 @@
 <jsp:useBean id="burgerdao" class="yb.burger.BurgerDAO"/>
 <jsp:useBean id="odao" class="yb.order_list.Order_listDAO"/>
 <jsp:useBean id="odto" class="yb.order_list.Order_listDTO" scope="session"/>
-
 <jsp:useBean id="sidedto" class="yb.burger.SideDTO"/>
 <jsp:setProperty property="*" name="sidedto"/>
 <jsp:useBean id="sidedao" class="yb.burger.SideDAO"/>
