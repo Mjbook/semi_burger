@@ -9,53 +9,36 @@
 	String sid = (String)session.getAttribute("sid");
 %>
 	<script>
-		var confirm = window.confirm('탈퇴하시겠습니까?');
+		var confirm_v = window.confirm('탈퇴하시겠습니까?');
 		
-		if(comfirm){
+		if(comfirm_v){
+			</script>
 			<%
-			String confirm = "yes";
+			int result = mdao.DelMember(sid);
+			
+			if(result>0){
+				%>
+				<script>
+				window.alert('탈퇴되었습니다');
+				<%
+				session.invalidate();
+				%>
+				location.href='/semi_burger/index.jsp';
+				</script>
+				<%	
+			} else{
+				%>
+				<script>
+				window.alert('고객센터로 문의 바랍니다');
+				location.href='/semi_burger/member/updateinfo.jsp';
+				<%
+			}
 			%>
 		} else {
-			<%
-			confirm = "no";
-			%>
-		}
-	</script>
-<%
-	int result = mdao.DelMember(sid);
-
-	if(result>0){
-		if(confirm.equals("yes")){
-			%>
-			<script>
-			window.alert('탈퇴되었습니다');
-			<%
-			session.invalidate();
-			%>
-			location.href='/semi_burger/index.jsp';
-			</script>
-			<%
-		} else{
-			%>
-			<script>
 			window.alert('고객센터로 문의 바랍니다');
 			location.href='/semi_burger/member/updateinfo.jsp';
-			</script>
-			<%
 		}
-	} else{
-		%>
-		<script>
-		window.alert('고객센터로 문의 바랍니다');
-		location.href='/semi_burger/member/updateinfo.jsp';
-		</script>
-		<%
-	}
-
-%>
-
-
-
+	</script>
 
 
 

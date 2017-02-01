@@ -9,11 +9,25 @@
 <%
 String name=tdto.getToping_name();
 String price=tdto.getToping_price();
-%>
-
-<% //가격 오류 걸러내기
+ 
 try{
-	Integer.parseInt(price);
+	Integer.parseInt(price);//가격 오류 걸러내기
+	
+	int result=tdao.addToping(name, price);
+	if(result>0){
+		%>
+		<script>
+			location.href='addToping_img.jsp';
+		</script>
+		<%
+	}else{
+		%>
+		<script>
+			window.alert('오류 발생. 다시 입력 부탁 드립니다.');
+			location.href='addToping.jsp';
+		</script>
+		<%
+	}
 }catch(Exception e){
 %>
 <script>
@@ -21,24 +35,6 @@ try{
 	location.href='addToping.jsp';
 </script>
 <%
-}
-%>
-
-<%
-int result=tdao.addToping(name, price);
-if(result>0){
-	%>
-	<script>
-		location.href='addToping_img.jsp';
-	</script>
-	<%
-}else{
-	%>
-	<script>
-		window.alert('오류 발생. 다시 입력 부탁 드립니다.');
-		location.href='addToping.jsp';
-	</script>
-	<%
 }
 %>
 
