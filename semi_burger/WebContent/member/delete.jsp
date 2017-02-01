@@ -35,11 +35,24 @@
 			location.href='/semi_burger/index.jsp';
 			</script>
 			<%
-
+		} else{
+			%>
+			<script>
+			window.alert('고객센터로 문의 바랍니다');
+			location.href='/semi_burger/member/updateinfo.jsp';
+			</script>
+			<%
 		}
+	} else{
+		%>
+		<script>
+		window.alert('고객센터로 문의 바랍니다');
+		location.href='/semi_burger/member/updateinfo.jsp';
+		</script>
+		<%
 	}
 
-	%>
+%>
 
 
 
