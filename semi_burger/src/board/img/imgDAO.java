@@ -24,7 +24,7 @@ public class imgDAO {
 			
 		try{
 			conn=yb.db.YB_DB.getConn();
-			String sql="SELECT * FROM  IMG_BOARD ORDER BY IMG_BOARD_NO DESC";
+			String sql="SELECT * FROM MY_KNOWHOW BY KNOWHOW_NO DESC";
 				ps=conn.prepareStatement(sql);
 				rs=ps.executeQuery();
 				
@@ -32,7 +32,7 @@ public class imgDAO {
 				
 				while(rs.next()){
 					imgDTO bdto = new imgDTO();
-					bdto.setImg_board_no(rs.getInt("Img_board_no"));
+					bdto.setKnowhow_no(rs.getInt("Img_board_no"));
 					bdto.setName(rs.getString("name"));
 					bdto.setSubject(rs.getString("subject"));
 					bdto.setContent(rs.getString("content"));
@@ -58,7 +58,7 @@ public class imgDAO {
 	public int getTotalCnt(){
 		try {
 			conn=yb.db.YB_DB.getConn();
-			String sql="SELECT COUNT(*) FROM IMG_BOARD";
+			String sql="SELECT COUNT(*) FROM MY_KNOWHOW";
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
 			rs.next();
@@ -83,7 +83,7 @@ public class imgDAO {
 	public int imgWrite(imgDTO dto){
 		try{
 			conn=yb.db.YB_DB.getConn();
-			String sql = "insert into IMG_BOARD values(img_seq.nextval,'admin',?,?,sysdate,0)";
+			String sql = "insert into MY_KNOWHOW values(my_knowhow_seq.nextval,'admin',?,?,sysdate,0)";
 
 			ps = conn.prepareStatement(sql);		
 			ps.setString(1, dto.getSubject());
@@ -109,14 +109,14 @@ public class imgDAO {
 		
 		try {
 			conn=yb.db.YB_DB.getConn();
-			String sql="SELECT * FROM  IMG_BOARD WHERE IMG_BOARD_NO=?";
+			String sql="SELECT * FROM MY_KNOWHOW WHERE IMG_BOARD_NO=?";
 			ps=conn.prepareStatement(sql);
 			ps.setInt(1, idx);
 			rs=ps.executeQuery();
 			imgDTO bdto = new imgDTO();
 			if(rs.next()){
 				
-				bdto.setImg_board_no(rs.getInt("Img_board_no"));
+				bdto.setKnowhow_no(rs.getInt("knowhow_no"));
 				bdto.setName(rs.getString("name"));
 				bdto.setSubject(rs.getString("subject"));
 				bdto.setContent(rs.getString("content"));
@@ -144,7 +144,7 @@ public class imgDAO {
 			try{
 				conn=yb.db.YB_DB.getConn();
 				
-				String sql = "delete from IMG_BOARD where IMG_BOARD_NO=?";
+				String sql = "delete from MY_KNOWHOW where KNOWHOW_NO=?";
 
 				ps = conn.prepareStatement(sql);		
 				ps.setInt(1, idx);			
@@ -166,12 +166,12 @@ public class imgDAO {
 		public int imgUpdate(imgDTO dto){
 			try{
 				conn=yb.db.YB_DB.getConn();
-				String sql = "UPDATE IMG_BOARD SET SUBJECT = ? , CONTENT = ? WHERE IMG_BOARD_NO = ?";
+				String sql = "UPDATE MY_KNOWHOW SET SUBJECT = ? , CONTENT = ? WHERE KNOWHOW_NO = ?";
 
 				ps = conn.prepareStatement(sql);		
 				ps.setString(1, dto.getSubject());
 				ps.setString(2, dto.getContent());
-				ps.setInt(3, dto.getImg_board_no());  
+				ps.setInt(3, dto.getKnowhow_no());  
 				int count = ps.executeUpdate();		
 				return count;		
 
@@ -189,7 +189,7 @@ public class imgDAO {
 	public void imgCount(int idx) {
 		try{
 			conn=yb.db.YB_DB.getConn();
-			String sql = "UPDATE IMG_BOARD SET BOARD_COUNT =  BOARD_COUNT + 1 WHERE IMG_BOARD_NO = ?";
+			String sql = "UPDATE MY_KNOWHOW SET BOARD_COUNT =  BOARD_COUNT + 1 WHEREKNOWHOW_NO = ?";
 
 			ps = conn.prepareStatement(sql);		
 			ps.setInt(1, idx);

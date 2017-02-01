@@ -13,7 +13,7 @@ if(dto==null){
 	%>
 	<script>
 	window.alert('잘못된 접근방식 또는 삭제된 게시글 입니다.');
-	location.href='img.jsp';
+	location.href='imgList.jsp';
 	</script>
 	<%
 	return;

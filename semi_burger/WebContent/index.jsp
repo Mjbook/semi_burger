@@ -28,9 +28,10 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
-	<img src="/semi_burger/img/indexmain.jpg" width="100%" height="400px" />
+
+	<img src="./img/main_img.jpg" width="100%" height="400px">
 	<div style="min-height: 400px; overflow: auto;">
-	<div style="border: 1px solid gold; float: left; width: 33%;">
+	<div style="border: 1px solid; float: left; width: 33%;">
 		<table >
 				<thead>
 					<tr>

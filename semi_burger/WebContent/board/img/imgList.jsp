@@ -144,7 +144,6 @@ table td {
 			</table>
    
    </div>
-   <a href="imgWrite.jsp">글쓰기</a>
 </div>
 
 	<%@include file="/footer.jsp" %>
