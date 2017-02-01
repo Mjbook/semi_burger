@@ -11,7 +11,8 @@ public class QADAO {
 	// ref 최대값 구하기 ( 답변 글 사용 )
 	public int getMaxRef() {
 		try {
-			conn=yb.db.YB_DB.getConn();String sql="SELECT MAX(REF) FROM QNA_BOARD";
+			conn=yb.db.YB_DB.getConn();
+			String sql="SELECT MAX(REF) FROM QNA_BOARD";
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
 			int max=0;
@@ -20,8 +21,7 @@ public class QADAO {
 			}
 			return max;
 		}catch(Exception e) {
-			e.printStackTrace();
-			return 0;
+			throw new RuntimeException(e);
 		}finally {
 			try {
 				if(rs!=null)rs.close();

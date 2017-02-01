@@ -10,14 +10,13 @@ request.setCharacterEncoding("UTF-8");
 %>
 <title>Insert title here</title>
 </head>
-
 <body>
 <section>
 	<article>
 	
 		<fieldset>
-			<legend align="center">버거 메뉴 등록하기</legend>
-			<form name="burger_up" action="burger_up_ok.jsp">
+			<legend align="center">이벤트 메뉴 등록하기</legend>
+			<form name="eventMenu_up" action="eventMenu_up_ok.jsp">
 			<table>
 				<tr>
 					<th>버거번호:</th>
@@ -38,6 +37,9 @@ request.setCharacterEncoding("UTF-8");
 				<tr>
 					<th>판매종료일자:</th>
 					<td>등록일로부터 14일</td>
+				</tr>
+				<tr>
+				<input type="file" name="item_img_src">
 				</tr>
 				<tr>
 					<td colspan="2"><input type="reset" value="다시작성">
