@@ -4,7 +4,7 @@
 <header>
 <script>
 	function game() {
-		window.open('/semi_burger/KHGAME/index.html','gameopoup','width=1000,height=700');
+		window.open('/semi_burger/burgerGame/index.html','gameopoup','width=1000,height=700');
 	}
 
 </script>
