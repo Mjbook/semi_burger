@@ -58,7 +58,7 @@ table td {
  <table border="1" bordercolor="blue" width="550" cellspacing="0">
 			<tr>
 				<th>번호</th>
-				<td><%=dto.getImg_board_no()%></td>
+				<td><%=dto.getKnowhow_no()%></td>
 				<th>작성 날짜</th>
 				<td><%=dto.getInsert_date() %></td>
 			</tr>
@@ -82,8 +82,8 @@ table td {
 			<tr>
 			<td>
 				<% if("관리자".equals(sname)) { %>
-				<a href="noticeUpdate.jsp?idx=<%=dto.getImg_board_no()%>&sub=<%=dto.getSubject()%>&con=<%=dto.getContent().replaceAll("\n", "<br>") %>">수정</a>
-				<a href="noticeDelete.jsp?idx=<%=dto.getImg_board_no()%>">삭제</a>
+				<a href="noticeUpdate.jsp?idx=<%=dto.getKnowhow_no()%>&sub=<%=dto.getSubject()%>&con=<%=dto.getContent().replaceAll("\n", "<br>") %>">수정</a>
+				<a href="noticeDelete.jsp?idx=<%=dto.getKnowhow_no()%>">삭제</a>
 				<%} %>
 				<a href="notice.jsp">목록</a>
 		    </td>

@@ -11,7 +11,6 @@
 <div id="headerback">
 <%
 	String sname = (String)session.getAttribute("sname");
-	
 	if(sname==null){
 		%><!-- 로그인 전 -->
 		<p><a href="/semi_burger/member/login.jsp">로그인</a> | <a href="/semi_burger/member/join.jsp"> 회원가입</a> </p> 						
