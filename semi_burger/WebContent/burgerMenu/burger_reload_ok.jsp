@@ -18,6 +18,12 @@ try{
 		
 	}else{
 		for(int i=0;i<files.length;i++){
+			if(files.length>1){
+				for(int j=0;j<files.length;j++){
+					File del=files[j];
+					del.delete();
+				}
+			}
 			files[i].getName();
 			savepath_end=files[i].getName();
 			%>
