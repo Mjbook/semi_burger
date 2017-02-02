@@ -1,42 +1,64 @@
+<%@page import="org.omg.PortableInterceptor.USER_EXCEPTION"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@page import="java.sql.*" %>
-<%@page import="java.util.*" %>
+	pageEncoding="UTF-8"%>
 <%@page import="com.oreilly.servlet.*"%>
-<%@ page import="yb.burger.*" %>
-<jsp:useBean id="burger_img" class="yb.burger.Burger_upload" scope="session"/>
-<jsp:useBean id="burgerdto" class="yb.burger.BurgerDTO"/>
-<jsp:setProperty property="*" name="burgerdto"/>
-<jsp:useBean id="burgerdao" class="yb.burger.BurgerDAO"/>
-
+<%@ page import="java.io.*" %>
+<jsp:useBean id="wf" class="yb.burger.Burger_upload" scope="session"/>
 <%
-request.setCharacterEncoding("UTF-8");
-
-String savepath=burger_img.USERS_HOME+"/"+burger_img.getUser();
+	String savepath=wf.USERS_HOME+"/"+wf.getCrpath();
+	
+	String savepath_end="";
 try{
-	MultipartRequest mr=new MultipartRequest(request,savepath,burger_img.getImgname());
+	MultipartRequest mr=new MultipartRequest(request,savepath,1024*1024*10,"utf-8");
+	
+	File f=new File(wf.USERS_HOME+"/"+wf.getCrpath());
+	File files[]=f.listFiles();
+	
+	if(files==null||files.length==0){
+		
+	}else{
+		for(int i=0;i<files.length;i++){
+			files[i].getName();
+			savepath_end=files[i].getName();
+			%>
+			<script>
+			window.alert('파일 업로드 성공!');
+			window.open("burger_reload_up.jsp?src=<%=savepath_end%>","burgerr_reload_up","top=300,left=400,width=350,height=250");
+			window.self.close();
+			</script>
+			<%
+			
+			String name=files[i].getName();
+			
+			if(files.length>1){
+				for(int j=0;j<files.length;j++){
+					File del=files[j];
+					del.delete();
+				}
+			}
+			
+			f=files[0];
+			name=f.getName();
+			int idx=name.lastIndexOf('.');
+			int length=name.length();
+			
+			f.renameTo(new File(wf.USERS_HOME+"/"+name));
+			
+		}
+	}
+	
 }catch(Exception e){
+	%>
+	<script>
+		window.alert('업로드 실패!');
+		window.self.close();
+	</script>
+	
+	<%
 }
-
-String item_num_s=request.getParameter("item_num");
-
-int item_num=(int)Integer.parseInt(item_num_s);
-
-String item_name=request.getParameter("item_name");
-
-String item_pay=request.getParameter("item_pay");
-
-String item_count_s=request.getParameter("item_count");
-int item_count=Integer.parseInt(item_count_s);
-
-String item_img_src=request.getParameter("item_img_src");
-int result=burgerdao.burgerReLoad(item_num, item_name, item_pay, item_count, item_img_src);
-
-String msg=result>0?"수정되었습니다.":"수정에 실패하였습니다.";
+	
 %>
-<script>
-window.alert('<%=msg%>');
-window.close();
-location.href='burgerMenu.jsp';
-opener.location.reload();
-</script>
+
+
+
+

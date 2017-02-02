@@ -15,32 +15,10 @@ request.setCharacterEncoding("UTF-8");
 	
 		<fieldset>
 			<legend align="center">버거 메뉴 수정하기</legend>
-			<form name="burger_up" action="burger_reload_ok.jsp">
+			<form name="burger_reload" action="burger_reload_ok.jsp" method="post" enctype="multipart/form-data">
 			<table>
-				<tr>
-					<th>버거번호:</th>
-					<td><input type="text" name="item_num"></td>
-				</tr>
-				<tr>
-					<th>버거이름:</th>
-					<td><input type="text" name="item_name"></td>
-				</tr>
-				<tr>
-					<th>가격:</th>
-					<td><input type="text" name="item_pay"></td>
-				</tr>
-				<tr>
-					<th>수량:</th>
-					<td><input type="text" name="item_count"></td>
-				</tr>
-				<tr>
-				<input type="file" name="item_img_src">
-				</tr>
-				<tr>
-					<td colspan="2"><input type="reset" value="다시작성">
-					<input type="submit" value="메뉴수정">
-					</td>
-				</tr>
+			파일명 : <input type="file" name="reLoad">
+			<input type="submit" value="올리기">
 			</table>
 			</form>
 		</fieldset>
