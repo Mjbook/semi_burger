@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.*" %>
-<%@ page import="java.sql.*" %>
 <%@page import="com.oreilly.servlet.*"%>
 <jsp:useBean id="burger_img" class="yb.burger.Burger_upload" scope="session"/>
 <jsp:useBean id="bdao" class="yb.burger.BurgerDAO"/>
 <%
 String savepath=burger_img.USERS_HOME;
+burger_img.userFolderExists();
 try{
 	MultipartRequest mr=new MultipartRequest(request,savepath,1024*1024*10,"utf-8");
 	
@@ -26,9 +25,8 @@ try{
 	
 	<%
 }
-
-String item_num_s = request.getParameter("item_num");
-int item_num = Integer.parseInt(item_num_s);
+String item_num_s=request.getParameter("item_num");
+int item_num=Integer.parseInt(item_num_s);
 String item_name = request.getParameter("item_name");
 String item_pay = request.getParameter("item_pay");
 String item_count_s = request.getParameter("item_count");

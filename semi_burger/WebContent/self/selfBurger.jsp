@@ -9,7 +9,7 @@
 <style>
 .d{
 	float: left;
-	width:500px;
+	width:300px;
 	height:500px;
 }
 </style>
@@ -18,7 +18,7 @@ function addTop(){
 	window.open('addToping.jsp','toping','width=400,height=250,left=600,top=300');
 }
 function delTop(){
-	window.open('delToping.jsp','toping','width=400,height=250,left=600,top=300');
+	window.open('delToping.jsp','toping','width=400,height=100,left=600,top=300');
 }
 </script>
 </head>
@@ -31,8 +31,7 @@ function delTop(){
 	<div class="d">그림</div>
 </article>
 <article>
-	<div class="d">
-	<table border="1">
+	<table border="1" width="480px">
 		<thead>
 		<tr>
 			<th>토핑</th>
@@ -43,6 +42,9 @@ function delTop(){
 		</thead>
 		
 		<tbody>
+		<%
+		
+		%>
 		<tr>
 			<td>1</td>
 			<td>2</td>
@@ -51,7 +53,6 @@ function delTop(){
 		</tr>
 		</tbody>
 	</table>
-	</div>
 </article>
 <div style="clear:both;"></div>
 </section>

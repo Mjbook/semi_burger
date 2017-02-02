@@ -70,8 +70,7 @@ public class TopingDAO {
 				name=maxidx+name.substring(idx, length);
 				f.renameTo(new File(TOPING_IMG+"/"+name));
 				
-				System.out.println(f.getPath());
-				return f.getPath();
+				return TOPING_IMG+"/"+name;
 				
 			}else{
 				return null;
@@ -92,12 +91,17 @@ public class TopingDAO {
 	public int addDir(){
 		try {
 			String dir=findDir();
-			conn=yb.db.YB_DB.getConn();
+			
 			String sql="update toping set toping_img=? where toping_key=(select max(toping_key) from toping)";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, dir);
 			
-			return ps.executeUpdate();
+			int result=ps.executeUpdate();
+			if(ps!=null)ps.close();
+			
+			delTrash();
+			
+			return result;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return -1;
@@ -110,9 +114,8 @@ public class TopingDAO {
 	}
 	
 	/**토핑 오류 주소 db 삭제 메서드*/
-	public void delTrash(){
+	private void delTrash(){
 		try {
-			conn=yb.db.YB_DB.getConn();
 			
 			String sql="delete toping where toping_img='0'";
 			ps=conn.prepareStatement(sql);

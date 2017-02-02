@@ -14,7 +14,6 @@ try{
 	tdto.setToping_price("");
 	
 	int result=tdao.addDir();
-	tdao.delTrash();
 	
 	if(result>0){
 		%>
