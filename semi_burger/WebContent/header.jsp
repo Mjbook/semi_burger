@@ -8,18 +8,19 @@ div, ul, li {
 	padding: 0;
 }
 
-nav ul{
-float:right;
+nav ul {
+	float: right;
 }
 
 #newMenu {
 	float: right;
-	margin: 0px 5px 3px 5px;
-	padding: 0 0 3px 0;
+	padding: 15px 0 8px 0;
 	box-shadow: 0px 0px 15px rgba(0, 0, 0, .3);
 	border-radius: 3px;
-	width:1000px;
+	width: 1000px;
+	height: 30px;
 }
+
 
 #newMenu ul li {
 	float: left;
@@ -27,17 +28,25 @@ float:right;
 }
 
 #newMenu a {
-	height: 20px;
+	height: 30px;
 	color: #990033;
 	font-family: 'Malgun Gothic';
-	font-size: 15px;
-	padding: 0 10px 0 10px;
+	font-size: 16px;
+	padding: 10px 10px 0 10px;
 	text-decoration: none;
+
+}
+#bi {
+
+	text-align: center;
+	font-size:12px;
+
 }
 
 #newMenu a:hover {
 	color: #cc3300;
 	border-bottom: 3px solid;
+	text-aling: center;
 }
 
 #newMenu ul ul {
@@ -48,17 +57,13 @@ float:right;
 
 #newMenu ul li:hover ul {
 	display: block;
-}
-#hie li ui {
-display: none;
-float: none;
-list-style:none;
+	width: 18%;
 }
 
 #newMenu ul ul li {
 	float: none;
+	font-size:12px;
 }
-
 </style>
 <script>
 	function game() {
@@ -82,21 +87,21 @@ list-style:none;
 	<nav>
 		<div id="newMenu">
 		<ul>
-			<li class ="menu"><a href="/semi_burger/index.jsp">HOME</a></li>
+			<li class ="menu"><a href="/semi_burger/index.jsp">HOME &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
 
-			<li><a href="#">소개 </a>
+			<li><a href="#">소개  &nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 				<ul>
-					<li><a href="/semi_burger/story.jsp">YONG STORY</a></li>
+					<li><a href="/semi_burger/story.jsp" >YONG STORY</a></li>
 					<li><a href="#">CEO 인사말</a></li>
 					<li><a href="#">찾아오시는길</a></li>
 				</ul>
 				</li>
 
-			<li><a href="#">메뉴</a>
+			<li><a href="#">메뉴 &nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 				<ul>
-					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp">햄버거</a></li>
+					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp" >햄버거</a></li>
 					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp#side">사이드</a></li>
 					<li><a href="/semi_burger/self/selfBurger.jsp">내맘대로 햄버거</a></li>
 					<li><a href="/semi_burger/burgerMenu/eventMenu.jsp">이벤트 메뉴</a></li>
@@ -104,14 +109,14 @@ list-style:none;
 				</ul>
 				</li>
 				
-					<li><a href="#">My burger</a>
+					<li><a href="#">My burger &nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 				<ul>
 					<li><a href="/semi_burger/order/orderCheck.jsp">주문 조회</a></li>
 				</ul>
 				</li>
 				
-					<li><a href="#">커뮤니티</a>
+					<li><a href="#">커뮤니티 &nbsp;&nbsp;&nbsp;&nbsp; </a>
 
 				<ul>
 					<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
@@ -122,6 +127,7 @@ list-style:none;
 				</li>
 
 		</ul>
+		</div>
 				<%
 					if (sname == null) {
 				%>
@@ -146,6 +152,6 @@ list-style:none;
 							</ul></li>
 						<% }
 						%>
-			</div>
+			
 			</nav>
 </header>
