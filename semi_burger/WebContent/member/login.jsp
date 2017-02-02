@@ -16,7 +16,9 @@ href="/semi_burger/css/mainLayout.css">
 	td{
 		font-size: 14px;
 	}
-
+	input::-webkit-input-placeholder {
+		color:pink;
+	}
 </style>
 <script>
 	function idfind(){
@@ -52,11 +54,11 @@ href="/semi_burger/css/mainLayout.css">
 		  	<td> &nbsp; </td>
 		  </tr>
 		  <tr>	
-			<td> <input type="text" name="id" placeholder="아이디" value="<%= idsave%>"> </td>
+			<td class="input"> <input type="text" name="id" placeholder="아이디" value="<%= idsave%>"> </td>
 			<td rowspan="2"> <input type="submit" value="로그인" style="height:48px;"> </td>
 		  </tr>
 		  <tr>
-		  	<td> <input type="password" name="pwd" placeholder="비밀번호"> </td>
+		  	<td class="input"> <input type="password" name="pwd" placeholder="비밀번호"> </td>
 		  	<td> </td>
 		  </tr>	
 		  <tr>
