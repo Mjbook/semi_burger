@@ -9,18 +9,31 @@
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
-  #container {min-height: 80%; maring-top: -100px; }
-   * html #container {height: 100%;}
-   
-  #container #content {padding: 100px 0 ; }
-  
-  #bmenu{
-	position: fixed;
-	top:200px;
-	left:100px;
-	width:250px;
-	text-align:center;
+#container {
+	min-height: 80%;
+	maring-top: -100px;
 }
+
+* html #container {
+	height: 100%;
+}
+
+#container #content {
+	padding: 100px 0;
+}
+
+
+
+<!--
+#bmenu {
+	position: fixed;
+	top: 200px;
+	left: 100px;
+	width: 250px;
+	text-align: center;
+}
+
+-->
 table {
 	width: 100%;
 	margin: 0px auto;
@@ -35,9 +48,8 @@ table th {
 
 table td {
 	text-align: center;
-}  
-  
- </style>
+}
+</style>
 <%
 String sid=(String)session.getAttribute("sid");
 	int totalCnt = bdao.getTotalCnt();//총 게시물 수
@@ -63,17 +75,16 @@ String sid=(String)session.getAttribute("sid");
 
 	<%@include file="/header.jsp" %>
 	
-	<div id="bmenu">
-			<h2>커뮤니티</h2>
+	<div id="sideMenu">
+			<h2 align="center">커뮤니티</h2>
 			<ul>
-				<li><a href="#"><img src="/semi_burger/img/notice.jpg" /></a></li>
-				<li><a href="#">창업문의</a></li>
-				<li><a href="#">고객의 소리</a></li>
+				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
+				<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
 				<li><a href="#">내가 만든 햄버거</a></li>
-				<li><a href="#">이벤트</a></li>
+				<li><a href="javascript:game()">게임하기</a></li>
 			</ul>
 	</div>
-	
+
 	
 <h2>공지 사항</h2>
 <div id="container">

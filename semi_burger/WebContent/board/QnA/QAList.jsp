@@ -60,7 +60,17 @@ if(cp%pageSize==0) {
 <%@include file="/header.jsp" %>
 
 			<h2>QNA</h2>
-<div id="container">
+	<div id="sideMenu">
+		<h2 align="center">커뮤니티</h2>
+		<ul>
+			<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
+			<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
+			<li><a href="#">내가 만든 햄버거</a></li>
+			<li><a href="javascript:game()">게임하기</a></li>
+		</ul>
+	</div>
+
+	<div id="container">
    <div id="content">
 			<table>
 				<thead>

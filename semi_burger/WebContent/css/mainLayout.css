@@ -66,3 +66,66 @@ footer {
 }
 
 
+#sideMenu {
+	position: fixed;
+	top: 200px;
+	left: 100px;
+	width: 250px;
+	border: 1px;
+}
+
+#sideMenu ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	max-width: 250px;
+	width: 100%;
+}
+
+#sideMenu ol {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	max-width: 150px;
+	width: 100%
+}
+
+#sideMenu ul li {
+	padding: 5px 0px 5px 5px;
+	margin-bottom: 3px;
+	border-bottom: 1px solid #ed3b50;
+	font-size: 15px;
+}
+
+#sideMenu ol li {
+	padding: 5px 0px 5px 5px;
+	margin-bottom: 5px;
+	border: 1px solid #ff6666;
+	font-size: 15px;
+}
+
+#
+#sideMenu ul li:list-child {
+	border-bottom: 0px;
+}
+
+#sideMenu ol li:list-child {
+	border-bottom: 0px;
+}
+
+#sideMenu ul li:before {
+	content: ">";
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0px 5px 6px 0px;
+}
+
+#sideMenu ol li:before {
+	color: white;
+	content: ">";
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0px 5px 6px 0px;
+}
+
+
