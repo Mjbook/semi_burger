@@ -8,7 +8,11 @@
 <link rel="stylesheet" type="text/css"
 href="/semi_burger/css/mainLayout.css">
 <style>
-	 section div{
+	section li{
+		list-style-type: none;
+		margin: 0px auto;
+	}
+	section div{
 		text-align: center;
 		font-size: 25px;
 	}
@@ -58,8 +62,8 @@ href="/semi_burger/css/mainLayout.css">
 	<article>
 		<table>	
 			<tr>
-				<td> &nbsp;<a onclick="location='/semi_burger/story.jsp'"><b>YONG BURGER</b></a>&nbsp;</td>
-				<th> &nbsp;<a onclick="location='/semi_burger/ceo.jsp'">CEO 인사말</a>&nbsp;</th>
+				<td> &nbsp;<a onclick="location='/semi_burger/ceo.jsp'"><b>CEO 인사말</b></a>&nbsp;</td>
+				<th> &nbsp;<a onclick="location='/semi_burger/story.jsp'">YONG BURGER</a>&nbsp;</th>
 				<td> &nbsp;<a onclick="location='/semi_burger/road.jsp'"><b>찾아오시는 길</b></a>&nbsp;</td>
 			</tr>
 		</table>
@@ -105,6 +109,8 @@ href="/semi_burger/css/mainLayout.css">
 		</ul>
 	</article>
 </section>
+<br>
+
 <%@ include file="/footer.jsp" %>
 </body>
 </html>

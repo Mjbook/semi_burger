@@ -92,8 +92,8 @@ nav ul {
 			<li><a href="#">소개  &nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 				<ul>
-					<li><a href="/semi_burger/story.jsp" >YONG STORY</a></li>
 					<li><a href="/semi_burger/ceo.jsp">CEO 인사말</a></li>
+					<li><a href="/semi_burger/story.jsp">YONG BURGER</a></li>					
 					<li><a href="/semi_burger/road.jsp">찾아오시는길</a></li>
 				</ul>
 				</li>
