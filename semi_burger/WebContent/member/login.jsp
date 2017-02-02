@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Yong Burger</title>
 <link rel="stylesheet" type="text/css"
 href="/semi_burger/css/mainLayout.css">
 <style>
