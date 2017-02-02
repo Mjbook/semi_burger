@@ -174,7 +174,48 @@ public class TopingDAO {
 			} catch (Exception e2) {}
 		}
 	}
+	/**토핑 옆 사진 저장,이름 바꾸기 메서드*/
+	public void saveTopImg(){
+		try {
+
+			conn=yb.db.YB_DB.getConn();
+			
+			String sql="select max(toping_key) from toping";
+			ps=conn.prepareStatement(sql);
+			rs=ps.executeQuery();
+			
+			int maxidx=0;
+			if(rs.next()){
+				
+				maxidx=rs.getInt("max(toping_key)");
+				File f=new File(TOPING_IMG+"/temp");
+				File temp[]=f.listFiles();
+				
+				if(temp.length>1){
+					for(int i=0;i<temp.length;i++){
+						File del=temp[i];
+						del.delete();
+					}
+				}
 	
+				f=temp[0];
+				String name=f.getName();
+				int idx=name.lastIndexOf('.');
+				int length=name.length();
+				name="ts"+maxidx+name.substring(idx, length);
+				f.renameTo(new File(TOPING_IMG+"/"+name));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e2) {}
+		}
+	}
 	/**토핑메뉴 가져오는 메서드*/
 	public ArrayList<TopingDTO> getInfo(){
 		try {
@@ -207,22 +248,22 @@ public class TopingDAO {
 		}
 	}
 	
-	/**toping_key로 토핑 검색*/
-	public String getToping(int toping_key){
+	/**toping_key로 토핑 테이블 column가져오기 메서드*/
+	public String getToping(String column,int toping_key){
 		try {
 			conn=yb.db.YB_DB.getConn();
-			String sql="select toping_img from toping where toping_key=?";
+			String sql="select "+column+" from toping where toping_key=?";
 			ps=conn.prepareStatement(sql);
 			ps.setInt(1, toping_key);
 	
 			rs=ps.executeQuery();
 			
-			String toping_img="";
+			String toping="";
 			if(rs.next()){
-				toping_img=rs.getString("toping_img");
+				toping=rs.getString(column);
 			}
 			
-			return toping_img;
+			return toping;
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -235,4 +276,5 @@ public class TopingDAO {
 			} catch (Exception e2) {}
 		}
 	}
+	
 }

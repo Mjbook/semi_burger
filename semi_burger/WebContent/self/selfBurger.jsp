@@ -39,7 +39,17 @@ if(count==null||count.equals("")){
 	count_i=Integer.parseInt(count);	
 }
 
+//토핑 추가
 if(!(toping==null||toping.equals(""))){
+	if(count_i>25){
+		%>
+		<script>
+			window.alert('토핑을 더 이상 추가할 수 없습니다.');
+			location.href='selfBurger.jsp';
+		</script>
+		<%
+		return;
+	}
 	session.setAttribute("t"+count, toping);
 	count_i=Integer.parseInt(count)+1;
 	session.setAttribute("toping_count", Integer.toString(count_i));
@@ -55,10 +65,11 @@ if(!(onetoping==null||onetoping.equals(""))){
 }
 
 if(!(alltoping==null||alltoping.equals(""))){
-	for(int i=count_i-1;i>=0;i--){
+	for(int i=0;i<count_i;i++){
 		session.removeAttribute("t"+i);	
 	}
-	session.setAttribute("toping_count", "0");
+	session.removeAttribute("toping_count");
+	count_i=0;
 }
 
 %>
@@ -69,31 +80,45 @@ if(!(alltoping==null||alltoping.equals(""))){
 String sid=(String)session.getAttribute("sid");
 if(sid!=null&&sid.equals("admin")){
 %>
-<fieldset>
+<div style="width:300px;"><fieldset>
 <legend>관리자 메뉴</legend>
 <p><a href="javascript:addTop()">토핑 추가</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:delTop()">토핑 제거</a></p>
-</fieldset>
+</fieldset></div>
 <%}%>
-<p><a href="selfBurger.jsp?oto=1">토핑 빼기</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="selfBurger.jsp?to=1">토핑 전부 빼기</a></p>
+<form name="selfBurger" action="selfBurger_ok.jsp">
+<p>
+	<a href="selfBurger.jsp?oto=1">제일 위의 토핑 빼기</a>
+	&nbsp;&nbsp;|&nbsp;&nbsp;
+	<a href="selfBurger.jsp?to=1">토핑 전부 빼기</a>
+	<br>수량:<input type="text" name="item_count"><input type="submit" value="주문하기">
+</p>
+</form>
 <section>
 <article>
 	<div class="d">
-	<table>
 	<%
-	
+	int price=0;
+	for(int i=0;i<count_i;i++){
+		String temp_s=(String)session.getAttribute("t"+i);
+		int temp=Integer.parseInt(temp_s);
+		String tp_price=tdao.getToping("toping_price", temp);
+		price+=Integer.parseInt(tp_price);
+	}
+	%>
+	<div align="center">가격:<%=price %>원</div>
+	<%
 	for(int i=count_i-1;i>=0;i--){
 		
 		String temp_s=(String)session.getAttribute("t"+i);
 		int temp=Integer.parseInt(temp_s);
-		String tp_img=tdao.getToping(temp);
+		String tp_img=tdao.getToping("toping_img",temp);
 		%>
-		<tr>
-		<td><img src="/semi_burger/self/toping_img/<%=tp_img%>"></td>
-		</tr>
+		<div>
+		<img src="/semi_burger/self/toping_img/ts<%=tp_img%>" width="100px" height="20px">
+		</div>
 		<%
 	}
 	%>
-	</table>
 	</div>
 </article>
 <article>
@@ -123,14 +148,11 @@ if(sid!=null&&sid.equals("admin")){
 			<td><%=tdto.getToping_price() %>원</td>
 			<td><a href="selfBurger.jsp?at=<%=tdto.getToping_key()%>">추가</a></td>
 		</tr>
-			<%
-			}
-			%>
 		<%
+			}
 		}
 		%>
-	
-			</tbody>
+		</tbody>
 	</table>
 </article>
 <div style="clear:both;"></div>

@@ -18,9 +18,7 @@ try{
 	if(result>0){
 		%>
 		<script>
-		window.alert('업로드 성공!');
-		window.opener.location.reload();
-		window.self.close();
+		location.href="addTopingSide_img.jsp"
 		</script>
 		<%
 	}

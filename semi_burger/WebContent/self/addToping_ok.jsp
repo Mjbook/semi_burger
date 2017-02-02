@@ -12,7 +12,7 @@ String price=tdto.getToping_price();
  
 try{
 	Integer.parseInt(price);//가격 오류 걸러내기
-	
+
 	int result=tdao.addToping(name, price);
 	if(result>0){
 		%>
