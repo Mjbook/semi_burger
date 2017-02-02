@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@page import="com.oreilly.servlet.*"%>
+    <%@ page import="java.io.*" %>
+<jsp:useBean id="wf" class="yb.burger.Burger_upload" scope="session"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +10,8 @@
 
 <%
 request.setCharacterEncoding("UTF-8");
-String item_num = request.getParameter("item_num");
-String item_name = request.getParameter("item_name");
-String item_pay = request.getParameter("item_pay");
-String item_count = request.getParameter("item_count");
+String item_img_src = request.getParameter("src");
+
 %>
 <title>Insert title here</title>
 </head>
@@ -21,18 +22,38 @@ String item_count = request.getParameter("item_count");
 	
 		<fieldset>
 			<legend align="center">버거 메뉴 등록하기</legend>
-			<form name="burger_up_img" action="burger_up_img_ok.jsp" method="post" enctype="multipart/form-data">
+			<form name="burger_up_img" action="burger_up_img_ok.jsp">
 			<table>
 				<tr>
-				<input type="hidden" name="item_num" value="<%=item_num%>">
-				<input type="hidden" name="item_name" value="<%=item_name%>">
-				<input type="hidden" name="item_pay" value="<%=item_pay%>">
-				<input type="hidden" name="item_count" value="<%=item_count%>">
-				<input type="file" name="item_img_src">
+					<th>버거 번호:</th>
+					<td><input type="text" name="item_num"></td>
 				</tr>
 				<tr>
-					<td colspan="2">
-					<input type="submit" value="이미지등록">
+					<th>버거 이름:</th>
+					<td><input type="text" name="item_name"></td>
+				</tr>
+				<tr>
+					<th>가격:</th>
+					<td><input type="text" name="item_pay"></td>
+				</tr>
+				<tr>
+					<th>수량:</th>
+					<td><input type="text" name="item_count"></td>
+				</tr>
+				<tr>
+					<th>판매종료일자:</th>
+					<td>등록일로부터 14일</td>
+				</tr>
+				<tr>
+				<%
+				
+				%>
+					<input type="hidden" name="item_img_src" value="<%=item_img_src%>">
+				<%
+				
+				%>	
+					<td colspan="2"><input type="reset" value="다시작성">
+					<input type="submit" value="메뉴등록">
 					</td>
 				</tr>
 			</table>

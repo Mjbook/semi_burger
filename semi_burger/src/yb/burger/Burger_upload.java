@@ -48,10 +48,17 @@ public class Burger_upload {
 		if(!f.exists()){//파일이 있냐?
 			f.mkdir();//없으면 폴더를 만들어라
 		}		
-		imgname=1024*1024*10*100;
+		
 	}
 
-	
+	/**사용자가 가지고 있는 파일 및 폴더 확인*/
+	public File[] getUsedList(){
+		File f=new File(USERS_HOME+"/"+user);
+		
+		File files[]=f.listFiles();
+		
+		return files;
+		}
 }
 	
 	

@@ -12,6 +12,9 @@
 <jsp:setProperty property="*" name="sidedto"/>
 <jsp:useBean id="sidedao" class="yb.burger.SideDAO"/>
 
+<%@ page import="java.io.*" %>
+<jsp:useBean id="wf" class="yb.burger.Burger_upload" scope="session"/>
+
 <%
 request.setCharacterEncoding("utf-8");
 ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
@@ -158,6 +161,15 @@ for(int i=0;i<arr_bdto.size();i++){
 			<table border="1">
 				<tr>
 				<%
+				String sid=(String)session.getAttribute("sid");
+				wf.setUser(sid);
+				wf.userFolderExists();
+				String cr=request.getParameter("cr");
+				if(cr==null||cr.equals("")){
+					cr=sid;
+				}
+				wf.setCrpath(cr);
+			
 				for(int i=0;i<al.size();i++){
 					if(i%2==0&&i!=al.size()&&i!=0){
 					%>
@@ -165,7 +177,9 @@ for(int i=0;i<arr_bdto.size();i++){
 					<%
 					}
 					%>
-					<th><img src="../burger_img/<%=al.get(i).getItem_img_src()%>" width="300" height="260"></th>
+					<th>
+					<img src="/semi_burger/burger_img/<%=al.get(i).getItem_img_src()%>" width="300" height="260">
+					</th>
 					<td align="center" width="200" height="260">
 					<%=al.get(i).getItem_name()%>
 					<br><br><br>
@@ -176,7 +190,6 @@ for(int i=0;i<arr_bdto.size();i++){
 					<%
 						for(int j=0;j<=100;j++){
 							%>
-
 							<option value="<%=j%>"><%=j %></option>
 							<%
 						}
@@ -189,7 +202,7 @@ for(int i=0;i<arr_bdto.size();i++){
 				}
 				%>
 				<%
-				String sid=(String)session.getAttribute("sid");
+				
 				if(sid!=null){
 					if(sid.equals("admin")){
 						%>
