@@ -62,9 +62,9 @@ href="/semi_burger/css/mainLayout.css">
 	<article>
 		<table>	
 			<tr>
-				<td> &nbsp;<a onclick="location='/semi_burger/ceo.jsp'"><b>CEO 인사말</b></a>&nbsp;</td>
-				<th> &nbsp;<a onclick="location='/semi_burger/story.jsp'">YONG BURGER</a>&nbsp;</th>
-				<td> &nbsp;<a onclick="location='/semi_burger/road.jsp'"><b>찾아오시는 길</b></a>&nbsp;</td>
+				<td> &nbsp;<a onclick="location='/semi_burger/introduce/ceo.jsp'"><b>CEO 인사말</b></a>&nbsp;</td>
+				<th> &nbsp;<a onclick="location='/semi_burger/introduce/story.jsp'">YONG BURGER</a>&nbsp;</th>
+				<td> &nbsp;<a onclick="location='/semi_burger/introduce/road.jsp'"><b>찾아오시는 길</b></a>&nbsp;</td>
 			</tr>
 		</table>
 		<br>
@@ -89,24 +89,17 @@ href="/semi_burger/css/mainLayout.css">
 			<li><span class="head">YONG BURGER는</span> 신선한 재료만 사용합니다.<br>
 				주 재료인 쇠고기, 양상추, 토마토, 양파, 버거번 등 모든 재료는 당일 배송된 신선한 상태의 원재료만 사용하였습니다.
 			</li>
-			<br>
-			
+			<br>			
 			<li><span class="head">YONG BURGER는</span> 재료비를 아끼지 않습니다.<br>
 				버거 패티에 가장 좋은 쇠고기 부위를 사용하고, 모든 야채도 철저한 검수를 통해 질 좋은 상품을 구입하였으며,<br>
 				치즈와 소스재료 모두 여러 구매경로를 통해 퀄리티는 높이고 가격은 낮췄습니다.
 			</li>
-			<br>
-			
+			<br>			
 			<li><span class="head">YONG BURGER는</span> 맛과 함께 건강도 생각합니다.<br>
 				버거는 안좋은 음식이라는 편견을 깨기 위해, 패티에 첨가물이나 필러를 넣지 않았고, 모든 메뉴에 인공 조미료 사용을 배제하였으며,<br>
 				깨끗한 올리브오일과 카놀라유 등 식물성 기름만 사용하여 건강까지 생각하였습니다.
 			</li> 
 		</ol>		
-		<ul>
-			<li> 한번 먹어보면 푹 빠지는 맛있는<br>
-				수제 햄버거 YONG BURGER를 만나보세요!
-			</li>
-		</ul>
 	</article>
 </section>
 <br>
