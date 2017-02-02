@@ -15,6 +15,14 @@ public class TopingDTO {
 		this.toping_price=toping_price;
 	}
 
+	public TopingDTO(int toping_key, String toping_img, String toping_name, String toping_price) {
+		super();
+		this.toping_key = toping_key;
+		this.toping_img = toping_img;
+		this.toping_name = toping_name;
+		this.toping_price = toping_price;
+	}
+
 	public int getToping_key() {
 		return toping_key;
 	}

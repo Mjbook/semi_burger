@@ -2,11 +2,13 @@ package yb.toping;
 
 import java.sql.*;
 import java.io.*;
+import java.util.*;
 
 public class TopingDAO {
 	
 	//img 저장할 경로
 	public static final String TOPING_IMG="E:/semi_burger/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/semi_burger/self/toping_img";
+	//"C:/Users/user1/git/semi_burger/semi_burger/WebContent/self/toping_img";
 	
 	private Connection conn;
 	private PreparedStatement ps;
@@ -70,7 +72,7 @@ public class TopingDAO {
 				name=maxidx+name.substring(idx, length);
 				f.renameTo(new File(TOPING_IMG+"/"+name));
 				
-				return TOPING_IMG+"/"+name;
+				return name;
 				
 			}else{
 				return null;
@@ -173,4 +175,64 @@ public class TopingDAO {
 		}
 	}
 	
+	/**토핑메뉴 가져오는 메서드*/
+	public ArrayList<TopingDTO> getInfo(){
+		try {
+			conn=yb.db.YB_DB.getConn();
+			String sql="select * from toping order by toping_key";
+			ps=conn.prepareStatement(sql);
+			rs=ps.executeQuery();
+			ArrayList<TopingDTO> arr=new ArrayList<TopingDTO>();
+			if(rs.next()){
+				do{
+					int key=rs.getInt("toping_key");
+					String dir=rs.getString("toping_img");
+					String name=rs.getString("toping_name");
+					String price=rs.getString("toping_price");
+					TopingDTO tdto=new TopingDTO(key,dir,name,price);
+					arr.add(tdto);
+				}while(rs.next());
+			}
+			return arr;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally {
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e2) {}
+		}
+	}
+	
+	/**toping_key로 토핑 검색*/
+	public String getToping(int toping_key){
+		try {
+			conn=yb.db.YB_DB.getConn();
+			String sql="select toping_img from toping where toping_key=?";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, toping_key);
+	
+			rs=ps.executeQuery();
+			
+			String toping_img="";
+			if(rs.next()){
+				toping_img=rs.getString("toping_img");
+			}
+			
+			return toping_img;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}finally {
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e2) {}
+		}
+	}
 }
