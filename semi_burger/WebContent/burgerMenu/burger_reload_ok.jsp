@@ -19,7 +19,7 @@ try{
 }
 
 String item_num_s=request.getParameter("item_num");
-System.out.println("!23");
+
 int item_num=(int)Integer.parseInt(item_num_s);
 
 String item_name=request.getParameter("item_name");
