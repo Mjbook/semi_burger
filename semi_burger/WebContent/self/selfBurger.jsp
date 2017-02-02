@@ -90,7 +90,7 @@ if(sid!=null&&sid.equals("admin")){
 	<a href="selfBurger.jsp?oto=1">제일 위의 토핑 빼기</a>
 	&nbsp;&nbsp;|&nbsp;&nbsp;
 	<a href="selfBurger.jsp?to=1">토핑 전부 빼기</a>
-	<br>수량:<input type="text" name="item_count"><input type="submit" value="주문하기">
+	<br>수량:<input type="text" name="item_count"><input type="submit" value="담기">
 </p>
 </form>
 <section>
