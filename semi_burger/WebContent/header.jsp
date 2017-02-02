@@ -41,7 +41,6 @@
 			</ul></li>
 			<li>My Burger<ul class="menu">
 				<li><a href="/semi_burger/order/orderCheck.jsp">주문 조회</a></li>
-				<li>myB</li>
 			</ul></li>	
 				<li>커뮤니티<ul class="menu">
 				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
@@ -73,5 +72,53 @@
 			%>			
 		</ol>
 	</nav>
+	</div>
+
+
+
+	<div id="newMenu">
+		<ul>
+			<li><a href="#">HOME</a></li>
+
+			<li><a href="#">소개 </a>
+
+				<ul>
+					<li><a href="#">YONG STORY</a></li>
+					<li><a href="#">CEO 인사말</a></li>
+					<li><a href="#">찾아오시는길</a></li>
+				</ul>
+				</li>
+
+			<li><a href="#">메뉴</a>
+
+				<ul>
+					<li><a href="#">햄버거</a></li>
+					<li><a href="#">사이드</a></li>
+					<li><a href="#">내맘대로 햄버거</a></li>
+					<li><a href="#">이벤트 메뉴</a></li>
+					<li><a href="#">재료 원산지 표기</a></li>
+				</ul>
+				</li>
+				
+					<li><a href="#">My burger</a>
+
+				<ul>
+					<li><a href="#">주문 조회</a></li>
+				</ul>
+				</li>
+				
+					<li><a href="#">커뮤니티</a>
+
+				<ul>
+					<li><a href="#">공지사항</a></li>
+					<li><a href="#">창업문의</a></li>
+					<li><a href="#">내맘대로 햄버거 자랑</a></li>
+					<li><a href="#">게임하기</a></li>
+				</ul>
+				</li>
+
+		</ul>
+	</div>
+
 	</div>
 </header>
