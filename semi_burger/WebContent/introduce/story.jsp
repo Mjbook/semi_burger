@@ -52,7 +52,7 @@ href="/semi_burger/css/mainLayout.css">
 		<br>
 		<div>
 			<b>Yong Burger 소개</b><br>
-			<span class="subtitle"> HOME > Yong Burger 소개&nbsp;&nbsp;&nbsp;</span>
+			<span class="subtitle"> HOME > Yong Burger 소개 > YONG BURGER&nbsp;&nbsp;&nbsp;</span>
 			<br>
 		</div>
 		<hr>
