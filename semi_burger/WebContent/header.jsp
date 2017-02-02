@@ -51,7 +51,7 @@
 			</ul></li>
 			<%	if(sname==null){
 					%>
-					<li> &nbsp;&nbsp;<ul class="menu">
+					<li> <img src="/semi_burger/img/hat.png"><ul class="menu">
 					<%
 				}else{
 					%>			
