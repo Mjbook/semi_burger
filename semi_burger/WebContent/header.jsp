@@ -8,6 +8,10 @@ div, ul, li {
 	padding: 0;
 }
 
+nav ul{
+float:right;
+}
+
 #newMenu {
 	float: right;
 	margin: 0px 5px 3px 5px;
