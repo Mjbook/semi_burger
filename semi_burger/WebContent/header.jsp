@@ -2,6 +2,55 @@
     pageEncoding="UTF-8"%>
     
 <header>
+<style>
+div, ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+#newMenu {
+	float: right;
+	margin: 0px 5px 3px 5px;
+	padding: 0 0 3px 0;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, .3);
+	border-radius: 3px;
+	width:1000px;
+}
+
+#newMenu ul li {
+	float: left;
+	list-style-type: none;
+}
+
+#newMenu a {
+	height: 20px;
+	color: #990033;
+	font-family: 'Malgun Gothic';
+	font-size: 15px;
+	padding: 0 10px 0 10px;
+	text-decoration: none;
+}
+
+#newMenu a:hover {
+	color: #cc3300;
+	border-bottom: 3px solid;
+}
+
+#newMenu ul ul {
+	display: none;
+	position: absolute;
+	background-color: #FFFFCC;
+}
+
+#newMenu ul li:hover ul {
+	display: block;
+}
+
+#newMenu ul ul li {
+	float: none;
+}
+
+</style>
 <script>
 	function game() {
 		window.open('/semi_burger/burgerGame/index.html','gameopoup','width=1000,height=700');
@@ -22,32 +71,49 @@
 	}
 %>
 	<nav>
-		<ol class="bigmenu">
-			<li><a href="/semi_burger/index.jsp">Home</a></li>
-			<li><a>소개</a>
-			<ul class="menu">
-				<li> <a href="/semi_burger/story.jsp">YONG STORY</a> </li>
-				<li> <a>CEO 인사말</a> </li>
-				<li>찾아오시는 길</li>
-				<li><a href="javascript:game()">매장 검색</a></li>
-			</ul>
-			</li>
-			<li>메뉴<ul class="menu">
-				<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp">햄버거</a></li>
-				<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp#side">사이드</a></li>
-				<li><a href="/semi_burger/burgerMenu/eventMenu.jsp">이벤트 메뉴</a></li>
-				<li><a href="/semi_burger/self/selfBurger.jsp">내가 만드는 햄버거</a></li>
-				<li>재료 원산지 표기</li>
-			</ul></li>
-			<li>My Burger<ul class="menu">
-				<li><a href="/semi_burger/order/orderCheck.jsp">주문 조회</a></li>
-			</ul></li>	
-				<li>커뮤니티<ul class="menu">
-				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
-				<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
-				<li><a href="#">내가 만든 햄버거</a></li>
-				<li><a href="">이벤트</a></li>
-			</ul></li>
+		<div id="newMenu">
+		<ul>
+			<li class ="menu"><a href="/semi_burger/index.jsp">HOME</a></li>
+
+			<li><a href="#">소개 </a>
+
+				<ul>
+					<li><a href="/semi_burger/story.jsp">YONG STORY</a></li>
+					<li><a href="#">CEO 인사말</a></li>
+					<li><a href="#">찾아오시는길</a></li>
+				</ul>
+				</li>
+
+			<li><a href="#">메뉴</a>
+
+				<ul>
+					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp">햄버거</a></li>
+					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp#side">사이드</a></li>
+					<li><a href="/semi_burger/self/selfBurger.jsp">내맘대로 햄버거</a></li>
+					<li><a href="/semi_burger/burgerMenu/eventMenu.jsp">이벤트 메뉴</a></li>
+					<li><a href="#">재료 원산지 표기</a></li>
+				</ul>
+				</li>
+				
+					<li><a href="#">My burger</a>
+
+				<ul>
+					<li><a href="/semi_burger/order/orderCheck.jsp">주문 조회</a></li>
+				</ul>
+				</li>
+				
+					<li><a href="#">커뮤니티</a>
+
+				<ul>
+					<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
+					<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
+					<li><a href="#">내맘대로 햄버거 자랑</a></li>
+					<li><a href="javascript:game()">게임하기</a></li>
+				</ul>
+				</li>
+
+		</ul>
+	</div>
 			<%	if(sname==null){
 					%>
 					<li><img src="/semi_burger/img/hat.png" width="20" height="30"><ul class="menu">
@@ -70,55 +136,6 @@
 				<%
 				}
 			%>			
-		</ol>
-	</nav>
-	</div>
 
 
-
-	<div id="newMenu">
-		<ul>
-			<li><a href="#">HOME</a></li>
-
-			<li><a href="#">소개 </a>
-
-				<ul>
-					<li><a href="#">YONG STORY</a></li>
-					<li><a href="#">CEO 인사말</a></li>
-					<li><a href="#">찾아오시는길</a></li>
-				</ul>
-				</li>
-
-			<li><a href="#">메뉴</a>
-
-				<ul>
-					<li><a href="#">햄버거</a></li>
-					<li><a href="#">사이드</a></li>
-					<li><a href="#">내맘대로 햄버거</a></li>
-					<li><a href="#">이벤트 메뉴</a></li>
-					<li><a href="#">재료 원산지 표기</a></li>
-				</ul>
-				</li>
-				
-					<li><a href="#">My burger</a>
-
-				<ul>
-					<li><a href="#">주문 조회</a></li>
-				</ul>
-				</li>
-				
-					<li><a href="#">커뮤니티</a>
-
-				<ul>
-					<li><a href="#">공지사항</a></li>
-					<li><a href="#">창업문의</a></li>
-					<li><a href="#">내맘대로 햄버거 자랑</a></li>
-					<li><a href="#">게임하기</a></li>
-				</ul>
-				</li>
-
-		</ul>
-	</div>
-
-	</div>
 </header>

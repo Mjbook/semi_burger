@@ -65,24 +65,4 @@ footer {
    line-height: 1.5;
 }
 
-<!-- new css -->
-
-.newMenu ul ul {
-	display:none;    <!-- 메뉴 숨기기 -->
-}
-
-.newMenu ul li:hover ul {
-	display:block  <!-- ul 태그 내부의 li태그에 마우스를 대면 ul를 보여주겟다는 소리 -->
-}
-
-.newMenu ul ul {
-	display:none;
-	position:absolute ;
-	background-color: darkblue; 
-}
-
-.nav_menu ul ul li {
-	float:none;  <!-- 서브 메뉴를 일렬로 출력 -->
-}
-
 
