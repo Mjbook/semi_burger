@@ -81,6 +81,7 @@ list-style:none;
 %>
 	<nav>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<ol class="bigmenu">
 			<li><a href="/semi_burger/index.jsp">Home</a></li>
 			<li><a>소개</a>
@@ -121,6 +122,50 @@ list-style:none;
 				%>				
 				<li> <a href="/semi_burger/member/login.jsp">로그인</a> </li>
 				<li> <a href="/semi_burger/member/join.jsp"> 회원가입</a> </li>
+=======
+		<div id="newMenu">
+		<ul>
+			<li class ="menu"><a href="/semi_burger/index.jsp">HOME</a></li>
+
+			<li><a href="#">소개 </a>
+
+				<ul>
+					<li><a href="/semi_burger/story.jsp">YONG STORY</a></li>
+					<li><a href="#">CEO 인사말</a></li>
+					<li><a href="#">찾아오시는길</a></li>
+				</ul>
+				</li>
+
+			<li><a href="#">메뉴</a>
+
+				<ul>
+					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp">햄버거</a></li>
+					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp#side">사이드</a></li>
+					<li><a href="/semi_burger/self/selfBurger.jsp">내맘대로 햄버거</a></li>
+					<li><a href="/semi_burger/burgerMenu/eventMenu.jsp">이벤트 메뉴</a></li>
+					<li><a href="#">재료 원산지 표기</a></li>
+				</ul>
+				</li>
+				
+					<li><a href="#">My burger</a>
+
+				<ul>
+					<li><a href="/semi_burger/order/orderCheck.jsp">주문 조회</a></li>
+				</ul>
+				</li>
+				
+					<li><a href="#">커뮤니티</a>
+
+				<ul>
+					<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
+					<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
+					<li><a href="#">내맘대로 햄버거 자랑</a></li>
+					<li><a href="javascript:game()">게임하기</a></li>
+				</ul>
+				</li>
+
+		</ul>
+>>>>>>> branch 'master' of https://github.com/yongburger/semi_burger.git
 =======
 		<div id="newMenu">
 		<ul>
