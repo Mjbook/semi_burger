@@ -45,6 +45,11 @@ div, ul, li {
 #newMenu ul li:hover ul {
 	display: block;
 }
+#hie li ui {
+display: none;
+float: none;
+list-style:none;
+}
 
 #newMenu ul ul li {
 	float: none;
@@ -113,29 +118,29 @@ div, ul, li {
 				</li>
 
 		</ul>
-	</div>
-			<%	if(sname==null){
-					%>
-					<li><img src="/semi_burger/img/hat.png" width="20" height="30"><ul class="menu">
-					<%
-				}else{
-					%>			
-					<li> <%= sname%>님<ul class="menu">
-					<%
-				}
-				if(sname==null){
-				%>				
-				<li> <a href="/semi_burger/member/login.jsp">로그인</a> </li>
-				<li> <a href="/semi_burger/member/join.jsp"> 회원가입</a> </li>
 				<%
-				} else{
+					if (sname == null) {
 				%>
-				<li> <a href="/semi_burger/member/updateinfo.jsp?"> 정보수정</a> </li>
-				<li> <a href="/semi_burger/member/logout.jsp"> 로그아웃</a> </li>
-			</ul></li>
-				<%
-				}
-			%>			
-
-
+				<li style="list-style:none";>&nbsp;&nbsp;<ul class="menu">
+						<%
+							} else {
+						%>
+						<li><%=sname%>님
+							<ul class="menu">
+								<%
+									}
+									if (sname == null) {
+								%>
+								<li><a href="/semi_burger/member/login.jsp">로그인</a></li>
+								<li><a href="/semi_burger/member/join.jsp"> 회원가입</a></li>
+								<%
+									} else {
+								%>
+								<li><a href="/semi_burger/member/updateinfo.jsp?"> 정보수정</a>
+								</li>
+								<li><a href="/semi_burger/member/logout.jsp"> 로그아웃</a></li>
+							</ul></li>
+						<% }
+						%>
+			</div>
 </header>
