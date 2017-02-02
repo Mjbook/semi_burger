@@ -112,6 +112,7 @@ nav ul {
 					<li><a href="#">My burger &nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 				<ul>
+					<li><a href="/semi_burger/member/updateinfo.jsp">회원정보 수정</a></li>
 					<li><a href="/semi_burger/order/orderCheck.jsp">주문 조회</a></li>
 				</ul>
 				</li>
@@ -128,30 +129,5 @@ nav ul {
 
 		</ul>
 		</div>
-				<%
-					if (sname == null) {
-				%>
-				<li style="list-style:none";>&nbsp;&nbsp;<ul class="menu">
-						<%
-							} else {
-						%>
-						<li><%=sname%>님
-							<ul class="menu">
-								<%
-									}
-									if (sname == null) {
-								%>
-								<li><a href="/semi_burger/member/login.jsp">로그인</a></li>
-								<li><a href="/semi_burger/member/join.jsp"> 회원가입</a></li>
-								<%
-									} else {
-								%>
-								<li><a href="/semi_burger/member/updateinfo.jsp?"> 정보수정</a>
-								</li>
-								<li><a href="/semi_burger/member/logout.jsp"> 로그아웃</a></li>
-							</ul></li>
-						<% }
-						%>
-			
-			</nav>
+	</nav>
 </header>

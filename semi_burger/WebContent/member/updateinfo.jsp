@@ -7,6 +7,22 @@
 
 <!DOCTYPE html>
 <html>
+<%
+	request.setCharacterEncoding("utf-8");
+
+	String sid=(String)session.getAttribute("sid");
+	if(sid==null||sid.equals("")){
+		%>
+		<script>
+			window.alert('로그인 먼저 부탁드립니다.');
+			location.href='/semi_burger/index.jsp';
+		</script>		
+		<%
+		return;
+	}
+	
+	ArrayList<MemberDTO> arr = mdao.getUserInfo(sid);
+%>
 <head>
 <meta charset="UTF-8">
 <title>Yong Burger</title> 
@@ -34,13 +50,6 @@ href="/semi_burger/css/mainLayout.css">
 	}
 </script>
 </head>
-<%
-	request.setCharacterEncoding("utf-8");
-	
-	String sid = (String)session.getAttribute("sid");
-	
-	ArrayList<MemberDTO> arr = mdao.getUserInfo(sid);
-%>
 <body>
 <%@ include file="/header.jsp" %>
 
