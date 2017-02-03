@@ -4,7 +4,7 @@
 <jsp:useBean id="burger_img" class="yb.burger.Burger_upload" scope="session"/>
 <jsp:useBean id="bdao" class="yb.burger.BurgerDAO"/>
 <%
-	String item_name = request.getParameter("item_name");
+	String item_name = "@"+ request.getParameter("item_name")+"@";
 
 	String item_pays = request.getParameter("item_pay");
 	%>
