@@ -254,6 +254,10 @@ footer {
 	padding: 4px;
 	border-collapse: collapse
 }
+#table2 {
+	width: 800px;
+	
+}
 
 #table2, #table2 th, #table2 td {
 	font-size: 12px;
@@ -272,7 +276,7 @@ footer {
 		endColorstr='#ffffff ');
 	}
 	#table2 input {
-	widows: 100%;
+	width: 100%;
 	
 	}
 	
