@@ -71,9 +71,10 @@ table textarea {
 	
 <h2>공지 사항</h2>
 <div id="container">
-   <div id="content">	
+   <div>	
+   <h2>공지사항</h2>
     <form action="noticeWrite_ok.jsp">
- <table border="1" bordercolor="blue" width="550" cellspacing="0">
+ <table border="1" bordercolor="blue" width="100%" cellspacing="0">
 
 			<tr>
 				<th>제목</th>
@@ -88,7 +89,7 @@ table textarea {
 			</tr>
 			<tr>
 			<td  id="button" colspan ="2">
-				<a href="notice.jsp">취소</a> <input type="submit" value="완료">
+				<input type="button"value="취소" onclick="location.href='notice.jsp'"> <input type="submit" value="완료">
 		    </td>
 			</tr>
 			</table>
