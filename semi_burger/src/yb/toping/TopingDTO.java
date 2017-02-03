@@ -5,6 +5,7 @@ public class TopingDTO {
 	private String toping_img;
 	private String toping_name;
 	private String toping_price;
+	private String show;
 	
 	public TopingDTO() {
 
@@ -53,6 +54,14 @@ public class TopingDTO {
 
 	public void setToping_price(String toping_price) {
 		this.toping_price = toping_price;
+	}
+
+	public String getShow() {
+		return show;
+	}
+
+	public void setShow(String show) {
+		this.show = show;
 	}
 	
 	

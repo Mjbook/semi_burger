@@ -23,7 +23,7 @@ public class TopingDAO {
 		try {
 			conn=yb.db.YB_DB.getConn();
 			
-			String sql="insert into toping values(toping_seq.nextval, 0,?,?)";
+			String sql="insert into toping values(toping_seq.nextval, 0,?,?,'0')";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, name);
 			ps.setString(2, price);
@@ -134,11 +134,10 @@ public class TopingDAO {
 		}
 	}
 	
-	public int delToping(String name){
+	public int showToping(String name,String show){
 		try {
-			//파일 삭제
 			conn=yb.db.YB_DB.getConn();
-			
+			/*//파일 삭제
 			String sql="select toping_img from toping where toping_name=?";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, name);
@@ -153,11 +152,11 @@ public class TopingDAO {
 				}while(rs.next());
 			}
 			rs.close();
-			ps.close();
+			ps.close();*/
 			
-			//db삭제
+			//db 변경
 			
-			sql="delete toping where toping_name=?";
+			String sql="update toping set show='"+show+"' where toping_name=?";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, name);
 		
@@ -174,6 +173,7 @@ public class TopingDAO {
 			} catch (Exception e2) {}
 		}
 	}
+	
 	/**토핑 옆 사진 저장,이름 바꾸기 메서드*/
 	public void saveTopImg(){
 		try {
@@ -220,7 +220,7 @@ public class TopingDAO {
 	public ArrayList<TopingDTO> getInfo(){
 		try {
 			conn=yb.db.YB_DB.getConn();
-			String sql="select * from toping order by toping_key";
+			String sql="select * from toping where show='show' order by toping_key";
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
 			ArrayList<TopingDTO> arr=new ArrayList<TopingDTO>();

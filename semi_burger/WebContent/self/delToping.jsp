@@ -8,7 +8,7 @@
 </head>
 <body>
 	<fieldset>
-		<legend>토핑 빼기</legend>
+		<legend>토핑 숨기기</legend>
 		<form name="delToping" action="delToping_ok.jsp">
 		토핑 이름:<input name="toping_name" type="text"><input type="submit" value="토핑 지우기">
 		</form>

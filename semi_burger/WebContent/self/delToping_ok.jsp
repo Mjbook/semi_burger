@@ -5,7 +5,7 @@
 <%
 String name=request.getParameter("toping_name");
 
-int result=tdao.delToping(name);
+int result=tdao.showToping(name,"0");
 
 if(result>0){
 	%>

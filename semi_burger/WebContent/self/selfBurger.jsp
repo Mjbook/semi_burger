@@ -24,6 +24,9 @@ function addTop(){
 function delTop(){
 	window.open('delToping.jsp','toping','width=400,height=100,left=600,top=300');
 }
+function showTop(){
+	window.open('showToping.jsp','toping','width=400,height=100,left=600,top=300');
+}
 </script>
 </head>
 <%
@@ -82,7 +85,10 @@ if(sid!=null&&sid.equals("admin")){
 %>
 <div style="width:300px;"><fieldset>
 <legend>관리자 메뉴</legend>
-<p><a href="javascript:addTop()">토핑 추가</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:delTop()">토핑 제거</a></p>
+<p><a href="javascript:addTop()">토핑 추가</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="javascript:showTop()">토핑 꺼내기</a>
+<a href="javascript:delTop()">토핑 숨기기</a>
+</p>
 </fieldset></div>
 <%}%>
 <form name="selfBurger" action="selfBurger_ok.jsp">
