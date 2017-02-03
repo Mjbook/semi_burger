@@ -45,13 +45,7 @@ String item_img_src = request.getParameter("src");
 					<td>등록일로부터 14일</td>
 				</tr>
 				<tr>
-				<%
-				
-				%>
 					<input type="hidden" name="item_img_src" value="<%=item_img_src%>">
-				<%
-				
-				%>	
 					<td colspan="2"><input type="reset" value="다시작성">
 					<input type="submit" value="메뉴등록">
 					</td>

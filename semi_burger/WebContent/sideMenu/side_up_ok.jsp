@@ -3,15 +3,15 @@
 	pageEncoding="UTF-8"%>
 <%@page import="com.oreilly.servlet.*"%>
 <%@ page import="java.io.*" %>
-<jsp:useBean id="swf" class="yb.burger.Side_upload" scope="session"/>
+<jsp:useBean id="wf" class="yb.burger.Burger_upload" scope="session"/>
 <%
-	String savepath=swf.USERS_HOME+"/"+swf.getCrpath();
+	String savepath=wf.USERS_HOME+"/"+wf.getCrpath();
 	
 	String savepath_end="";
 try{
 	MultipartRequest mr=new MultipartRequest(request,savepath,1024*1024*10,"utf-8");
 	
-	File f=new File(swf.USERS_HOME+"/"+swf.getCrpath());
+	File f=new File(wf.USERS_HOME+"/"+wf.getCrpath());
 	File files[]=f.listFiles();
 	
 	if(files==null||files.length==0){
@@ -42,7 +42,7 @@ try{
 			int idx=name.lastIndexOf('.');
 			int length=name.length();
 			
-			f.renameTo(new File(swf.USERS_HOME+"/"+name));
+			f.renameTo(new File(wf.USERS_HOME+"/"+name));
 			
 		}
 	}

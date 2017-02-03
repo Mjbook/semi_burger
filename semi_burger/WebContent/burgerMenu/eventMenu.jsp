@@ -21,7 +21,7 @@
 <link rel="stylesheet" type="text/css" href="../css/mainLayout.css">
 <script>
 function eventMenu_up(){
-	window.open("eventMenu_up.jsp","eventMenu_up","top=300,left=400,width=350,height=250");
+	window.open("eventMenu_img_up.jsp","eventMenu_up","top=300,left=400,width=350,height=250");
 }
 function eventMenu_reload(){
 	window.open("eventMenu_reload.jsp","eventMenu_reload","top=300,left=400,width=350,height=250");
