@@ -24,7 +24,7 @@ function eventMenu_up(){
 	window.open("eventMenu_img_up.jsp","eventMenu_up","top=300,left=400,width=350,height=250");
 }
 function eventMenu_reload(){
-	window.open("eventMenu_reload.jsp","eventMenu_reload","top=300,left=400,width=350,height=250");
+	window.open("eventMenu_reload.jsp","eventMenu_reload_img","top=300,left=400,width=350,height=250");
 }
 function eventMenu_delete(){
 	window.open("eventMenu_delete.jsp","eventMenu_delete","top=300,left=400,width=350,height=250");
@@ -58,7 +58,7 @@ String sid=(String)session.getAttribute("sid");
 					if(sid!=null){
 					if(sid.equals("admin")){
 						%>
-						버거번호 : <%=al.get(i).getItem_key() %>
+						Key : <%=al.get(i).getItem_key() %>
 						<br><br><br>
 						<% 
 					}	

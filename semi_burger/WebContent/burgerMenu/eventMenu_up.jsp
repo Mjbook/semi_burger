@@ -20,10 +20,6 @@ String item_img_src = request.getParameter("src");
 			<form name="eventMenu_up" action="eventMenu_up_ok.jsp">
 			<table>
 				<tr>
-					<th>버거번호:</th>
-					<td><input type="text" name="item_num"></td>
-				</tr>
-				<tr>
 					<th>버거이름:</th>
 					<td><input type="text" name="item_name"></td>
 				</tr>
