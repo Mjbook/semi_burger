@@ -18,17 +18,6 @@
 	return;
 	}
 %>
-<%
-String sig_no=(String)request.getParameter("sig_no");
-if(!(sig_no==null||sig_no.equals(""))){
-%>
-<script>
-function pop(){
-	window.open("/semi_burger/self/signature_ok.jsp","sig","top=300,left=400,width=350,height=250");
-}
-</script>
-<%
-} %>
 <head>
 <meta charset=UTF-8>
 <title>Yong Burger</title>
@@ -180,7 +169,19 @@ function sig<%=i%>(){
 	
 }
 </script>
-<%} %>
+<%}%>
+<%
+String sig_no=(String)request.getParameter("sig_no");
+if(!(sig_no==null||sig_no.equals(""))){
+	String click=request.getParameter("no"+sig_no);
+%>
+<script>
+function pop(){
+	window.open("/semi_burger/self/signature.jsp?no=<%=click%>","sig","top=300,left=400,width=350,height=250");
+}
+</script>
+<%
+} %>
 <%@include file="/footer.jsp"%>
 </body>
 </html>
