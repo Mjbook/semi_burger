@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.*" %>
-<%@ page import="board.notice.*" %>
-<jsp:useBean id="bdao" class="board.notice.noticeDAO"/>
+	pageEncoding="UTF-8" import="java.util.*"%>
+<%@ page import="board.notice.*"%>
+<jsp:useBean id="bdao" class="board.notice.noticeDAO" />
 <%
 String idx_s=request.getParameter("NOTICE_NO");
 if(idx_s==null||idx_s.equals("")){
@@ -11,11 +11,11 @@ int idx=Integer.parseInt(idx_s);
 noticeDTO dto=bdao.noticeContent(idx);
 if(dto==null){
 	%>
-	<script>
+<script>
 	window.alert('잘못된 접근방식 또는 삭제된 게시글 입니다.');
 	location.href='notice.jsp';
 	</script>
-	<%
+<%
 	return;
 }
 %>
@@ -24,80 +24,86 @@ if(dto==null){
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Yong Burger</title>
-<link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
+<link rel="stylesheet" type="text/css"
+	href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
- <!--
-  #container {min-height: 80%; maring-top: -100px; }
-   * html #container {height: 100%;}
-  #container #content {padding: 100px 0 ; }
-  
+<!--
+#container {
+	min-height: 80%;
+	maring-top: -100px;
+}
+
+* html #container {
+	height: 100%;
+}
+
+#container #content {
+	padding: 100px 0;
+}
+
 table {
 	width: 100%;
 	margin: 0px auto;
-	border-top: 2px double darkblue;
-	border-bottom: 2px double darkblue;
 	border-spacing: 0px;
-}
-
-table th {
-	background: skyblue;
+	border: 1px #5b0d14;
 }
 
 table td {
 	text-align: center;
-	
 }
+
 table textarea {
 	width: 100%;
-
 }
 
-
 #sub {
-	width:100%;
+	width: 100%;
 }
 
 #button {
 	text-align: right;
-	width="100%"
 }
-
-  
-  
- </style>
+</style>
+</head>
 </head>
 <body>
-	<%@include file="/header.jsp" %>
-	
-<h2>공지 사항</h2>
-<div id="container">
-   <div>	
-   <h2>공지사항</h2>
-    <form action="noticeWrite_ok.jsp">
- <table border="1" bordercolor="blue" width="100%" cellspacing="0">
+	<div id="container">
+		<div id="header">
+			<%@include file="/header.jsp"%>
+		</div>
+		<div id="sideMenu">
 
-			<tr>
-				<th>제목</th>
-				<td colspan="3" align="left" >
-				<input id="sub" type="text" name="subject" placeholder="제목을 입력하세요." />
-				</td>
-			</tr>
-			<tr height="250">
-					<td colspan="4" align="left" valign="top">
-						<textarea rows="15" cols="100" name="content" placeholder="내용을 입력하세요."></textarea>
-					</td>
-			</tr>
-			<tr>
-			<td  id="button" colspan ="2">
-				<input type="button"value="취소" onclick="location.href='notice.jsp'"> <input type="submit" value="완료">
-		    </td>
-			</tr>
-			</table>
-   
-   </div>
-</div>
+			<h2 align="center">커뮤니티</h2>
+			<ul>
+				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
+				<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
+				<li><a href="#">내가 만든 햄버거</a></li>
+				<li><a href="javascript:game()">게임하기</a></li>
+			</ul>
 
-	<%@include file="/footer.jsp" %>
+		</div>
+		<div id="container">
 
+			<form action="noticeWrite_ok.jsp">
+				<h2>공지사항</h2>
+				<table id="table2">
+					<tr>
+						<th>제목</th>
+						<td colspan="3" align="left"><input type="text"	name="subject" placeholder="제목을 입력하세요." /></td>
+					</tr>
+					<tr height="100%">
+						<td colspan="4" align="left" valign="top"><textarea rows="15" cols="100" name="content" placeholder="내용을 입력하세요."></textarea></td>
+					</tr>
+				</table>
+				<div align="center">
+					<input type="button" value="취소"  onclick="location.href='notice.jsp'"> <input type="submit" value="완료">
+				</div>
+			</form>
+		</div>
+		</div>
+
+	<div id="footer">
+		<%@include file="/footer.jsp"%>
+	</div>
 </body>
-</html>				
+</html>

@@ -87,7 +87,9 @@ footer {
 	margin-bottom: 3px;
 	border-bottom: 1px solid #ed3b50;
 	font-size: 15px;
+	
 }
+
 
 #sideMenu ol li {
 	padding: 5px 0px 5px 5px;
@@ -150,6 +152,8 @@ footer {
 	color: #cc3300;
 	border-bottom: 3px solid;
 	text-aling: center;
+	
+	
 }
  
 #newMenu ul ul {
@@ -158,9 +162,11 @@ footer {
 	
 }
 
+
 #newMenu ul li:hover ul {
 	display: block;
 	width: 18%;
+
 }
 
 #newMenu ul ul li {
@@ -191,7 +197,9 @@ footer {
 	margin-bottom: 20px;
 	float: left; 
 	border: 1px;
+	
 }
+
 #sidebar-right {
 	width: 160px;
 	padding: 20px;
@@ -221,4 +229,51 @@ footer {
 	float : right;
 	border: 1px;
 }
+
+
+#table1 table {
+	margin: 15px 0;
+}
+
+
+#table1 th {
+	color: #ffffff;
+	background-color: #aae1fe;
+	background: -o-linear-gradient(90deg, #800000, #ffffff);
+	background: -moz-linear-gradient(center top, #800000 100%, #ffffff  5%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #800000
+		), color-stop(1, #ffffff ));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#800000',
+		endColorstr='#ffffff ');
+	}
+
+#table1, #table1 th, #table1 td {
+	width: 800px;
+	font-size: 12px;
+	text-align: center;
+	padding: 4px;
+	border-collapse: collapse
+}
+
+#table2, #table2 th, #table2 td {
+	font-size: 12px;
+	text-align: center;
+	padding: 4px;
+	border-collapse: collapse
+}
+#table2 th {
+	color: #ffffff;
+	background-color: #aae1fe;
+	background: -o-linear-gradient(90deg, #800000, #ffffff);
+	background: -moz-linear-gradient(center top, #800000 100%, #ffffff  5%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #800000
+		), color-stop(1, #ffffff ));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#800000',
+		endColorstr='#ffffff ');
+	}
+	#table2 input {
+	widows: 100%;
+	
+	}
+	
 

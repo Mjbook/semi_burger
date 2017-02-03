@@ -28,80 +28,77 @@
 		userGroup--;
 %>
 <title>Yong Burger</title>
-<link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
+<link rel="stylesheet" type="text/css"
+	href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
- <!--
-  #container {min-height: 80%; maring-top: -100px; }
-   * html #container {height: 100%;}
-  #container #content {padding: 100px 0 ; }
-  
-table {
-	width: 100%;
-	margin: 0px auto;
-	border-top: 2px double darkblue;
-	border-bottom: 2px double darkblue;
-	border-spacing: 0px;
+#table1 table {
+	width: 1000px;
+	margin: 15px 0;
 }
 
-table th {
-	background: skyblue;
-}
+#table1 th {
+	color: #ffffff;
+	background-color: #aae1fe;
+	background: -o-linear-gradient(90deg, #800000, #ffffff);
+	background: -moz-linear-gradient(center top, #800000 100%, #ffffff  5%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #800000
+		), color-stop(1, #ffffff ));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#800000',
+		endColorstr='#ffffff ');
+	}
 
-table td {
+#table1, #table1 th, #table1 td {
+	width: 800px;
+	font-size: 12px;
 	text-align: center;
-	
-}
-table textarea {
-	width: 100%;
-
+	padding: 4px;
+	border-collapse: collapse
 }
 
-
-#sub {
-	width:100%;
-}
-
-#button {
-	text-align: right;
-	width="100%"
-}
-
-  
-  
- </style>
+</style>
 </head>
 <body>
-	<%@include file="/header.jsp" %>
-	
-<h2>공지 사항</h2>
-<div id="container">
-   <div id="content">	
-    <form action="noticeUpdate_ok.jsp">
- <table border="1" bordercolor="blue" width="550" cellspacing="0">
+	<div id="container">
+		<div id="header">
+			<%@include file="/header.jsp"%>
+		</div>
+		<div id="sideMenu">
 
-			<tr>
-				<th>제목</th>
-				<td colspan="3" align="left" >
-				<input id="sub" type="text" name="subject" value=<%=sub %> placeholder="제목을 입력하세요." />
-				</td>
-			</tr>
-			<tr height="250">
-					<td colspan="4" align="left" valign="top">
-						<textarea id="textarea_test" rows="15" cols="100" name="content" placeholder="내용을 입력하세요."><%=con %></textarea>
-					</td>
-			</tr>
-			<tr>
-			<td  id="button" colspan ="2">
+			<h2 align="center">커뮤니티</h2>
+			<ul>
+				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
+				<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
+				<li><a href="#">내가 만든 햄버거</a></li>
+				<li><a href="javascript:game()">게임하기</a></li>
+			</ul>
+
+		</div>
+		<div id="content">
+			<h2>공지사항</h2>
+			<form action="noticeUpdate_ok.jsp">
+				<table id="table1" border="1">
+					<tr>
+						<th>제목</th>
+						<td colspan="3" align="left">
+						<input type="text" name="subject" value=<%=sub%> placeholder="제목을 입력하세요." /></td>
+					</tr>
+					<tr height="250">
+						<td colspan="4" align="left" valign="top">
+						<textarea id="textarea_test" rows="15" cols="100" name="content" placeholder="내용을 입력하세요."><%=con%></textarea></td>
+					</tr>
+				</table>
+				<div align="center">
 				<input type="hidden" name="notice_no" value=<%=idx%> />
-				<a href="notice.jsp">취소</a> <input type="submit" value="완료">
-		    </td>
-			</tr>
-			</table>
-   
-   </div>
-</div>
+				<input type="button" value="취소" onclick="location.href='notice.jsp'">
+				 <input	type="submit" value="완료">
+		</div>
+		</form>
+		</div>
 
-	<%@include file="/footer.jsp" %>
+		<div id="footer">
+			<%@include file="/footer.jsp"%>
+		</div>
+	</div>
 
 </body>
-</html>				
+</html>

@@ -16,43 +16,25 @@
 }
 
 #table1 th {
-	background-color: #00A5FF;
-	background: -o-linear-gradient(90deg, #00A5FF, #6dcbfe);
-	background: -moz-linear-gradient(center top, #00A5FF 5%, #6dcbfe 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #00A5FF
-		), color-stop(1, #6dcbfe));
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00A5FF',
-		endColorstr='#6dcbfe');
-	color: #FFFFFF;
+	color: #ffffff;
+	background-color: #aae1fe;
+	background: -o-linear-gradient(90deg, #800000, #ffffff);
+	background: -moz-linear-gradient(center top, #800000 100%, #ffffff  5%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #800000
+		), color-stop(1, #ffffff ));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#800000',
+		endColorstr='#ffffff ');
 	}
 
 #table1, #table1 th, #table1 td {
 	width: 800px;
-	font-size: 0.95em;
+	font-size: 12px;
 	text-align: center;
 	padding: 4px;
-	border: 1px solid #efefef;
 	border-collapse: collapse
 }
 
-#table1 tr:nth-child(odd) {
-	background-color: #aae1fe;
-	background: -o-linear-gradient(90deg, #aae1fe, #eef9fe);
-	background: -moz-linear-gradient(center top, #aae1fe 5%, #eef9fe 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #aae1fe
-		), color-stop(1, #eef9fe));
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aae1fe',
-		endColorstr='#eef9fe');
-}
 
-#table1 tr:nth-child(even) {
-	background-color: #fdfdfd table{ 
-	width: 100%;
-	margin: 0px auto;
-	border-top: 2px double darkblue;
-	border-bottom: 2px double darkblue;
-	border-spacing: 0px;
-}
 
 
 </style>
@@ -146,7 +128,7 @@ String sid=(String)session.getAttribute("sid");
 							<td><%=adto.get(i).getNotice_no()%></td>
 							<td><a
 								href="noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><%=adto.get(i).getSubject() %></a></td>
-							<td><%=adto.get(i).getInsert_date()%></td>
+							<td><%=adto.get(i).getName()%></td>
 							<td><%=adto.get(i).getBoard_count() %></td>
 						</tr>
 						<%
