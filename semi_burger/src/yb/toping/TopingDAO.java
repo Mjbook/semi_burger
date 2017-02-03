@@ -277,4 +277,48 @@ public class TopingDAO {
 		}
 	}
 	
+	/**시그니처 버거 토핑 메뉴 나열 메서드*/
+	public void getTopings(String menu_name){
+		try {
+//			conn=yb.db.YB_DB.getConn();
+//			String sql="select toping_key,toping_name from toping";
+//			ps=conn.prepareStatement(sql);
+//			
+//			rs=ps.executeQuery();
+			
+			StringTokenizer st=new StringTokenizer(menu_name, ".");
+			HashMap<Integer, String> hm=new HashMap<Integer, String>();
+			
+			while(st.hasMoreTokens()){
+				String temp=st.nextToken();
+				int tk=0;
+				try {
+					tk=Integer.parseInt(temp);
+				} catch (Exception e) {
+					continue;
+				}
+				System.out.println(tk);
+				
+				
+			}
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e2) {}
+		}
+		
+		
+		
+		
+		
+			
+		
+	}
 }

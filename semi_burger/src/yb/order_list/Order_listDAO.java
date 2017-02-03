@@ -145,6 +145,7 @@ public class Order_listDAO {
 			ArrayList<Order_listDTO> odtos=new ArrayList<Order_listDTO>();
 			if(rs.next()){
 				do{
+					int order_no=rs.getInt("order_no");
 					String item_name=rs.getString("item_name");
 					int item_count=rs.getInt("item_count");
 					String order_place=rs.getString("order_shop");//주문자 주소
@@ -153,6 +154,7 @@ public class Order_listDAO {
 					String hm=rs.getString("hm");
 					
 					Order_listDTO temp=new Order_listDTO(item_name, item_count, date, order_place, sid, total_pay);
+					temp.setOrder_no(order_no);
 					temp.setDate_hm(hm);
 					odtos.add(temp);
 				}while(rs.next());
