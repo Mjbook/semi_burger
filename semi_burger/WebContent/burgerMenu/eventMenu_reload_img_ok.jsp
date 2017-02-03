@@ -28,9 +28,9 @@ try{
 			savepath_end=files[i].getName();
 			%>
 			<script>
-			window.alert('파일 업로드 성공!');
-			window.open("eventMenu_reload_up.jsp?src=e_<%=savepath_end%>","eventMenu_reload_up","top=300,left=400,width=350,height=250");
-			window.self.close();
+			
+			location.href="eventMenu_reload_up.jsp?src=e_<%=savepath_end%>";
+			
 			</script>
 			<%
 			

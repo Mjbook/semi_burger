@@ -24,7 +24,7 @@ function eventMenu_up(){
 	window.open("eventMenu_img_up.jsp","eventMenu_up","top=300,left=400,width=350,height=250");
 }
 function eventMenu_reload(){
-	window.open("eventMenu_reload.jsp","eventMenu_reload_img","top=300,left=400,width=350,height=250");
+	window.open("eventMenu_reload_img.jsp","eventMenu_reload_img","top=300,left=400,width=350,height=250");
 }
 function eventMenu_delete(){
 	window.open("eventMenu_delete.jsp","eventMenu_delete","top=300,left=400,width=350,height=250");

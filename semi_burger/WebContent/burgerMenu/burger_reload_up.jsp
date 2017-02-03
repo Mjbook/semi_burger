@@ -21,7 +21,7 @@ String item_img_src = request.getParameter("src");
 	<article>
 	
 		<fieldset>
-			<legend align="center">버거 메뉴 등록하기</legend>
+			<legend align="center">버거 메뉴 수정하기</legend>
 			<form name="burger_reload_up" action="burger_reload_up_ok.jsp">
 			<table>
 				<tr>

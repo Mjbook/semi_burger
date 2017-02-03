@@ -28,9 +28,9 @@ try{
 			savepath_end=files[i].getName();
 			%>
 			<script>
-			window.alert('파일 업로드 성공!');
-			window.open("side_up_img.jsp?src=<%=savepath_end%>","side_up_img","top=300,left=400,width=350,height=250");
-			window.self.close();
+			
+			location.href="side_up_img.jsp?src=<%=savepath_end%>";
+			
 			</script>
 			<%
 			String name=files[i].getName();

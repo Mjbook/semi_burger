@@ -18,8 +18,8 @@ String msg=result>0?"등록되었습니다.":"등록에 실패하였습니다.";
 
 <script>
 window.alert('<%=msg%>');
+opener.location.reload();
+opener.location.href='eventMenu.jsp';
 window.self.close();
-opener.opener.opener.location.reload();
-
 </script>
 

@@ -20,6 +20,6 @@ String msg=result>0?"삭제되었습니다.":"삭제에 실패하였습니다.";
 <script>
 window.alert('<%=msg%>');
 window.close();
-location.href='sideMenu.jsp';
+location.href='../burgerMenu/burgerMenu.jsp';
 opener.location.reload();
 </script>
