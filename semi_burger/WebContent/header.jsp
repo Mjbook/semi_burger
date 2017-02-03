@@ -41,7 +41,7 @@ nav ul {
 
 				<ul>
 					<li><a href="/semi_burger/introduce/ceo.jsp">CEO 인사말</a></li>
-					<li><a href="/semi_burger/introduce/story.jsp">YONG STORY</a></li>					
+					<li><a href="/semi_burger/introduce/story.jsp">YONG BURGER</a></li>					
 					<li><a href="/semi_burger/introduce/road.jsp">찾아오시는길</a></li>
 				</ul>
 				</li>

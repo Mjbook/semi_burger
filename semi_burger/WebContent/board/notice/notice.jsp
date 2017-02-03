@@ -12,16 +12,6 @@
 
 
 
-<!--
-#bmenu {
-	position: fixed;
-	top: 200px;
-	left: 100px;
-	width: 250px;
-	text-align: center;
-}
-
--->
 table {
 	width: 100%;
 	margin: 0px auto;

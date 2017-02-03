@@ -1,10 +1,10 @@
 @CHARSET "UTF-8";
+
 body{
 	width: 1000px;
-	margin: 120px auto;
+	margin: 70px auto;
 }
-header{
-	
+header{	
 	width:1000px;
 }
 #headerback{
@@ -171,18 +171,18 @@ footer {
 
 <!---------------------------다시 레이아웃 잡기 ------------------------------------>
 
+
 #container {
-	width: 940px;
 	margin: 0px auto;
 	padding: 10px;
 }
 #header {
-	padding: 20px;
+	padding-top: 20px;
 }
 
 #content {
 	width: 80%;
-	padding: 20 px;
+	padding: 20px auto;
 	float : left;
 }
 #sideMenu {
@@ -204,3 +204,21 @@ footer {
 	padding: 20px;
 	
 }
+
+#mainnotice {
+	box-sizing: border-box;
+	width: 50%;
+	padding: 20px;
+	margin-bottom: 20px;
+	float: left; 
+	border: 1px;
+}
+#maincenter {
+	box-sizing: border-box;
+	width: 50%;
+	padding: 20px;
+	margin-bottom: 20px;
+	float : right;
+	border: 1px;
+}
+
