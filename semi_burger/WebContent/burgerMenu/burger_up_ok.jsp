@@ -29,7 +29,7 @@ try{
 			
 			%>
 			<script>
-			window.alert('파일 업로드 성공! ');
+			window.alert('파일 업로드 성공!');
 			window.self.close();
 			window.open("burger_up_img.jsp?src=<%=savepath_end%>","event_up","top=300,left=400,width=350,height=250");
 			
