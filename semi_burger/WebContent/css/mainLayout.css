@@ -20,7 +20,7 @@ header p{
 }
 header nav{
 	
-	height:50px;
+	height:51px;
 	border-bottom: 2px solid #800000;
 }
 .bigmenu li{
@@ -66,14 +66,6 @@ footer {
 }
 
 
-#sideMenu {
-	position: fixed;
-	top: 200px;
-	left: 100px;
-	width: 250px;
-	border: 1px;
-}
-
 #sideMenu ul {
 	list-style: none;
 	margin: 0px;
@@ -100,7 +92,7 @@ footer {
 #sideMenu ol li {
 	padding: 5px 0px 5px 5px;
 	margin-bottom: 5px;
-	border: 1px solid #ff6666;
+	border: 1px solid;
 	font-size: 15px;
 }
 
@@ -153,12 +145,6 @@ footer {
 	text-decoration: none;
 
 }
-#bi {
-
-	text-align: center;
-	font-size:12px;
-
-}
 
 #newMenu a:hover {
 	color: #cc3300;
@@ -169,7 +155,7 @@ footer {
 #newMenu ul ul {
 	display: none;
 	position: absolute;
-	background-color: #FFFFCC;
+	
 }
 
 #newMenu ul li:hover ul {
@@ -183,3 +169,38 @@ footer {
 }
 
 
+<!---------------------------다시 레이아웃 잡기 ------------------------------------>
+
+#container {
+	width: 940px;
+	margin: 0px auto;
+	padding: 10px;
+}
+#header {
+	padding: 20px;
+}
+
+#content {
+	width: 80%;
+	padding: 20 px;
+	float : left;
+}
+#sideMenu {
+	width: 160px;
+	padding: 20px;
+	margin-bottom: 20px;
+	float: left; 
+	border: 1px;
+}
+#sidebar-right {
+	width: 160px;
+	padding: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	float: left;   <!-- 왼쪽 오른쪽 조절 가능 -->
+}
+#footer {
+	clear: both;
+	padding: 20px;
+	
+}

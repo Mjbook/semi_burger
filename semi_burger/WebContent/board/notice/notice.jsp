@@ -9,18 +9,6 @@
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
-#container {
-	min-height: 80%;
-	maring-top: -100px;
-}
-
-* html #container {
-	height: 100%;
-}
-
-#container #content {
-	padding: 100px 0;
-}
 
 
 
@@ -73,9 +61,12 @@ String sid=(String)session.getAttribute("sid");
 </head>
 <body>
 
-	<%@include file="/header.jsp" %>
-	
-	<div id="sideMenu">
+<div id="container">
+		<div id="header">
+			<%@include file="/header.jsp"%>
+		</div>
+		<div id="sideMenu"> 
+
 			<h2 align="center">커뮤니티</h2>
 			<ul>
 				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
@@ -83,32 +74,26 @@ String sid=(String)session.getAttribute("sid");
 				<li><a href="#">내가 만든 햄버거</a></li>
 				<li><a href="javascript:game()">게임하기</a></li>
 			</ul>
-	</div>
 
-	
-<h2>공지 사항</h2>
-<div id="container">
-	
-
-
-   <div id="content">
-   
-   <table >
-				<thead>
-					<tr>
-						<th>순번</th>
-						<th>제목</th>
-						<th>작성자</th>
-						<th>조회수</th>
-					</tr>
-				</thead>
-				<tfoot>
-					<tr>
-						<td colspan="3" align="center">
-							<%
+</div>
+<div id="content">
+			<h2>공지사항</h2>
+			<table>
+					<thead>
+						<tr>
+							<th>순번</th>
+							<th>제목</th>
+							<th>작성자</th>
+							<th>조회수</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<td colspan="3" align="center">
+								<%
 						if(userGroup!=0) {
 							%><a href="QAList.jsp?cp=<%=(userGroup-1)*pageSize+pageSize%>">&lt;&lt;</a>
-							<%
+								<%
 							 }
 						for(int i=userGroup*pageSize+1; i<=userGroup*pageSize+pageSize; i++) {
 							%> &nbsp;&nbsp;<a href="QAList.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
@@ -118,46 +103,47 @@ String sid=(String)session.getAttribute("sid");
 							}
 						if(userGroup!=((totalPage/pageSize)-(totalPage%pageSize==0?1:0))) {
 							%> <a href="QAList.jsp?cp=<%=((userGroup+1)*pageSize+1)%>">&gt;
-								&gt;</a> <%
+									&gt;</a> <%
 							}
 						%>
-						</td>
-						<% if("admin".equals(sid)) { %>
+							</td>
+							<% if("admin".equals(sid)) { %>
 							<td><a href="noticeWrite.jsp">글쓰기</a></td>
-						<% } %>
-					</tr>
-				</tfoot>
-				<tbody>
-					<%
+							<% } %>
+						</tr>
+					</tfoot>
+					<tbody>
+						<%
 					ArrayList<noticeDTO> adto = bdao.noticeList(cp, listSize);
 					if (adto == null || adto.size() == 0) {
 							%>
-					<tr>
-						<td colspan="4" align="center">등록된 게시글이 없습니다.</td>
-					</tr>
-					<%
+						<tr>
+							<td colspan="4" align="center">등록된 게시글이 없습니다.</td>
+						</tr>
+						<%
 					} else {
 						for (int i = 0; i < adto.size(); i++) {
 								%>
-					<tr>
-						<td><%=adto.get(i).getNotice_no()%></td>
-						<td>
-						
-						<a href="noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><%=adto.get(i).getSubject() %></a></td>
-						<td><%=adto.get(i).getInsert_date()%></td>
-						<td><%=adto.get(i).getBoard_count() %></td>
-					</tr>
-					<%
+						<tr>
+							<td><%=adto.get(i).getNotice_no()%></td>
+							<td><a
+								href="noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><%=adto.get(i).getSubject() %></a></td>
+							<td><%=adto.get(i).getInsert_date()%></td>
+							<td><%=adto.get(i).getBoard_count() %></td>
+						</tr>
+						<%
 							}
-						}
-					%>
-				</tbody>
-			</table>
-   
-   </div>
+										}
+						%>
+					</tbody>
+				</table>
+
 </div>
 
-	<%@include file="/footer.jsp" %>
+<div id="footer">
+<%@include file="/footer.jsp" %>
+</div>
+</div>
 
 </body>
 </html>				
