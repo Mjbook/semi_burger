@@ -18,7 +18,7 @@
 <%
 request.setCharacterEncoding("utf-8");
 ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
-String item_pays=request.getParameter("item_pays");
+
 %>
 <!DOCTYPE html>
 <html>
@@ -160,6 +160,7 @@ for(int i=0;i<arr_bdto.size();i++){
 		<form name="burgerMenu" method="post">
 			<table border="1">
 				<tr>
+				@표시는 이벤트 메뉴 입니다.
 				<%
 				String sid=(String)session.getAttribute("sid");
 				wf.setUser(sid);
@@ -173,7 +174,7 @@ for(int i=0;i<arr_bdto.size();i++){
 				for(int i=0;i<al.size();i++){
 					if(i%2==0&&i!=al.size()&&i!=0){
 					%>
-						등록된 메뉴가 없습니다.</tr><tr>
+					</tr><tr>
 					<%
 					}
 					%>
