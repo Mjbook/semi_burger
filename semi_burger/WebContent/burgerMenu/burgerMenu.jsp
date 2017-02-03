@@ -158,7 +158,7 @@ for(int i=0;i<arr_bdto.size();i++){
 	<article>
 	<h2>햄버거 메뉴</h2>
 		<form name="burgerMenu" method="post">
-			<table border="1">
+			<table border="1" cellspacing="1">
 				<tr>
 				@표시는 이벤트 메뉴 입니다.
 				<%
