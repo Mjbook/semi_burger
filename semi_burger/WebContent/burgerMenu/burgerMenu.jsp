@@ -18,7 +18,7 @@
 <%
 request.setCharacterEncoding("utf-8");
 ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
-String item_pays=request.getParameter("item_pays");
+
 %>
 <!DOCTYPE html>
 <html>

@@ -36,7 +36,7 @@ function eventMenu_delete(){
 request.setCharacterEncoding("utf-8");
 ArrayList<BurgerDTO> al=burgerdao.eventMenu(burgerdto);
 String sid=(String)session.getAttribute("sid");
-String item_pays=request.getParameter("item_pays");
+
 %>
 <%@include file="../header.jsp" %>
 
@@ -67,8 +67,14 @@ String item_pays=request.getParameter("item_pays");
 					 %>
 					<%=al.get(i).getItem_name()%>
 					<br><br><br>
+					
 					<span style="text-decoration: line-through; color: red;">
-					<%=item_pays+"원" %>
+					<%	
+					int epay=Integer.parseInt(al.get(i).getItem_pay());
+					double pay=epay/0.85;
+					int epays=(int)pay;
+					%>
+					<%=epays %>원
 					</span>		
 					<br>
 					<%=	al.get(i).getItem_pay()%>원
