@@ -5,8 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Yong Burger</title>
-<link rel="stylesheet" type="text/css"
-href="/semi_burger/css/mainLayout.css">
+<link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <style>
 	section li{
 		margin: 0px auto;
@@ -42,9 +41,12 @@ href="/semi_burger/css/mainLayout.css">
 		width: 130px;
 		height: 40px;
 	}
-	.li2{
-		font-size: 15px;
+	.li1{
+		font-size: 18px;
 		color: gray;
+	}
+	.li2{
+		font-size: 14px;
 	}
 </style>
 </head>
@@ -78,45 +80,42 @@ href="/semi_burger/css/mainLayout.css">
 		</ul>
 		<ol>
 			<li><img src="/semi_burger/introduce/img/intro_img01.jpg"> <br>
-				하나. <br>
+				<span style="color:red; font-size:18px;"><b>하나.</b></span> <br>
 				<br>
-				<div class="li2">국내최초 한정판매 방식<br>
+				<div class="li1">국내최초 한정판매 방식<br>
 				버거전문점</div><br>
+				<div class="li2">신선함과 퀄리티를 극대화 하기 위해 당일 판매할 분량만큼 만들어 판매하고 클로징하는 시스템을 유지하고 있습니다.</div>
 				<br>
-				신선함과 퀄리티를 극대화 하기 위해 당일 판매할 분량만큼 만들어 판매하고 클로징하는 시스템을 유지하고 있습니다.
 			</li>
 							
 			<li><img src="/semi_burger/introduce/img/intro_img03.jpg"> <br>
-				둘. <br>
+				<span style="color:red; font-size:18px;"><b>둘.</b></span><br>
 				<br>
-				<div class="li2">천연 효모 발효종<br>
+				<div class="li1">천연 효모 발효종<br>
 				버거번 사용</div><br>
-				<br>
-				전문 매장에서 YONG BURGER를 위해 개발한<br>
-				천연효모 발표 버거번을 사용합니다.
+				<div class="li2">전문 매장에서 YONG BURGER를 위해 개발한<br>
+				천연효모 발표 버거번을 사용합니다.</div>
 				<br>
 			</li> 
 			
 			<li><img src="/semi_burger/introduce/img/intro_img04.jpg"> <br>
-				셋. <br>
+				<span style="color:red; font-size:18px;"><b>셋.</b></span><br>
 				<br>
-				<div class="li2">매장에서 직접 패티를 제조하는<br>
+				<div class="li1">매장에서 직접 패티를 제조하는<br>
 				자가제육 방식</div><br>
-				<br>
-				냉동 패티를 사용하지 않기 위해 모든 매장에서 직접<br>
-				패티를 만드는 방식으로 운영됩니다.
+				<div class="li2">냉동 패티를 사용하지 않기 위해 모든 매장에서 직접<br>
+				패티를 만드는 방식으로 운영됩니다.</div>
 				<br>
 			</li>
 			
 			<li><img src="/semi_burger/introduce/img/intro_img06.jpg"> <br>
-				넷. <br>
+				<span style="color:red; font-size:18px;"><b>넷.</b></span><br>
 				<br>
-				<div class="li2">신선하고 안정적인<br>
+				<div class="li1">신선하고 안정적인<br>
 				물류 시스템</div><br>
-				<br>
-				철저한 검수를 통해 질 좋은 식재료를 더욱 저렴하게<br>
+				<div class="li2">철저한 검수를 통해 질 좋은 식재료를 더욱 저렴하게<br>
 				공급 받을 수 있도록 국내 최대 물류기업과 계약하여<br>
-				모든 매장에서 안정적으로 재료를 공급받을 수 있도록 하였습니다.
+				모든 매장에서 안정적으로 재료를 공급받을 수 있도록 하였습니다.</div>
 				<br>
 			</li>
 		</ol>
