@@ -54,16 +54,10 @@ public class SideDAO {
 	public int sideUPLoad(String sideitem_name,String sideitem_pay,int sideitem_count,String sideitem_img_src){
 		try{
 			conn=yb.db.YB_DB.getConn();
-<<<<<<< HEAD
+
 			String sql="insert into side values(side_seq.nextval,?,?,?,sysdate,sysdate+14,?)";
-=======
-			String sql="insert into side values(side_seq.nextval,,?,?,?,sysdate,sysdate+14,?)";
->>>>>>> branch 'master' of https://github.com/yongburger/semi_burger.git
-			ps=conn.prepareStatement(sql);
-<<<<<<< HEAD
-			
-=======
->>>>>>> branch 'master' of https://github.com/yongburger/semi_burger.git
+
+
 			ps.setString(1, sideitem_name);
 			ps.setString(2, sideitem_pay);
 			ps.setInt(3, sideitem_count);
