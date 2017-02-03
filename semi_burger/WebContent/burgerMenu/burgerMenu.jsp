@@ -180,16 +180,18 @@ for(int i=0;i<arr_bdto.size();i++){
 					<th>
 					<img src="/semi_burger/burger_img/<%=al.get(i).getItem_img_src()%>" width="300" height="260">
 					</th>
+					<td align="center" width="200" height="260">
 					<%
 					if(sid!=null){
 					if(sid.equals("admin")){
 						%>
 						Key : <%=al.get(i).getItem_key() %>
+						<br><br><br>
 						<% 
 					}	
 					}
 					 %>
-					<td align="center" width="200" height="260">
+					
 					<%=al.get(i).getItem_name()%>
 					<br><br><br>
 					<%=al.get(i).getItem_pay()+"원" %>

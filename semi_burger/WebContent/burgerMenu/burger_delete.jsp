@@ -18,8 +18,8 @@ request.setCharacterEncoding("UTF-8");
 			<form name="burger_delete" action="burger_delete_ok.jsp">
 			<table>
 				<tr>
-					<th>버거번호:</th>
-					<td><input type="text" name="item_num"></td>
+					<th>key : </th>
+					<td><input type="text" name="item_key"></td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="reset" value="다시작성">
