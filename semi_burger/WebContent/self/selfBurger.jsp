@@ -30,7 +30,7 @@ function showTop(){
 </script>
 </head>
 <%
-ArrayList<TopingDTO> tdtos=tdao.getInfo();
+ArrayList<TopingDTO> tdtos=tdao.getInfo("show");
 String count=(String)session.getAttribute("toping_count");
 int count_i=0;
 String toping=request.getParameter("at");

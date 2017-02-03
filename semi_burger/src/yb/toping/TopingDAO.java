@@ -23,7 +23,7 @@ public class TopingDAO {
 		try {
 			conn=yb.db.YB_DB.getConn();
 			
-			String sql="insert into toping values(toping_seq.nextval, 0,?,?,'0')";
+			String sql="insert into toping values(toping_seq.nextval, 0,?,?,'show')";
 			ps=conn.prepareStatement(sql);
 			ps.setString(1, name);
 			ps.setString(2, price);
@@ -217,10 +217,16 @@ public class TopingDAO {
 		}
 	}
 	/**토핑메뉴 가져오는 메서드*/
-	public ArrayList<TopingDTO> getInfo(){
+	public ArrayList<TopingDTO> getInfo(String show){
 		try {
+			if(!show.equals("show")){
+				show="!";
+			}else{
+				show="";
+			}
+			
 			conn=yb.db.YB_DB.getConn();
-			String sql="select * from toping where show='show' order by toping_key";
+			String sql="select * from toping where show"+show+"='show' order by toping_key";
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
 			ArrayList<TopingDTO> arr=new ArrayList<TopingDTO>();
@@ -281,7 +287,7 @@ public class TopingDAO {
 	public HashMap<Integer, String> getTopings(){
 		try {
 			conn=yb.db.YB_DB.getConn();
-			String sql="select toping_key,toping_name from toping";
+			String sql="select * from toping";
 			ps=conn.prepareStatement(sql);
 			
 			rs=ps.executeQuery();
