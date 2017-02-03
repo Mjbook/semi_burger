@@ -10,9 +10,43 @@
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
 
+#table1 table {
+	width: 1000px;
+	margin: 15px 0;
+}
 
+#table1 th {
+	background-color: #00A5FF;
+	background: -o-linear-gradient(90deg, #00A5FF, #6dcbfe);
+	background: -moz-linear-gradient(center top, #00A5FF 5%, #6dcbfe 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #00A5FF
+		), color-stop(1, #6dcbfe));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00A5FF',
+		endColorstr='#6dcbfe');
+	color: #FFFFFF;
+	}
 
-table {
+#table1, #table1 th, #table1 td {
+	width: 800px;
+	font-size: 0.95em;
+	text-align: center;
+	padding: 4px;
+	border: 1px solid #efefef;
+	border-collapse: collapse
+}
+
+#table1 tr:nth-child(odd) {
+	background-color: #aae1fe;
+	background: -o-linear-gradient(90deg, #aae1fe, #eef9fe);
+	background: -moz-linear-gradient(center top, #aae1fe 5%, #eef9fe 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #aae1fe
+		), color-stop(1, #eef9fe));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aae1fe',
+		endColorstr='#eef9fe');
+}
+
+#table1 tr:nth-child(even) {
+	background-color: #fdfdfd table{ 
 	width: 100%;
 	margin: 0px auto;
 	border-top: 2px double darkblue;
@@ -20,13 +54,7 @@ table {
 	border-spacing: 0px;
 }
 
-table th {
-	background: skyblue;
-}
 
-table td {
-	text-align: center;
-}
 </style>
 <%
 String sid=(String)session.getAttribute("sid");
@@ -68,7 +96,7 @@ String sid=(String)session.getAttribute("sid");
 </div>
 <div id="content">
 			<h2>공지사항</h2>
-			<table>
+			<table id="table1">
 					<thead>
 						<tr>
 							<th>순번</th>
@@ -82,23 +110,23 @@ String sid=(String)session.getAttribute("sid");
 							<td colspan="3" align="center">
 								<%
 						if(userGroup!=0) {
-							%><a href="QAList.jsp?cp=<%=(userGroup-1)*pageSize+pageSize%>">&lt;&lt;</a>
+							%><a href="noticeList.jsp?cp=<%=(userGroup-1)*pageSize+pageSize%>">&lt;&lt;</a>
 								<%
 							 }
 						for(int i=userGroup*pageSize+1; i<=userGroup*pageSize+pageSize; i++) {
-							%> &nbsp;&nbsp;<a href="QAList.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
+							%> &nbsp;&nbsp;<a href="noticeList.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
 							if(i==totalPage) {
 								break;
 								}
 							}
 						if(userGroup!=((totalPage/pageSize)-(totalPage%pageSize==0?1:0))) {
-							%> <a href="QAList.jsp?cp=<%=((userGroup+1)*pageSize+1)%>">&gt;
+							%> <a href="noticeList.jsp?cp=<%=((userGroup+1)*pageSize+1)%>">&gt;
 									&gt;</a> <%
 							}
 						%>
 							</td>
 							<% if("admin".equals(sid)) { %>
-							<td><a href="noticeWrite.jsp">글쓰기</a></td>
+							<td><input type="button" value="글쓰기" onclick="location.href='noticeWrite.jsp'"></td>
 							<% } %>
 						</tr>
 					</tfoot>
