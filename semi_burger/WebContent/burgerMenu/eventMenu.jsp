@@ -35,6 +35,7 @@ function eventMenu_delete(){
 <%
 request.setCharacterEncoding("utf-8");
 ArrayList<BurgerDTO> al=burgerdao.eventMenu(burgerdto);
+String sid=(String)session.getAttribute("sid");
 %>
 <%@include file="../header.jsp" %>
 
@@ -53,6 +54,16 @@ ArrayList<BurgerDTO> al=burgerdao.eventMenu(burgerdto);
 					%>
 					<th><img src="../burger_img/<%=al.get(i).getItem_img_src()%>" width="300" height="260"></th>
 					<td align="center" width="200" height="260">
+					<%
+					if(sid!=null){
+					if(sid.equals("admin")){
+						%>
+						버거번호 : <%=al.get(i).getItem_key() %>
+						<br><br><br>
+						<% 
+					}	
+					}
+					 %>
 					<%=al.get(i).getItem_name()%>
 					<br><br><br>
 					<%=al.get(i).getItem_pay()+"원" %>
@@ -75,7 +86,7 @@ ArrayList<BurgerDTO> al=burgerdao.eventMenu(burgerdto);
 				}
 				%>
 				<%
-				String sid=(String)session.getAttribute("sid");
+				
 				if(sid!=null){
 					if(sid.equals("admin")){
 						%>

@@ -4,10 +4,6 @@
 <jsp:useBean id="burger_img" class="yb.burger.Burger_upload" scope="session"/>
 <jsp:useBean id="bdao" class="yb.burger.BurgerDAO"/>
 <%
-
-	String s=request.getParameter("item_num");
-	int item_num = Integer.parseInt(s);
-	
 	String item_name = request.getParameter("item_name");
 	String item_pay = request.getParameter("item_pay");
 	
@@ -16,7 +12,7 @@
 	
 	String item_img_src=request.getParameter("item_img_src");
 	
-int result=bdao.burgerUPLoad(item_num, item_name, item_pay, item_count, item_img_src);
+int result=bdao.burgerUPLoad(item_name, item_pay, item_count, item_img_src);
 String msg=result>0?"등록되었습니다.":"등록에 실패하였습니다.";
 %>
 

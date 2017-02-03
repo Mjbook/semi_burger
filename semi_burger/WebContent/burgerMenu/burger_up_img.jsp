@@ -25,10 +25,6 @@ String item_img_src = request.getParameter("src");
 			<form name="burger_up_img" action="burger_up_img_ok.jsp">
 			<table>
 				<tr>
-					<th>버거 번호:</th>
-					<td><input type="text" name="item_num"></td>
-				</tr>
-				<tr>
 					<th>버거 이름:</th>
 					<td><input type="text" name="item_name"></td>
 				</tr>

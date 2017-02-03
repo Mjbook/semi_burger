@@ -17,7 +17,7 @@ try{
 	if(files==null||files.length==0){
 		
 	}else{
-		for(int i=0;i<files.length;i++){
+			for(int i=0;i<files.length;i++){
 			if(files.length>1){
 				for(int j=0;j<files.length;j++){
 					File del=files[j];
@@ -29,7 +29,9 @@ try{
 			%>
 			<script>
 			window.alert('파일 업로드 성공!');
-			window.open("burger_up_img.jsp?src=<%=savepath_end%>","burger_up_img","top=300,left=400,width=350,height=250");
+			
+			window.open('burger_up_img.jsp?src=<%=save%>');
+			
 			window.self.close();
 			</script>
 			<%
