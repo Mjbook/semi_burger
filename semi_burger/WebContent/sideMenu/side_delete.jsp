@@ -18,8 +18,8 @@ request.setCharacterEncoding("UTF-8");
 			<form name="side_delete" action="side_delete_ok.jsp">
 			<table>
 				<tr>
-					<th>사이드번호:</th>
-					<td><input type="text" name="sideitem_num"></td>
+					<th>key : </th>
+					<td><input type="text" name="sideitem_key"></td>
 				</tr>
 				<tr>
 					<td colspan="2"><input type="reset" value="다시작성">

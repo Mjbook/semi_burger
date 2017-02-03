@@ -3,7 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@page import="com.oreilly.servlet.*"%>
 <%@ page import="java.io.*" %>
-<jsp:useBean id="wf" class="yb.burger.Side_upload" scope="session"/>
+<jsp:useBean id="wf" class="yb.burger.Burger_upload" scope="session"/>
 <%
 	String savepath=wf.USERS_HOME+"/"+wf.getCrpath();
 	

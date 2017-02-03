@@ -9,11 +9,11 @@
 <%
 request.setCharacterEncoding("UTF-8");
 
-String sideitem_num_s=request.getParameter("sideitem_num");
-int sideitem_num=Integer.parseInt(sideitem_num_s);
+String sideitem_key_s=request.getParameter("sideitem_key");
+int sideitem_key=Integer.parseInt(sideitem_key_s);
 
 
-int result=sdao.sideDelete(sideitem_num);
+int result=sdao.sideDelete(sideitem_key);
 
 String msg=result>0?"삭제되었습니다.":"삭제에 실패하였습니다.";
 %>

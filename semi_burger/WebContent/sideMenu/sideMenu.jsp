@@ -40,6 +40,16 @@ function side_delete(){
 					%>
 					<th><img src="../side_img/<%=al2.get(i).getSideitem_img_src()%>" width="300" height="260"></th>
 					<td align="center" width="300" height="260">
+					<%
+					if(sid!=null){
+					if(sid.equals("admin")){
+						%>
+					Key : <%=al2.get(i).getSideitem_key() %>	
+					<br><br><br>
+						<%	
+					}
+					}
+					%>
 					<%=al2.get(i).getSideitem_name() %>
 					<br><br><br>
 					<%=al2.get(i).getSideitem_pay()+"원" %>
