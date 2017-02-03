@@ -9,10 +9,9 @@
 href="/semi_burger/css/mainLayout.css">
 <style>
 	section li{
-		list-style-type: none;
 		margin: 0px auto;
 	}
-	section div{
+	.div1{
 		text-align: center;
 		font-size: 25px;
 	}
@@ -43,6 +42,10 @@ href="/semi_burger/css/mainLayout.css">
 		width: 130px;
 		height: 40px;
 	}
+	.li2{
+		font-size: 15px;
+		color: gray;
+	}
 </style>
 </head>
 <body>
@@ -50,9 +53,9 @@ href="/semi_burger/css/mainLayout.css">
 <section>
 	<article>
 		<br>
-		<div>
+		<div class="div1">
 			<b>Yong Burger 소개</b><br>
-			<span class="subtitle"> HOME > Yong Burger 소개 > YONG BURGER&nbsp;&nbsp;&nbsp;</span>
+			<span class="subtitle"> HOME > Yong Burger 소개 > YONG STORY&nbsp;&nbsp;&nbsp;</span>
 			<br>
 		</div>
 		<hr>
@@ -63,7 +66,7 @@ href="/semi_burger/css/mainLayout.css">
 		<table>	
 			<tr>
 				<td> &nbsp;<a onclick="location='/semi_burger/introduce/ceo.jsp'"><b>CEO 인사말</b></a>&nbsp;</td>
-				<th> &nbsp;<a onclick="location='/semi_burger/introduce/story.jsp'">YONG BURGER</a>&nbsp;</th>
+				<th> &nbsp;<a onclick="location='/semi_burger/introduce/story.jsp'">YONG STORY</a>&nbsp;</th>
 				<td> &nbsp;<a onclick="location='/semi_burger/introduce/road.jsp'"><b>찾아오시는 길</b></a>&nbsp;</td>
 			</tr>
 		</table>
@@ -71,35 +74,52 @@ href="/semi_burger/css/mainLayout.css">
 	</article>
 	<article>
 		<ul>
-			<li><span class="head">YONG BURGER는</span><br>
-				미국의 버거 레시피를 한국인의 입맛에 맞게 업그레이드하여 <br>
-				한번 먹어보면 버거에 빠지는<br>
-				매력을 가진 수제 햄버거 브랜드입니다.
-			</li>
-			<br>
-				
-			<li> 국내 유일의 순쇠고기 냉장패티 수제 버거전문점으로<br>
-				다른 패스트푸드점과 달리 고객에게 신선하고 따뜻한 햄버거를 제공하기 위해<br>
-				주문과 동시에 조리가 시작됩니다.
-			</li> 
-			<br>
+			<li>YOUNG BURGER의 특징!</li>
 		</ul>
-		
 		<ol>
-			<li><span class="head">YONG BURGER는</span> 신선한 재료만 사용합니다.<br>
-				주 재료인 쇠고기, 양상추, 토마토, 양파, 버거번 등 모든 재료는 당일 배송된 신선한 상태의 원재료만 사용하였습니다.
+			<li><img src="/semi_burger/introduce/img/intro_img01.jpg"> <br>
+				하나. <br>
+				<br>
+				<div class="li2">국내최초 한정판매 방식<br>
+				버거전문점</div><br>
+				<br>
+				신선함과 퀄리티를 극대화 하기 위해 당일 판매할 분량만큼 만들어 판매하고 클로징하는 시스템을 유지하고 있습니다.
 			</li>
-			<br>			
-			<li><span class="head">YONG BURGER는</span> 재료비를 아끼지 않습니다.<br>
-				버거 패티에 가장 좋은 쇠고기 부위를 사용하고, 모든 야채도 철저한 검수를 통해 질 좋은 상품을 구입하였으며,<br>
-				치즈와 소스재료 모두 여러 구매경로를 통해 퀄리티는 높이고 가격은 낮췄습니다.
-			</li>
-			<br>			
-			<li><span class="head">YONG BURGER는</span> 맛과 함께 건강도 생각합니다.<br>
-				버거는 안좋은 음식이라는 편견을 깨기 위해, 패티에 첨가물이나 필러를 넣지 않았고, 모든 메뉴에 인공 조미료 사용을 배제하였으며,<br>
-				깨끗한 올리브오일과 카놀라유 등 식물성 기름만 사용하여 건강까지 생각하였습니다.
+							
+			<li><img src="/semi_burger/introduce/img/intro_img03.jpg"> <br>
+				둘. <br>
+				<br>
+				<div class="li2">천연 효모 발효종<br>
+				버거번 사용</div><br>
+				<br>
+				전문 매장에서 YONG BURGER를 위해 개발한<br>
+				천연효모 발표 버거번을 사용합니다.
+				<br>
 			</li> 
-		</ol>		
+			
+			<li><img src="/semi_burger/introduce/img/intro_img04.jpg"> <br>
+				셋. <br>
+				<br>
+				<div class="li2">매장에서 직접 패티를 제조하는<br>
+				자가제육 방식</div><br>
+				<br>
+				냉동 패티를 사용하지 않기 위해 모든 매장에서 직접<br>
+				패티를 만드는 방식으로 운영됩니다.
+				<br>
+			</li>
+			
+			<li><img src="/semi_burger/introduce/img/intro_img06.jpg"> <br>
+				넷. <br>
+				<br>
+				<div class="li2">신선하고 안정적인<br>
+				물류 시스템</div><br>
+				<br>
+				철저한 검수를 통해 질 좋은 식재료를 더욱 저렴하게<br>
+				공급 받을 수 있도록 국내 최대 물류기업과 계약하여<br>
+				모든 매장에서 안정적으로 재료를 공급받을 수 있도록 하였습니다.
+				<br>
+			</li>
+		</ol>
 	</article>
 </section>
 <br>
