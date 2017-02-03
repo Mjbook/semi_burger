@@ -18,7 +18,7 @@
 <%
 request.setCharacterEncoding("utf-8");
 ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
-
+String item_pays=request.getParameter("item_pays");
 %>
 <!DOCTYPE html>
 <html>
@@ -173,7 +173,7 @@ for(int i=0;i<arr_bdto.size();i++){
 				for(int i=0;i<al.size();i++){
 					if(i%2==0&&i!=al.size()&&i!=0){
 					%>
-						</tr><tr>
+						등록된 메뉴가 없습니다.</tr><tr>
 					<%
 					}
 					%>

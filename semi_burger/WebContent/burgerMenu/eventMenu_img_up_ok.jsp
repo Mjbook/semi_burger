@@ -39,7 +39,7 @@ try{
 			
 			f=files[0];
 			name="e_"+f.getName();
-			System.out.println(name);
+			
 			
 			int idx=name.lastIndexOf('.');
 			int length=name.length();
