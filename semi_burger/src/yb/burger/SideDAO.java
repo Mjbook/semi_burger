@@ -56,8 +56,7 @@ public class SideDAO {
 			conn=yb.db.YB_DB.getConn();
 
 			String sql="insert into side values(side_seq.nextval,?,?,?,sysdate,sysdate+14,?)";
-
-
+			ps=conn.prepareStatement(sql);
 			ps.setString(1, sideitem_name);
 			ps.setString(2, sideitem_pay);
 			ps.setInt(3, sideitem_count);
