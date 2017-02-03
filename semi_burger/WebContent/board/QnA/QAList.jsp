@@ -10,10 +10,7 @@
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <title>Insert title here</title>
 <style>
- #container {min-height: 80%; maring-top: -100px; }
-   * html #container {height: 100%;}
-  #container #content {padding: 100px 0 ; }
-  
+
 table {
 	width: 100%;
 	margin: 0px auto;
@@ -57,10 +54,13 @@ if(cp%pageSize==0) {
 }
 %>
 <body>
+<div id="container">
+<div id="header">
 <%@include file="/header.jsp" %>
+</div>
 
-			<h2>QNA</h2>
-	<div id="sideMenu">
+<div id="sideMenu">
+
 		<h2 align="center">커뮤니티</h2>
 		<ul>
 			<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
@@ -69,10 +69,9 @@ if(cp%pageSize==0) {
 			<li><a href="javascript:game()">게임하기</a></li>
 		</ul>
 	</div>
-
-	<div id="container">
-   <div id="content">
-			<table>
+	<div id="content">
+		<h2>창업문의</h2>
+				<table>
 				<thead>
 					<tr>
 						<th>순번</th>
@@ -136,8 +135,11 @@ if(cp%pageSize==0) {
 			</table>
    
    </div>
+   <div id="footer">
+   	<%@include file="/footer.jsp" %>
+   </div>
 </div>
 	
-	<%@include file="/footer.jsp" %>
+
 </body>
 </html>
