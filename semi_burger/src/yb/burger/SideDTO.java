@@ -5,7 +5,6 @@ import java.util.*;
 public class SideDTO {
 	
 	private int sideitem_key;
-	private int sideitem_num;
 	private String sideitem_name;
 	private String sideitem_pay;
 	private int sideitem_count;
@@ -17,11 +16,10 @@ public class SideDTO {
 		
 	}
 
-	public SideDTO(int sideitem_key, int sideitem_num, String sideitem_name, String sideitem_pay, int sideitem_count,
+	public SideDTO(int sideitem_key, String sideitem_name, String sideitem_pay, int sideitem_count,
 			Date sideitem_event_start, Date sideitem_event_finish, String sideitem_img_src) {
 		super();
 		this.sideitem_key = sideitem_key;
-		this.sideitem_num = sideitem_num;
 		this.sideitem_name = sideitem_name;
 		this.sideitem_pay = sideitem_pay;
 		this.sideitem_count = sideitem_count;
@@ -36,14 +34,6 @@ public class SideDTO {
 
 	public void setSideitem_key(int sideitem_key) {
 		this.sideitem_key = sideitem_key;
-	}
-
-	public int getSideitem_num() {
-		return sideitem_num;
-	}
-
-	public void setSideitem_num(int sideitem_num) {
-		this.sideitem_num = sideitem_num;
 	}
 
 	public String getSideitem_name() {
@@ -94,5 +84,4 @@ public class SideDTO {
 		this.sideitem_img_src = sideitem_img_src;
 	}
 	
-		
 }

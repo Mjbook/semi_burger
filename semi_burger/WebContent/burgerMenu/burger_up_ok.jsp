@@ -30,7 +30,7 @@ try{
 			<script>
 			window.alert('파일 업로드 성공!');
 			
-			window.open('burger_up_img.jsp?src=<%=save%>');
+			window.open('burger_up_img.jsp?src=<%=save%>','burgerup','width=300 height=200');
 			
 			window.self.close();
 			</script>
