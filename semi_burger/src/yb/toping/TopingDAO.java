@@ -134,6 +134,7 @@ public class TopingDAO {
 		}
 	}
 	
+	/**토핑 보여주기 관련 메서드*/
 	public int showToping(String name,String show){
 		try {
 			conn=yb.db.YB_DB.getConn();
@@ -219,14 +220,15 @@ public class TopingDAO {
 	/**토핑메뉴 가져오는 메서드*/
 	public ArrayList<TopingDTO> getInfo(String show){
 		try {
-			if(!show.equals("show")){
-				show="!";
+			String sql="";
+			if(show.equals("show")){
+				sql="select * from toping where show='show' order by toping_key";
 			}else{
-				show="";
+				sql="select * from toping where show!='show' order by toping_key";
 			}
 			
 			conn=yb.db.YB_DB.getConn();
-			String sql="select * from toping where show"+show+"='show' order by toping_key";
+			
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
 			ArrayList<TopingDTO> arr=new ArrayList<TopingDTO>();
@@ -283,7 +285,7 @@ public class TopingDAO {
 		}
 	}
 	
-	/**토핑 메뉴 목록 가져오기 메서드*/
+	/**토핑 메뉴 목록(key,String) 가져오기 메서드*/
 	public HashMap<Integer, String> getTopings(){
 		try {
 			conn=yb.db.YB_DB.getConn();

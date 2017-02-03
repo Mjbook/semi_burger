@@ -4,15 +4,13 @@
 <!DOCTYPE html>
 <%
 String name=request.getParameter("select");
-System.out.println(name);
-int result=0;
-//int result=tdao.showToping(name,"show");
+int result=tdao.showToping(name,"show");
 
 if(result>0){
 	%>
 	<script>
 		window.opener.location.reload();
-		window.self.close();
+		location.href='showTop.jsp';
 	</script>
 	<%
 }else{

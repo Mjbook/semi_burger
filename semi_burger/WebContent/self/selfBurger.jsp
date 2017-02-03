@@ -25,7 +25,7 @@ function delTop(){
 	window.open('delToping.jsp','toping','width=400,height=100,left=600,top=300');
 }
 function showTop(){
-	window.open('showToping.jsp','toping','width=400,height=100,left=600,top=300');
+	window.open('showTop.jsp','toping','width=400,height=100,left=600,top=300');
 }
 </script>
 </head>

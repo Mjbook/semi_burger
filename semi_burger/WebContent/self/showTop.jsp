@@ -1,14 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="java.util.*" %>    
-<%@page import="yb.toping.*" %>    
-<jsp:useBean id="tdao" class=yb.toping.TopingDAO/>
-<jsp:useBean id="tdto" class=yb.toping.TopingDTO/>
+<%@page import="yb.toping.*" %>   
 <!DOCTYPE html>
 <html>
+<jsp:useBean id="tdao" class="yb.toping.TopingDAO"/>
+<jsp:useBean id="tdto" class="yb.toping.TopingDTO"/>
 <head>
 <meta charset=UTF-8>
 <title>Yong Burger</title>
+<script>
+function popClose(){
+	window.self.close();
+}
+</script>
 </head>
 <%
 ArrayList<TopingDTO> tdtos=tdao.getInfo("0");
@@ -32,17 +37,15 @@ ArrayList<TopingDTO> tdtos=tdao.getInfo("0");
 		<tr>
 			<td><img src="/semi_burger/self/toping_img/<%=tdto.getToping_img()%>"><br><%=tdto.getToping_name()%></td>
 			<td><%=tdto.getToping_price() %>원</td>
-			<td><input type="checkbox" name="select" value="<%=tdto.getToping_name()%>"></td>
+			<td><a href="showTop_ok.jsp?select=<%=tdto.getToping_name()%>">보이기</a></td>
 		</tr>
 		<%
 			}
-		%>
-		<tr>
-			<td colspan="3"><input type="submit" value="토핑  보이기"></td>
-		</tr>
-		<%
 		}
 		%>
+		<tr>
+			<td><input type="button" onclick="popClose()" value="닫기"></td>
+		</tr>
 		</table>
 		</form>
 	</fieldset>
