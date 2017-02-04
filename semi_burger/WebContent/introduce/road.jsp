@@ -10,11 +10,13 @@
 	.div1{
 		text-align: center;
 		font-size: 25px;
-		background-image: url(comma.png);
+		background: url(/semi_burger/introduce/img/sub_top_bg01.jpg) 50% 50% no-repeat;
+		background-size: cover;
 	}
 	div .subtitle{
 		font-size: 12px;
 		float: right;
+		color: white;
 	}
 	section table{
 		margin: 0px auto;
@@ -38,7 +40,7 @@
 	.title{
 		margin:0 auto;
 		position:relative;
-		font-size:21px;
+		font-size:22px;
 		letter-spacing:-2px;
 		color:#4f4f4f;
 		line-height:38px;
@@ -50,13 +52,11 @@
 
 <section>
 	<article>
-		<br>
 		<div class="div1">
-			<b>Yong Burger 소개</b><br>
-			<span class="subtitle"> HOME > Yong Burger 소개 > 찾아오시는 길&nbsp;&nbsp;&nbsp;</span>
+		<br>
+			<div style="color:white;font-size:30px;"><b>Yong Burger 소개</b><br></div>
 			<br>
 		</div>
-		<hr>
 		<br>
 	</article>
 	
@@ -75,14 +75,17 @@
 		<ul class="road">
 			<li><img src="/semi_burger/introduce/img/dot.png" width="40" height="40"></li>
 			<li class="title">찾아오시는 길</li>
-			<li style="color: skyblue; font-size:16px;"><b>한번 먹어보면 푹 빠지는 <span style="color:blue;">맛있는</span><br>
+			<br>
+			<li style="color: skyblue; font-size:17px;"><b>한번 먹어보면 푹 빠지는 <span style="color:blue;">맛있는</span><br>
 				수제 햄버거 YONG BURGER를 만나보세요!</b>
 			</li>
+			<br>
 			<br>
 			<li><img src="/semi_burger/introduce/img/map.jpg"></li>
 		</ul>	
 	</article>
 </section>
+<br>
 <br>
 
 <%@ include file="/footer.jsp" %>
