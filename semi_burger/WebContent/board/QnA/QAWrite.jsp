@@ -29,7 +29,6 @@ table textarea {
 #button {
 	text-align: right;
 }
-  
  </style>
 </head><body>
 	<div id="container">
@@ -54,7 +53,7 @@ table textarea {
 			<table id="table2">
 				<tr>
 					<th>작성자</th>
-					<td><input type="text" name="name" id="na"></td>
+					<td><input type="text" name="name" value="<%=sname%>" disabled ></td>
 					<th>비밀번호</th>
 					<td><input type="password" name="pwd" id="pw"> </td>
 				</tr>
@@ -80,6 +79,7 @@ table textarea {
 
 	<div id="footer">
 		<%@include file="/footer.jsp"%>
+	</div>
 	</div>
 </body>
 </html>
