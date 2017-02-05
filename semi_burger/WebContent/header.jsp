@@ -35,7 +35,7 @@ nav ul {
 	<nav>
 		<div id="newMenu">
 		<ul>
-			<li class ="menu"><a href="/semi_burger/index.jsp">HOME &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			<li><a href="/semi_burger/index.jsp">HOME &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
 
 			<li><a href="#">소개  &nbsp;&nbsp;&nbsp;&nbsp;</a>
 
