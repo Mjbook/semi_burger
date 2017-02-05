@@ -75,7 +75,7 @@ float: left;
 					<table>
 						<thead>
 							<tr >
-								<th>공지사항</th>
+								<th align="center">공지사항</th>
 							</tr>
 						</thead>
 						<tfoot>
