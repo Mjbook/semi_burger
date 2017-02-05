@@ -26,29 +26,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
-<style type="text/css">
- <!--
-  #container {min-height: 80%; maring-top: -100px; }
-   * html #container {height: 100%;}
-  #container #content {padding: 100px 0 ; }
-  
-table {
-	width: 100%;
-	margin: 0px auto;
-	border-top: 2px double darkblue;
-	border-bottom: 2px double darkblue;
-	border-spacing: 0px;
-}
-
-table th {
-	background: skyblue;
-}
-
-table td {
-	text-align: center;
-}  
-  
- </style>
 </head>
 <body>
 	<%@include file="/header.jsp" %>

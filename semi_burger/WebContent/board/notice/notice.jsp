@@ -8,36 +8,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
-<style type="text/css">
-
-#table1 table {
-	width: 1000px;
-	margin: 15px 0;
-}
-
-#table1 th {
-	color: #ffffff;
-	background-color: #aae1fe;
-	background: -o-linear-gradient(90deg, #800000, #ffffff);
-	background: -moz-linear-gradient(center top, #800000 100%, #ffffff  5%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #800000
-		), color-stop(1, #ffffff ));
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#800000',
-		endColorstr='#ffffff ');
-	}
-
-#table1, #table1 th, #table1 td {
-	width: 800px;
-	font-size: 12px;
-	text-align: center;
-	padding: 4px;
-	border-collapse: collapse
-}
-
-
-
-
-</style>
 <%
 String sid=(String)session.getAttribute("sid");
 	int totalCnt = bdao.getTotalCnt();//총 게시물 수
@@ -78,7 +48,7 @@ String sid=(String)session.getAttribute("sid");
 </div>
 <div id="content">
 			<h2>공지사항</h2>
-			<table id="table1">
+			<table id="tableList">
 					<thead>
 						<tr>
 							<th>순번</th>
