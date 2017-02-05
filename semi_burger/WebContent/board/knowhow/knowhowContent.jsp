@@ -1,19 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.*" %>
-<%@ page import="board.img.*" %>
-<jsp:useBean id="bdao" class="board.img.imgDAO"/>
+<%@ page import="board.knowhow.*" %>
+<jsp:useBean id="bdao" class="board.knowhow.knowhowDAO"/>
 <%
-String idx_s=request.getParameter("IMG_BOARD_NO");
+String idx_s=request.getParameter("KNOWHOW_NO");
 if(idx_s==null||idx_s.equals("")){
 	idx_s="0";
 }
 int idx=Integer.parseInt(idx_s);
-imgDTO dto=bdao.imgContent(idx);
+knowhowDTO dto=bdao.knowhowContent(idx);
 if(dto==null){
 	%>
 	<script>
 	window.alert('잘못된 접근방식 또는 삭제된 게시글 입니다.');
-	location.href='imgList.jsp';
+	location.href='knowhowList.jsp';
 	</script>
 	<%
 	return;

@@ -1,19 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.*" %>
-<%@ page import="board.img.*" %>
-<jsp:useBean id="bdao" class="board.img.imgDAO"/>
+<%@ page import="board.knowhow.*" %>
+<jsp:useBean id="bdao" class="board.knowhow.knowhowDAO"/>
 <%
-String idx_s=request.getParameter("IMG_BOARD_NO");
+String idx_s=request.getParameter("KNOWHOW_NO");
 if(idx_s==null||idx_s.equals("")){
 	idx_s="0";
 }
 int idx=Integer.parseInt(idx_s);
-imgDTO dto=bdao.imgContent(idx);
+knowhowDTO dto=bdao.knowhowContent(idx);
 if(dto==null){
 	%>
 	<script>
 	window.alert('잘못된 접근방식 또는 삭제된 게시글 입니다.');
-	location.href='imgList.jsp';
+	location.href='knowhowList.jsp';
 	</script>
 	<%
 	return;
@@ -62,6 +62,11 @@ table textarea {
 	width="100%"
 }
 
+#file {
+	text-align: left;
+	width="100%"
+}
+
   
   
  </style>
@@ -72,9 +77,8 @@ table textarea {
 <h2>내가 만든 햄버거</h2>
 <div id="container">
    <div id="content">	
-    <form action="imgWrite_ok.jsp">
+    <form action="knowhowWrite_ok.jsp" method="post" enctype="multipart/form-data" >
  <table border="1" bordercolor="blue" width="550" cellspacing="0">
-
 			<tr>
 				<th>제목</th>
 				<td colspan="3" align="left" >
@@ -87,10 +91,11 @@ table textarea {
 					</td>
 			</tr>
 			<tr>
-				<input type="file" name="img_src">
+				<td id="file" colspan="2" align="left" ><input type="file" name="upLoad"></td>
 			</tr>
 			<tr>
 			<td  id="button" colspan ="2">
+				<input type="hidden" name="name" value="<%=sname %>" />
 				<a href="img.jsp">취소</a> <input type="submit" value="완료">
 		    </td>
 			</tr>

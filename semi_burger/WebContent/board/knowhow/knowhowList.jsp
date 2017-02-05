@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.util.*"%>
-<%@page import="board.img.*"%>
-<jsp:useBean id="bdao" class="board.img.imgDAO" />
+<%@page import="board.knowhow.*"%>
+<jsp:useBean id="bdao" class="board.knowhow.knowhowDAO" />
 <!DOCTYPE>
 <html>
 <head>
@@ -96,29 +96,29 @@ table td {
 						<td colspan="3" align="center">
 							<%
 						if(userGroup!=0) {
-							%><a href="imgList.jsp?cp=<%=(userGroup-1)*pageSize+pageSize%>">&lt;&lt;</a>
+							%><a href="knowhowList.jsp?cp=<%=(userGroup-1)*pageSize+pageSize%>">&lt;&lt;</a>
 							<%
 							 }
 						for(int i=userGroup*pageSize+1; i<=userGroup*pageSize+pageSize; i++) {
-							%> &nbsp;&nbsp;<a href="imgList.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
+							%> &nbsp;&nbsp;<a href="knowhowList.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
 							if(i==totalPage) {
 								break;
 								}
 							}
 						if(userGroup!=((totalPage/pageSize)-(totalPage%pageSize==0?1:0))) {
-							%> <a href="imgList.jsp?cp=<%=((userGroup+1)*pageSize+1)%>">&gt;
+							%> <a href="knowhowList.jsp?cp=<%=((userGroup+1)*pageSize+1)%>">&gt;
 								&gt;</a> <%
 							}
 						%>
 						</td>
-						<% if("관리자".equals(sname)) { %>
-							<td><a href="imgWrite.jsp">글쓰기</a></td>
-						<% } %>
+					
+							<td><a href="knowhowWrite.jsp">글쓰기</a></td>
+					
 					</tr>
 				</tfoot>
 				<tbody>
 					<%
-					ArrayList<imgDTO> adto = bdao.imgList(cp, listSize);
+					ArrayList<knowhowDTO> adto = bdao.knowhowList(cp, listSize);
 					if (adto == null || adto.size() == 0) {
 							%>
 					<tr>
@@ -132,7 +132,7 @@ table td {
 						<td><%=adto.get(i).getKnowhow_no()%></td>
 						<td>
 						
-						<a href="imgContent.jsp?IMG_BOARD_NO=<%=adto.get(i).getKnowhow_no()%>"><%=adto.get(i).getSubject() %></a></td>
+						<a href="knowhowContent.jsp?knowhow_no=<%=adto.get(i).getKnowhow_no()%>"><%=adto.get(i).getSubject() %></a></td>
 						<td><%=adto.get(i).getInsert_date()%></td>
 						<td><%=adto.get(i).getBoard_count() %></td>
 					</tr>
