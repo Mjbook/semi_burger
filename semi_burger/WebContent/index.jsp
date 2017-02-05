@@ -111,7 +111,7 @@
 					</table>
 				</div>
 
-				<div id="maincenter">여긴 내가 만든 시그니처 버거가 들어갈 예정ddd</div>
+				<div id="maincenter">여긴 내가 만든 시그니처 버거가 들어갈 예정</div>
 				
 				<div id="footer">
 					<%@include file="footer.jsp"%>

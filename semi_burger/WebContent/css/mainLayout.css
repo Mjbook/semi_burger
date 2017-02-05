@@ -172,6 +172,7 @@ footer {
 }
 
 #newMenu ul ul li {
+	background-color:white;
 	float: none;
 	font-size:12px;
 }
