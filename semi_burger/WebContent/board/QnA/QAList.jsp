@@ -9,6 +9,11 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <title>Insert title here</title>
+<script>
+	function init() {
+		alert(1);
+	}
+</script>
 </head>
 <%
 int totalCnt=bdao.getTotalCnt(); //총 게시물 수 
@@ -93,16 +98,18 @@ if(cp%pageSize==0) {
 							for(int i=0; i<arr.size(); i++){
 								%>
 					<tr>
-						<td id="tableC"><%=arr.get(i).getQna_no()%></td>
-						<td id="su">
+						<td><%=arr.get(i).getQna_no()%></td>
+						<td>
+						<div align="left">
 						<%
 							for(int z=0; z<arr.get(i).getLev(); z++) {
 								out.print("&nbsp;&nbsp;&nbsp;&nbsp;");
 							}
 						%>
-						<a href="QAContent.jsp?idx=<%=arr.get(i).getQna_no()%>"><%=arr.get(i).getSubject() %></a></td>
-						<td id="tableC"><%=arr.get(i).getName()%></td>
-						<td id="tableC"><%=arr.get(i).getBoard_count()%></td>
+						<a href="QAContent.jsp?idx=<%=arr.get(i).getQna_no()%>"><%=arr.get(i).getSubject() %></a>
+						</div></td>
+						<td><%=arr.get(i).getName()%></td>
+						<td><%=arr.get(i).getBoard_count()%></td>
 					</tr>
 					<%
 							}

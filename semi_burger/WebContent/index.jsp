@@ -8,6 +8,7 @@
 <meta charset=UTF-8>
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="css/mainLayout.css">
+<link rel="stylesheet" type="text/css" href="css/slider.css">
 <%
 	int totalCnt = bdao.getTotalCnt();//총 게시물 수
 	int listSize = 5;//보여줄 리스트 수
@@ -30,8 +31,29 @@
 <div id="container">
 <div id="header">
 <%@include file="header.jsp" %>
-	<img src="./img/main_img.jpg" width="100%" height="300px">
-	
+			</div>	
+<div class="pure-steps-wrap max-1000 m-auto">
+<input type="radio" name="steps" class="pure-steps-radio"id="step-1" checked> <input type="radio" name="steps" class="pure-steps-radio" id="step-2"> 
+<input type="radio"name="steps" class="pure-steps-radio" id="step-3">
+	<div class="pure-steps-group">
+		<div class="pure-steps">
+			<section class="pure-step"> </section>
+			<section class="pure-step"> </section>
+			<section class="pure-step"></section>
+		</div>
+		<div class="pure-step-triggers">
+		<div class="pure-step-trigger">
+			<label for="step-2">이벤트 메뉴 1</label>
+			</div>
+			<div class="pure-step-trigger">
+				<label for="step-3">이벤트 메뉴 2</label>
+				</div>
+					<div class="pure-step-trigger">
+							<label for="step-1">이벤트 메뉴 3</label>
+								</div>
+						</div>
+					</div>
+				</div>
 </div>
 
 
