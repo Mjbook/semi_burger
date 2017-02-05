@@ -26,36 +26,50 @@
 	if (cp % pageSize == 0)
 		userGroup--;
 %> 
+<style>
+ @keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+#slider { overflow: hidden; }
+#slider figure img { 
+width: 20%; 
+float: left; 
+}
+#slider figure { 
+  position: relative;
+  width: 500%;
+  margin: 0;
+  top:0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  -webkit-animation: 20s slidy ease-in-out infinite;
+  animation: 20s slidy ease-in-out infinite; 
+}
+</style>
 </head>
 <body>
 <div id="container">
 <div id="header">
-<%@include file="header.jsp" %>
-			</div>	
-<div class="pure-steps-wrap max-1000 m-auto">
-<input type="radio" name="steps" class="pure-steps-radio"id="step-1" checked> <input type="radio" name="steps" class="pure-steps-radio" id="step-2"> 
-<input type="radio"name="steps" class="pure-steps-radio" id="step-3">
-	<div class="pure-steps-group">
-		<div class="pure-steps">
-			<section class="pure-step"> </section>
-			<section class="pure-step"> </section>
-			<section class="pure-step"></section>
-		</div>
-		<div class="pure-step-triggers">
-		<div class="pure-step-trigger">
-			<label for="step-2">이벤트 메뉴 1</label>
-			</div>
-			<div class="pure-step-trigger">
-				<label for="step-3">이벤트 메뉴 2</label>
-				</div>
-					<div class="pure-step-trigger">
-							<label for="step-1">이벤트 메뉴 3</label>
-								</div>
-						</div>
-					</div>
-				</div>
+<%@include file="header.jsp" %>	</div>	
 </div>
-
+<div id="slider">
+	<figure>
+		<img src="img/event1.png">
+		<img src="img/event2.png">
+		<img src="img/event3.png">
+		<img src="img/event4.png">
+		<img src="img/event5.png">
+	</figure>
+</div>
 
 				<div id="mainnotice">
 					<table>
@@ -116,8 +130,6 @@
 				<div id="footer">
 					<%@include file="footer.jsp"%>
 				</div>
-			</div>
-			</div>
 			
 			</body>
 </html>
