@@ -9,30 +9,6 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <title>Insert title here</title>
-<style>
-
-table {
-	width: 100%;
-	margin: 0px auto;
-	border-top: 2px double darkblue;
-	border-bottom: 2px double darkblue;
-	border-spacing: 0px;
-}
-
-table th {
-	background: skyblue;
-}
-
-table td {
-	text-align: center;
-}  
-
-#su{
-	text-align: left;
-
-}
-
-</style>
 </head>
 <%
 int totalCnt=bdao.getTotalCnt(); //총 게시물 수 
@@ -101,7 +77,7 @@ if(cp%pageSize==0) {
 							}
 						%>
 						</td>
-						<td><a href="QAWrite.jsp">글쓰기</a></td>
+
 					</tr>
 				</tfoot>
 				<tbody>
@@ -117,7 +93,7 @@ if(cp%pageSize==0) {
 							for(int i=0; i<arr.size(); i++){
 								%>
 					<tr>
-						<td><%=arr.get(i).getQna_no()%></td>
+						<td id="tableC"><%=arr.get(i).getQna_no()%></td>
 						<td id="su">
 						<%
 							for(int z=0; z<arr.get(i).getLev(); z++) {
@@ -125,20 +101,25 @@ if(cp%pageSize==0) {
 							}
 						%>
 						<a href="QAContent.jsp?idx=<%=arr.get(i).getQna_no()%>"><%=arr.get(i).getSubject() %></a></td>
-						<td><%=arr.get(i).getName()%></td>
-						<td><%=arr.get(i).getBoard_count()%></td>
+						<td id="tableC"><%=arr.get(i).getName()%></td>
+						<td id="tableC"><%=arr.get(i).getBoard_count()%></td>
 					</tr>
 					<%
 							}
 						}
 					%>
 				</tbody>
+
 			</table>
-   
-   </div>
-   <div id="footer">
-   	<%@include file="/footer.jsp" %>
-   </div>
+			<div align="right">
+				<input type="button" value="글쓰기" onclick="location.href='QAWrite.jsp'">
+			</div>
+
+		</div>
+
+<div id="footer">
+<%@include file="/footer.jsp" %>
+</div>
 </div>
 	
 

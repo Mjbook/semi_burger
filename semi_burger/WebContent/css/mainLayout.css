@@ -230,12 +230,15 @@ footer {
 }
 
 
-#table1 table {
+#tableList table {
+	margin: 15px 0;
+}
+#tableList2 table {
 	margin: 15px 0;
 }
 
 
-#table1 th {
+#tableList th {
 	color: #ffffff;
 	background-color: #aae1fe;
 	background: -o-linear-gradient(90deg, #800000, #ffffff);
@@ -246,10 +249,30 @@ footer {
 		endColorstr='#ffffff ');
 	}
 
-#table1, #table1 th, #table1 td {
+#tableList, #tableList th, #tableList td {
 	width: 800px;
 	font-size: 12px;
 	text-align: center;
+	padding: 4px;
+	border-collapse: collapse
+}
+#tableC {
+	taxt-align: center;
+}
+#tableList2 th {
+	color: #ffffff;
+	background-color: #aae1fe;
+	background: -o-linear-gradient(90deg, #800000, #ffffff);
+	background: -moz-linear-gradient(center top, #800000 100%, #ffffff  5%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #800000
+		), color-stop(1, #ffffff ));
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#800000',
+		endColorstr='#ffffff ');
+	}
+
+#tableList2, #tableList th2, #tableList td2 {
+	width: 800px;
+	font-size: 12px;
 	padding: 4px;
 	border-collapse: collapse
 }
@@ -274,7 +297,7 @@ footer {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#800000',
 		endColorstr='#ffffff ');
 	}
-	#table2 input {
+#table2 input {
 	width: 100%;
 	
 	}

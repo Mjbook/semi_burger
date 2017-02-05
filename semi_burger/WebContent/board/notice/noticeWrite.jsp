@@ -27,19 +27,6 @@ if(dto==null){
 <link rel="stylesheet" type="text/css"
 	href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
-<!--
-#container {
-	min-height: 80%;
-	maring-top: -100px;
-}
-
-* html #container {
-	height: 100%;
-}
-
-#container #content {
-	padding: 100px 0;
-}
 
 table {
 	width: 100%;
@@ -82,7 +69,7 @@ table textarea {
 			</ul>
 
 		</div>
-		<div id="container">
+		<div id="contnet">
 
 			<form action="noticeWrite_ok.jsp">
 				<h2>공지사항</h2>

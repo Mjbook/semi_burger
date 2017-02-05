@@ -28,33 +28,31 @@
 		userGroup--;
 %>
 <title>Yong Burger</title>
-<link rel="stylesheet" type="text/css"
-	href="/semi_burger/css/mainLayout.css">
+<link rel="stylesheet" type="text/css"	href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
-#table1 table {
-	width: 1000px;
-	margin: 15px 0;
+
+table {
+	width: 100%;
+	margin: 0px auto;
+	border-spacing: 0px;
+	border: 1px #5b0d14;
 }
 
-#table1 th {
-	color: #ffffff;
-	background-color: #aae1fe;
-	background: -o-linear-gradient(90deg, #800000, #ffffff);
-	background: -moz-linear-gradient(center top, #800000 100%, #ffffff  5%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #800000
-		), color-stop(1, #ffffff ));
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#800000',
-		endColorstr='#ffffff ');
-	}
-
-#table1, #table1 th, #table1 td {
-	width: 800px;
-	font-size: 12px;
+table td {
 	text-align: center;
-	padding: 4px;
-	border-collapse: collapse
 }
 
+table textarea {
+	width: 100%;
+}
+
+#sub {
+	width: 100%;
+}
+
+#button {
+	text-align: right;
+}
 </style>
 </head>
 <body>
@@ -76,7 +74,7 @@
 		<div id="content">
 			<h2>공지사항</h2>
 			<form action="noticeUpdate_ok.jsp">
-				<table id="table1" border="1">
+				<table id="table2">
 					<tr>
 						<th>제목</th>
 						<td colspan="3" align="left">
@@ -84,7 +82,7 @@
 					</tr>
 					<tr height="250">
 						<td colspan="4" align="left" valign="top">
-						<textarea id="textarea_test" rows="15" cols="100" name="content" placeholder="내용을 입력하세요."><%=con%></textarea></td>
+						<textarea id="textarea_test" rows="15" cols="120" name="content" placeholder="내용을 입력하세요."><%=con%></textarea></td>
 					</tr>
 				</table>
 				<div align="center">
