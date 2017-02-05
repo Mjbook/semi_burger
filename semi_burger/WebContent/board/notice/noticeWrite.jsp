@@ -95,7 +95,7 @@ table textarea {
 						<td colspan="4" align="left" valign="top"><textarea rows="15" cols="100" name="content" placeholder="내용을 입력하세요."></textarea></td>
 					</tr>
 				</table>
-				<div align="center">
+				<div align="right">
 					<input type="button" value="취소"  onclick="location.href='notice.jsp'"> <input type="submit" value="완료">
 				</div>
 			</form>
