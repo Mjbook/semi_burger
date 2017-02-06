@@ -43,6 +43,16 @@ public class TopingDAO {
 	/**마지막으로 저장한 파일 경로 찾는 메서드*/
 	private String findDir(){
 		try {
+			File makedir1=new File(TOPING_IMG);
+			if(!makedir1.exists()){
+				makedir1.createNewFile();
+				System.out.println("경로생성");
+			}
+			File makedir2=new File(TOPING_IMG+"/temp");
+			if(!makedir2.exists()){
+				makedir2.createNewFile();
+			}
+			
 			conn=yb.db.YB_DB.getConn();
 			
 			String sql="select toping_key,toping_img from toping where toping_key=(select max(toping_key) from toping)";
@@ -92,16 +102,6 @@ public class TopingDAO {
 	/**토핑 추가 step2 경로 저장 메서드*/
 	public int addDir(){
 		try {
-			
-			File makedir1=new File(TOPING_IMG);
-			if(!makedir1.exists()){
-				makedir1.createNewFile();
-				System.out.println("경로생성");
-			}
-			File makedir2=new File(TOPING_IMG+"/temp");
-			if(!makedir2.exists()){
-				makedir2.createNewFile();
-			}
 			
 			String dir=findDir();
 			
