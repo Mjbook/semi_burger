@@ -280,8 +280,8 @@ for(int i=0;i<arr_bdto.size();i++){
 		}
 %>
 		</article>
-		<br>
-		<hr>
+		<br >
+		<p id="side"></p>
 		
 		<%@include file="/sideMenu/sideMenu.jsp" %>	
 		
@@ -342,7 +342,7 @@ for(int i=0;i<arr_bdto.size();i++){
 		</article>
 
 </section>
-<hr>
+
 <%@include file="../footer.jsp" %>
 </body>
 </html>

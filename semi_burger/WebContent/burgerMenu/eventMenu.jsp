@@ -41,7 +41,12 @@ String sid=(String)session.getAttribute("sid");
 <%@include file="../header.jsp" %>
 
 <section>
-	<h2>이벤트 메뉴</h2>
+	<article>
+	<div style="background:url(/semi_burger/introduce/img/eventcover.jpg) 50% 50% no-repeat;">
+	<br>
+	<h2 style="color:white;">&nbsp;&nbsp;이벤트 메뉴</h2>
+	<br>
+	</div>
 		<form name="eventMenu" method="post">
 			<table border="0" cellspacing="0">
 				<tr>
@@ -104,6 +109,7 @@ String sid=(String)session.getAttribute("sid");
 			</table>
 			<hr>
 		</form>
+		</article>
 </section>
 
 <%@include file="../footer.jsp" %>
