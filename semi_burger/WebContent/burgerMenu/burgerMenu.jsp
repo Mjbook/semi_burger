@@ -35,6 +35,9 @@ ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 	text-align:center;
 }
 
+table{
+	background-color: #EAEAEA;
+}
 
 
 </style>
@@ -163,7 +166,7 @@ for(int i=0;i<arr_bdto.size();i++){
 		<form name="burgerMenu" method="post">
 			<table border="1" cellspacing="1">
 				<tr>
-				@표시는 이벤트 메뉴 입니다.
+				<span style="font-size: 12px; font">@표시는 이벤트 메뉴 입니다.</span>
 				<%
 				String sid=(String)session.getAttribute("sid");
 				wf.setUser(sid);
