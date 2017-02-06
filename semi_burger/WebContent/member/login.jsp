@@ -72,13 +72,7 @@ href="/semi_burger/css/mainLayout.css">
 		</table>
 	</form>
 	</fieldset>
-	<fieldset>
-		<table>
-		  <tr>
-			<td style="height:200px;"> ABCD </td>
-		  </tr>
-		</table>
-	</fieldset>
+
 <br>
 </section>	
 
