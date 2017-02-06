@@ -49,10 +49,8 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 						}else{
 							int temp=Integer.parseInt(pn_s);
 							start_num=(temp-1)*5;
-							print_num=5*temp<arr_menu_num.size()?5:arr_menu_num.size();
-							for(int i=0;i<start_num;i++){
-								row_count+=arr_menu_num.get(i);
-							}
+							print_num=5*temp<arr_menu_num.size()?5*temp:arr_menu_num.size();
+							row_count=start_num;
 						}
 						
 						page_num=(arr_menu_num.size())%5==0?arr_menu_num.size()/5:arr_menu_num.size()/5+1;

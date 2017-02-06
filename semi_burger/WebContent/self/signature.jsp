@@ -7,6 +7,15 @@
 <head>
 <meta charset=UTF-8>
 <title>Yong Burger</title>
+<style>
+.sidetop{
+	border-radius:100px 100px 0px 0px;
+	width:200px;
+	height:30px;
+	margin: 0px;
+	padding:0px;
+}
+</style>
 </head>
 <%
 String menu_name=request.getParameter("no");
@@ -38,7 +47,7 @@ for(int i=arr.size()-1;i>=0;i--){
 
 %>
 	<tr>
-		<td><img src="/semi_burger/self/toping_img/ts<%=img%>" width="100px" height="20px"></td>
+		<td><img src="/semi_burger/self/toping_img/ts<%=img%>" class="sidetop"></td>
 		<td><%=tname %></td>
 	</tr>
 

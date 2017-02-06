@@ -15,7 +15,6 @@ public class Order_listDTO {
 	private ArrayList<Order_listDTO> odtos;//db에 없는 변수
 	 
 	public Order_listDTO(){
-		odtos=new ArrayList<Order_listDTO>();
 	}
 	
 	
@@ -29,6 +28,7 @@ public class Order_listDTO {
 		this.order_shop = order_shop;
 		this.order_user = order_user;
 		this.total_pay = total_pay;
+		odtos=new ArrayList<Order_listDTO>();
 	}
 
 
@@ -91,6 +91,7 @@ public class Order_listDTO {
 	}
 
 	public void addOdtos(Order_listDTO odto) {
+		if(odtos==null)odtos=new ArrayList<Order_listDTO>();
 		odtos.add(odto);
 	}
 	

@@ -1,7 +1,7 @@
-<%@page import="yb.order_list.Order_listDTO"%>
-<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="yb.order_list.*"%>
+<%@page import="java.util.*"%>
 <jsp:useBean id="burgerdto" class="yb.burger.BurgerDTO"/>
 <jsp:useBean id="burgerdao" class="yb.burger.BurgerDAO"/>
 <jsp:useBean id="mdto" class="member.MemberDTO"/>
