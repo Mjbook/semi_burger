@@ -32,7 +32,7 @@
 		  </tr>
 		  <tr>
 		  	<th> &nbsp;전화번호 :&nbsp;</th>
-		  	<td> <input type="text" name="cellphone" placeholder=" ex: 01012345678"> </td>
+		  	<td> <input type="text" name="cellphone" maxlength="11" placeholder=" ex: 01012345678"> </td>
 			<td> <input type="submit" value="검색"> </td>
 		  </tr>
 		</table>

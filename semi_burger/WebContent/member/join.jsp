@@ -69,7 +69,7 @@ href="/semi_burger/css/mainLayout.css">
 					<td> </td>
 				</tr>
 				<tr>
-					<th> 핸드폰 번호&nbsp; </th>
+					<th> 전화번호&nbsp; </th>
 					<td> <input type="text" name="cellphone" maxlength="11" placeholder=" ex: 01012345678"> </td>
 					<td> </td>
 				</tr>

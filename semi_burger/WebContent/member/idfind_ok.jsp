@@ -23,7 +23,7 @@
 		window.self.close();
 	}
 	function rejoin(){
-		opener.location.href='join.jsp';
+		opener.location.href='agree.jsp';
 		window.self.close();
 	}	
 </script>
