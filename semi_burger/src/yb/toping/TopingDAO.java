@@ -146,7 +146,7 @@ public class TopingDAO {
 	}
 	
 	/**토핑 보여주기 관련 메서드*/
-	public int showToping(String name,String show){
+	public int showToping(int key,String show){
 		try {
 			conn=yb.db.YB_DB.getConn();
 			/*//파일 삭제
@@ -168,9 +168,9 @@ public class TopingDAO {
 			
 			//db 변경
 			
-			String sql="update toping set show='"+show+"' where toping_name=?";
+			String sql="update toping set show='"+show+"' where toping_key=?";
 			ps=conn.prepareStatement(sql);
-			ps.setString(1, name);
+			ps.setInt(1, key);
 		
 			int result=ps.executeUpdate();
 			return result;

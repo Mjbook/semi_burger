@@ -3,9 +3,9 @@
 <jsp:useBean id="tdao" class="yb.toping.TopingDAO"/>
 <!DOCTYPE html>
 <%
-String name=request.getParameter("toping_name");
-
-int result=tdao.showToping(name,"0");
+String name=request.getParameter("toping_key");
+int name_i=Integer.parseInt(name);
+int result=tdao.showToping(name_i,"0");
 
 if(result>0){
 	%>
