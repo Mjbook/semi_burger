@@ -25,6 +25,7 @@ ArrayList<BurgerDTO> al3=burgerdao.eventMenu(burgerdto);
 	<h2 style="color:white;">&nbsp;&nbsp;이벤트 메뉴</h2>
 	<br>
 	</div>
+	<div>
 		<form name="eventMenu" method="post">
 			<table border="0" cellspacing="0">
 				<tr>
@@ -90,6 +91,7 @@ ArrayList<BurgerDTO> al3=burgerdao.eventMenu(burgerdto);
 			</table>
 		
 		</form>
+		</div>
 		</article>
 
 

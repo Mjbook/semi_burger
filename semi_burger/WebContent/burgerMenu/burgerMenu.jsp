@@ -28,7 +28,7 @@ ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 <link rel="stylesheet" type="text/css" href="../css/mainLayout.css">
 <style>
 #orderlist{
-	position: fixed;
+	position:fixed;
 	top:200px;
 	right:50px;
 	width:250px;
@@ -171,10 +171,11 @@ for(int i=0;i<arr_bdto.size();i++){
 	<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;햄버거 메뉴</h2>
 	<br>
 	</div>
+	<div>
 		<form name="burgerMenu" method="post">
+		
 			<table border="0" cellspacing="0">
 				<tr>
-				
 				<%
 				String sid=(String)session.getAttribute("sid");
 				wf.setUser(sid);
@@ -246,6 +247,7 @@ for(int i=0;i<arr_bdto.size();i++){
 			</table>
 			
 		</form>
+		</div>
 <%		
 		for(int i=0;i<arr_bdto.size();i++){
 			String select_menu=request.getParameter("m"+i+"_check");
@@ -289,15 +291,16 @@ for(int i=0;i<arr_bdto.size();i++){
 		 
 		}
 %>
-		<p id="side"></p>
+		
 		</article>
 		
 		<%@include file="/sideMenu/sideMenu.jsp" %>	
 		
-		<br id="event">
+		
 		<%@include file="eventMenu.jsp" %>
 		
 		<article>
+		<div>
 		<form name="orderlist" action="/semi_burger/order/orderList.jsp">
 			<table id="orderlist">
 				<thead>
@@ -351,6 +354,7 @@ for(int i=0;i<arr_bdto.size();i++){
 				</tfoot> 
 			</table>
 		</form>
+		</div>
 		</article>
 
 </section>

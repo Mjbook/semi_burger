@@ -32,6 +32,7 @@ function side_delete(){
 		<h2 style="color:white;">&nbsp;&nbsp;사이드 메뉴</h2>
 		<br>
 		</div>
+		<div>
 		<form name="sideMenu">
 			<table border="0" cellspacing="0">
 				<tr>
@@ -94,4 +95,5 @@ function side_delete(){
 				%>
 			</table>
 		</form>
+		</div>
 	</article>
