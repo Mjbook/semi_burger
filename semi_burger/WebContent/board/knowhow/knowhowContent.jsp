@@ -26,36 +26,45 @@ if(dto==null){
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
- <!--
-  #container {min-height: 80%; maring-top: -100px; }
-   * html #container {height: 100%;}
-  #container #content {padding: 100px 0 ; }
-  
-table {
-	width: 100%;
-	margin: 0px auto;
-	border-top: 2px double darkblue;
-	border-bottom: 2px double darkblue;
-	border-spacing: 0px;
-}
 
-table th {
-	background: skyblue;
-}
-
-table td {
-	text-align: center;
+#img {
+  width: inherit;
+  max-width: 80%;
+  height: auto;
 }  
   
  </style>
 </head>
 <body>
-	<%@include file="/header.jsp" %>
-	
-<h2>공지 사항</h2>
+<%
+String sid=(String)session.getAttribute("sid");
+String url = "";
+if(dto.getMy_img_url() != null) {
+url = dto.getMy_img_url();
+url = url.substring(url.length()-4, url.length());
+}
+
+%>
 <div id="container">
+		<div id="header">
+			<%@include file="/header.jsp"%>
+		</div>
+		<div id="sideMenu">
+
+			<h2 align="center">커뮤니티</h2>
+			<ul>
+				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
+				<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
+				<li><a href="#">내가 만든 햄버거</a></li>
+				<li><a href="javascript:game()">게임하기</a></li>
+			</ul>
+
+		</div>
+
+		<div id="container">
+			<h2>내가 만든 햄버거</h2>
    <div id="content">	
- <table border="1" bordercolor="blue" width="550" cellspacing="0">
+ <table id="tableList" border="1">
 			<tr>
 				<th>번호</th>
 				<td><%=dto.getKnowhow_no()%></td>
@@ -75,25 +84,34 @@ table td {
 				</td>
 			</tr>
 			<tr height="250">
-					<td colspan="4" align="left" valign="top">
+					<td colspan="4" align="center" valign="top">
 						<%=dto.getContent().replaceAll("\n", "<br>") %>
+						<br/>
+						<br/>
+						<% if(!"null".equals(url) && !"".equals(url)) {  %>
+						<img src="<%=dto.getMy_img_url() %>" id="img" />
+						<% } %>
 					</td>
 			</tr>
 			<tr>
 			<td>
-				<% if("관리자".equals(sname)) { %>
-				<a href="noticeUpdate.jsp?idx=<%=dto.getKnowhow_no()%>&sub=<%=dto.getSubject()%>&con=<%=dto.getContent().replaceAll("\n", "<br>") %>">수정</a>
-				<a href="noticeDelete.jsp?idx=<%=dto.getKnowhow_no()%>">삭제</a>
+				<% if(sname.equals(dto.getName()) || "admin".equals(sid)) { %>
+				<a href="knowhowUpdate.jsp?idx=<%=dto.getKnowhow_no()%>&sub=<%=dto.getSubject()%>&con=<%=dto.getContent().replaceAll("\n", "<br>") %>&url=<%=dto.getMy_img_url() %>">수정</a>
+				<a href="knowhowDelete.jsp?idx=<%=dto.getKnowhow_no()%>">삭제</a>
 				<%} %>
-				<a href="notice.jsp">목록</a>
+				<a href="knowhowList.jsp">목록</a>
 		    </td>
 			</tr>
 			</table>
-   
-   </div>
-</div>
+  </div>
 
-	<%@include file="/footer.jsp" %>
+			<div id="footer">
+				<%@include file="/footer.jsp"%>
+			</div>
+		</div>
+		</div>
+
+
 
 </body>
 </html>				

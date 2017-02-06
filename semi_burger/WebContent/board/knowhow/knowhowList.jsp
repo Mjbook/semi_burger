@@ -8,40 +8,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
-<style type="text/css">
- <!--
-  #container {min-height: 80%; maring-top: -100px; }
-   * html #container {height: 100%;}
-   
-  #container #content {padding: 100px 0 ; }
-  
-  #bmenu{
-	position: fixed;
-	top:200px;
-	left:100px;
-	width:250px;
-	text-align:center;
-}
-table {
-	width: 100%;
-	margin: 0px auto;
-	border-top: 2px double darkblue;
-	border-bottom: 2px double darkblue;
-	border-spacing: 0px;
-}
 
-table th {
-	background: skyblue;
-}
-
-table td {
-	text-align: center;
-}  
-  
- </style>
 <%
 	int totalCnt = bdao.getTotalCnt();//총 게시물 수
-	int listSize = 10;//보여줄 리스트 수
+	int listSize = 6;//보여줄 리스트 수
 	int pageSize = 5;//보여줄 페이지 수
 	String cp_s = request.getParameter("cp");
 	if (cp_s == null || cp_s.equals("")) {
@@ -49,104 +19,123 @@ table td {
 	}
 	int cp = Integer.parseInt(cp_s); //현재 위치 
 	int totalPage = totalCnt / listSize + 1;
-	if (totalCnt % listSize == 0)
+	if (totalCnt % listSize == 0){
 		totalPage--;
-
+	}
 	int userGroup = cp / pageSize;
-	if (cp % pageSize == 0)
+	if (cp % pageSize == 0) {
 		userGroup--;
+	}
+
 %>
 
 
 </head>
 <body>
-
-	<%@include file="/header.jsp" %>
-	
-	<div id="bmenu">
-			<h2>커뮤니티</h2>
-			<ul>
-				<li><a href="#"><img src="/semi_burger/img/notice.jpg" /></a></li>
-				<li><a href="#">창업문의</a></li>
-				<li><a href="#">고객의 소리</a></li>
-				<li><a href="#">내가 만든 햄버거</a></li>
-				<li><a href="#">이벤트</a></li>
-			</ul>
-	</div>
-	
-	
-<h2>내가 만든 햄버거</h2>
 <div id="container">
-	
+		<div id="header">
+			<%@include file="/header.jsp"%>
+		</div>
+		<div id="sideMenu">
 
+			<h2 align="center">커뮤니티</h2>
+			<ul>
+				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
+				<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
+				<li><a href="#">내가 만든 햄버거</a></li>
+				<li><a href="javascript:game()">게임하기</a></li>
+			</ul>
 
-   <div id="content">
+		</div>
+		<div id="content">
+			<h2>내가 만든 햄버거</h2>
    
-   <table >
-				<thead>
-					<tr>
-						<th>순번</th>
-						<th>제목</th>
-						<th>작성자</th>
-						<th>조회수</th>
-					</tr>
-				</thead>
-				<tfoot>
-					<tr>
-						<td colspan="3" align="center">
+   
+   
+   
+   
+   			
+						<%
+						ArrayList<knowhowDTO> adto = bdao.knowhowList(cp, listSize);
+						if (adto == null || adto.size() == 0) {
+						%>
+							<br />
+								<center>등록된 게시물이 없습니다</center>
+							<br />
+						<%
+						} else {
+							%>
+							
+							<table >
+								<tr>
+							
 							<%
-						if(userGroup!=0) {
-							%><a href="knowhowList.jsp?cp=<%=(userGroup-1)*pageSize+pageSize%>">&lt;&lt;</a>
-							<%
-							 }
-						for(int i=userGroup*pageSize+1; i<=userGroup*pageSize+pageSize; i++) {
-							%> &nbsp;&nbsp;<a href="knowhowList.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
-							if(i==totalPage) {
-								break;
+							for (int i = 0; i < adto.size(); i++) {
+									%>
+								
+								<td align="right" ><img src="<%=adto.get(i).getMy_img_url() %>" width="250" height="250" alt="" onclick="onView('<%=adto.get(i).getKnowhow_no()%>');" />
+										<br><%=adto.get(i).getSubject()%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=adto.get(i).getBoard_count()%>&nbsp;&nbsp;
+								</td>				
+									
+									<% if((i+1)%3 == 0) { %>
+									</tr>
+						<%			}
 								}
 							}
-						if(userGroup!=((totalPage/pageSize)-(totalPage%pageSize==0?1:0))) {
-							%> <a href="knowhowList.jsp?cp=<%=((userGroup+1)*pageSize+1)%>">&gt;
+						%>	
+							</tr>
+							</table>
+						<div align="center">
+						<%
+								if (userGroup != 0) {
+							%><a
+							href="noticejsp?cp=<%=(userGroup - 1) * pageSize + pageSize%>">&lt;&lt;</a>
+							<%
+								}
+								for (int i = userGroup * pageSize + 1; i <= userGroup * pageSize + pageSize; i++) {
+							%> &nbsp;&nbsp;<a href="knowhowList.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
+ 	if (i == totalPage) {
+ 			break;
+ 		}
+ 	}
+ 	if (userGroup != ((totalPage / pageSize) - (totalPage % pageSize == 0 ? 1 : 0))) {
+ %> <a href="knowhowList.jsp?cp=<%=((userGroup + 1) * pageSize + 1)%>">&gt;
 								&gt;</a> <%
-							}
-						%>
-						</td>
+ 	}
+ %>
+						</div>
 					
-							<td><a href="knowhowWrite.jsp">글쓰기</a></td>
-					
-					</tr>
-				</tfoot>
-				<tbody>
-					<%
-					ArrayList<knowhowDTO> adto = bdao.knowhowList(cp, listSize);
-					if (adto == null || adto.size() == 0) {
-							%>
-					<tr>
-						<td colspan="4" align="center">등록된 게시글이 없습니다.</td>
-					</tr>
-					<%
-					} else {
-						for (int i = 0; i < adto.size(); i++) {
-								%>
-					<tr>
-						<td><%=adto.get(i).getKnowhow_no()%></td>
-						<td>
+						<div align="right">
+				<%
+					if (sname != null) {
+				%>
+				<input type="button" value="글쓰기"
+					onclick="location.href='knowhowWrite.jsp'">
+				<%
+					}
+				%>
+				</div>
+			</div>
 						
-						<a href="knowhowContent.jsp?knowhow_no=<%=adto.get(i).getKnowhow_no()%>"><%=adto.get(i).getSubject() %></a></td>
-						<td><%=adto.get(i).getInsert_date()%></td>
-						<td><%=adto.get(i).getBoard_count() %></td>
-					</tr>
-					<%
-							}
-						}
-					%>
-				</tbody>
-			</table>
-   
-   </div>
+						
+
+	</div>
+		<div id="footer">
+			<%@include file="/footer.jsp"%>
+		</div>
+	
 </div>
+</body><%-- 
+<dt ><span style="font-size:16px;color:#1a1a1a;font-weight:bold;"><%=adto.get(i).getSubject() %>}</span></dt>
+									<dd >
+											<span class="price-prdc"><%=adto.get(i).getBoard_count() %></span>&nbsp;조회수<br>
+											<%=adto.get(i).getInsert_date()%>
+									</dd> --%>
 
-	<%@include file="/footer.jsp" %>
+<script type="text/javascript">
 
-</body>
+var onView = function(no){
+	location.href='knowhowContent.jsp?KNOWHOW_NO='+no;
+};
+</script>
 </html>				

@@ -24,7 +24,11 @@ public class knowhowDAO {
 			
 		try{
 			conn=yb.db.YB_DB.getConn();
-			String sql="SELECT * FROM MY_KNOWHOW ORDER BY KNOWHOW_NO DESC";
+			String sql="select * from "
+					+ "(select rownum as rnum,a.* from "
+					+ "(select * from MY_KNOWHOW order by KNOWHOW_NO desc)a)b"
+					+ " where rnum>=("+cp+"-1)*"+ls+"+1 and "
+					+ "rnum <="+cp+"*"+ls;
 				ps=conn.prepareStatement(sql);
 				rs=ps.executeQuery();
 				
@@ -38,6 +42,7 @@ public class knowhowDAO {
 					bdto.setContent(rs.getString("content"));
 					bdto.setInsert_date(rs.getDate("insert_date"));
 					bdto.setBoard_count(rs.getInt("board_count"));
+					bdto.setMy_img_url(rs.getString("my_img_url"));
 					arr.add(bdto);
 				} return arr;
 				
@@ -83,12 +88,13 @@ public class knowhowDAO {
 	public int knowhowWrite(knowhowDTO dto){
 		try{
 			conn=yb.db.YB_DB.getConn();
-			String sql = "insert into MY_KNOWHOW values(my_knowhow_seq.nextval,?,?,?,sysdate,0,'')";
+			String sql = "insert into MY_KNOWHOW values(my_knowhow_seq.nextval,?,?,?,sysdate,0,?)";
 
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, dto.getName());
 			ps.setString(2, dto.getSubject());
 			ps.setString(3, dto.getContent());
+			ps.setString(4, dto.getMy_img_url());
 			int count = ps.executeUpdate();		
 			return count;		
 
@@ -123,6 +129,7 @@ public class knowhowDAO {
 				bdto.setContent(rs.getString("content"));
 				bdto.setInsert_date(rs.getDate("insert_date"));
 				bdto.setBoard_count(rs.getInt("board_count"));
+				bdto.setMy_img_url(rs.getString("my_img_url"));
 				
 			}
 			return bdto;
@@ -167,12 +174,13 @@ public class knowhowDAO {
 		public int knowhowUpdate(knowhowDTO dto){
 			try{
 				conn=yb.db.YB_DB.getConn();
-				String sql = "UPDATE MY_KNOWHOW SET SUBJECT = ? , CONTENT = ? WHERE KNOWHOW_NO = ?";
+				String sql = "UPDATE MY_KNOWHOW SET SUBJECT = ? , CONTENT = ?, MY_IMG_URL = ? WHERE KNOWHOW_NO = ?";
 
 				ps = conn.prepareStatement(sql);		
 				ps.setString(1, dto.getSubject());
 				ps.setString(2, dto.getContent());
-				ps.setInt(3, dto.getKnowhow_no());  
+				ps.setString(3, dto.getMy_img_url());
+				ps.setInt(4, dto.getKnowhow_no());
 				int count = ps.executeUpdate();		
 				return count;		
 

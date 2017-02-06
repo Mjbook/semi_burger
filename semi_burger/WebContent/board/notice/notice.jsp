@@ -20,12 +20,13 @@
 	}
 	int cp = Integer.parseInt(cp_s); //현재 위치 
 	int totalPage = totalCnt / listSize + 1;
-	if (totalCnt % listSize == 0)
+	if (totalCnt % listSize == 0){
 		totalPage--;
-
+	}
 	int userGroup = cp / pageSize;
-	if (cp % pageSize == 0)
+	if (cp % pageSize == 0){
 		userGroup--;
+	}
 %>
 
 
@@ -64,17 +65,17 @@
 							<%
 								if (userGroup != 0) {
 							%><a
-							href="noticeList.jsp?cp=<%=(userGroup - 1) * pageSize + pageSize%>">&lt;&lt;</a>
+							href="noticejsp?cp=<%=(userGroup - 1) * pageSize + pageSize%>">&lt;&lt;</a>
 							<%
 								}
 								for (int i = userGroup * pageSize + 1; i <= userGroup * pageSize + pageSize; i++) {
-							%> &nbsp;&nbsp;<a href="noticeList.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
+							%> &nbsp;&nbsp;<a href="notice.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
  	if (i == totalPage) {
  			break;
  		}
  	}
  	if (userGroup != ((totalPage / pageSize) - (totalPage % pageSize == 0 ? 1 : 0))) {
- %> <a href="noticeList.jsp?cp=<%=((userGroup + 1) * pageSize + 1)%>">&gt;
+ %> <a href="notice.jsp?cp=<%=((userGroup + 1) * pageSize + 1)%>">&gt;
 								&gt;</a> <%
  	}
  %>

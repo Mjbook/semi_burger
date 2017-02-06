@@ -23,62 +23,59 @@ if(dto==null){
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Yong Burger</title>
-<link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
+<link rel="stylesheet" type="text/css"
+	href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
- <!--
-  #container {min-height: 80%; maring-top: -100px; }
-   * html #container {height: 100%;}
-  #container #content {padding: 100px 0 ; }
-  
+
 table {
 	width: 100%;
 	margin: 0px auto;
-	border-top: 2px double darkblue;
-	border-bottom: 2px double darkblue;
 	border-spacing: 0px;
-}
-
-table th {
-	background: skyblue;
+	border: 1px #5b0d14;
 }
 
 table td {
 	text-align: center;
-	
 }
+
 table textarea {
 	width: 100%;
-
 }
 
-
 #sub {
-	width:100%;
+	width: 100%;
 }
 
 #button {
 	text-align: right;
-	width="100%"
 }
-
-#file {
-	text-align: left;
-	width="100%"
-}
-
-  
-  
- </style>
+</style>
+</head>
 </head>
 <body>
-	<%@include file="/header.jsp" %>
-	
-<h2>내가 만든 햄버거</h2>
-<div id="container">
-   <div id="content">	
+	<div id="container">
+		<div id="header">
+			<%@include file="/header.jsp"%>
+		</div>
+		<div id="sideMenu">
+
+			<h2 align="center">커뮤니티</h2>
+			<ul>
+				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
+				<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
+				<li><a href="#">내가 만든 햄버거</a></li>
+				<li><a href="javascript:game()">게임하기</a></li>
+			</ul>
+
+		</div>
+		<div id="contnet">
+
+				<h2>내가만든햄버거</h2>
+				
     <form action="knowhowWrite_ok.jsp" method="post" enctype="multipart/form-data" >
- <table border="1" bordercolor="blue" width="550" cellspacing="0">
+<table id="table2">	
 			<tr>
 				<th>제목</th>
 				<td colspan="3" align="left" >
@@ -96,15 +93,19 @@ table textarea {
 			<tr>
 			<td  id="button" colspan ="2">
 				<input type="hidden" name="name" value="<%=sname %>" />
-				<a href="img.jsp">취소</a> <input type="submit" value="완료">
+				
 		    </td>
 			</tr>
 			</table>
-   
-   </div>
-</div>
+			<div align="right">
+					<input type="button" value="취소"  onclick="location.href='knowhowList.jsp'"> <input type="submit" value="완료">
+				</div>
+</form>
+ </div>
+		</div>
 
-	<%@include file="/footer.jsp" %>
-
+	<div id="footer">
+		<%@include file="/footer.jsp"%>
+	</div>
 </body>
 </html>				

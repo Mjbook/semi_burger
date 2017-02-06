@@ -24,7 +24,11 @@ public class noticeDAO {
 			
 		try{
 			conn=yb.db.YB_DB.getConn();
-			String sql="SELECT * FROM  NOTICE_BOARD ORDER BY NOTICE_NO DESC";
+			String sql="select * from "
+					+ "(select rownum as rnum,a.* from "
+					+ "(select * from NOTICE_BOARD order by NOTICE_NO desc)a)b"
+					+ " where rnum>=("+cp+"-1)*"+ls+"+1 and "
+					+ "rnum <="+cp+"*"+ls;
 				ps=conn.prepareStatement(sql);
 				rs=ps.executeQuery();
 				
