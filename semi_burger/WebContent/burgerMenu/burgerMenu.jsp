@@ -34,6 +34,9 @@ ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 	width:250px;
 	text-align:center;
 }
+
+
+
 </style>
 <script>
 function resetMenu(){
