@@ -45,6 +45,22 @@
 		color:#4f4f4f;
 		line-height:38px;
 	}
+	section a:link{
+		text-decoration: none;
+		color: gray;
+	}	
+	section a:active{
+		text-decoration: none;
+		color: gray;
+	}
+	sction a:visited{
+		text-decoration: none;
+		color: gray;
+	}
+	section a:hover{
+		text-decoration: none;
+		color: red;
+	}
 </style>
 </head>
 <body>
@@ -60,7 +76,7 @@
 		<br>
 	</article>
 	
-	<article>
+	<div style="cursor:pointer;">
 		<table>		
 			<tr>
 				<td> &nbsp;<a onclick="location='/semi_burger/introduce/ceo.jsp'"><b>CEO 인사말</b></a>&nbsp;</td>
@@ -69,7 +85,7 @@
 			</tr>
 		</table>
 		<br>
-	</article>
+	</div>
 	
 	<article>
 		<ul class="road">
