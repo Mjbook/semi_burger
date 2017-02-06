@@ -76,10 +76,7 @@ public class TopingDAO {
 				}
 	
 				f=temp[0];
-				name=f.getName();
-				int idx=name.lastIndexOf('.');
-				int length=name.length();
-				name=maxidx+name.substring(idx, length);
+				name=maxidx+".jpg";
 				f.renameTo(new File(TOPING_IMG+"/"+name));
 				
 				return name;
@@ -124,8 +121,7 @@ public class TopingDAO {
 				if(conn!=null)conn.close();
 			} catch (Exception e2) {}
 		}
-	}
-	
+	}	
 	/**토핑 오류 주소 db 삭제 메서드*/
 	private void delTrash(){
 		try {
@@ -215,10 +211,7 @@ public class TopingDAO {
 	
 				f=temp[0];
 				String name=f.getName();
-				int idx=name.lastIndexOf('.');
-				int length=name.length();
-				name="ts"+maxidx+name.substring(idx, length);
-				name=name.toLowerCase();
+				name="ts"+maxidx+".jpg";
 				f.renameTo(new File(TOPING_IMG+"/"+name));
 			}
 

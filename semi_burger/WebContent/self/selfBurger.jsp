@@ -1,8 +1,10 @@
+<%@page import="java.io.File"%>
 <%@page import="java.beans.Encoder"%>
 <%@page import="yb.toping.TopingDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import="java.util.*" %>
+<%@page import="java.io.*" %>
 <!DOCTYPE html>
 <jsp:useBean id="tdto" class="yb.toping.TopingDTO"/>
 <jsp:useBean id="tdao" class="yb.toping.TopingDAO"/>
@@ -199,7 +201,7 @@ if(sid!=null&&sid.equals("admin")){
 			}
 		}else{%>
 				<div class="side">
-		<%}%>
+	<%	} %>
 					<img src="/semi_burger/self/toping_img/ts<%=tp_img%>">
 				</div>
 			</td>
@@ -231,19 +233,19 @@ if(sid!=null&&sid.equals("admin")){
 			<%
 		}else{
 			for(int i=0;i<tdtos.size();i++){
-				tdto=tdtos.get(i);
-			%>
-		<tr>
-			<td><img src="/semi_burger/self/toping_img/<%=tdto.getToping_img()%>"><br><%=tdto.getToping_name()%></td>
-			<td><%=tdto.getToping_price() %>원</td>
-			<td><a href="selfBurger.jsp?at=<%=tdto.getToping_key()%>" class="a">추가</a><%
-			if(sid!=null&&sid.equals("admin")){
-			%><br><a href="javascript:delTop(<%=tdto.getToping_key()%>)" class="a">토핑 숨기기</a><%	
-			}
-			%>
-			</td>
-		</tr>
-		<%
+					tdto=tdtos.get(i);
+				%>
+			<tr>
+				<td><img src="/semi_burger/self/toping_img/<%=tdto.getToping_img()%>"><br><%=tdto.getToping_name()%></td>
+				<td><%=tdto.getToping_price() %>원</td>
+				<td><a href="selfBurger.jsp?at=<%=tdto.getToping_key()%>" class="a">추가</a><%
+				if(sid!=null&&sid.equals("admin")){
+				%><br><a href="javascript:delTop(<%=tdto.getToping_key()%>)" class="a">토핑 숨기기</a><%	
+				}
+				%>
+				</td>
+			</tr>
+			<%
 			}
 		}
 		%>

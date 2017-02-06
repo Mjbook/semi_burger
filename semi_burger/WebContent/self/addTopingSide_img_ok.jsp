@@ -9,7 +9,7 @@
 request.setCharacterEncoding("utf-8");
 String savepath=tdao.TOPING_IMG+"/temp";
 try{
-	MultipartRequest mr=
+	MultipartRequest mr1=
 			new MultipartRequest(request,savepath,1024*1024*10,"utf-8");
 	
 	tdao.saveTopImg();
