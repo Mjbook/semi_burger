@@ -20,15 +20,29 @@ h2{
 }
 .d{
 	float: left;
-	width:300px;
+	width:50%;
 	min-height:500px;
 	margin: 0px;
 	padding:0px;
 	text-align:center;
 }
-body div img{
+.sidetable{
+	width:100%;
+	padding: 0px;
+	border-spacing: 0px;
+}
+.sidetable tbody{
+	text-align:center;
+}
+.side{
+	width: 200px;
+	height:18px;
+}
+.side img{
 	width:200px;
 	height:20px;
+	margin: 0px;
+	padding:0px;
 }
 body table{
 	width:300px;
@@ -131,7 +145,9 @@ if(sid!=null&&sid.equals("admin")){
 		price+=Integer.parseInt(tp_price);
 	}
 	%>
-	<div align="center">가격:<%=price %>원</div>
+	<div>가격:<%=price %>원</div>
+	<br>
+	<table class="sidetable">
 	<%
 	for(int i=count_i-1;i>=0;i--){
 		
@@ -139,12 +155,18 @@ if(sid!=null&&sid.equals("admin")){
 		int temp=Integer.parseInt(temp_s);
 		String tp_img=tdao.getToping("toping_img",temp);
 		%>
-		<div>
-		<img src="/semi_burger/self/toping_img/ts<%=tp_img%>">
-		</div>
+		<tr>
+			<td align="center">
+			<div class="side">
+			<img src="/semi_burger/self/toping_img/ts<%=tp_img%>">
+				</div>
+			</td>
+		</tr>
+		
 		<%
 	}
 	%>
+	</table>
 	</div>
 </article>
 <article>
