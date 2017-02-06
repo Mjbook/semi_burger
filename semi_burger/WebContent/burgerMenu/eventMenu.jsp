@@ -61,7 +61,10 @@ ArrayList<BurgerDTO> al3=burgerdao.eventMenu(burgerdto);
 					</span>		
 					<br>
 					<span style="font-size:15px ; color:black;"><b><%=	al3.get(i).getItem_pay()%>원</b></span>
+					<br><br>
+					<input type="button" value="주문하기" onclick="location.href='/semi_burger/burgerMenu/burgerMenu.jsp'">
 					</td>
+					
 					
 				<%
 				}

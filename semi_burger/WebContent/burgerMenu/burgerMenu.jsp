@@ -38,6 +38,14 @@ ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 
 </style>
 <script>
+function go_scroll(h){
+	window.scrollTo(0,h);
+	return;
+}
+function go_scrollevent(h){
+	window.scrollTo(0,h);
+	return;
+}
 function resetMenu(){
 	location.href="burgerMenu.jsp?re=1"
 }
@@ -160,7 +168,7 @@ for(int i=0;i<arr_bdto.size();i++){
 	<article>
 	<div style="background:url(/semi_burger/introduce/img/sub_top_bg01.jpg) 50% 50% no-repeat;">
 	<br>
-	<h2 style="color:white;">&nbsp;&nbsp;햄버거 메뉴</h2>
+	<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;햄버거 메뉴</h2>
 	<br>
 	</div>
 		<form name="burgerMenu" method="post">
@@ -234,7 +242,9 @@ for(int i=0;i<arr_bdto.size();i++){
 					}	
 				}
 				 %>
+				
 			</table>
+			
 		</form>
 <%		
 		for(int i=0;i<arr_bdto.size();i++){
@@ -279,8 +289,9 @@ for(int i=0;i<arr_bdto.size();i++){
 		 
 		}
 %>
+		<p id="side"></p>
 		</article>
-		<br id="side">
+		
 		<%@include file="/sideMenu/sideMenu.jsp" %>	
 		
 		<br id="event">

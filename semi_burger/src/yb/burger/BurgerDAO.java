@@ -130,7 +130,7 @@ public class BurgerDAO {
 	public ArrayList<BurgerDTO> eventMenu(BurgerDTO bdto){
 		try{
 			conn=yb.db.YB_DB.getConn();
-			String sql="select * from burger where item_img_src like 'e_%' order by item_key desc";
+			String sql="select * from burger where item_img_src like 'e_%' order by item_name asc";
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
 			ArrayList<BurgerDTO> al=new ArrayList<BurgerDTO>();
