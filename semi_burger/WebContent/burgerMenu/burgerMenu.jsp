@@ -282,11 +282,7 @@ for(int i=0;i<arr_bdto.size();i++){
 		</article>
 		<br>
 		<hr>
-		<div style="background:url(/semi_burger/introduce/img/sub_1_bg0111.jpg) 50% 50% no-repeat;">
-		<br>
-		<h2 style="color:white;">&nbsp;&nbsp;사이드 메뉴</h2>
-		<br>
-		</div>
+		
 		<%@include file="/sideMenu/sideMenu.jsp" %>	
 		
 		<article>
