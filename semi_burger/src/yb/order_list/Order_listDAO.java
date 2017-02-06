@@ -38,11 +38,10 @@ public class Order_listDAO {
 	}
 	
 	/**고객 최종 주문 메서드*/
-	public int orderMenu(Order_listDTO odto,String sid, String addr){
+	public int orderMenu(Order_listDTO odto,String sid, String addr, Calendar c){
 		try {
 			getConn();
 			
-			Calendar c=Calendar.getInstance();
 			int year=c.get(Calendar.YEAR);
 			int month=c.get(Calendar.MONTH)+1;
 			int date=c.get(Calendar.DATE);
@@ -60,7 +59,6 @@ public class Order_listDAO {
 				ps=conn.prepareStatement(sql);
 				
 				Order_listDTO temp=arr.get(i);
-				
 				String item_name=temp.getItem_name();
 				int item_count=temp.getItem_count();
 				String price=temp.getTotal_pay();//1개당 가격
@@ -74,7 +72,7 @@ public class Order_listDAO {
 				ps.setString(5, total_pay);
 				
 				count+=ps.executeUpdate();
-				if(ps!=null)ps.close();
+				
 			}
 			return count;
 			

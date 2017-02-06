@@ -25,8 +25,17 @@
 		location.href="/semi_burger/burgerMenu/burgerMenu.jsp";
 		</script>
 		<%
+		return;
 	}
 %>
+<script>
+function goMenu(){
+	location.href='/semi_burger/burgerMenu/burgerMenu.jsp';
+}
+function goSelf(){
+	location.href='/semi_burger/self/selfBurger.jsp';
+}
+</script>
 </head>
 <%
 	String sid=(String)session.getAttribute("sid");
@@ -67,7 +76,11 @@ if(sid!=null){
 				<td colspan="4"><input type="text" name="addr" value="<%=addr%>" required="required"></td>
 			</tr>
 			<tr>
-				<td colspan="5" align="center"><input type="submit" value="주문하기"></td>
+				<td colspan="5" align="center">
+					<input type="button" value="더 담기" onclick="goMenu()">
+					<input type="button" value="시그니처 버거 담기" onclick="goSelf()">
+					<input type="submit" value="주문하기">
+				</td>
 			</tr>
 		</tfoot>
 		
@@ -76,9 +89,8 @@ if(sid!=null){
 			//총가격
 			int total_price=0;	
 			for(int i=0;i<arr.size();i++){
-				Order_listDTO temp=arr.get(i);
-				String price=temp.getTotal_pay();//개당 가격
-				int num=temp.getItem_count();
+				String price=arr.get(i).getTotal_pay();//개당 가격
+				int num=arr.get(i).getItem_count();
 				total_price+=Integer.parseInt(price)*num;
 			}
 			//나머지 정보, 테이블
@@ -87,13 +99,17 @@ if(sid!=null){
 				String menu=temp.getItem_name();
 				int num=temp.getItem_count();
 				String price=temp.getTotal_pay();//개당 가격
-				//	String shop=temp.getOrder_shop();
+				
 				Calendar now=Calendar.getInstance();
 				int year=now.get(Calendar.YEAR);
 				int month=now.get(Calendar.MONTH)+1;
 				int date=now.get(Calendar.DATE);
 				int hour=now.get(Calendar.HOUR_OF_DAY);
 				int min=now.get(Calendar.MINUTE);
+				
+				if(menu.startsWith("signature")){
+					menu="시그니처 버거";
+				}
 			%>
 				<tr>
 					<td><%=menu%></td>

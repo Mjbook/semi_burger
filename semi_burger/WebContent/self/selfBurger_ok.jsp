@@ -63,6 +63,6 @@ odto.addOdtos(sig);
 
 %>
 <script>
-	location.href='/semi_burger/order/orderList.jsp';
+	location.href='/semi_burger/self/selfburger.jsp';
 </script>
 
