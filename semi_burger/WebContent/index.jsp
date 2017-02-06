@@ -8,7 +8,6 @@
 <meta charset=UTF-8>
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="css/mainLayout.css">
-<link rel="stylesheet" type="text/css" href="css/slider.css">
 <%
 	int totalCnt = bdao.getTotalCnt();//총 게시물 수
 	int listSize = 5;//보여줄 리스트 수
@@ -42,6 +41,7 @@
 #slider figure img { 
 width: 20%; 
 float: left; 
+padding-bottom: 5px;
 }
 #slider figure { 
   position: relative;
@@ -59,8 +59,8 @@ float: left;
 <body>
 <div id="container">
 <div id="header">
-<%@include file="header.jsp" %>	</div>	
-</div>
+<%@include file="header.jsp" %>	
+</div>	
 <div id="slider">
 	<figure>
 		<img src="img/event1.png">
@@ -71,7 +71,17 @@ float: left;
 	</figure>
 </div>
 
-				<div id="mainnotice">
+			<div id=mainFont align="left">
+			   <img src="introduce/img/hat.png" width="25px;"> YongBurger Menu
+			</div>
+			
+			<div>
+				<div id="S_menu" align="center"> <img src="img/burger.png"> <br> 버거준비중	</div>
+				<div id="S_menu" align="center"> <img src="img/side.png"> <br> 사이드메뉴	</div>
+				<div id="S_menu" align="center"> <img src="img/knowhow.jpg"> <br> 시그니처</div>
+				<div id="S_menu1" align="center"> <img src="img/1.png"> <br> 커피    </div>
+			</div>
+				<div>
 					<table>
 						<thead>
 							<tr >
@@ -130,6 +140,6 @@ float: left;
 				<div id="footer">
 					<%@include file="footer.jsp"%>
 				</div>
-			
+			</div>
 			</body>
 </html>

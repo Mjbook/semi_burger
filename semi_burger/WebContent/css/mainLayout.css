@@ -219,7 +219,7 @@ footer {
 
 #mainnotice {
 	box-sizing: border-box;
-	width: 40%;
+	width: 38%;
 	padding: 20px;
 	margin-bottom: 20px;
 	float: left; 
@@ -307,11 +307,29 @@ footer {
 	}
 #table2 input {
 	width: 100%;
-	
 	}
 	
-#tableList3 {
-	
+
+#mainFont {
+	background-position: 0 0;
+	color : #ec1f27;
+	font-weight: bold;
+	font-size: 17px;
+	height: 30px;
+	padding-bottom: 5px;
 	
 }
 
+#S_menu {
+	width: 24%;
+	border-right: 0.5px dotted;
+	float: left; 
+	padding-bottom: 10px;
+	
+}
+#S_menu1 {
+	width: 24%;
+	float: left; 
+	padding-bottom: 10px;
+	
+}
