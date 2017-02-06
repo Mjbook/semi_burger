@@ -92,6 +92,16 @@ public class TopingDAO {
 	/**토핑 추가 step2 경로 저장 메서드*/
 	public int addDir(){
 		try {
+			
+			File makedir1=new File(TOPING_IMG);
+			if(!makedir1.exists()){
+				makedir1.createNewFile();
+			}
+			File makedir2=new File(TOPING_IMG+"/temp");
+			if(!makedir2.exists()){
+				makedir2.createNewFile();
+			}
+			
 			String dir=findDir();
 			
 			String sql="update toping set toping_img=? where toping_key=(select max(toping_key) from toping)";

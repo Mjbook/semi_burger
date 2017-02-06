@@ -14,6 +14,19 @@ function popClose(){
 	window.self.close();
 }
 </script>
+<style>
+body{
+	margin: 0px auto;
+	width:480px;
+}
+body table img{
+	width:100px;
+	height:100px;
+}
+body table{
+	text-align:center;
+}
+</style>
 </head>
 <%
 ArrayList<TopingDTO> tdtos=tdao.getInfo("0");

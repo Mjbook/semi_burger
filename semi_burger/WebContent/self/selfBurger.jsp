@@ -11,10 +11,31 @@
 <title>Yong burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <style>
+h2{
+	text-align:center;
+}
+.admin{
+	float:right;
+	width:500px;
+}
 .d{
 	float: left;
 	width:300px;
 	min-height:500px;
+	margin: 0px;
+	padding:0px;
+	text-align:center;
+}
+body div img{
+	width:200px;
+	height:20px;
+}
+body table{
+	width:300px;
+}
+body table img{
+	width:100px;
+	height:100px;
 }
 </style>
 <script>
@@ -25,7 +46,7 @@ function delTop(){
 	window.open('delToping.jsp','toping','width=400,height=100,left=600,top=300');
 }
 function showTop(){
-	window.open('showTop.jsp','toping','width=400,height=100,left=600,top=300');
+	window.open('showTop.jsp','toping','width=500,height=400,left=600,top=300');
 }
 </script>
 </head>
@@ -83,13 +104,12 @@ if(!(alltoping==null||alltoping.equals(""))){
 String sid=(String)session.getAttribute("sid");
 if(sid!=null&&sid.equals("admin")){
 %>
-<div style="width:300px;"><fieldset>
-<legend>관리자 메뉴</legend>
+<div class="admin">
 <p><a href="javascript:addTop()">토핑 추가</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="javascript:showTop()">토핑 꺼내기</a>
+<a href="javascript:showTop()">토핑 꺼내기</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 <a href="javascript:delTop()">토핑 숨기기</a>
 </p>
-</fieldset></div>
+</div>
 <%}%>
 <form name="selfBurger" action="selfBurger_ok.jsp">
 <p>
@@ -120,7 +140,7 @@ if(sid!=null&&sid.equals("admin")){
 		String tp_img=tdao.getToping("toping_img",temp);
 		%>
 		<div>
-		<img src="/semi_burger/self/toping_img/ts<%=tp_img%>" width="100px" height="20px">
+		<img src="/semi_burger/self/toping_img/ts<%=tp_img%>">
 		</div>
 		<%
 	}
@@ -128,7 +148,7 @@ if(sid!=null&&sid.equals("admin")){
 	</div>
 </article>
 <article>
-	<table border="1" width="480px">
+	<table>
 		<thead>
 		<tr>
 			<th>토핑</th>

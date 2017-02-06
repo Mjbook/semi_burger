@@ -9,7 +9,7 @@ int result=tdao.showToping(name,"show");
 if(result>0){
 	%>
 	<script>
-		window.opener.location.reload();
+		window.opener.location.href='selfBurger.jsp';
 		location.href='showTop.jsp';
 	</script>
 	<%
