@@ -7,7 +7,7 @@ import java.util.*;
 public class TopingDAO {
 	
 	//img 저장할 경로
-	public static final String TOPING_IMG="/semi_burger/self/toping_img";
+	public static final String TOPING_IMG="E:/semi_burger/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/semi_burger/self/toping_img";
 	//"C:/Users/user1/git/semi_burger/semi_burger/WebContent/self/toping_img";
 	
 	private Connection conn;
