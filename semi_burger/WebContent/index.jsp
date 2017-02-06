@@ -77,10 +77,10 @@ padding-bottom: 15px;
 			</div>
 			
 			<div>
-				<div id="S_menu" align="center"> <img src="img/burger.png"> <br> 버거준비중	</div>
-				<div id="S_menu" align="center"> <img src="img/side.png"> <br> 사이드메뉴	</div>
-				<div id="S_menu" align="center"> <img src="img/miniburger.jpg"> <br> 시그니처</div>
-				<div id="S_menu1" align="center"> <img src="img/1.png"> <br> 커피    </div>
+				<div id="S_menu" align="center"> <img src="img/burger.png" onclick="location.href='/semi_burger/burgerMenu/burgerMenu.jsp'"> <br> 햄버거	</div>
+				<div id="S_menu" align="center"> <img src="img/side.png" onclick="location.href='/semi_burger/burgerMenu/burgerMenu.jsp'"> <br> 사이드메뉴	</div>
+				<div id="S_menu" align="center"> <img src="img/miniburger.jpg" onclick="location.href='/semi_burger/self/selfBurger.jsp'"> <br> 시그니처</div>
+				<div id="S_menu1" align="center"> <img src="img/1.png" onclick="location.href='/semi_burger/burgerMenu/burgerMenu.jsp'"> <br> 커피    </div>
 			</div>
 			<div id="mainFont" align="left">
 			  <img src="introduce/img/hat.png" width="25px;"> YongBurger News 
@@ -142,9 +142,14 @@ padding-bottom: 15px;
 							 	<div id="tableFont" align="center"> BURGER BOAST </div>
 							 	<table border="1"> 들어갈 영역</table>
 					</div>
+					
+					
+					
 				<div id="maincenter1">
 					<div id="tableFont" align="center"> BURGER STORE</div>
 					<a href="introduce/road.jsp"><img src="img/location.png"></a>
+					<img src="img/gameimg.png" onclick="javascript:game()"></a>
+					
 				</div>
 				
 				<div id="footer">
