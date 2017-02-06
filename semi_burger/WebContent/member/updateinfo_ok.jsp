@@ -22,7 +22,7 @@
 	} else{
 		%>
 		<script>
-		window.alert('수정 실패');
+		window.alert('비밀번호를 입력해주세요');
 		location.href='/semi_burger/index.jsp';
 		</script>
 		<%
