@@ -43,7 +43,7 @@ String sid=(String)session.getAttribute("sid");
 <section>
 	<h2>이벤트 메뉴</h2>
 		<form name="eventMenu" method="post">
-			<table border="1">
+			<table border="0" cellspacing="0">
 				<tr>
 				<%
 				for(int i=0;i<al.size();i++){
@@ -59,13 +59,13 @@ String sid=(String)session.getAttribute("sid");
 					if(sid!=null){
 					if(sid.equals("admin")){
 						%>
-						Key : <%=al.get(i).getItem_key() %>
+						<span style="font-style: italic; color:red;">Key : <%=al.get(i).getItem_key() %></span>
 						<br><br><br>
 						<% 
 					}	
 					}
 					 %>
-					<%=al.get(i).getItem_name()%>
+					<span style="font-size:20px ; color:gray;"><b><%=al.get(i).getItem_name()%></b></span>
 					<br><br><br>
 					
 					<span style="text-decoration: line-through; color: red;">
@@ -74,10 +74,10 @@ String sid=(String)session.getAttribute("sid");
 					double pay=epay/0.85;
 					int epays=(int)pay;
 					%>
-					<%=epays %>원
+					<b><%=epays %>원</b>
 					</span>		
 					<br>
-					<%=	al.get(i).getItem_pay()%>원
+					<span style="font-size:15px ; color:black;"><b><%=	al.get(i).getItem_pay()%>원</b></span>
 					</td>
 					
 				<%

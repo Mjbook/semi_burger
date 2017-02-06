@@ -28,7 +28,7 @@ function side_delete(){
 
 	<article>
 		<form name="sideMenu">
-			<table border="1" cellspacing="1">
+			<table border="0" cellspacing="0">
 				<tr>
 				<%
 				for(int i=0;i<al2.size();i++){
@@ -44,15 +44,15 @@ function side_delete(){
 					if(sid!=null){
 					if(sid.equals("admin")){
 						%>
-					Key : <%=al2.get(i).getSideitem_key() %>	
+					<span style="font-style: italic; color:red;">Key : <%=al2.get(i).getSideitem_key() %></span>
 					<br><br><br>
 						<%	
 					}
 					}
 					%>
-					<%=al2.get(i).getSideitem_name() %>
+					<span style="font-size:20px;color:gray;"><b><%=al2.get(i).getSideitem_name() %></b></span>
 					<br><br><br>
-					<%=al2.get(i).getSideitem_pay()+"원" %>
+					<span style="font-size:15px;color:black;"><b><%=al2.get(i).getSideitem_pay()+"원" %></b></span>
 					<br><br><br>
 					<select name="s<%=i%>">
 					<%

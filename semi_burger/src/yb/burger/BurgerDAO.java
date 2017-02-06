@@ -16,7 +16,7 @@ public class BurgerDAO {
 	public ArrayList<BurgerDTO> burgerMenu(BurgerDTO bdto){
 		try{
 			conn=yb.db.YB_DB.getConn();
-			String sql="select * from burger order by item_key desc";
+			String sql="select * from burger order by item_name asc";
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
 			ArrayList<BurgerDTO> al=new ArrayList<BurgerDTO>();

@@ -35,10 +35,6 @@ ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 	text-align:center;
 }
 
-table{
-	background-color: #EAEAEA;
-}
-
 
 </style>
 <script>
@@ -162,11 +158,15 @@ for(int i=0;i<arr_bdto.size();i++){
 
 <section>
 	<article>
-	<h2>햄버거 메뉴</h2>
+	<div style="background:url(/semi_burger/introduce/img/sub_top_bg01.jpg) 50% 50% no-repeat;">
+	<br>
+	<h2 style="color:white;">&nbsp;&nbsp;햄버거 메뉴</h2>
+	<br>
+	</div>
 		<form name="burgerMenu" method="post">
-			<table border="1" cellspacing="1">
+			<table border="0" cellspacing="0">
 				<tr>
-				<span style="font-size: 12px; font">@표시는 이벤트 메뉴 입니다.</span>
+				
 				<%
 				String sid=(String)session.getAttribute("sid");
 				wf.setUser(sid);
@@ -192,16 +192,16 @@ for(int i=0;i<arr_bdto.size();i++){
 					if(sid!=null){
 					if(sid.equals("admin")){
 						%>
-						Key : <%=al.get(i).getItem_key() %>
+						<span style="font-style: italic; color:red;">Key : <%=al.get(i).getItem_key() %></span>
 						<br><br><br>
 						<% 
 					}	
 					}
 					 %>
 					
-					<%=al.get(i).getItem_name()%>
+					<span style="font-size:20px;color:gray;"><b><%=al.get(i).getItem_name()%></b></span>
 					<br><br><br>
-					<%=al.get(i).getItem_pay()+"원" %>
+					<span style="font-size:15px;color:black;"><b><%=al.get(i).getItem_pay()+"원" %></b></span>
 					<br><br><br>
 					
 					<select name="m<%=i%>">
@@ -282,7 +282,11 @@ for(int i=0;i<arr_bdto.size();i++){
 		</article>
 		<br>
 		<hr>
-		<h2 id="side"><br>사이드 메뉴</h2>
+		<div style="background:url(/semi_burger/introduce/img/sub_1_bg0111.jpg) 50% 50% no-repeat;">
+		<br>
+		<h2 style="color:white;">&nbsp;&nbsp;사이드 메뉴</h2>
+		<br>
+		</div>
 		<%@include file="/sideMenu/sideMenu.jsp" %>	
 		
 		<article>
