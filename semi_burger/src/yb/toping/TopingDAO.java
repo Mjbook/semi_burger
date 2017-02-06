@@ -283,7 +283,7 @@ public class TopingDAO {
 				toping=rs.getString(column);
 			}
 			
-			return toping;
+			return toping.toLowerCase();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
