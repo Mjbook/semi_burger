@@ -2,8 +2,7 @@ package yb.burger;
 import java.io.*;
 public class Burger_upload {
 	
-	public static final String USERS_HOME="E:/semi_burger/.metadata/.plugins/"
-			+ "org.eclipse.wst.server.core/tmp0/wtpwebapps/semi_burger/burger_img";
+	public static final String USERS_HOME="/semi_burger/burger_img";
 	
 	private String user;
 	private String crpath;
