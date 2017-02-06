@@ -10,8 +10,8 @@
 <link rel="stylesheet" type="text/css" href="css/mainLayout.css">
 <%
 	int totalCnt = bdao.getTotalCnt();//총 게시물 수
-	int listSize = 5;//보여줄 리스트 수
-	int pageSize = 5;//보여줄 페이지 수
+	int listSize = 2;//보여줄 리스트 수
+	int pageSize = 3;//보여줄 페이지 수
 	String cp_s = request.getParameter("cp");
 	if (cp_s == null || cp_s.equals("")) {
 		cp_s = "1";
@@ -57,6 +57,7 @@ padding-bottom: 15px;
 </style>
 </head>
 <body>
+
 <div id="container">
 <div id="header">
 <%@include file="header.jsp" %>	
@@ -143,6 +144,7 @@ padding-bottom: 15px;
 					</div>
 				<div id="maincenter1">
 					<div id="tableFont" align="center"> BURGER STORE</div>
+					<a href="introduce/road.jsp"><img src="img/location.png"></a>
 				</div>
 				
 				<div id="footer">
