@@ -41,7 +41,7 @@
 #slider figure img { 
 width: 20%; 
 float: left; 
-padding-bottom: 5px;
+padding-bottom: 15px;
 }
 #slider figure { 
   position: relative;
@@ -71,26 +71,28 @@ padding-bottom: 5px;
 	</figure>
 </div>
 
-			<div id=mainFont align="left">
+			<div id="mainFont" align="left">
 			   <img src="introduce/img/hat.png" width="25px;"> YongBurger Menu
 			</div>
 			
 			<div>
 				<div id="S_menu" align="center"> <img src="img/burger.png"> <br> 버거준비중	</div>
 				<div id="S_menu" align="center"> <img src="img/side.png"> <br> 사이드메뉴	</div>
-				<div id="S_menu" align="center"> <img src="img/knowhow.jpg"> <br> 시그니처</div>
+				<div id="S_menu" align="center"> <img src="img/miniburger.jpg"> <br> 시그니처</div>
 				<div id="S_menu1" align="center"> <img src="img/1.png"> <br> 커피    </div>
 			</div>
-				<div>
+			<div id="mainFont" align="left">
+			  <img src="introduce/img/hat.png" width="25px;"> YongBurger News 
+			</div>
+			
+			
+				<div id ="mainnotice">
+			 	<div id="tableFont" align="center"> NOTICE
+				</div>
 					<table>
-						<thead>
-							<tr >
-								<th align="center">공지사항</th>
-							</tr>
-						</thead>
 						<tfoot>
 							<tr>
-								<td colspan="3" align="center">
+								<td colspan="2" align="center">
 									<%
 						if(userGroup!=0) {
 							%><a href="notice.jsp?cp=<%=(userGroup-1)*pageSize+pageSize%>">&lt;&lt;</a>
@@ -116,7 +118,7 @@ padding-bottom: 5px;
 					if (adto == null || adto.size() == 0) {
 							%>
 							<tr>
-								<td colspan="4" align="center">등록된 게시글이 없습니다.</td>
+								<td colspan="3" align="center">등록된 게시글이 없습니다.</td>
 							</tr>
 							<%
 					} else {
@@ -124,7 +126,7 @@ padding-bottom: 5px;
 								%>
 							<tr>
 								<td><%=adto.get(i).getNotice_no()%></td>
-								<td colspan="2"><a
+								<td colspan="1"><a
 									href="./board/notice/noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><%=adto.get(i).getSubject() %></a></td>
 							</tr>
 							<%
@@ -133,9 +135,15 @@ padding-bottom: 5px;
 					%>
 						</tbody>
 					</table>
-				</div>
+					</div>
 
-				<div id="maincenter">여긴 내가 만든 시그니처 버거가 들어갈 예정</div>
+				<div id="maincenter">
+							 	<div id="tableFont" align="center"> BURGER BOAST </div>
+							 	<table border="1"> 들어갈 영역</table>
+					</div>
+				<div id="maincenter1">
+					<div id="tableFont" align="center"> BURGER STORE</div>
+				</div>
 				
 				<div id="footer">
 					<%@include file="footer.jsp"%>
