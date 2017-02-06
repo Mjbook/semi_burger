@@ -19,7 +19,23 @@ nav ul {
 	}
 
 </script>
-<div id="headerback">
+<div id="headerback" style="cursor:pointer;">
+<style>
+	a:link{
+		text-decoration: none;
+	}	
+	a:active{
+		text-decoration: none;
+	}
+	a:visited{
+		text-decoration: none;
+	}
+	a:hover{
+		text-decoration: none;
+		color: gray;
+	}
+</style>
+
 <%
 	String sname = (String)session.getAttribute("sname");
 	if(sname==null){
@@ -28,7 +44,7 @@ nav ul {
 		<%
 	} else {
 		%> <!-- 로그인 후 -->
-		<p><a> <%=sname %> 님 로그인 중</a> | <a href="/semi_burger/member/logout.jsp"> 로그아웃</a></p>			
+		<p><%=sname %> 님 로그인 중 | <a href="/semi_burger/member/logout.jsp"> 로그아웃</a></p>			
 		<%
 	}
 %>
