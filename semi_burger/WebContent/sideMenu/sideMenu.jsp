@@ -28,7 +28,7 @@ function side_delete(){
 
 	<article>
 		<form name="sideMenu">
-			<table border="1">
+			<table border="1" cellspacing="1">
 				<tr>
 				<%
 				for(int i=0;i<al2.size();i++){
