@@ -147,10 +147,8 @@ String sid=(String)session.getAttribute("sid");
 if(sid!=null&&sid.equals("admin")){
 %>
 <div class="admin">
-<p>
-<a href="javascript:addTop()" class="a">토핑 추가</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="javascript:showTop()" class="a">토핑 꺼내기</a>
-</p>
+<p><a href="javascript:addTop()" class="a">토핑 추가</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="javascript:showTop()" class="a">토핑 꺼내기</a></p>
 </div>
 <%}%>
 <form name="selfBurger" action="selfBurger_ok.jsp">
