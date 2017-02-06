@@ -1,3 +1,4 @@
+<%@page import="java.text.DecimalFormat"%>
 <%@page import="yb.order_list.Order_listDTO"%>
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -6,7 +7,8 @@
 <jsp:useBean id="odto" class="yb.order_list.Order_listDTO" scope="session"/>
 <!DOCTYPE html>
 <html>
-<%
+<%	
+	DecimalFormat df=new DecimalFormat("##,###,###,###,###");
 	String sid=(String)session.getAttribute("sid");
 	if(sid==null||sid.equals("")){
 %>
@@ -22,6 +24,42 @@
 <meta charset=UTF-8>
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css" >
+<style>
+body{
+	text-align: center;
+}
+.otable{
+	width:60%;
+	text-align: center;
+	margin:0px auto;
+	border-spacing: 0px;
+	border-color: 1px solid #DFDFDF;
+}
+.otable thead th{
+	border-bottom:1px solid #800000 ;
+}
+.div_th{
+	vertical-align:bottom;
+	padding: 0px;
+	border-bottom: 1px solid #DFDFDF;
+}
+.addr{
+	height:0px;
+	width:140px;
+	border-bottom:20px solid #DFDFDF;
+	border-right: 10px solid white;
+}
+.addr_s{
+	padding-left:28px;
+	padding-top:0px;
+	padding-bottom:0px;
+	text-align:left;
+	border-bottom:1px solid #800000;
+}
+.blank{
+	height:30px;
+}
+</style>
 </head>
 <%
 ArrayList<Order_listDTO> arr_odto=odao.getOrderList(sid);
@@ -31,7 +69,7 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 <%@include file="/header.jsp"%>
 	<section>
 		<article>
-			
+			<br><br>
 					<%
 					//1page에 5개씩 출력
 					int print_num=0;
@@ -62,19 +100,22 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 				%>
 				<form name="orderCheck" action="orderCheck.jsp">
 				<%
-					for(int i=start_num;i<print_num;i++){
+					
 					%>
 				
-				<table border="1">
-				<tbody>
+				<table class="otable">
+				<thead>
 					<tr>
-						<th>주문 일시</th>
+						<th width="140px">주문 일시</th>
 						<th>메뉴</th>
 						<th>주문 수량</th>
 						<th>메뉴 가격</th>
 						<th>합계</th>
 					</tr>
+				</thead>
+				<tbody>
 					<%
+					for(int i=start_num;i<print_num;i++){
 						if(arr_menu_num==null||arr_menu_num.size()==0){
 					%>
 					<tr>
@@ -116,7 +157,7 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 						<%		}			%>
 							<td><%=menu %></td>
 							<td><%=num %></td>
-							<td><%=price/num %></td>
+							<td><%=df.format(price/num)%>원</td>
 						<%		if(j==0){ //주문별 총 금액 구하기
 									int temp_row=row_count;
 									for(int k=0;k<row;k++){
@@ -127,7 +168,8 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 										temp_row++;
 									}
 						%>
-							<td rowspan="<%=row%>"><%=total_price%>원</td>
+							
+							<td rowspan="<%=row%>"><%=df.format(total_price)%>원</td>
 						<%		}	%>
 						</tr>
 						
@@ -136,16 +178,19 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 							}
 						%>
 						<tr>
-							<th>주소</th>
-							<td colspan="4"><%=address %></td>
+							<th class="div_th"><div class="addr">주소</div></th>
+							<td colspan="4" class="addr_s"><%=address %></td>
+						</tr>
+						<tr>
+							<td colspan="5"><div class="blank"></div></td>
 						</tr>
 						<%
 						}
 					%>
-					</tbody>
-				</table>				
-				<br>
 					<%} %>
+					</tbody>
+				</table>
+				
 				<input type="hidden" name="sig_no" value="">
 				<input type="hidden" name="pn" value="<%=curr_page%>">
 				</form>

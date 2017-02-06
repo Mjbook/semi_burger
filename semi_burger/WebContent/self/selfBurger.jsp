@@ -1,10 +1,10 @@
-<%@page import="java.io.File"%>
-<%@page import="java.beans.Encoder"%>
-<%@page import="yb.toping.TopingDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="java.beans.Encoder"%>
+<%@page import="yb.toping.TopingDTO"%>
 <%@page import="java.util.*" %>
 <%@page import="java.io.*" %>
+<%@page import="java.text.DecimalFormat"%>
 <!DOCTYPE html>
 <jsp:useBean id="tdto" class="yb.toping.TopingDTO"/>
 <jsp:useBean id="tdao" class="yb.toping.TopingDAO"/>
@@ -95,6 +95,8 @@ function order(){
 </script>
 </head>
 <%
+DecimalFormat df=new DecimalFormat("##,###,###,###,###");
+
 tdao.delTop();
 ArrayList<TopingDTO> tdtos=tdao.getInfo("show");
 String count=(String)session.getAttribute("toping_count");
@@ -175,7 +177,7 @@ if(sid!=null&&sid.equals("admin")){
 		price+=Integer.parseInt(tp_price);
 	}
 	%>
-	<div>가격:<%=price %>원</div>
+	<div>가격:<%=df.format(price) %>원</div>
 	<br>
 	<table class="sidetable">
 	<%

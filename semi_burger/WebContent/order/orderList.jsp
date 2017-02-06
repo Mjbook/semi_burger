@@ -118,7 +118,7 @@ if(sid!=null){
 					<%-- <td><%=shop%></td> --%>
 				<%if(i==0){ %>
 					<td rowspan="<%=arr.size()%>"><%=year+"-"+month+"-"+date+" "+hour+":"+min%></td>
-					<td rowspan="<%=arr.size()%>"><%=total_price%></td>
+					<td rowspan="<%=arr.size()%>"><%=total_price%>원</td>
 				<%} %>
 				</tr>			
 			<%
