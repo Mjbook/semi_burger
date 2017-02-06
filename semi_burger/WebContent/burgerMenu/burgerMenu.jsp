@@ -150,6 +150,7 @@ for(int i=0;i<arr_bdto.size();i++){
 	}
 }
 %>
+<%@include file="burgerMenu_basics.jsp" %>
 </head>
 <body>
 <%@include file="../header.jsp" %>
