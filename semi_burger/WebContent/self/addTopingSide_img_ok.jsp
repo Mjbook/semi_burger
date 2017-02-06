@@ -16,7 +16,7 @@ try{
 	%>
 	<script>
 		window.alert('업로드 성공!');
-		window.opener.location.reload();
+		window.opener.location.href='selfBurger.jsp';
 		window.self.close();
 	</script>
 	<%

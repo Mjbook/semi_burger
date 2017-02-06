@@ -46,11 +46,23 @@ h2{
 .sidetable tbody{
 	text-align:center;
 }
+.sidetop{
+	width: 200px;
+	height:18px;
+}
+.sidetop img{
+	border-radius:100px 100px 0px 0px;
+	width:200px;
+	height:30px;
+	margin: 0px;
+	padding:0px;
+}
 .side{
 	width: 200px;
 	height:18px;
 }
 .side img{
+	border-radius:9px;
 	width:200px;
 	height:20px;
 	margin: 0px;
@@ -78,6 +90,7 @@ function showTop(){
 </script>
 </head>
 <%
+tdao.delTop();
 ArrayList<TopingDTO> tdtos=tdao.getInfo("show");
 String count=(String)session.getAttribute("toping_count");
 int count_i=0;
@@ -169,8 +182,25 @@ if(sid!=null&&sid.equals("admin")){
 		%>
 		<tr>
 			<td align="center">
-			<div class="side">
-			<img src="/semi_burger/self/toping_img/ts<%=tp_img%>">
+		<%
+		int top_i=count_i-1;
+		String temp_tops=(String)session.getAttribute("t"+top_i);
+		int temp_top=Integer.parseInt(temp_tops);
+		
+		if(i==top_i){
+			String tp_n=tdao.getToping("toping_name",temp);
+			if(tp_n.equals("빵")){
+		%>
+				<div class="sidetop">
+		<%	}else{
+			%>
+				<div class="side">
+			<%		
+			}
+		}else{%>
+				<div class="side">
+		<%}%>
+					<img src="/semi_burger/self/toping_img/ts<%=tp_img%>">
 				</div>
 			</td>
 		</tr>

@@ -149,23 +149,6 @@ public class TopingDAO {
 	public int showToping(int key,String show){
 		try {
 			conn=yb.db.YB_DB.getConn();
-			/*//파일 삭제
-			String sql="select toping_img from toping where toping_name=?";
-			ps=conn.prepareStatement(sql);
-			ps.setString(1, name);
-			rs=ps.executeQuery();
-			
-			if(rs.next()){
-				do{
-					String dir=rs.getString("toping_img");
-					File temp=new File(dir);
-					temp.delete();
-
-				}while(rs.next());
-			}
-			rs.close();
-			ps.close();*/
-			
 			//db 변경
 			
 			String sql="update toping set show='"+show+"' where toping_key=?";
@@ -184,6 +167,26 @@ public class TopingDAO {
 				if(conn!=null)conn.close();
 			} catch (Exception e2) {}
 		}
+	}
+	
+	/**토핑 업로드 중에 중단한 db삭제 메서드*/
+	public void delTop(){
+		try{
+			conn=yb.db.YB_DB.getConn();
+			
+			String sql="delete from toping where toping_img='0'";
+			ps=conn.prepareStatement(sql);
+			ps.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e2) {}
+		}
+		
 	}
 	
 	/**토핑 옆 사진 저장,이름 바꾸기 메서드*/
