@@ -11,6 +11,17 @@
 <title>Yong burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <style>
+.a{
+	text-decoration: none;
+}
+.a:HOVER{
+	color: ;
+}
+.a:VISITED{
+	text-decoration: none;
+}
+
+
 h2{
 	text-align:center;
 }
@@ -119,17 +130,17 @@ String sid=(String)session.getAttribute("sid");
 if(sid!=null&&sid.equals("admin")){
 %>
 <div class="admin">
-<p><a href="javascript:addTop()">토핑 추가</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="javascript:showTop()">토핑 꺼내기</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="javascript:delTop()">토핑 숨기기</a>
+<p>
+<a href="javascript:addTop()" class="a">토핑 추가</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="javascript:showTop()" class="a">토핑 꺼내기</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="javascript:delTop()" class="a">토핑 숨기기</a>
 </p>
 </div>
 <%}%>
 <form name="selfBurger" action="selfBurger_ok.jsp">
-<p>
-	<a href="selfBurger.jsp?oto=1">제일 위의 토핑 빼기</a>
+<p><a href="selfBurger.jsp?oto=1" class="a">제일 위의 토핑 빼기</a>
 	&nbsp;&nbsp;|&nbsp;&nbsp;
-	<a href="selfBurger.jsp?to=1">토핑 전부 빼기</a>
+	<a href="selfBurger.jsp?to=1" class="a">토핑 전부 빼기</a>
 	<br>수량:<input type="text" name="item_count"><input type="submit" value="담기">
 </p>
 </form>
