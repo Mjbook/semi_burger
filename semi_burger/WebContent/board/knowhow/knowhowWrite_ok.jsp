@@ -14,7 +14,7 @@
 
 
 <%
-	String savePath = "C:/Users/gram/git/semi_burger/semi_burger/WebContent/upload"; // Upload 경로 
+	String savePath = "C:/Users/semi_burger/git/semi_burger/semi_burger/WebContent/upload"; // Upload 경로 
 	int sizeLimit = 5 * 1024 * 1024; 
 
 
