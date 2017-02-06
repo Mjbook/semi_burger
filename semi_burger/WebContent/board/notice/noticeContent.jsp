@@ -26,15 +26,7 @@
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css"
 	href="/semi_burger/css/mainLayout.css">
-<style type="text/css">
 
-}
-
-
-table th {
-	background: skyblue;
-}
-</style>
 <%
 String sid=(String)session.getAttribute("sid");
 
@@ -60,7 +52,7 @@ String sid=(String)session.getAttribute("sid");
 		<div id="container">
 			<h2>공지 사항</h2>
 			<div id="content">
-				<table id="table1" border="1">
+				<table id="tableList" border="1">
 					<tr>
 						<th>번호</th>
 						<td><%=dto.getNotice_no()%></td>
@@ -82,10 +74,11 @@ String sid=(String)session.getAttribute("sid");
 						</td>
 					</tr>
 				</table>
+					<div align="center">
 				<%
 								if ("admin".equals(sid)) {
 							%> 
-							<div align="center">
+						
 							<input type="button" value="수정" onclick="location.href='noticeUpdate.jsp?idx=<%=dto.getNotice_no()%>&sub=<%=dto.getSubject()%>&con=<%=dto.getContent().replaceAll("\n", "<br>")%>'">
 							<input type="button" value="삭제" onclick="location.href='noticeDelete.jsp?idx=<%=dto.getNotice_no()%>'">
 							 <%
@@ -97,6 +90,7 @@ String sid=(String)session.getAttribute("sid");
 			<div id="footer">
 				<%@include file="/footer.jsp"%>
 			</div>
+		</div>
 		</div>
 </body>
 </html>

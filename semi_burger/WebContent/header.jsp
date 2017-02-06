@@ -35,7 +35,7 @@ nav ul {
 	<nav>
 		<div id="newMenu">
 		<ul>
-			<li class ="menu"><a href="/semi_burger/index.jsp">HOME &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			<li><a href="/semi_burger/index.jsp">HOME &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
 
 			<li><a href="#">소개  &nbsp;&nbsp;&nbsp;&nbsp;</a>
 
@@ -70,7 +70,7 @@ nav ul {
 				<ul>
 					<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
 					<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
-					<li><a href="#">내맘대로 햄버거 자랑</a></li>
+					<li><a href="/semi_burger/board/knowhow/knowhowList.jsp">내맘대로 햄버거 자랑</a></li>
 					<li><a href="javascript:game()">게임하기</a></li>
 				</ul>
 				</li>

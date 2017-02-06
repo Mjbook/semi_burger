@@ -9,30 +9,11 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <title>Insert title here</title>
-<style>
-
-table {
-	width: 100%;
-	margin: 0px auto;
-	border-top: 2px double darkblue;
-	border-bottom: 2px double darkblue;
-	border-spacing: 0px;
-}
-
-table th {
-	background: skyblue;
-}
-
-table td {
-	text-align: center;
-}  
-
-#su{
-	text-align: left;
-
-}
-
-</style>
+<script>
+	function init() {
+		alert(1);
+	}
+</script>
 </head>
 <%
 int totalCnt=bdao.getTotalCnt(); //총 게시물 수 
@@ -54,24 +35,25 @@ if(cp%pageSize==0) {
 }
 %>
 <body>
+
 <div id="container">
-<div id="header">
-<%@include file="/header.jsp" %>
+		<div id="header">
+			<%@include file="/header.jsp"%>
+		</div>
+		<div id="sideMenu"> 
+
+			<h2 align="center">커뮤니티</h2>
+			<ul>
+				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
+				<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
+				<li><a href="#">내가 만든 햄버거</a></li>
+				<li><a href="javascript:game()">게임하기</a></li>
+			</ul>
+
 </div>
-
-<div id="sideMenu">
-
-		<h2 align="center">커뮤니티</h2>
-		<ul>
-			<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
-			<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
-			<li><a href="#">내가 만든 햄버거</a></li>
-			<li><a href="javascript:game()">게임하기</a></li>
-		</ul>
-	</div>
-	<div id="content">
+<div id="content">
 		<h2>창업문의</h2>
-				<table>
+				<table id="tableList">
 				<thead>
 					<tr>
 						<th>순번</th>
@@ -100,7 +82,7 @@ if(cp%pageSize==0) {
 							}
 						%>
 						</td>
-						<td><a href="QAWrite.jsp">글쓰기</a></td>
+
 					</tr>
 				</tfoot>
 				<tbody>
@@ -117,13 +99,15 @@ if(cp%pageSize==0) {
 								%>
 					<tr>
 						<td><%=arr.get(i).getQna_no()%></td>
-						<td id="su">
+						<td>
+						<div align="left">
 						<%
 							for(int z=0; z<arr.get(i).getLev(); z++) {
 								out.print("&nbsp;&nbsp;&nbsp;&nbsp;");
 							}
 						%>
-						<a href="QAContent.jsp?idx=<%=arr.get(i).getQna_no()%>"><%=arr.get(i).getSubject() %></a></td>
+						<a href="QAContent.jsp?idx=<%=arr.get(i).getQna_no()%>"><%=arr.get(i).getSubject() %></a>
+						</div></td>
 						<td><%=arr.get(i).getName()%></td>
 						<td><%=arr.get(i).getBoard_count()%></td>
 					</tr>
@@ -132,12 +116,17 @@ if(cp%pageSize==0) {
 						}
 					%>
 				</tbody>
+
 			</table>
-   
-   </div>
-   <div id="footer">
-   	<%@include file="/footer.jsp" %>
-   </div>
+			<div align="right">
+				<input type="button" value="글쓰기" onclick="location.href='QAWrite.jsp'">
+			</div>
+
+		</div>
+
+<div id="footer">
+<%@include file="/footer.jsp" %>
+</div>
 </div>
 	
 

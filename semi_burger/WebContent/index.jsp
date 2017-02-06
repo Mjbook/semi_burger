@@ -8,6 +8,7 @@
 <meta charset=UTF-8>
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="css/mainLayout.css">
+<link rel="stylesheet" type="text/css" href="css/slider.css">
 <%
 	int totalCnt = bdao.getTotalCnt();//총 게시물 수
 	int listSize = 5;//보여줄 리스트 수
@@ -25,21 +26,56 @@
 	if (cp % pageSize == 0)
 		userGroup--;
 %> 
+<style>
+ @keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+#slider { overflow: hidden; }
+#slider figure img { 
+width: 20%; 
+float: left; 
+}
+#slider figure { 
+  position: relative;
+  width: 500%;
+  margin: 0;
+  top:0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  -webkit-animation: 20s slidy ease-in-out infinite;
+  animation: 20s slidy ease-in-out infinite; 
+}
+</style>
 </head>
 <body>
 <div id="container">
 <div id="header">
-<%@include file="header.jsp" %>
-	<img src="./img/main_img.jpg" width="100%" height="300px">
-	
+<%@include file="header.jsp" %>	</div>	
 </div>
-
+<div id="slider">
+	<figure>
+		<img src="img/event1.png">
+		<img src="img/event2.png">
+		<img src="img/event3.png">
+		<img src="img/event4.png">
+		<img src="img/event5.png">
+	</figure>
+</div>
 
 				<div id="mainnotice">
 					<table>
 						<thead>
 							<tr >
-								<th>공지사항</th>
+								<th align="center">공지사항</th>
 							</tr>
 						</thead>
 						<tfoot>
@@ -89,13 +125,11 @@
 					</table>
 				</div>
 
-				<div id="maincenter">여긴 내가 만든 시그니처 버거가 들어갈 예정ddd</div>
+				<div id="maincenter">여긴 내가 만든 시그니처 버거가 들어갈 예정</div>
 				
 				<div id="footer">
 					<%@include file="footer.jsp"%>
 				</div>
-			</div>
-			</div>
 			
 			</body>
 </html>

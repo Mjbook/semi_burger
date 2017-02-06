@@ -26,37 +26,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
-<style type="text/css">
- <!--
-  #container {min-height: 80%; maring-top: -100px; }
-   * html #container {height: 100%;}
-  #container #content {padding: 100px 0 ; }
-  
-table {
-	width: 100%;
-	margin: 0px auto;
-	border-top: 2px double darkblue;
-	border-bottom: 2px double darkblue;
-	border-spacing: 0px;
-}
-
-table th {
-	background: skyblue;
-}
-
-table td {
-	text-align: center;
-}  
-  
- </style>
 </head>
 <body>
-	<%@include file="/header.jsp" %>
-<div id="container">
-   <div id="content">	
+		<div id="header">
+			<%@include file="/header.jsp"%>
+		</div>
+		<div id="sideMenu">
+
+			<h2 align="center">커뮤니티</h2>
+			<ul>
+				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
+				<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
+				<li><a href="#">내가 만든 햄버거</a></li>
+				<li><a href="javascript:game()">게임하기</a></li>
+			</ul>
+
+		</div>
+		<div id="container">
+		<h2>자유게시판 본문</h2>
+		<div id="content">	
 	
-			<h2>자유게시판 본문</h2>
-			<table border="1" bordercolor="blue" width="550" cellspacing="0">
+
+			<table id="tableList">
 			<tr>
 				<th>번호</th>
 				<td><%=dto.getQna_no()%></td>
@@ -80,14 +71,16 @@ table td {
 						<%=dto.getContent().replaceAll("\n", "<br>") %>
 					</td>
 			</tr>
-			<tr>
-				<td colspan="4" align="center"><a href="QAList.jsp" >목록보기 | </a>
-				 <a href="QAReWrite.jsp?subject=<%=dto.getSubject()%>&ref=<%=dto.getRef()%>&lev=<%=dto.getLev()%>&sunbun=<%=dto.getSunbun()%>">답변쓰기</a>
-			</tr>
 			</table>
-</div>
-</div>
-	
-	<%@include file="/footer.jsp" %>
+			<div align="center">
+			<input type="button" value="목록보기" onclick="location.href='QAList.jsp'">
+			<input type="button" value="답변쓰기" onclick="location.href='QAReWrite.jsp?subject=<%=dto.getSubject()%>&ref=<%=dto.getRef()%>&lev=<%=dto.getLev()%>&sunbun=<%=dto.getSunbun()%>'">
+			</div>
+			</div>
+			</div>
+
+			<div id="footer">
+				<%@include file="/footer.jsp"%>
+			</div>
 </body>
 </html>

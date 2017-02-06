@@ -6,57 +6,49 @@
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
- <!--
-  #container {min-height: 80%; maring-top: -100px; }
-   * html #container {height: 100%;}
-  #container #content {padding: 100px 0 ; }
-  
 table {
 	width: 100%;
 	margin: 0px auto;
-	border-top: 2px double darkblue;
-	border-bottom: 2px double darkblue;
 	border-spacing: 0px;
-}
-
-table th {
-	background: skyblue;
+	border: 1px #5b0d14;
 }
 
 table td {
 	text-align: center;
-	
 }
+
 table textarea {
 	width: 100%;
-
 }
-
 
 #sub {
-	width:100%;
-}
-#na {
-	width:100%;
-}
-#pw {
-	width:100%;
+	width: 100%;
 }
 
 #button {
 	text-align: right;
-	width="100%"
 }
-
-  
-  
  </style>
 </head>
 <body>
-	<%@include file="/header.jsp" %>
 	<div id="container">
+		<div id="header">
+			<%@include file="/header.jsp"%>
+		</div>
+		<div id="sideMenu">
+
+			<h2 align="center">커뮤니티</h2>
+			<ul>
+				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
+				<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
+				<li><a href="#">내가 만든 햄버거</a></li>
+				<li><a href="javascript:game()">게임하기</a></li>
+			</ul>
+
+		</div>
+		<div id="container">
+		<h2> 답 변 글</h2>
    <div id="content">	
-			<h2>답 변 글 </h2>
 			<form name="QAReWrite" action="QAReWrite_ok.jsp">
 			<%
 				String subject = request.getParameter("subject");
@@ -67,7 +59,7 @@ table textarea {
 			<input type="hidden" name="ref" value="<%=ref%>">
 			<input type="hidden" name="lev" value="<%=lev%>">
 			<input type="hidden" name="sunbun" value="<%=sunbun%>">
-			<table>
+			<table id="table2">
 				<tr>
 					<th>작성자</th>
 					<td><input type="text" name="name" id="na"></td>
@@ -85,18 +77,18 @@ table textarea {
 					<textarea rows="15" cols="50" name="content"></textarea>
 					</td>
 				</tr>
-				<tr>
-					<td colspan="4" align="center">
-					<input type="submit" value="글쓰기">
-					<input type="reset" value="다시작성">
-					
-				</tr>
 			</table>
+				<div align="right">
+						<input type="submit" value="완료"> 
+						<input type="reset" value="다시작성">
+					</div>
 			
 			</form>
-</div>
-</div>
+		</div>
+		</div>
 
-	<%@include file="/footer.jsp" %>
+	<div id="footer">
+		<%@include file="/footer.jsp"%>
+	</div>
 </body>
 </html>

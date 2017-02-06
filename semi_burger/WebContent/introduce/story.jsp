@@ -9,14 +9,19 @@
 <style>
 	section li{
 		margin: 0px auto;
+		list-style-type: none;
+		float: center;
 	}
 	.div1{
 		text-align: center;
 		font-size: 25px;
+		background:url(/semi_burger/introduce/img/sub_top_bg01.jpg) 50% 50% no-repeat;
+		background-size:cover;
 	}
 	div .subtitle{
 		font-size: 12px;
 		float: right;
+		color: white;
 	}
 	.head{
 		margin:0 auto;
@@ -42,11 +47,19 @@
 		height: 40px;
 	}
 	.li1{
-		font-size: 18px;
+		font-size: 19px;
 		color: gray;
 	}
 	.li2{
-		font-size: 14px;
+		font-size: 15px;
+	}
+	.maintable{
+		border: 0px;
+		width: 900px;
+		margin: 0px auto;
+	}
+	.maintable td{
+		text-align: left;
 	}
 </style>
 </head>
@@ -54,13 +67,11 @@
 <%@ include file="/header.jsp" %>
 <section>
 	<article>
-		<br>
 		<div class="div1">
-			<b>Yong Burger 소개</b><br>
-			<span class="subtitle"> HOME > Yong Burger 소개 > YONG STORY&nbsp;&nbsp;&nbsp;</span>
+		<br>
+			<div style="color:white;font-size:30px;"><b>Yong Burger 소개</b><br></div>
 			<br>
 		</div>
-		<hr>
 		<br>
 	</article>
 	
@@ -73,52 +84,72 @@
 			</tr>
 		</table>
 		<br>
+		<br>
 	</article>
 	<article>
 		<ul>
-			<li>YOUNG BURGER의 특징!</li>
+			<li style="font-size:25px;color:gray;text-align:center;"><b>YOUNG BURGER의 <span style="color:red;">특징!</span></b></li>
 		</ul>
-		<ol>
-			<li><img src="/semi_burger/introduce/img/intro_img01.jpg"> <br>
-				<span style="color:red; font-size:18px;"><b>하나.</b></span> <br>
-				<br>
-				<div class="li1">국내최초 한정판매 방식<br>
-				버거전문점</div><br>
-				<div class="li2">신선함과 퀄리티를 극대화 하기 위해 당일 판매할 분량만큼 만들어 판매하고 클로징하는 시스템을 유지하고 있습니다.</div>
-				<br>
-			</li>
-							
-			<li><img src="/semi_burger/introduce/img/intro_img03.jpg"> <br>
-				<span style="color:red; font-size:18px;"><b>둘.</b></span><br>
-				<br>
-				<div class="li1">천연 효모 발효종<br>
-				버거번 사용</div><br>
-				<div class="li2">전문 매장에서 YONG BURGER를 위해 개발한<br>
-				천연효모 발표 버거번을 사용합니다.</div>
-				<br>
-			</li> 
-			
-			<li><img src="/semi_burger/introduce/img/intro_img04.jpg"> <br>
-				<span style="color:red; font-size:18px;"><b>셋.</b></span><br>
-				<br>
-				<div class="li1">매장에서 직접 패티를 제조하는<br>
-				자가제육 방식</div><br>
-				<div class="li2">냉동 패티를 사용하지 않기 위해 모든 매장에서 직접<br>
-				패티를 만드는 방식으로 운영됩니다.</div>
-				<br>
-			</li>
-			
-			<li><img src="/semi_burger/introduce/img/intro_img06.jpg"> <br>
-				<span style="color:red; font-size:18px;"><b>넷.</b></span><br>
-				<br>
-				<div class="li1">신선하고 안정적인<br>
-				물류 시스템</div><br>
-				<div class="li2">철저한 검수를 통해 질 좋은 식재료를 더욱 저렴하게<br>
-				공급 받을 수 있도록 국내 최대 물류기업과 계약하여<br>
-				모든 매장에서 안정적으로 재료를 공급받을 수 있도록 하였습니다.</div>
-				<br>
-			</li>
-		</ol>
+		<table class="maintable">
+			<tr>
+			  <td> </td>
+			  <td> </td>
+			</tr>
+			<tr>
+			  <td>
+				<li><img src="/semi_burger/introduce/img/intro_img01.jpg" width="370" height="250"> <br>
+					<span style="color:red; font-size:22px;"><b>하나.</b></span> <br>
+					<br>
+					<div class="li1">국내최초 한정판매 방식<br>
+					버거전문점</div><br>
+					<div class="li2">신선함과 퀄리티를 극대화 하기 위해 당일 판매할 분량만큼<br>
+					만들어 판매하고 클로징하는 시스템을 유지하고 있습니다.</div>
+					<br>
+				</li>
+			  </td>
+			  <td>								
+				<li><img src="/semi_burger/introduce/img/intro_img03.jpg" width="370" height="250"> <br>
+					<span style="color:red; font-size:22px;"><b>둘.</b></span><br>
+					<br>
+					<div class="li1">천연 효모 발효종<br>
+					버거번 사용</div><br>
+					<div class="li2">전문 매장에서 YONG BURGER를 위해 개발한<br>
+					천연효모 발표 버거번을 사용합니다.</div>
+					<br>
+				</li>
+			  </td>
+			 </tr>
+			 <tr>
+			   <td>				
+				<li><img src="/semi_burger/introduce/img/intro_img04.jpg" width="370" height="250"> <br>
+					<span style="color:red; font-size:22px;"><b>셋.</b></span><br>
+					<br>
+					<div class="li1">매장에서 직접 패티를 제조하는<br>
+					자가제육 방식</div><br>
+					<div class="li2">냉동 패티를 사용하지 않기 위해 모든 매장에서 직접<br>
+					패티를 만드는 방식으로 운영됩니다.</div>
+					<br>
+				</li>
+			  </td>
+			  <td>				
+				<li><br>
+					<img src="/semi_burger/introduce/img/intro_img06.jpg" width="370" height="250"> <br>
+					<span style="color:red; font-size:22px;"><b>넷.</b></span><br>
+					<br>
+					<div class="li1">신선하고 안정적인<br>
+					물류 시스템</div><br>
+					<div class="li2">철저한 검수를 통해 질 좋은 식재료를 더욱 저렴하게<br>
+					공급 받을 수 있도록 국내 최대 물류기업과 계약하여<br>
+					모든 매장에서 안정적으로 재료를 공급받을 수 있도록 하였습니다.</div>
+					<br>
+				</li>
+			  </td>
+			  </tr>
+			  <tr>
+			  	<td> </td>
+			  	<td> </td>
+		 	  </tr>
+		</table>
 	</article>
 </section>
 <br>
