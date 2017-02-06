@@ -50,7 +50,7 @@ ArrayList<TopingDTO> tdtos=tdao.getInfo("0");
 		<tr>
 			<td><img src="/semi_burger/self/toping_img/<%=tdto.getToping_img()%>"><br><%=tdto.getToping_name()%></td>
 			<td><%=tdto.getToping_price() %>원</td>
-			<td><a href="showTop_ok.jsp?select=<%=tdto.getToping_name()%>">보이기</a></td>
+			<td><a href="showTop_ok.jsp?select=<%=tdto.getToping_key()%>">보이기</a></td>
 		</tr>
 		<%
 			}
