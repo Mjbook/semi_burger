@@ -79,9 +79,11 @@ String sid=(String)session.getAttribute("sid");
 					<br>
 					<%=	al.get(i).getItem_pay()%>원
 					</td>
+					
 				<%
 				}
 				%>
+				
 				<%
 				
 				if(sid!=null){
@@ -98,7 +100,9 @@ String sid=(String)session.getAttribute("sid");
 					}	
 				}
 				 %>
+				 
 			</table>
+			<hr>
 		</form>
 </section>
 
