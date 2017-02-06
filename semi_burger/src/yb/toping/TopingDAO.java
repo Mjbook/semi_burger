@@ -215,6 +215,7 @@ public class TopingDAO {
 				int idx=name.lastIndexOf('.');
 				int length=name.length();
 				name="ts"+maxidx+name.substring(idx, length);
+				name=name.toLowerCase();
 				f.renameTo(new File(TOPING_IMG+"/"+name));
 			}
 
