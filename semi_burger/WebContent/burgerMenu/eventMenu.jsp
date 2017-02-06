@@ -42,7 +42,7 @@ String sid=(String)session.getAttribute("sid");
 
 <section>
 	<article>
-	<div style="background:url(/semi_burger/introduce/img/eventcover.jpg) 50% 50% no-repeat;">
+	<div style="background:url(/semi_burger/introduce/img/eventCover.jpg) 50% 50% no-repeat;">
 	<br>
 	<h2 style="color:white;">&nbsp;&nbsp;이벤트 메뉴</h2>
 	<br>
@@ -107,7 +107,7 @@ String sid=(String)session.getAttribute("sid");
 				 %>
 				 
 			</table>
-			<hr>
+		
 		</form>
 		</article>
 </section>
