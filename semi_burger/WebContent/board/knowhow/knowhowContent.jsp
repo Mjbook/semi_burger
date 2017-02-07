@@ -89,20 +89,19 @@ url = url.substring(url.length()-4, url.length());
 						<br/>
 						<br/>
 						<% if(!"null".equals(url) && !"".equals(url)) {  %>
-						<img src="<%=dto.getMy_img_url() %>" id="img" />
+						<img src="<%= pageContext.getServletContext().getContextPath() %>/<%=dto.getMy_img_url() %>" id="img" />
 						<% } %>
 					</td>
 			</tr>
-			<tr>
-			<td>
-				<% if(sname.equals(dto.getName()) || "admin".equals(sid)) { %>
-				<a href="knowhowUpdate.jsp?idx=<%=dto.getKnowhow_no()%>&sub=<%=dto.getSubject()%>&con=<%=dto.getContent().replaceAll("\n", "<br>") %>&url=<%=dto.getMy_img_url() %>">수정</a>
-				<a href="knowhowDelete.jsp?idx=<%=dto.getKnowhow_no()%>">삭제</a>
-				<%} %>
-				<a href="knowhowList.jsp">목록</a>
-		    </td>
-			</tr>
 			</table>
+			<% if(sname.equals(dto.getName()) || "admin".equals(sid)) { %>
+			<div align="center">
+			<input type="button" value="수정" onclick="location.href='knowhowUpdate.jsp?idx=<%=dto.getKnowhow_no()%>&sub=<%=dto.getSubject()%>&con=<%=dto.getContent().replaceAll("\n", "<br>") %>&url=<%=dto.getMy_img_url() %>'">
+			<input type="button" value="삭제" onclick="location.href='knowhowDelete.jsp?idx=<%=dto.getKnowhow_no()%>'">
+				<%} %>
+			<input type="button" value="목록" onclick="location.href='knowhowList.jsp'">
+				</div>
+
   </div>
 
 			<div id="footer">

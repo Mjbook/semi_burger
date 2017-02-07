@@ -9,7 +9,6 @@
 <style>
 	section li{
 		list-style-type: none;
-		margin: 0px auto;
 	}
 	.div1{
 		text-align: center;

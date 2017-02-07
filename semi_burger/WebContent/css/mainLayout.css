@@ -147,7 +147,11 @@ footer {
 	float: left;
 	list-style-type: none;
 }
-
+.firstli{
+	height:50px;
+	float: left;
+	list-style-type: none;
+}
 #newMenu a {
 	height: 30px;
 	color: #990033;
@@ -169,7 +173,7 @@ footer {
 #newMenu ul ul {
 	display: none;
 	position: absolute;
-	top:60px;
+	top:105px;
 }
 
 
