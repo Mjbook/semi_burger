@@ -40,6 +40,7 @@ h2{
 .sidetop{
 	width: 200px;
 	height:18px;
+	margin: 0px auto;
 }
 .sidetop img{
 	border-radius:100px 100px 0px 0px;
@@ -51,6 +52,7 @@ h2{
 .side{
 	width: 200px;
 	height:18px;
+	margin: 0px auto;
 }
 .side img{
 	border-radius:9px;
@@ -193,7 +195,7 @@ if(sid!=null&&sid.equals("admin")){
 		String tp_img=tdao.getToping("toping_img",temp);
 		%>
 		<tr>
-			<td align="center">
+			<td >
 		<%
 		int top_i=count_i-1;
 		String temp_tops=(String)session.getAttribute("t"+top_i);
