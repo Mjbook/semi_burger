@@ -110,20 +110,20 @@ public class MemberDAO {
 		}
 	}
 	
-	/** 비밀번호 찾기 관련 메서드*/
-	public int pwdfind(String pwd, String id){
+	/** 비밀번호 설정*/
+	public int SetPwd(String userpwd, String id){
 		try{
 			conn = yb.db.YB_DB.getConn();
 			
 			String sql = "update member set passwd=? where id=?";
 			
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, pwd);
+			ps.setString(1, userpwd);
 			ps.setString(2, id);
 			
 			int count = ps.executeUpdate();
 			
-			return count;			
+			return count;
 			
 		} catch(Exception e){
 			e.printStackTrace();
@@ -131,6 +131,7 @@ public class MemberDAO {
 		} finally{
 			try{
 				if(ps!=null) ps.close();
+				
 				if(conn!=null) conn.close();				
 			} catch(Exception e2){}
 		}
@@ -331,12 +332,6 @@ public class MemberDAO {
 			} catch(Exception e2){}
 		}
 	}
-	
-	
-	
-
-	
-	
 	
 	
 	

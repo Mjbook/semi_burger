@@ -8,10 +8,35 @@
 <meta charset=UTF-8>
 <title>Yong Burger</title>
 <style>
-.sidetop{
+body table{
+	margin:0px auto;
+	border-spacing: 0px;
+}
+body td{
+	height:20px;
+	padding:0px;
+}
+.side_top{
+	padding:0px;
+	width: 200px;
+	height:18px;
+}
+.side_top img{
 	border-radius:100px 100px 0px 0px;
 	width:200px;
 	height:30px;
+	margin: 0px;
+	padding:0px;
+}
+.side{
+	padding:0px;
+	width: 200px;
+	height:18px;
+}
+.side img{
+	border-radius:9px;
+	width:200px;
+	height:21px;
 	margin: 0px;
 	padding:0px;
 }
@@ -42,12 +67,29 @@ while(st.hasMoreTokens()){
 <%
 for(int i=arr.size()-1;i>=0;i--){
 	int key=arr.get(i);
-	String tname=hm.get(key);
-	String img=tdao.getToping("toping_img", key);
-
+	String tname="";
+	String img="";
+	String div_class="side";
+	
+	if(hm.containsKey(key)){
+		tname=hm.get(key);
+		
+		img="src='/semi_burger/self/toping_img/ts"+tdao.getToping("toping_img", key)+"'";
+		
+		if(i==arr.size()-1&&tname.equals("빵")){
+			div_class="side_top";
+		}
+		
+	}else{
+		tname="판매 종료된 토핑";
+	}
+	
+	
+	
+	
 %>
 	<tr>
-		<td><img src="/semi_burger/self/toping_img/ts<%=img%>" class="sidetop"></td>
+		<td><div class="<%=div_class%>"><img <%=img%>></div></td>
 		<td><%=tname %></td>
 	</tr>
 

@@ -57,7 +57,7 @@ YONG BURGER는
 		</div>
 		<br>
 		<div class="agree-check-box">
-				<input type="checkbox" name="agree_checkbox" id="agree_checkbox1" value="이용약관">
+				<input type="checkbox" name="agree_checkbox1" value="on">
 				<label for="agree_checkbox1">위 이용약관에 동의합니다.</label>
 		</div>
 	</div>
@@ -97,7 +97,7 @@ YONG BURGER 에 접속하는 이용자의 브라우저에 고유한 쿠키를 �
 		</div>
 		<br>
 		<div class="agree-check-box">
-			<input type="checkbox" name="agree_checkbox" id="agree_checkbox2" value="이용약관">
+			<input type="checkbox" name="agree_checkbox2" value="on">
 			<label for="agree_checkbox2">위 이용약관에 동의합니다.</label>
 		</div>
 	</div>

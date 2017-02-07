@@ -19,8 +19,7 @@
 		window.self.close();
 	}
 	function pwdfind(){
-		opener.location.href='pwdfind.jsp';
-		window.self.close();
+		location.href='pwdfind.jsp';
 	}
 	function rejoin(){
 		opener.location.href='agree.jsp';
