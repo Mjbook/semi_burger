@@ -14,7 +14,8 @@
 
 
 <%
-	String savePath = "E:/semi_burger/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/semi_burger/"; // Upload 경로 
+	String savePath = getServletContext().getRealPath("/") + "upload"; // Upload 경로
+	new File(savePath).mkdir();
 	int sizeLimit = 5 * 1024 * 1024; 
 
 
@@ -28,7 +29,7 @@
 	bdto.setName(name);
 	bdto.setSubject(subject);
 	bdto.setContent(content);
-	bdto.setMy_img_url("../../upload/" + fileName);
+	bdto.setMy_img_url("upload/" + fileName);
 
 	int result=bdao.knowhowWrite(bdto);
 	String msg=result>0?"작성완료!":"작성실패!";

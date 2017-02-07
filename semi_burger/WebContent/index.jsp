@@ -149,9 +149,9 @@ padding-bottom: 15px;
 
 						if (cdto == null || cdto.size() == 0) {
 						%>
-							<br/>
+							<br>
 								<center>등록된 게시물이 없습니다</center>
-							<br/>
+							<br>
 						<%
 						} else {
 							%>
