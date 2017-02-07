@@ -79,8 +79,8 @@ table textarea {
 				</tr>
 			</table>
 				<div align="right">
-						<input type="submit" value="완료"> 
 						<input type="reset" value="다시작성">
+						<input type="submit" value="완료"> 
 					</div>
 			
 			</form>
