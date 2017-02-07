@@ -13,35 +13,53 @@
 		text-align: right;
 	}
 </style>
+
 </head>
 <%
 	String userid = request.getParameter("id");
 	String userpwd = request.getParameter("passwd");
 	
-	int result = mdao.DelMember(userid, userpwd);
+	String dbpwd = mdao.getPwd(userid);	
 %>
 <body>
  
 <section>
   <fieldset>
-	  <form name="delete" action="delete_ok.jsp">
+	  <form name="delete">
 	  	<%
-		  	if(result>0){
-		  		%>
-				<script>
-					window.confirm('탈퇴하시겠습니까?');
-										
-				</script>
-				<%				
-			} else{
-				%>
-				<script>
-					window.alert('비밀번호를 확인해주세요');
-					history.back();
-				</script>
-				<%
-				return;
-			}
+	  		if(userpwd.equals(dbpwd)){
+	  			%>
+	  			<script>
+	  			var confirm = window.confirm('탈퇴하시겠습니까?');
+	  			
+	  			if(confirm){
+	  				<%
+	  				int result = mdao.DelMember(userid);
+	  				
+	  				if(result>0){
+	  					%>
+	  					window.alert('탈퇴되었습니다');
+	  					location.href='/semi_burger/index.jsp';
+	  					<%	  					
+	  					session.invalidate();
+	  				} else{
+	  					%>
+	  					window.alert('감사합니다');
+	  					history.back();
+	  					<%
+	  				}
+	  				%>
+	  			}
+	  			</script>
+	  			<%
+	  		} else{
+	  			%>
+	  			<script>
+	  				window.alert('비밀번호를 확인해주세요');
+	  				history.back();
+	  			</script>
+	  			<%
+	  		}	  		
 	  	%>
 	  </form>
   </fieldset>

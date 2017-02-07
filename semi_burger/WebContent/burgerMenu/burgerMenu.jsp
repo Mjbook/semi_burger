@@ -43,17 +43,6 @@ ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 body{
 	padding-top: 10px;
 }
-.old{
-	display:inline-block;
-	border-radius:5px;
-	border:1px solid white;
-	background:#dac4c4;
-	width:30%;
-}
-.old a {
-	color: #800000;
-}
-
 </style>
 <script>
 function go_scroll(h){
@@ -367,8 +356,8 @@ for(int i=0;i<arr_bdto.size();i++){
 				</tr>
 				<tr>
 					<td colspan="4" align="center">
-						<div class="old"><a href="javascript:submit()">주문하기</a></div>
-						<div class="old"><a href="javascript:resetMenu()">다시 담기</a></div>
+						<div class="button_div"><a href="javascript:submit()">주문하기</a></div>
+						<div class="button_div"><a href="javascript:resetMenu()">다시 담기</a></div>
 					</td>
 				</tr>
 				</tfoot> 

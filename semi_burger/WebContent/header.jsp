@@ -70,6 +70,7 @@ nav ul {
 			<li class="firstli"><a href="#">메뉴 &nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 				<ul>
+					<li><a href="/semi_burger/order/orderList.jsp" >온라인 주문</a></li>
 					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp" >햄버거</a></li>
 					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp#side" >사이드</a></li>
 					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp#event" >이벤트 메뉴</a></li>
