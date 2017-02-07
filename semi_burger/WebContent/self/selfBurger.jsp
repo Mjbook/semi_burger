@@ -149,7 +149,7 @@ if(!(alltoping==null||alltoping.equals(""))){
 <article style="height:113px;padding-top: 14px;">
 <div style="background:url(/semi_burger/introduce/img/sub_top_bg01.jpg) 50% 50% no-repeat; height:106px;" >
 	<br>
-	<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;시그니처 버거</h2>
+	<h2 style="color:white;text-align: left;">&nbsp;&nbsp;시그니처 버거</h2>
 	<br>
 </div>
 </article>
