@@ -54,7 +54,7 @@ nav ul {
 		<ul>
 			<li><a href="/semi_burger/index.jsp">HOME &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
 
-			<li><a href="#">소개  &nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<li class="firstli"><a href="#">소개  &nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 				<ul>
 					<li><a href="/semi_burger/introduce/ceo.jsp">CEO 인사말</a></li>
@@ -63,7 +63,7 @@ nav ul {
 				</ul>
 				</li>
 
-			<li><a href="#">메뉴 &nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<li class="firstli"><a href="#">메뉴 &nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 				<ul>
 					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp" >햄버거</a></li>
@@ -74,7 +74,7 @@ nav ul {
 				</ul>
 				</li>
 				
-					<li><a href="#">My burger &nbsp;&nbsp;&nbsp;&nbsp;</a>
+					<li class="firstli"><a href="#">My burger &nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 				<ul>
 					<li><a href="/semi_burger/member/updateinfo.jsp">회원정보 수정</a></li>
@@ -82,7 +82,7 @@ nav ul {
 				</ul>
 				</li>
 				
-					<li><a href="#">커뮤니티 &nbsp;&nbsp;&nbsp;&nbsp; </a>
+					<li class="firstli"><a href="#">커뮤니티 &nbsp;&nbsp;&nbsp;&nbsp; </a>
 
 				<ul>
 					<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
