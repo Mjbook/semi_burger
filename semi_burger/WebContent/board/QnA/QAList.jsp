@@ -46,7 +46,7 @@ if(cp%pageSize==0) {
 			<ul>
 				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
 				<li><a href="/semi_burger/board/QnA/QAList.jsp">창업문의</a></li>
-				<li><a href="#">내가 만든 햄버거</a></li>
+				<li><a href="/semi_burger/board/knowhow/knowhowList.jsp">내가 만든 햄버거</a></li>
 				<li><a href="javascript:game()">게임하기</a></li>
 			</ul>
 
