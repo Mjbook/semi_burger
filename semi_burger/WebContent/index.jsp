@@ -2,6 +2,8 @@
 	pageEncoding="UTF-8" import="java.util.*"%>
 <%@page import="board.notice.*"%>
 <jsp:useBean id="bdao" class="board.notice.noticeDAO" />
+<%@ page import="board.knowhow.*" %>
+<jsp:useBean id="cdao" class="board.knowhow.knowhowDAO"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="css/mainLayout.css">
 <%
 	int totalCnt = bdao.getTotalCnt();//총 게시물 수
-	int listSize = 2;//보여줄 리스트 수
+	int listSize = 6;//보여줄 리스트 수
 	int pageSize = 3;//보여줄 페이지 수
 	String cp_s = request.getParameter("cp");
 	if (cp_s == null || cp_s.equals("")) {
@@ -127,7 +129,7 @@ padding-bottom: 15px;
 								%>
 							<tr>
 								<td><%=adto.get(i).getNotice_no()%></td>
-								<td colspan="1"><a
+								<td colspan="1" align="center"><a
 									href="./board/notice/noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><%=adto.get(i).getSubject() %></a></td>
 							</tr>
 							<%
@@ -137,10 +139,35 @@ padding-bottom: 15px;
 						</tbody>
 					</table>
 					</div>
-
+					<%
+					ArrayList<knowhowDTO> cdto = cdao.knowhowList(1, 1);
+					%>
 				<div id="maincenter">
 							 	<div id="tableFont" align="center"> BURGER BOAST </div>
-							 	<table border="1"> 들어갈 영역</table>
+							 	<table border="1"> 
+							 	<%
+
+						if (cdto == null || cdto.size() == 0) {
+						%>
+							<br/>
+								<center>등록된 게시물이 없습니다</center>
+							<br/>
+						<%
+						} else {
+							%>
+							</table>
+
+							
+							<%
+							for (int i = 0; i <cdto.size(); i++) {
+									%>
+								<img src="<%=cdto.get(i).getMy_img_url() %>" width="90%" height="90%" alt="못만든햄버거" onclick="onView('<%=cdto.get(i).getKnowhow_no()%>');" />
+										<br><%=cdto.get(i).getSubject()%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=cdto.get(i).getBoard_count()%>&nbsp;&nbsp;
+						<%			}
+								}
+						%>	
+						 	
+							 	</table>
 					</div>
 					
 					
@@ -149,7 +176,6 @@ padding-bottom: 15px;
 					<div id="tableFont" align="center"> BURGER STORE</div>
 					<a href="introduce/road.jsp"><img src="img/location.png"></a>
 					<img src="img/gameimg.png" onclick="javascript:game()"></a>
-					
 				</div>
 				
 				<div id="footer">

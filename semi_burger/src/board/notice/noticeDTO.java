@@ -12,6 +12,7 @@ public class noticeDTO {
 	private int 	board_count;
 	
 	
+	
 	public int getNotice_no() {
 		return notice_no;
 	}
