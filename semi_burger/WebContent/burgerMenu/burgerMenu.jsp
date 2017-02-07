@@ -295,12 +295,12 @@ for(int i=0;i<arr_bdto.size();i++){
 %>
 		
 		</article>
-		<br id="side">
+		<div id="side" style="width: 1000px; height:120px;"></div>
 		<%@include file="/sideMenu/sideMenu.jsp"%>	
 		
-		<br id="event">
+		<div id="event" style="width: 1000px; height:120px;"></div>
 		<%@include file="eventMenu.jsp" %>
-		
+		<div style="width: 1000px; height:120px;"></div>
 		<article>
 		<div>
 		<form name="orderlist" action="/semi_burger/order/orderList.jsp">
