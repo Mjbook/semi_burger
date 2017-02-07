@@ -135,7 +135,15 @@ if(!(alltoping==null||alltoping.equals(""))){
 %>
 <body>
 <%@include file="/header.jsp"%>
-<h2>나만의 버거</h2>
+<section>
+<article style="height:113px;padding-top: 14px;">
+<div style="background:url(/semi_burger/introduce/img/sub_top_bg01.jpg) 50% 50% no-repeat; height:106px;" >
+	<br>
+	<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;시그니처 버거</h2>
+	<br>
+</div>
+</article>
+<article>
 <%
 String sid=(String)session.getAttribute("sid");
 if(sid!=null&&sid.equals("admin")){
@@ -154,7 +162,7 @@ if(sid!=null&&sid.equals("admin")){
 			<input type="button" value="계산하기" onclick="order()">
 </p>
 </form>
-<section>
+</article>
 <article>
 	<div class="d">
 	<%

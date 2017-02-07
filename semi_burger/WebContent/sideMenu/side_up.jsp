@@ -8,7 +8,7 @@
 <%
 request.setCharacterEncoding("UTF-8");
 %>
-<title>Insert title here</title>
+<title>Yong Burger</title>
 </head>
 
 <body>

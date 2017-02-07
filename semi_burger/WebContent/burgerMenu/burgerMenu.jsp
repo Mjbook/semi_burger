@@ -24,7 +24,7 @@ ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 <html>
 <head>
 <meta charset=UTF-8">
-<title>Insert title here</title>
+<title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="../css/mainLayout.css">
 <style>
 #orderlist{
@@ -295,10 +295,10 @@ for(int i=0;i<arr_bdto.size();i++){
 %>
 		
 		</article>
+		<br id="side">
+		<%@include file="/sideMenu/sideMenu.jsp"%>	
 		
-		<%@include file="/sideMenu/sideMenu.jsp" %>	
-		
-		
+		<br id="event">
 		<%@include file="eventMenu.jsp" %>
 		
 		<article>
