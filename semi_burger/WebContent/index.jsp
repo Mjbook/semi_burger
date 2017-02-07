@@ -140,7 +140,7 @@ padding-bottom: 15px;
 					</table>
 					</div>
 					<%
-					ArrayList<knowhowDTO> cdto = cdao.knowhowList(1, 1);
+					ArrayList<knowhowDTO> cdto = cdao.knowhowList(cp, listSize);
 					%>
 				<div id="maincenter">
 							 	<div id="tableFont" align="center"> BURGER BOAST </div>
@@ -156,17 +156,19 @@ padding-bottom: 15px;
 						} else {
 							%>
 							</table>
-
-							
-							<%
-							for (int i = 0; i <cdto.size(); i++) {
-									%><div align="center">
-								<img src="<%= pageContext.getServletContext().getContextPath() %>/<%=cdto.get(i).getMy_img_url() %>" width="50%" height="50%" alt="못만든햄버거" onclick="onView('<%=cdto.get(i).getKnowhow_no()%>');" />
-										<br>제목 : <%=cdto.get(i).getSubject()%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;조회수 : <%=cdto.get(i).getBoard_count()%>&nbsp;&nbsp;
-						<%			}
-								}
-						%></div>	
-						 	
+							<div id="slider">
+								<figure>
+								<%
+									for( int i =0; i <cdto.size(); i++) {
+										%>
+									<a href="board/knowhow/knowhowList.jsp"><img src="<%= pageContext.getServletContext().getContextPath() %>/<%=cdto.get(i).getMy_img_url() %>" width="50%" height="50%" onclick="onView('<%=cdto.get(i).getKnowhow_no()%>');" /></a>
+										<%	
+									}
+						}
+						%>
+								</figure>
+						</div>	
+						 	<p id="mainFont"> 최근 고객이 만든 햄버거
 						</div>
 					
 					
