@@ -14,17 +14,6 @@
 <title>Yong burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <style>
-.a{
-	text-decoration: none;
-}
-.a:HOVER{
-	color: ;
-}
-.a:VISITED{
-	text-decoration: none;
-}
-
-
 h2{
 	text-align:center;
 }

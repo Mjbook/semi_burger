@@ -198,21 +198,21 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 			
 		<p><%
 		for(int i=0;i<page_num;i++){
-			%><a href="orderCheck.jsp?pn=<%=i+1%>"><%=i+1+"\t"%></a><%
+			%><a href="orderCheck.jsp?pn=<%=i+1%>" class="a"><%=i+1+"\t"%></a><%
 		}%></p>
 	</section>
-<%
-//시그니처 팝업
+
+<script>
+<%//시그니처 팝업	
 for(int i=0;i<=sig_num;i++){
 %>
-<script>
 function sig<%=i%>(){
 	document.orderCheck.sig_no.value="<%=i%>";
 	document.orderCheck.submit();
 	
 }
-</script>
 <%}%>
+</script>
 <%
 String sig_no=(String)request.getParameter("sig_no");
 if(!(sig_no==null||sig_no.equals(""))){
