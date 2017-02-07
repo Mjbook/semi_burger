@@ -371,12 +371,10 @@ footer {
 }
 
 .a{
+	color:#800000;
 	text-decoration: none;
 }
-.a:HOVER{
-	color: #800000;
-}
-.a:VISITED{
-	color: black;
+.a:hover{
+	color:#dac4c4;
 	text-decoration: none;
 }
