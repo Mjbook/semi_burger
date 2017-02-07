@@ -68,7 +68,7 @@
 							for (int i = 0; i < adto.size(); i++) {
 									%>
 								
-								<td align="right" ><img src="<%=adto.get(i).getMy_img_url() %>" width="250" height="250" alt="" onclick="onView('<%=adto.get(i).getKnowhow_no()%>');" />
+								<td align="right" ><img src="<%= pageContext.getServletContext().getContextPath() %>/<%=adto.get(i).getMy_img_url() %>" width="250" height="250" alt="" onclick="onView('<%=adto.get(i).getKnowhow_no()%>');" />
 										<br><%=adto.get(i).getSubject()%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=adto.get(i).getBoard_count()%>&nbsp;&nbsp;
 								</td>				
 									

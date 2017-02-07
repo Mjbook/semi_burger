@@ -12,7 +12,7 @@
 <jsp:useBean id="bdao" class="board.knowhow.knowhowDAO" scope="session"/>
 
 <%
-String savePath = "C:/Users/gram/git/semi_burger/semi_burger/WebContent/upload"; // Upload 경로 
+String savePath = getServletContext().getRealPath("/") + "uploads/concerts"; // Upload 경로 
 int sizeLimit = 5 * 1024 * 1024; 
 
 MultipartRequest multi = new MultipartRequest(request, savePath, sizeLimit, "utf-8", new DefaultFileRenamePolicy()); 
