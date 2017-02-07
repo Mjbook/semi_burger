@@ -43,17 +43,12 @@
 		text-align:center;
 	}
 </style>
-<script>
-	function confirm(){
-		window.confirm('탈퇴하시겠습니까?');
-	}
-</script>
 </head>
 <body>
 <%@ include file="/header.jsp" %>
 
 <section style="padding-top: 20px;">
-	<form name="updateinfo" action="updateinfo_ok.jsp" method="post">
+	<form name="updateinfo" action="updateinfo_ok.jsp">
 		<h1> 회원정보 수정 </h1>
 		<table>
 			<thead>
@@ -68,7 +63,7 @@
 				</tr>
 				<tr>
 					<th> Password </th>
-					<td> <input type="password" name="passwd" required="required"> </td>
+					<td> <input type="password" name="passwd" id="passwd" required="required"> </td>
 				</tr>
 				<tr>
 					<th> 이름 </th>
@@ -92,7 +87,7 @@
 				</tr>
 				<tr>
 					<td class="button" colspan="2"> <input type="submit" value="수정하기"> <input type="reset" value="다시작성"> 
-						<input type="button" value="탈퇴하기" onclick="location='delete.jsp?passwd=<%=arr.get(i).getPasswd()%>'"></td>
+						<input type="button" value="탈퇴하기" onclick="location='delete.jsp?id=<%= arr.get(i).getId()%>&passwd=<%= arr.get(i).getPasswd()%>'"></td>
 					<%
 				} %>
 				</tr>		

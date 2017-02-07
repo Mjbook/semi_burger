@@ -339,16 +339,45 @@ public class MemberDAO {
 		}
 	}
 	
-	/** 회원 탈퇴*/
-	public int DelMember(String userid, String userpwd){
+	/** 탈퇴 전 비밀번호 가져오기*/
+	public String getPwd(String userid){
 		try{
 			conn = yb.db.YB_DB.getConn();
 			
-			String sql = "delete from member where id=? pwd=?";
+			String sql = "select * from member where id=?";
 			
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, userid);
-			ps.setString(2, userpwd);
+			
+			rs = ps.executeQuery();
+			
+			while(rs.next()){
+			System.out.println(rs.getString("passwd"));				
+			return rs.getString("passwd");
+			}
+			return "none";
+		} catch(Exception e){
+			e.printStackTrace();
+			return null;
+		} finally{
+			try{
+				if(rs!=null) rs.close();
+				if(ps!=null) ps.close();
+				
+				if(conn!=null) conn.close();				
+			} catch(Exception e2){}
+		}
+	}
+	
+	/** 회원 탈퇴*/
+	public int DelMember(String userid){
+		try{
+			conn = yb.db.YB_DB.getConn();
+			
+			String sql = "delete from member where id=?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, userid);
 			
 			int count = ps.executeUpdate();
 						
