@@ -22,14 +22,6 @@
 		float: right;
 		color: white;
 	}
-	.head{
-		margin:0 auto;
-		position:relative;
-		font-size:21px;
-		letter-spacing:-2px;
-		color:#4f4f4f;
-		line-height:38px;
-	}
 	section table{
 		margin: 0px auto;
 		border: 1px solid black;
@@ -81,6 +73,7 @@
 </head>
 <body>
 <%@ include file="/header.jsp" %>
+
 <section>
 	<article style="padding-top: 20px;">
 		<div class="div1">
@@ -174,26 +167,3 @@
 <%@ include file="/footer.jsp" %>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

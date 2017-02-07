@@ -23,7 +23,7 @@
 		%>
 		<script>
 		window.alert('비밀번호를 입력해주세요');
-		location.href='/semi_burger/index.jsp';
+		history.back();
 		</script>
 		<%
 	}

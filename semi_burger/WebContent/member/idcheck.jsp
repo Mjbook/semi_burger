@@ -10,8 +10,8 @@
 <body>
  
 <section>
-  <form name="idcheck" action="idcheck_ok.jsp">
-	&nbsp;ID 입력 :&nbsp; <input type="text" name="id"> 
+  <form name="idcheck" action="idcheck_ok.jsp" >
+	&nbsp;ID 입력 :&nbsp; <input type="text" name="id" required="required"> 
 	<input type="submit" value="검색">
   </form>
 </section>

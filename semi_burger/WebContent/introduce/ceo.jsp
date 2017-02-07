@@ -15,23 +15,11 @@
 		font-size: 25px;
 		background:url(/semi_burger/introduce/img/sub_top_bg01.jpg) 50% 50% no-repeat;
 		background-size:cover;
-	}
-	.head{
-		margin:0 auto;
-		position:relative;
-		font-size:21px;
-		letter-spacing:-2px;
-		color:#4f4f4f;
-		line-height:38px;
-	}
+	}	
 	.headtable{
 		margin: 0px auto;
 		border: 1px solid black;
 		border-spacing: 0px;
-	}
-	th{
-		border-right: 1px solid black;
-		border-left: 1px solid black;
 	}
 	.headtable th, td{
 		font-size: 13px;
@@ -39,10 +27,9 @@
 		width: 130px;
 		height: 40px;
 	}
-	.li1{
-		a:hover{
-			text-decoration:none; color:#666;
-		}
+	th{
+		border-right: 1px solid black;
+		border-left: 1px solid black;
 	}
 	.maintable{
 		border: 1px solid black;
@@ -77,6 +64,7 @@
 </head>
 <body>
 <%@ include file="/header.jsp" %>
+
 <section>
 	<article style="padding-top: 20px;">
 		<div class="div1">

@@ -16,7 +16,7 @@
 	} else{
 		%>
 		<script>
-			window.alert('이용 약관 동의에 체크해주세요');
+			window.alert('이용 약관에 동의해주세요');
 			location.href='/semi_burger/member/agree.jsp';
 		</script>
 		<%

@@ -19,7 +19,17 @@
 	request.setCharacterEncoding("utf-8");
 
 	String userid = request.getParameter("id");
-
+	
+	int result = mdao.getId(userid);
+	
+	if(result<=0){
+		%>
+		<script>
+			window.alert('존재하지 않는 ID입니다');
+			history.back();
+		</script>
+		<%
+	}
 %>
 <body>
 	<form name="pwdset" action="pwdset_ok.jsp" method="post">

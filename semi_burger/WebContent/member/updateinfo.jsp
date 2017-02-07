@@ -15,7 +15,7 @@
 		%>
 		<script>
 			window.alert('로그인 먼저 부탁드립니다.');
-			location.href='/semi_burger/index.jsp';
+			location.href='/semi_burger/member/login.jsp';
 		</script>		
 		<%
 		return;
@@ -26,8 +26,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Yong Burger</title> 
-<link rel="stylesheet" type="text/css"
-href="/semi_burger/css/mainLayout.css"> 
+<link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css"> 
 <style>
 	h1{
 		text-align: center;
@@ -53,7 +52,7 @@ href="/semi_burger/css/mainLayout.css">
 <body>
 <%@ include file="/header.jsp" %>
 
-<section>
+<section style="padding-top: 20px;">
 	<form name="updateinfo" action="updateinfo_ok.jsp" method="post">
 		<h1> 회원정보 수정 </h1>
 		<table>
@@ -69,33 +68,33 @@ href="/semi_burger/css/mainLayout.css">
 				</tr>
 				<tr>
 					<th> Password </th>
-					<td> <input type="password" name="passwd"> </td>
+					<td> <input type="password" name="passwd" required="required"> </td>
 				</tr>
 				<tr>
 					<th> 이름 </th>
-					<td> <input type="text" name="name" value="<%= arr.get(i).getName()%>"> </td>
+					<td> <input type="text" name="name" value="<%= arr.get(i).getName()%>" required="required"> </td>
 				</tr>
 				<tr>
 					<th> 생년월일 </th>
-					<td> <input type="text" name="birth" maxlength="6" placeholder=" ex: 170123" value="<%= arr.get(i).getBirth()%>"> </td>
+					<td> <input type="text" name="birth" maxlength="6" placeholder=" ex: 170123" value="<%= arr.get(i).getBirth()%>" required="required"> </td>
 				</tr>
 				<tr>
 					<th> 핸드폰 번호 </th>
-					<td> <input type="text" name="cellphone" maxlength="11" placeholder=" ex: 01012345678" value="<%= arr.get(i).getCellphone()%>"> </td>
+					<td> <input type="text" name="cellphone" maxlength="11" placeholder=" ex: 01012345678" value="<%= arr.get(i).getCellphone()%>" required="required"> </td>
 				</tr>
 				<tr>
 					<th> E-mail </th>
-					<td> <input type="text" name="email" value="<%= arr.get(i).getEmail()%>"> </td>
+					<td> <input type="text" name="email" value="<%= arr.get(i).getEmail()%>" required="required"> </td>
 				</tr>
 				<tr>
 					<th> 주소 </th>
-					<td> <input type="text" name="address" value="<%= arr.get(i).getAddress()%>"> </td>
+					<td> <input type="text" name="address" value="<%= arr.get(i).getAddress()%>" required="required"> </td>
 				</tr>
 					<%
 				} %>
 				<tr>
 					<td class="button" colspan="2"> <input type="submit" value="수정하기"> <input type="reset" value="다시작성"> 
-						<input type="button" value="탈퇴하기" onclick="confirm()"></td>
+						<input type="button" value="탈퇴하기"></td>
 				</tr>		
 			</tbody>
 		</table>

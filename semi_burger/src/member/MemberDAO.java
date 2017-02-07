@@ -110,6 +110,37 @@ public class MemberDAO {
 		}
 	}
 	
+	/** 비밀번호 설정 - 아이디 가져오기*/
+	public int getId(String userid){
+		try{
+			conn = yb.db.YB_DB.getConn();
+			
+			String sql = "select id from member where id=?";
+			
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, userid);
+			
+			rs = ps.executeQuery();
+			
+			int count = 0;
+			if(rs.next()){
+				count = 1;
+			}
+			
+			return count;			
+		} catch(Exception e){
+			e.printStackTrace();
+			return ERROR;		
+		} finally{
+			try{
+				if(rs!=null) rs.close();
+				if(ps!=null) ps.close();
+				
+				if(conn!=null) conn.close();				
+			} catch(Exception e2){}
+		}
+	}
+	
 	/** 비밀번호 설정*/
 	public int SetPwd(String userpwd, String id){
 		try{

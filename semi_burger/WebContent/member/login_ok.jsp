@@ -44,7 +44,7 @@
 		%>
 		<script>
 			window.alert('비밀번호를 확인해주세요');
-			location.href='/semi_burger/member/login.jsp';
+			history.back();
 		</script>
 		<%
 	} else if(result==mdao.NOT_ID){
@@ -57,8 +57,8 @@
 	} else {
 		%>
 		<script>
-			window.alert('고객센터로 연락주세요~');
-			location.href='/semi_burger/member/login.jsp';
+			window.alert('고객센터로 연락주세요');
+			location.href='/semi_burger/board/QnA/QAList.jsp';
 		</script>
 		<%
 	}

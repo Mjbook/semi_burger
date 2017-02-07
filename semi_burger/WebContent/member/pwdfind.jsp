@@ -28,7 +28,7 @@
 		<table>
 		  <tr>
 		  	<th> &nbsp;아이디 :&nbsp;</th>
-		  	<td> <input type="text" name="id"> </td>
+		  	<td> <input type="text" name="id" required="required"> </td>
 		  	<td> <input type="submit" value="검색"> </td>
 		  </tr>
 		</table>

@@ -38,7 +38,7 @@ href="/semi_burger/css/mainLayout.css">
 <body>
 <%@ include file="/header.jsp" %>
 
-<section>
+<section style="padding-top: 20px;">
 	<form name="join" action="join_ok.jsp" method="post">
 		<h1> 회원가입 </h1>
 		<table>
@@ -55,32 +55,32 @@ href="/semi_burger/css/mainLayout.css">
 				</tr>
 				<tr>
 					<th> Password&nbsp; </th>
-					<td> <input type="password" name="passwd"> </td>
+					<td> <input type="password" name="passwd" required="required"> </td>
 					<td> </td>
 				</tr>
 				<tr>
 					<th> 이름&nbsp; </th>
-					<td> <input type="text" name="name"> </td>
+					<td> <input type="text" name="name" required="required"> </td>
 					<td> </td>
 				</tr>
 				<tr>
 					<th> 생년월일&nbsp; </th>
-					<td> <input type="text" name="birth" maxlength="6" placeholder=" ex: 170123"> </td>
+					<td> <input type="text" name="birth" maxlength="6" placeholder=" ex: 170123" required="required"> </td>
 					<td> </td>
 				</tr>
 				<tr>
 					<th> 전화번호&nbsp; </th>
-					<td> <input type="text" name="cellphone" maxlength="11" placeholder=" ex: 01012345678"> </td>
+					<td> <input type="text" name="cellphone" maxlength="11" placeholder=" ex: 01012345678" required="required"> </td>
 					<td> </td>
 				</tr>
 				<tr>
 					<th> E-mail&nbsp; </th>
-					<td> <input type="text" name="email"> </td>
+					<td> <input type="text" name="email" required="required"> </td>
 					<td> </td>
 				</tr>
 				<tr>
 					<th> 주소&nbsp; </th>
-					<td> <input type="text" name="address"> </td>
+					<td> <input type="text" name="address" required="required"> </td>
 					<td> </td>
 				</tr>
 				<tr>
@@ -94,6 +94,7 @@ href="/semi_burger/css/mainLayout.css">
 		  		</tr>		
 			</tbody>
 		</table>
+		<br>
 		<br>
 	</form>
 </section>

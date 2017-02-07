@@ -17,7 +17,7 @@ href="/semi_burger/css/mainLayout.css">
 		font-size: 14px;
 	}
 	input::-webkit-input-placeholder {
-		color:pink;
+		color:red;
 	}
 </style>
 <script>

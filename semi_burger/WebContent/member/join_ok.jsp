@@ -20,8 +20,8 @@
 	} else{
 		%>
 		<script>
-		window.alert('회원가입 실패 :( \n빠짐없이 입력해주세요');
-		location.href='/semi_burger/member/join.jsp';
+		window.alert('고객센터로 연락주세요');
+		history.back();
 		</script>
 		<%
 	}

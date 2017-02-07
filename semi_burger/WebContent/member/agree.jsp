@@ -6,18 +6,17 @@
 <meta charset="UTF-8">
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
-
 </head>
 
 <body style="text-align:center;">
 <%@ include file="/header.jsp" %>
-
-<h2> 회원가입 </h2>
-<form name="agree" action="agree_ok.jsp" method="post">
-	<div class="agree-a">
-		<h3 class="a-title"> 이용약관 </h3>
-		<div class="a-box">
-			<textarea style="text-align:justify;" rows="20" cols="100" name="agree1">
+<article style="padding-top: 20px;">
+	<h2> 회원가입 </h2>
+	<form name="agree" action="agree_ok.jsp" method="post">
+		<div class="agree-a">
+			<h3 class="a-title"> 이용약관 </h3>
+			<div class="a-box">
+				<textarea style="text-align:justify;" rows="20" cols="100" name="agree1">
 YONG BURGER는
 공정거래위원회에서 심의한 표준약관을 사용하고 있음.
 		
@@ -53,19 +52,19 @@ YONG BURGER는
  “몰”은 컴퓨터 등 정보통신설비의 보수점검?교체 및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스의 제공을 일시적으로 중단할 수 있습니다.
 “몰”은 제1항의 사유로 서비스의 제공이 일시적으로 중단됨으로 인하여 이용자 또는 제3자가 입은 손해에 대하여 배상합니다. 단, “몰”이 고의 또는 과실이 없음을 입증하는 경우에는 그러하지 아니합니다.
 사업종목의 전환, 사업의 포기, 업체간의 통합 등의 이유로 서비스를 제공할 수 없게 되는 경우에는 “몰”은 제8조에 정한 방법으로 이용자에게 통지하고 당초 “몰”에서 제시한 조건에 따라 소비자에게 보상합니다. 다만, “몰”이 보상기준 등을 고지하지 아니한 경우에는 이용자들의 마일리지 또는 e-Money 등을 “몰”에서 통용되는 통화가치에 상응하는 현물 또는 현금으로 이용자에게 지급합니다.
-			</textarea>
+				</textarea>
+			</div>
+			<br>
+			<div class="agree-check-box">
+					<input type="checkbox" name="agree_checkbox1" value="on">
+					<label for="agree_checkbox1">위 이용약관에 동의합니다.</label>
+			</div>
 		</div>
 		<br>
-		<div class="agree-check-box">
-				<input type="checkbox" name="agree_checkbox1" value="on">
-				<label for="agree_checkbox1">위 이용약관에 동의합니다.</label>
-		</div>
-	</div>
-	<br>
-	<div class="agree-b">
-		<h3 class="b-title"> 개인정보 보호정책 </h3>
-		<div class="b-box">
-			<textarea style="text-align:justify;" rows="20" cols="100" name="agree2">
+		<div class="agree-b">
+			<h3 class="b-title"> 개인정보 보호정책 </h3>
+			<div class="b-box">
+				<textarea style="text-align:justify;" rows="20" cols="100" name="agree2">
  우리 헌법은 국민의 기본권인 사생활의 비밀과 자유 및 통신의 비밀을 보장하고 있으므로 도/감청 등에의한 개인 정보 및 사생활의 은밀한 탐지는 원칙적으로 불법입니다. 그러나 우리 사회에 횡행하는 불법 도청, 통신상의 정보 유출로 인하여 심각한 인권 침해가 나타나고 있고 국민 개개인의 자유로운 생활형성이 위협 받고 있습니다.
 이러한 기본권 침해의 소지를 원천적으로 제거함으로써 YONG BURGER 회원의 프라이버시를 철저히 보호하여 정보화 사회에서의 통신의 자유를 보장하고자 아래와 같이 개인정보보호정책을 명시합니다. YONG BURGER 개인정보보호정책은 정부의 법률 및 지침의 변경과 YONG BURGER의 정책 변화에 따라 변경될 수 있습니다. 회원님께서는 YONG BURGER 사이트 방문 시에 수시로 확인하시기 바랍니다.
 
@@ -93,27 +92,28 @@ YONG BURGER 는 보다 나은 서비스 제공을 위해 회원님의 개인정�
 YONG BURGER 에 접속하는 이용자의 브라우저에 고유한 쿠키를 부여함으로써 회원 및 비회원들의 YONG BURGER 사이트 이용빈도나 전체 이용자수 등과 같은 이용자 규모를 파악하는데도 이용됩니다. 또한 YONG BURGER 쇼핑에서 상품구매 시 인증을 위해서나 상품구매를 돕기 위해서도 쿠키 정보를 이용하며, 기타 이벤트나 설문조사에서 회원님의 참여 경력을 확인하기 위해서 쿠키를 이용하게 됩니다.
 쿠키를 이용하여 회원님께서 방문한 YONG BURGER서비스의 방문 및 이용형태를 파악함으로써 더 유용하고 이용하기 편리한 서비스를 만들어 제공할 수 있게 됩니다.
 회원님은 쿠키에 대한 선택권을 가지고 있습니다. 회원님의 웹브라우저에서 옵션을 선택함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다. 단, 쿠키의 저장을 거부하실 경우 로그인이 필요한 YONG BURGER의 모든 서비스는 이용하실 수 없게됩니다.
-			</textarea>
+				</textarea>
+			</div>
+			<br>
+			<div class="agree-check-box">
+				<input type="checkbox" name="agree_checkbox2" value="on">
+				<label for="agree_checkbox2">위 이용약관에 동의합니다.</label>
+			</div>
+		</div>
+		
+		<br>
+		<br>
+		
+		<div class="agree-bt">		
+			<span class="farm-A-half">
+				<input type="button" onclick="javascript:history.back()" value="이전으로">
+				<input type="submit" value="회원가입">
+			</span>
 		</div>
 		<br>
-		<div class="agree-check-box">
-			<input type="checkbox" name="agree_checkbox2" value="on">
-			<label for="agree_checkbox2">위 이용약관에 동의합니다.</label>
-		</div>
-	</div>
-	
-	<br>
-	<br>
-	
-	<div class="agree-bt">		
-		<span class="farm-A-half">
-			<input type="button" onclick="javascript:history.back()" value="이전으로">
-			<input type="submit" value="회원가입">
-		</span>
-	</div>
-	<br>
-	<br>
-</form>
+		<br>
+	</form>
+</article>
 		
 <%@ include file="/footer.jsp" %>
 </body>
