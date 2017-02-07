@@ -29,6 +29,7 @@
 			history.back();
 		</script>
 		<%
+		return;
 	}
 %>
 <body>

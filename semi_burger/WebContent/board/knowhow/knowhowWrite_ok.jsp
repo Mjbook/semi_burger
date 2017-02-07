@@ -10,7 +10,7 @@
 %>
 <jsp:useBean id="bdto" class="board.knowhow.knowhowDTO" scope="request"/>
 <jsp:setProperty property="*" name="bdto"/>
-<jsp:useBean id="bdao" class="board.knowhow.knowhowDAO" scope="session"/>
+<jsp:useBean id="fdao" class="board.knowhow.knowhowDAO" scope="session"/>
 
 
 <%
@@ -31,7 +31,7 @@
 	bdto.setContent(content);
 	bdto.setMy_img_url("upload/" + fileName);
 
-	int result=bdao.knowhowWrite(bdto);
+	int result=fdao.knowhowWrite(bdto);
 	String msg=result>0?"작성완료!":"작성실패!";
 			
 

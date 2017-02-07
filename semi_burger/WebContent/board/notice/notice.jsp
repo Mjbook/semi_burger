@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.util.*"%>
 <%@page import="board.notice.*"%>
-<jsp:useBean id="bdao" class="board.notice.noticeDAO" />
+<jsp:useBean id="ddao" class="board.notice.noticeDAO" />
 <!DOCTYPE>
 <html>
 <head>
@@ -11,7 +11,7 @@
 	href="/semi_burger/css/mainLayout.css">
 <%
 	String sid = (String) session.getAttribute("sid");
-	int totalCnt = bdao.getTotalCnt();//총 게시물 수
+	int totalCnt = ddao.getTotalCnt();//총 게시물 수
 	int listSize = 10;//보여줄 리스트 수
 	int pageSize = 5;//보여줄 페이지 수
 	String cp_s = request.getParameter("cp");
@@ -83,7 +83,7 @@
 				</tfoot>
 				<tbody>
 					<%
-						ArrayList<noticeDTO> adto = bdao.noticeList(cp, listSize);
+						ArrayList<noticeDTO> adto = ddao.noticeList(cp, listSize);
 						if (adto == null || adto.size() == 0) {
 					%>
 					<tr>

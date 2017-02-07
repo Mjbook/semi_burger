@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.util.*"%>
 <%@page import="board.knowhow.*"%>
-<jsp:useBean id="bdao" class="board.knowhow.knowhowDAO" />
+<jsp:useBean id="fdao" class="board.knowhow.knowhowDAO" />
 <!DOCTYPE>
 <html>
 <head>
@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 
 <%
-	int totalCnt = bdao.getTotalCnt();//총 게시물 수
+	int totalCnt = fdao.getTotalCnt();//총 게시물 수
 	int listSize = 6;//보여줄 리스트 수
 	int pageSize = 5;//보여줄 페이지 수
 	String cp_s = request.getParameter("cp");
@@ -51,7 +51,7 @@
    
    
 						<%
-						ArrayList<knowhowDTO> adto = bdao.knowhowList(cp, listSize);
+						ArrayList<knowhowDTO> adto = fdao.knowhowList(cp, listSize);
 						if (adto == null || adto.size() == 0) {
 						%>
 							<br />

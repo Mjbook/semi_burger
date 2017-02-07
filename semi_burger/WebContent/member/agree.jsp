@@ -8,9 +8,10 @@
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 </head>
 
-<body style="text-align:center;">
+<body>
 <%@ include file="/header.jsp" %>
-<article style="padding-top: 20px;">
+
+<article style="padding-top: 20px; text-align:center;">
 	<h2> 회원가입 </h2>
 	<form name="agree" action="agree_ok.jsp" method="post">
 		<div class="agree-a">

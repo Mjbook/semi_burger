@@ -189,6 +189,7 @@ footer {
 	background-color:white;
 	float: none;
 	font-size:12px;
+	opacity: 0.9;
 }
 
 
@@ -318,7 +319,6 @@ footer {
 }
 #table2 {
 	width: 800px;
-	
 }
 
 #table2, #table2 th, #table2 td {

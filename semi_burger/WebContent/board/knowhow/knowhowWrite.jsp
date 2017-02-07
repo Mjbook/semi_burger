@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.util.*" %>
 <%@ page import="board.knowhow.*" %>
-<jsp:useBean id="bdao" class="board.knowhow.knowhowDAO"/>
+<jsp:useBean id="fdao" class="board.knowhow.knowhowDAO"/>
 <%
 String idx_s=request.getParameter("KNOWHOW_NO");
 if(idx_s==null||idx_s.equals("")){
 	idx_s="0";
 }
 int idx=Integer.parseInt(idx_s);
-knowhowDTO dto=bdao.knowhowContent(idx);
+knowhowDTO dto=fdao.knowhowContent(idx);
 if(dto==null){
 	%>
 	<script>

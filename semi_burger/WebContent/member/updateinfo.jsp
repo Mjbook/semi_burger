@@ -45,7 +45,7 @@
 </style>
 <script>
 	function confirm(){
-		window.open('delete.jsp','delete','width=340, height=50, left=420, top=250');
+		window.confirm('탈퇴하시겠습니까?');
 	}
 </script>
 </head>
@@ -90,13 +90,14 @@
 					<th> 주소 </th>
 					<td> <input type="text" name="address" value="<%= arr.get(i).getAddress()%>" required="required"> </td>
 				</tr>
-					<%
-				} %>
 				<tr>
 					<td class="button" colspan="2"> <input type="submit" value="수정하기"> <input type="reset" value="다시작성"> 
-						<input type="button" value="탈퇴하기"></td>
+						<input type="button" value="탈퇴하기" onclick="location='delete.jsp?passwd=<%=arr.get(i).getPasswd()%>'"></td>
+					<%
+				} %>
 				</tr>		
 			</tbody>
+			
 		</table>
 		<br>
 	</form>

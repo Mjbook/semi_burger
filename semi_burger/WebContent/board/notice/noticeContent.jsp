@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.util.*"%>
 <%@ page import="board.notice.*"%>
-<jsp:useBean id="bdao" class="board.notice.noticeDAO" />
+<jsp:useBean id="ddao" class="board.notice.noticeDAO" />
 <%
 	String idx_s = request.getParameter("NOTICE_NO");
 	if (idx_s == null || idx_s.equals("")) {
 		idx_s = "0";
 	}
 	int idx = Integer.parseInt(idx_s);
-	noticeDTO dto = bdao.noticeContent(idx);
+	noticeDTO dto = ddao.noticeContent(idx);
 	if (dto == null) {
 %>
 <script>

@@ -22,7 +22,7 @@
 	} else{
 		%>
 		<script>
-		window.alert('비밀번호를 입력해주세요');
+		window.alert('고객센터로 연락바랍니다');
 		history.back();
 		</script>
 		<%
