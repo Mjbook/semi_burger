@@ -36,6 +36,31 @@ function goSelf(){
 	location.href='/semi_burger/self/selfBurger.jsp';
 }
 </script>
+<style>
+body h2{
+	text-align:center;
+	color: #800000;
+}
+.otable{
+	min-width:60%;
+	text-align: center;
+	margin:0px auto;
+	border-spacing: 0px;
+	border-color: 1px solid #DFDFDF;
+}
+.otable thead th{
+	border-bottom:1px solid #800000 ;
+}
+.otable tbody td{
+	padding: 5px;
+}
+.otable tfoot th div{
+	height:0px;
+	width:140px;
+	border-bottom:20px solid #DFDFDF;
+	border-right: 10px solid white;
+}
+</style>
 </head>
 <%
 	String sid=(String)session.getAttribute("sid");
@@ -51,10 +76,12 @@ if(sid!=null){
 %>
 <body>
 <%@include file="/header.jsp"%>
+	<br><br>
+	<h2>온라인 주문</h2>
 	<section>
 	<article>
 		<form name="orderList" action="orderList_ok.jsp">
-		<table>
+		<table class="otable">
 		<thead>
 			<tr>
 				<th>메뉴</th>
@@ -68,16 +95,16 @@ if(sid!=null){
 		
 		<tfoot>
 			<tr>
-				<th>주문자</th>
-				<td colspan="4"><input type="text" name="name" value="<%=sid%>" disabled="disabled"></td>
+				<th><div>주문자</div></th>
+				<td colspan="4" style="text-align: left;"><input type="text" name="name" value="<%=sid%>" disabled="disabled"></td>
 			</tr>
 			<tr>
-				<th>배달 수령 주소</th>
-				<td colspan="4"><input type="text" name="addr" value="<%=addr%>" required="required"></td>
+				<th><div>배달 수령 주소</div></th>
+				<td colspan="4" style="text-align: left;"><input type="text" name="addr" value="<%=addr%>" required="required"></td>
 			</tr>
 			<tr>
-				<td colspan="5" align="center">
-					<input type="button" value="더 담기" onclick="goMenu()">
+				<td colspan="5" style="padding-top: 20px;">
+					<input type="button" value="다른 메뉴 담기" onclick="goMenu()">
 					<input type="button" value="시그니처 버거 담기" onclick="goSelf()">
 					<input type="submit" value="주문하기">
 				</td>
@@ -128,6 +155,7 @@ if(sid!=null){
 		</tbody>
 		</table>
 		</form>
+		<br>
 	</article>
 	</section>
 <%@include file="/footer.jsp"%>

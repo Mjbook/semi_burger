@@ -380,3 +380,13 @@ footer {
 	color:#dac4c4;
 	text-decoration: none;
 }
+.button_div{
+	display:inline-block;
+	border-radius:5px;
+	border:1px solid white;
+	background:#dac4c4;
+	width:30%;
+}
+.button_div a {
+	color: #800000;
+}
