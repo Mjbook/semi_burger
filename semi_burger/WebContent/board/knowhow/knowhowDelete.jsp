@@ -8,11 +8,11 @@ int idx = Integer.parseInt(request.getParameter("idx"));
 %>
 <jsp:useBean id="bdto" class="board.knowhow.knowhowDTO" scope="page"/>
 <jsp:setProperty property="*" name="bdto"/>
-<jsp:useBean id="bdao" class="board.knowhow.knowhowDAO" scope="session"/>
+<jsp:useBean id="fdao" class="board.knowhow.knowhowDAO" scope="session"/>
 
 <%
 
-int result=bdao.knowhowDelete(idx);
+int result=fdao.knowhowDelete(idx);
 String msg=result > 0 ? "삭제 성공!":"삭제 실패!";
 %>
 <script>

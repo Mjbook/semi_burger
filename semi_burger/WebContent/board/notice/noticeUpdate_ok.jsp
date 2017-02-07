@@ -6,11 +6,11 @@
 %>
 <jsp:useBean id="bdto" class="board.notice.noticeDTO" scope="page"/>
 <jsp:setProperty property="*" name="bdto"/>
-<jsp:useBean id="bdao" class="board.notice.noticeDAO" scope="session"/>
+<jsp:useBean id="ddao" class="board.notice.noticeDAO" scope="session"/>
 
 <%
 
-int result=bdao.noticeUpdate(bdto);
+int result=ddao.noticeUpdate(bdto);
 String msg=result>0?"수정완료!":"수정실패!";
 %>
 <script>

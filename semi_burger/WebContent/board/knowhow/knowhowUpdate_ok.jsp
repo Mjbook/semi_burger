@@ -9,7 +9,7 @@
 %>
 <jsp:useBean id="bdto" class="board.knowhow.knowhowDTO" scope="page"/>
 <jsp:setProperty property="*" name="bdto"/>
-<jsp:useBean id="bdao" class="board.knowhow.knowhowDAO" scope="session"/>
+<jsp:useBean id="fdao" class="board.knowhow.knowhowDAO" scope="session"/>
 
 <%
 String savePath = getServletContext().getRealPath("/") + "uploads/concerts"; // Upload 경로 
@@ -34,7 +34,7 @@ if(fileName == null) {
 	bdto.setMy_img_url("../../upload/" + fileName);
 }
 
-int result=bdao.knowhowUpdate(bdto);
+int result=fdao.knowhowUpdate(bdto);
 String msg=result>0?"작성완료!":"작성실패!";
 %>
 <script>

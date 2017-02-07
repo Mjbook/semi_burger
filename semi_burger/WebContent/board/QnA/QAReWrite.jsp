@@ -62,7 +62,7 @@ table textarea {
 			<table id="table2">
 				<tr>
 					<th>작성자</th>
-					<td><input type="text" name="name" id="na"></td>
+					<td><input type="text" name="name1" value="<%=sname %>" disabled="disabled"><input type="hidden" name="name" value="<%=sname %>"></td>
 					<th>비밀번호</th>
 					<td><input type="password" name="pwd" id="pw"> </td>
 				</tr>

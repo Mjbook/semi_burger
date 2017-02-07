@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="java.util.*"%>
 <%@ page import="board.notice.*"%>
-<jsp:useBean id="bdao" class="board.notice.noticeDAO" />
+<jsp:useBean id="ddao" class="board.notice.noticeDAO" />
 <!DOCTYPE html>
 <html>
 <html>
@@ -11,7 +11,7 @@
 	int idx = Integer.parseInt(request.getParameter("idx"));
 	String sub = request.getParameter("sub"); //제목
 	String con = request.getParameter("con"); //내용
-	int totalCnt = bdao.getTotalCnt();//총 게시물 수
+	int totalCnt = ddao.getTotalCnt();//총 게시물 수
 	int listSize = 10;//보여줄 리스트 수
 	int pageSize = 5;//보여줄 페이지 수
 	String cp_s = request.getParameter("cp");

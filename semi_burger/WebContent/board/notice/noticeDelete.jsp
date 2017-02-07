@@ -8,11 +8,11 @@ int idx = Integer.parseInt(request.getParameter("idx"));
 %>
 <jsp:useBean id="bdto" class="board.notice.noticeDTO" scope="page"/>
 <jsp:setProperty property="*" name="bdto"/>
-<jsp:useBean id="bdao" class="board.notice.noticeDAO" scope="session"/>
+<jsp:useBean id="ddao" class="board.notice.noticeDAO" scope="session"/>
 
 <%
 
-int result=bdao.noticeDelete(idx);
+int result=ddao.noticeDelete(idx);
 String msg=result > 0 ? "삭제 성공!":"삭제 실패!";
 %>
 <script>
