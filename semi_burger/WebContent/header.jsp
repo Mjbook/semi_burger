@@ -18,6 +18,9 @@ nav ul {
 		window.open('/semi_burger/burgerGame/index.html','gameopoup','width=1000,height=700');
 	}
 
+	function sideMenuGo(){
+		
+	}
 </script>
 <div id="headerback" style="cursor:pointer;">
 <style>
@@ -67,8 +70,8 @@ nav ul {
 
 				<ul>
 					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp" >햄버거</a></li>
-					<li><a href="javascript:go_scroll(1200)" onclick="/semi_burger/burgerMenu/burgerMenu.jsp">사이드</a></li>
-					<li><a href="javascript:go_scrollevent(2400)" onclick="/semi_burger/burgerMenu/burgerMenu.jsp">이벤트 메뉴</a></li>
+					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp#side">사이드</a></li>
+					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp#event">이벤트 메뉴</a></li>
 					<li><a href="/semi_burger/self/selfBurger.jsp">내맘대로 햄버거</a></li>
 					<li><a href="#">재료 원산지 표기</a></li>
 				</ul>

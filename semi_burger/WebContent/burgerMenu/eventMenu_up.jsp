@@ -9,7 +9,7 @@
 request.setCharacterEncoding("UTF-8");
 String item_img_src = request.getParameter("src");
 %>
-<title>Insert title here</title>
+<title>Yong Burger</title>
 </head>
 <body>
 <section>

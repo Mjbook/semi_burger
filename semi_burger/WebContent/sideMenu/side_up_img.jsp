@@ -14,7 +14,7 @@ request.setCharacterEncoding("UTF-8");
 String sideitem_img_src = request.getParameter("src");
 
 %>
-<title>Insert title here</title>
+<title>Yong Burger</title>
 </head>
 
 <body>
