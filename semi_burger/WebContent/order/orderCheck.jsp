@@ -146,7 +146,7 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 								//시그니처버거 메뉴 이름
 								if(menu.startsWith("signature")){
 									menu="<input type='hidden' name='no"+sig_num+"' value='"+menu+"'> ";
-									menu+="<a href='javascript:sig"+sig_num+"();'>시그니처 버거</a>";
+									menu+="<a href='javascript:sig"+sig_num+"();' class='a'>시그니처 버거</a>";
 									sig_num++;
 								}
 						

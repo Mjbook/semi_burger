@@ -13,6 +13,8 @@ body table{
 	border-spacing: 0px;
 }
 body td{
+	text-align:center;
+	font-size:13px;
 	height:20px;
 	padding:0px;
 }

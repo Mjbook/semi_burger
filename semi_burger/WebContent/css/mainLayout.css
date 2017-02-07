@@ -184,6 +184,7 @@ footer {
 }
 
 #newMenu ul ul li {
+	text-align:left;
 	background-color:white;
 	float: none;
 	font-size:12px;
