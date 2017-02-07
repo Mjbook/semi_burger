@@ -160,15 +160,14 @@ padding-bottom: 15px;
 							
 							<%
 							for (int i = 0; i <cdto.size(); i++) {
-									%>
-								<img src="<%=cdto.get(i).getMy_img_url() %>" width="90%" height="90%" alt="못만든햄버거" onclick="onView('<%=cdto.get(i).getKnowhow_no()%>');" />
-										<br><%=cdto.get(i).getSubject()%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=cdto.get(i).getBoard_count()%>&nbsp;&nbsp;
+									%><div align="center">
+								<img src="<%= pageContext.getServletContext().getContextPath() %>/<%=cdto.get(i).getMy_img_url() %>" width="50%" height="50%" alt="못만든햄버거" onclick="onView('<%=cdto.get(i).getKnowhow_no()%>');" />
+										<br>제목 : <%=cdto.get(i).getSubject()%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;조회수 : <%=cdto.get(i).getBoard_count()%>&nbsp;&nbsp;
 						<%			}
 								}
-						%>	
+						%></div>	
 						 	
-							 	</table>
-					</div>
+						</div>
 					
 					
 					
