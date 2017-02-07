@@ -4,6 +4,8 @@
 <jsp:useBean id="burger_img" class="yb.burger.Burger_upload" scope="session"/>
 <jsp:useBean id="bdao" class="yb.burger.BurgerDAO"/>
 <%
+request.setCharacterEncoding("utf-8");
+
 	String item_name = request.getParameter("item_name");
 	String item_pay = request.getParameter("item_pay");
 	
