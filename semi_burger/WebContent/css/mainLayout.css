@@ -1,17 +1,18 @@
 @CHARSET "UTF-8";
 
 body{
+	
 	width: 1000px;
 	margin: 120px auto;
 }
 header{	
 
-	height: 20px;
+	top : 20px;
 	width:1000px;
 	
 }
 #headerback{
-	top:20px;
+	top:0px;
 	
 	width:1000px;
 	position: fixed;
@@ -24,8 +25,10 @@ header p{
 	
 }
 header nav{
+	
 	background-image: url('../img/logo_1.png');
-	height:100px ;
+	background-size: cover;
+	height:120px ;
 	border-bottom: 2px solid #800000;
 }
 .bigmenu li{
@@ -128,13 +131,14 @@ footer {
 
 
 #newMenu {
+	top:20px;
 	position: fixed;
 	float: right;
-	padding: 0px 0 8px 0;
+	padding: 0px 0px 0px 0px;
 	<!--box-shadow: 0px 0px 15px rgba(0, 0, 0, .3);-->
 	border-radius: 3px;
 	width: 1000px;
-	height: 0px;
+	height: 20px;
 	background-repeat: no-repeat;
 }
 

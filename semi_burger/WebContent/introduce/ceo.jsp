@@ -79,7 +79,7 @@
 <body>
 <%@ include file="/header.jsp" %>
 <section>
-	<article>
+	<article style="padding-top: 20px;">
 		<div class="div1">
 		<br>
 			<div style="color:white;font-size:30px;"><b>Yong Burger 소개</b><br></div>
