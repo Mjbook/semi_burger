@@ -13,11 +13,11 @@
 	
 	int result = mdao.SetPwd(userpwd, userid);
 	
-	if(userpwd.equals("userpwd2")){
+	if(userpwd.equals(userpwd2)){
 		if(result>0){
 			%>
 			<script>
-				window.alert('비밀번호 설정이 완료되었습니다 \n로그인 해주세요');
+				window.alert('비밀번호 설정이 완료되었습니다');
 				opener.location.href='/semi_burger/member/login.jsp';
 				window.self.close();
 			</script>
@@ -34,8 +34,8 @@
 	} else {
 		%>
 		<script>
-			window.alert('<%=userpwd2%><%=userpwd%>');
-			loaction.self.close();
+			window.alert('비밀번호가 일치하지 않습니다');
+			history.back();
 		</script>
 		<%
 	}

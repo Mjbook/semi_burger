@@ -29,11 +29,11 @@
 		  <table>
 		  	<tr>
 		  		<th> 비밀번호 입력 : </th>
-		  		<td> <input type="text" name="pwd1"> </td>
+		  		<td> <input type="password" name="pwd1"> </td>
 		  	</tr>
 		  	<tr>
 		  		<th> 비밀번호 확인 : </th> 
-		  		<td> <input type="text" name="pwd2"> </td>
+		  		<td> <input type="password" name="pwd2"> </td>
 		  	</tr>
 		  </table>
 	 	</fieldset>
