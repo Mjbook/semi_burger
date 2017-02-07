@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+<jsp:useBean id="mdao" class="member.MemberDAO" scope="session"/>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,15 +14,35 @@
 	}
 </style>
 </head>
+<%
+	String userid = request.getParameter("id");
+	String userpwd = request.getParameter("passwd");
+	
+	int result = mdao.DelMember(userid, userpwd);
+%>
 <body>
  
 <section>
   <fieldset>
 	  <form name="delete" action="delete_ok.jsp">
-	   	정말 탈퇴하시겠습니까? <br>
-	   	<hr>
-		<div class="button"><input type="submit" value="탈퇴하기"> 
-		<input type="button" value="취소" onclick="javascript:window.self.close()"></div>
+	  	<%
+		  	if(result>0){
+		  		%>
+				<script>
+					window.confirm('탈퇴하시겠습니까?');
+										
+				</script>
+				<%				
+			} else{
+				%>
+				<script>
+					window.alert('비밀번호를 확인해주세요');
+					history.back();
+				</script>
+				<%
+				return;
+			}
+	  	%>
 	  </form>
   </fieldset>
 </section>

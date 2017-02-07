@@ -340,14 +340,15 @@ public class MemberDAO {
 	}
 	
 	/** 회원 탈퇴*/
-	public int DelMember(String userid){
+	public int DelMember(String userid, String userpwd){
 		try{
 			conn = yb.db.YB_DB.getConn();
 			
-			String sql = "delete from member where id=?";
+			String sql = "delete from member where id=? pwd=?";
 			
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, userid);
+			ps.setString(2, userpwd);
 			
 			int count = ps.executeUpdate();
 						
