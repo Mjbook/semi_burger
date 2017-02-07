@@ -30,12 +30,28 @@ ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 #orderlist{
 	position:fixed;
 	top:200px;
-	right:50px;
+	right:12%;
 	width:250px;
 	text-align:center;
+	background: #800000;
+	border-radius: 20px;
+	color:white;
+}
+.ola{
+	color: white;
 }
 body{
 	padding-top: 10px;
+}
+.old{
+	display:inline-block;
+	border-radius:5px;
+	border:1px solid white;
+	background:#dac4c4;
+	width:30%;
+}
+.old a {
+	color: #800000;
 }
 
 </style>
@@ -59,6 +75,9 @@ function burger_reload(){
 }
 function burger_delete(){
 	window.open("burger_delete.jsp","burger_delete","top=300,left=400,width=350,height=250");
+}
+function submit(){
+	document.orderlist.submit();
 }
 </script>
 <%	
@@ -334,7 +353,7 @@ for(int i=0;i<arr_bdto.size();i++){
 								<td><%=menu%></td>
 								<td><%=num %></td>
 								<td><%=order_price%></td>
-								<td><a href="burgerMenu.jsp?delorder=<%=i%>">취소</a></td>
+								<td><a href="burgerMenu.jsp?delorder=<%=i%>"class="ola">취소</a></td>
 							</tr>
 							<%
 						}
@@ -349,8 +368,8 @@ for(int i=0;i<arr_bdto.size();i++){
 				</tr>
 				<tr>
 					<td colspan="4" align="center">
-						<input type="submit" value="주문하기">
-						<input type="button" value="다시 담기" onclick="javascript:resetMenu()">
+						<div class="old"><a href="javascript:submit()">주문하기</a></div>
+						<div class="old"><a href="javascript:resetMenu()">다시 담기</a></div>
 					</td>
 				</tr>
 				</tfoot> 
