@@ -220,7 +220,7 @@ if(!(sig_no==null||sig_no.equals(""))){
 %>
 <script>
 function pop(){
-	window.open("/semi_burger/self/signature.jsp?no=<%=click%>","sig","top=300,left=400,width=350,height=250");
+	window.open("/semi_burger/self/signature.jsp?no=<%=click%>","sig","top=300,left=400,width=380,height=250");
 }
 </script>
 <%
