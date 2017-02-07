@@ -143,7 +143,7 @@ padding-bottom: 15px;
 					ArrayList<knowhowDTO> cdto = cdao.knowhowList(cp, listSize);
 					%>
 				<div id="maincenter">
-							 	<div id="tableFont" align="center"> USER BURGERS </div>
+							 	<div id="tableFont" align="center" > USER BURGERS </div>
 							 	<table border="1"> 
 							 	<%
 
@@ -161,7 +161,7 @@ padding-bottom: 15px;
 								<%
 									for( int i =0; i <cdto.size(); i++) {
 										%>
-									<a href="board/knowhow/knowhowList.jsp"><img src="<%= pageContext.getServletContext().getContextPath() %>/<%=cdto.get(i).getMy_img_url() %>" width="50%" height="50%" onclick="onView('<%=cdto.get(i).getKnowhow_no()%>');" /></a>
+									<a href="board/knowhow/knowhowList.jsp" style="cursor:pointer;"><img src="<%= pageContext.getServletContext().getContextPath() %>/<%=cdto.get(i).getMy_img_url() %>" width="50%" height="50%" onclick="onView('<%=cdto.get(i).getKnowhow_no()%>');" /></a>
 										<%	
 									}
 						}
