@@ -8,6 +8,7 @@
 <%
 request.setCharacterEncoding("UTF-8");
 String item_img_src = request.getParameter("src");
+System.out.println("123");
 %>
 <title>Yong Burger</title>
 </head>

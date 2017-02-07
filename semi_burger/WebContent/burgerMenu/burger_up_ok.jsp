@@ -1,3 +1,4 @@
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="org.omg.PortableInterceptor.USER_EXCEPTION"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -5,14 +6,14 @@
 <%@ page import="java.io.*" %>
 <jsp:useBean id="wf" class="yb.burger.Burger_upload" scope="session"/>
 <%
-	String savepath=wf.USERS_HOME+"/"+wf.getCrpath();
-	
+	String savepath=getServletContext().getRealPath("/") + "burger_img/admin";
+	new File(savepath).mkdir();
 	String savepath_end="";
 try{
 	MultipartRequest mr=new MultipartRequest(request,savepath,1024*1024*10,"utf-8");
 	
 	
-	File f=new File(wf.USERS_HOME+"/"+wf.getCrpath());
+	File f=new File(getServletContext().getRealPath("/"+ "burger_img/admin") );
 	File files[]=f.listFiles();
 	
 	if(files==null||files.length==0){

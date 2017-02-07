@@ -1,3 +1,4 @@
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="org.omg.PortableInterceptor.USER_EXCEPTION"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -9,7 +10,7 @@
 	
 	String savepath_end="";
 try{
-	MultipartRequest mr=new MultipartRequest(request,savepath,1024*1024*10,"utf-8");
+	MultipartRequest mr=new MultipartRequest(request,savepath,1024*1024*10,"utf-8", new DefaultFileRenamePolicy());
 	
 	File f=new File(wf.USERS_HOME+"/"+wf.getCrpath());
 	File files[]=f.listFiles();

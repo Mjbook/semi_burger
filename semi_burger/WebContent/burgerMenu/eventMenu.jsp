@@ -36,7 +36,7 @@ ArrayList<BurgerDTO> al3=burgerdao.eventMenu(burgerdto);
 					<%
 					}
 					%>
-					<th><img src="../burger_img/<%=al3.get(i).getItem_img_src()%>" width="300" height="260"></th>
+					<th><img src="/semi_burger/burger_img/<%=al3.get(i).getItem_img_src()%>" width="300" height="260"></th>
 					<td align="center" width="200" height="260">
 					<%
 					if(sid!=null){

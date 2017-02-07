@@ -44,7 +44,7 @@ function side_delete(){
 					<%
 					}
 					%>
-					<th><img src="../side_img/<%=al2.get(i).getSideitem_img_src()%>" width="300" height="260"></th>
+					<th><img src="/semi_burger/burger_img/<%=al2.get(i).getSideitem_img_src()%>" width="300" height="260"></th>
 					<td align="center" width="300" height="260">
 					<%
 					if(sid!=null){

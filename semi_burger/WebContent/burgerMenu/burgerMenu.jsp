@@ -181,12 +181,8 @@ for(int i=0;i<arr_bdto.size();i++){
 				<%
 				String sid=(String)session.getAttribute("sid");
 				wf.setUser(sid);
-				wf.userFolderExists();
-				String cr=request.getParameter("cr");
-				if(cr==null||cr.equals("")){
-					cr=sid;
-				}
-				wf.setCrpath(cr);
+				
+				
 			
 				for(int i=0;i<al.size();i++){
 					if(i%2==0&&i!=al.size()&&i!=0){
@@ -295,11 +291,14 @@ for(int i=0;i<arr_bdto.size();i++){
 %>
 		
 		</article>
+		
 		<div id="side" style="width: 1000px; height:120px;"></div>
 		<%@include file="/sideMenu/sideMenu.jsp"%>	
 		
 		<div id="event" style="width: 1000px; height:120px;"></div>
 		<%@include file="eventMenu.jsp" %>
+		
+		
 		<div style="width: 1000px; height:120px;"></div>
 		<article>
 		<div>
