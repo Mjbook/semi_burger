@@ -36,24 +36,25 @@ nav ul {
 	}
 </style>
 
-<%
-	String sname = (String)session.getAttribute("sname");
-	if(sname==null){
-		%><!-- 로그인 전 -->
-		<p><a href="/semi_burger/member/login.jsp">로그인</a> | <a href="/semi_burger/member/agree.jsp"> 회원가입</a> </p> 						
-		<%
-	} else {
-		%> <!-- 로그인 후 -->
-		<p><%=sname %> 님 로그인 중 | <a href="/semi_burger/member/logout.jsp"> 로그아웃</a></p>			
-		<%
-	}
-%>
+
 	<nav>
 		<div id="newMenu">
+		<%
+		String sname = (String)session.getAttribute("sname");
+		if(sname==null){
+		%><!-- 로그인 전 -->
+		<p><a href="/semi_burger/member/login.jsp">로그인</a> | <a href="/semi_burger/member/agree.jsp"> 회원가입&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> </p> 						
+		<%
+		} else {
+		%> <!-- 로그인 후 -->
+		<p><%=sname %> 님 로그인 중 | <a href="/semi_burger/member/logout.jsp"> 로그아웃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>		
+		<%
+		}
+		%>
 		<ul>
 			<li><a href="/semi_burger/index.jsp">HOME &nbsp;&nbsp;&nbsp;&nbsp;</a></li>
 
-			<li><a href="#">소개  &nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<li class="firstli"><a href="#">소개  &nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 				<ul>
 					<li><a href="/semi_burger/introduce/ceo.jsp">CEO 인사말</a></li>
@@ -62,7 +63,7 @@ nav ul {
 				</ul>
 				</li>
 
-			<li><a href="#">메뉴 &nbsp;&nbsp;&nbsp;&nbsp;</a>
+			<li class="firstli"><a href="#">메뉴 &nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 				<ul>
 					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp" >햄버거</a></li>
@@ -73,7 +74,7 @@ nav ul {
 				</ul>
 				</li>
 				
-					<li><a href="#">My burger &nbsp;&nbsp;&nbsp;&nbsp;</a>
+					<li class="firstli"><a href="#">My burger &nbsp;&nbsp;&nbsp;&nbsp;</a>
 
 				<ul>
 					<li><a href="/semi_burger/member/updateinfo.jsp">회원정보 수정</a></li>
@@ -81,7 +82,7 @@ nav ul {
 				</ul>
 				</li>
 				
-					<li><a href="#">커뮤니티 &nbsp;&nbsp;&nbsp;&nbsp; </a>
+					<li class="firstli"><a href="#">커뮤니티 &nbsp;&nbsp;&nbsp;&nbsp; </a>
 
 				<ul>
 					<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>

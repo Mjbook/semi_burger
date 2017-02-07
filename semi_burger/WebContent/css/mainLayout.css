@@ -1,14 +1,19 @@
 @CHARSET "UTF-8";
 
 body{
+	
 	width: 1000px;
 	margin: 120px auto;
 }
 header{	
+
+	top : 20px;
 	width:1000px;
+	
 }
 #headerback{
 	top:0px;
+	
 	width:1000px;
 	position: fixed;
 	background: white;
@@ -21,7 +26,9 @@ header p{
 }
 header nav{
 	
-	height:51px;
+	background-image: url('../img/logo_1.png');
+	background-size: cover;
+	height:120px ;
 	border-bottom: 2px solid #800000;
 }
 .bigmenu li{
@@ -124,14 +131,14 @@ footer {
 
 
 #newMenu {
+	top:20px;
 	position: fixed;
 	float: right;
-	padding: 15px 0 8px 0;
-	box-shadow: 0px 0px 15px rgba(0, 0, 0, .3);
+	padding: 0px 0px 0px 0px;
+	<!--box-shadow: 0px 0px 15px rgba(0, 0, 0, .3);-->
 	border-radius: 3px;
 	width: 1000px;
-	height: 30px;
-	background-image: url('../img/logo.png');
+	height: 20px;
 	background-repeat: no-repeat;
 }
 
@@ -140,7 +147,11 @@ footer {
 	float: left;
 	list-style-type: none;
 }
-
+.firstli{
+	height:200px;
+	float: left;
+	list-style-type: none;
+}
 #newMenu a {
 	height: 30px;
 	color: #990033;
@@ -162,7 +173,7 @@ footer {
 #newMenu ul ul {
 	display: none;
 	position: absolute;
-	
+	top:105px;
 }
 
 
