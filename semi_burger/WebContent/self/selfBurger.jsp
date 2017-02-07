@@ -81,7 +81,7 @@ function delTop(key){
 	window.open('delToping.jsp','toping','width=300,height=130,left=600,top=300');
 }
 function showTop(){
-	window.open('showTop.jsp','toping','width=500,height=400,left=600,top=300');
+	window.open('showTop.jsp','toping','width=400,height=400,left=600,top=300');
 }
 function order(){
 	location.href='/semi_burger/order/orderList.jsp';
@@ -155,14 +155,14 @@ if(sid!=null&&sid.equals("admin")){
 %>
 <div class="admin">
 <p><a href="javascript:addTop()" class="a">토핑 추가</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="javascript:showTop()" class="a">토핑 꺼내기</a></p>
+<a href="javascript:showTop()" class="a">토핑 관리</a></p>
 </div>
 <%}%>
 <form name="selfBurger" action="selfBurger_ok.jsp">
 <div class="sb"><a href="selfBurger.jsp?oto=1" class="a">제일 위의 토핑 빼기</a>
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="selfBurger.jsp?to=1" class="a">토핑 전부 빼기</a>
-	<br>수량:<input type="text" name="item_count" size="5px">
+	<br><br>수량:<input type="text" name="item_count" size="5px">
 			<input type="submit" value="계산서에 담기">
 			<input type="button" value="계산하러 가기" onclick="order()">
 </div>
