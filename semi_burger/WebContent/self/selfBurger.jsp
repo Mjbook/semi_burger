@@ -60,7 +60,10 @@ h2{
 	padding:0px;
 }
 body table{
-	width:300px;
+	min-width:300px;
+}
+body table td{
+	text-align: center;
 }
 body table img{
 	width:100px;
@@ -222,14 +225,6 @@ if(sid!=null&&sid.equals("admin")){
 </article>
 <article>
 	<table>
-		<thead>
-		<tr>
-			<th>토핑</th>
-			<th>가격</th>
-			<th></th>
-		</tr>
-		</thead>
-		
 		<tbody>
 		<%
 		if(tdtos.size()==0||tdtos==null){
@@ -243,8 +238,8 @@ if(sid!=null&&sid.equals("admin")){
 					tdto=tdtos.get(i);
 				%>
 			<tr>
-				<td><img src="/semi_burger/self/toping_img/<%=tdto.getToping_img()%>"><br><%=tdto.getToping_name()%></td>
-				<td><%=tdto.getToping_price() %>원</td>
+				<td><img src="/semi_burger/self/toping_img/<%=tdto.getToping_img()%>"></td>
+				<td style="width:120px;"><%=tdto.getToping_name()%><br><%=tdto.getToping_price() %>원</td>
 				<td><a href="selfBurger.jsp?at=<%=tdto.getToping_key()%>" class="a">추가</a><%
 				if(sid!=null&&sid.equals("admin")){
 				%><br><a href="javascript:delTop(<%=tdto.getToping_key()%>)" class="a">토핑 숨기기</a><%	
