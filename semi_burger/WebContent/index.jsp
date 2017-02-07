@@ -143,7 +143,7 @@ padding-bottom: 15px;
 					ArrayList<knowhowDTO> cdto = cdao.knowhowList(cp, listSize);
 					%>
 				<div id="maincenter">
-							 	<div id="tableFont" align="center"> BURGER BOAST </div>
+							 	<div id="tableFont" align="center"> USER BURGERS </div>
 							 	<table border="1"> 
 							 	<%
 
@@ -168,7 +168,7 @@ padding-bottom: 15px;
 						%>
 								</figure>
 						</div>	
-						 	<p id="mainFont"> 최근 고객이 만든 햄버거
+						 	<p id="mainFont">
 						</div>
 					
 					
