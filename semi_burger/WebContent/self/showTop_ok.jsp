@@ -4,8 +4,15 @@
 <!DOCTYPE html>
 <%
 String key_s=request.getParameter("select");
-int key=Integer.parseInt(key_s);
-int result=tdao.showToping(key,"show");
+String dkey=request.getParameter("delete");
+int result=0;
+if(dkey==null){
+	int key=Integer.parseInt(key_s);
+	result=tdao.showToping(key,"show");
+}else if(key_s==null){
+	int key=Integer.parseInt(dkey);
+	result=tdao.deleteTop(key);
+}
 
 if(result>0){
 	%>

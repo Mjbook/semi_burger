@@ -156,6 +156,29 @@ public class TopingDAO {
 		}
 	}
 	
+	/**toping db에서 삭제하는 메서드*/
+	public int deleteTop(int key){
+		try {
+			conn=yb.db.YB_DB.getConn();
+			
+			String sql="delete from toping where toping_key=?";
+			ps=conn.prepareStatement(sql);
+			ps.setInt(1, key);
+		
+			int result=ps.executeUpdate();
+			return result;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return -1;
+		}finally {
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			} catch (Exception e2) {}
+		}
+	}
+	
 	/**토핑 업로드 중에 중단한 db삭제 메서드*/
 	public void delTop(){
 		try{
