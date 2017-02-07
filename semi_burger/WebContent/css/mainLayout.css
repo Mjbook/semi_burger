@@ -29,7 +29,7 @@ header nav{
 	background-image: url('../img/logo_2.jpg');
 	background-size: cover;
 	height:120px ;
-	border-bottom: 2px solid #800000;
+	border-bottom: 2px double red;
 }
 .bigmenu li{
 	list-style-type: none;
@@ -154,7 +154,7 @@ footer {
 }
 #newMenu a {
 	height: 30px;
-	color: #990033;
+	color: black;
 	font-family: 'Malgun Gothic';
 	font-size: 16px;
 	padding: 10px 10px 0 10px;
