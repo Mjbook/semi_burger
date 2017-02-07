@@ -351,3 +351,12 @@ footer {
 	padding-top: 30px;
 }
 
+.a{
+	text-decoration: none;
+}
+.a:HOVER{
+	color: #800000;
+}
+.a:VISITED{
+	text-decoration: none;
+}
