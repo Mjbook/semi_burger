@@ -38,28 +38,22 @@ h2{
 	text-align:center;
 }
 .sidetop{
+	border-radius:100px 100px 0px 0px;
 	width: 200px;
 	height:18px;
 	margin: 0px auto;
-}
-.sidetop img{
-	border-radius:100px 100px 0px 0px;
-	width:200px;
-	height:30px;
-	margin: 0px;
-	padding:0px;
 }
 .side{
+	border-radius:9px;
 	width: 200px;
 	height:18px;
 	margin: 0px auto;
 }
-.side img{
+.sideslim{
 	border-radius:9px;
-	width:200px;
-	height:20px;
-	margin: 0px;
-	padding:0px;
+	width: 200px;
+	height:10px;
+	margin: 0px auto;
 }
 body table{
 	min-width:300px;
@@ -68,8 +62,8 @@ body table td{
 	text-align: center;
 }
 body table img{
-	width:100px;
-	height:100px;
+	width:50px;
+	height:50px;
 }
 .sb{
 	text-align:center;
@@ -186,7 +180,7 @@ if(sid!=null&&sid.equals("admin")){
 	%>
 	<div>가격:<%=df.format(price) %>원</div>
 	<br>
-	<table class="sidetable">
+	<table class="sidetable" cellpadding="0" cellspacing="0">
 	<%
 	for(int i=count_i-1;i>=0;i--){
 		
@@ -201,24 +195,22 @@ if(sid!=null&&sid.equals("admin")){
 		String temp_tops=(String)session.getAttribute("t"+top_i);
 		int temp_top=Integer.parseInt(temp_tops);
 		
-		if(i==top_i){
-			String tp_n=tdao.getToping("toping_name",temp);
-			if(tp_n.equals("빵")){
-		%>
-				<div class="sidetop">
-		<%	}else{
-			%>
-				<div class="side">
-			<%		
+		String tp_n=tdao.getToping("toping_name",temp);
+		String div_class="";
+		if(i==top_i&&tp_n.contains("빵")){
+			div_class="sidetop";
+		}else{
+			if(tp_n.contains("패티")||tp_n.contains("빵")){
+				div_class="side";	
+			}else{
+				div_class="sideslim";
 			}
-		}else{%>
-				<div class="side">
-	<%	} %>
-					<img src="/semi_burger/self/toping_img/ts<%=tp_img%>">
+		}
+		 %>
+				<div class="<%=div_class%>" style="background-image:url('/semi_burger/self/toping_img/ts<%=tp_img%>');">
 				</div>
 			</td>
 		</tr>
-		
 		<%
 	}
 	%>
