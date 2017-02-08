@@ -26,60 +26,86 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
+<style>
+th div{
+	height:0px;
+	width:140px;
+	border-bottom:20px solid #DFDFDF;
+	border-right: 10px solid white;
+}
+td{
+	width: 160px;
+	padding-left:28px;
+	padding-top:0px;
+	padding-bottom:0px;
+	text-align:left;
+	border-bottom:1px solid black;
+}
+#textarea{
+	height : 250px;
+	border-bottom:1px solid black;
+	border-top:1px solid black;
+	border-left:1px solid black;
+	border-right:1px solid black;
+	
+}
+</style>
 </head>
 <body>
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
-		<div id="sideMenu">
-
-			<h2 align="center">커뮤니티</h2>
-			<ul>
-				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
-				<li><a href="/semi_burger/board/QnA/QAList.jsp">QnA</a></li>
-				<li><a href="#">내가 만든 햄버거</a></li>
-				<li><a href="javascript:game()">게임하기</a></li>
-			</ul>
-
-		</div>
+				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;">
+			<br>
+			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;Q & A</h2>
+			<br>
+			</div>
+			<br>
+			
+		<%@include file="../sideMenuBar.jsp" %>
+		
 		<div id="container">
-		<h2>자유게시판 본문</h2>
-		<div id="content">	
+	
+		<div id="content" align="center">	
 	
 
-			<table id="tableList">
+			<table class="tableList">
 			<tr>
-				<th>번호</th>
+				<th><div >번호</div></th>
 				<td><%=dto.getQna_no()%></td>
-				<th>작성 날짜</th>
+				<th><div>작성 날짜</div></th>
 				<td><%=dto.getInsert_date() %></td>
 			</tr>
 			<tr>
-				<th>작성자</th>
+				<th><div>작성자</div></th>
 				<td><%=dto.getName()%></td>
-				<th>조회수</th>
+				<th><div>조회수</div></th>
 				<td><%=dto.getContent() %></td>
 			</tr>
 			<tr>
-				<th>제목</th>
+				<th><div>제목</div></th>
 				<td colspan="3" align="left">
 				<%=dto.getSubject() %>
 				</td>
 			</tr>
-			<tr height="250">
-					<td colspan="4" align="left" valign="top">
-						<%=dto.getContent().replaceAll("\n", "<br>") %>
+			<tr>
+					<td colspan="4" id="textarea" align="left" valign="top" >
+						<br><%=dto.getContent().replaceAll("\n", "<br>") %>
 					</td>
 			</tr>
 			</table>
+			<table align="center">
 			<div align="center">
+			<br>
 			<input type="button" value="목록보기" onclick="location.href='QAList.jsp'">
 			<input type="button" value="답변쓰기" onclick="location.href='QAReWrite.jsp?subject=<%=dto.getSubject()%>&ref=<%=dto.getRef()%>&lev=<%=dto.getLev()%>&sunbun=<%=dto.getSunbun()%>'">
 			</div>
+			</table>
 			</div>
 			</div>
-
+		
 			<div id="footer">
+				<br>
 				<%@include file="/footer.jsp"%>
 			</div>
 </body>

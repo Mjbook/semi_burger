@@ -59,20 +59,17 @@ table textarea {
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
-		<div id="sideMenu">
-
-			<h2 align="center">커뮤니티</h2>
-			<ul>
-				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
-				<li><a href="/semi_burger/board/QnA/QAList.jsp">QnA</a></li>
-				<li><a href="#">내가 만든 햄버거</a></li>
-				<li><a href="javascript:game()">게임하기</a></li>
-			</ul>
-
-		</div>
+				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;">
+			<br>
+			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;내가 만든 햄버거</h2>
+			<br>
+			</div>
+			
+		<%@include file="../sideMenuBar.jsp" %>
+		
 		<div id="contnet">
 
-				<h2>내가만든햄버거</h2>
+		
 				
     <form action="knowhowWrite_ok.jsp" method="post" enctype="multipart/form-data" >
 <table id="table2">	

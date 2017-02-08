@@ -40,19 +40,17 @@ if(cp%pageSize==0) {
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
-		<div id="sideMenu"> 
+					<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;">
+			<br>
+			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;Q & A</h2>
+			<br>
+			</div>
+			
+		<%@include file="../sideMenuBar.jsp" %>
 
-			<h2 align="center">커뮤니티</h2>
-			<ul>
-				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
-				<li><a href="/semi_burger/board/QnA/QAList.jsp">QnA</a></li>
-				<li><a href="/semi_burger/board/knowhow/knowhowList.jsp">내가 만든 햄버거</a></li>
-				<li><a href="javascript:game()">게임하기</a></li>
-			</ul>
-
-</div>
 <div id="content">
-		<h2>QnA</h2>
+
+
 				<table id="tableList">
 				<thead>
 					<tr>

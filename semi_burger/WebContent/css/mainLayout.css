@@ -26,7 +26,7 @@ header p{
 }
 header nav{
 	
-	background-image: url('../img/logo_5.jpg');
+	background-image: url('../img/logo_4.jpg');
 	background-size: cover;
 	height:120px ;
 	border-bottom: 2px double red;
@@ -72,9 +72,7 @@ footer {
    text-align: center;
    line-height: 1.5;
 }
-
-
-#sideMenu ul {
+#sideMenu ul{
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
@@ -82,53 +80,23 @@ footer {
 	width: 100%;
 }
 
-#sideMenu ol {
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
-	max-width: 150px;
-	width: 100%
+#sideMenu li{
+	height:65px;
 }
 
-#sideMenu ul li {
-	padding: 5px 0px 5px 5px;
-	margin-bottom: 3px;
-	font-size: 15px;
+#sidestyle{
+	
+	border-top : 30px solid white;
+	height:13px;
+	width:140px;
+	border-bottom:20px solid #DFDFDF;
+	border-right: 10px solid white;
+}
+
+#sideMenu a{
+	color:black;
 	
 }
-
-
-#sideMenu ol li {
-	padding: 5px 0px 5px 5px;
-	margin-bottom: 5px;
-	border: 1px solid;
-	font-size: 15px;
-}
-
-#
-#sideMenu ul li:list-child {
-	border-bottom: 0px;
-}
-
-#sideMenu ol li:list-child {
-	border-bottom: 0px;
-}
-
-#sideMenu ul li:before {
-	content: ">";
-	display: inline-block;
-	vertical-align: middle;
-	padding: 0px 5px 6px 0px;
-}
-
-#sideMenu ol li:before {
-	color: white;
-	content: ">";
-	display: inline-block;
-	vertical-align: middle;
-	padding: 0px 5px 6px 0px;
-}
-
 
 #newMenu {
 	top:20px;

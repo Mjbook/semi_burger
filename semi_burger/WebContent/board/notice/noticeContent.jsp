@@ -37,20 +37,16 @@ String sid=(String)session.getAttribute("sid");
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
-		<div id="sideMenu">
-
-			<h2 align="center">커뮤니티</h2>
-			<ul>
-				<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
-				<li><a href="/semi_burger/board/QnA/QAList.jsp">QnA</a></li>
-				<li><a href="#">내가 만든 햄버거</a></li>
-				<li><a href="javascript:game()">게임하기</a></li>
-			</ul>
-
-		</div>
+				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;">
+			<br>
+			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;공 지 사 항</h2>
+			<br>
+			</div>
+			
+		<%@include file="../sideMenuBar.jsp" %>
 
 		<div id="container">
-			<h2>공지 사항</h2>
+			
 			<div id="content">
 				<table id="tableList" border="1">
 					<tr>
