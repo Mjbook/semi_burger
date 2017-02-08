@@ -58,7 +58,7 @@ table textarea {
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
-				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;">
+				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;opacity: 0.85;">
 			<br>
 			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;공 지 사 항</h2>
 			<br>

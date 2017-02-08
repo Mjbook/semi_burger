@@ -28,9 +28,30 @@
 		userGroup--;
 	}
 %>
-
-
-
+<style>
+th div{
+	height:0px;
+	
+	border-bottom:20px solid #FF4848;
+	border-right: 10px solid white;
+}
+td{
+	width: 160px;
+	padding-left:28px;
+	padding-top:0px;
+	padding-bottom:0px;
+	text-align:left;
+	border-bottom:1px solid black;
+}
+#textarea{
+	height : 250px;
+	border-bottom:1px solid black;
+	border-top:1px solid black;
+	border-left:1px solid black;
+	border-right:1px solid black;
+	
+}
+</style>
 </head>
 <body>
 
@@ -38,7 +59,7 @@
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
-				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;">
+				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;opacity: 0.85;">
 			<br>
 			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;공 지 사 항</h2>
 			<br>
@@ -48,13 +69,13 @@
 		
 		<div id="content">
 		
-			<table id="tableList">
+			<table>
 				<thead>
 					<tr>
-						<th>순번</th>
-						<th>제목</th>
-						<th>작성자</th>
-						<th>조회수</th>
+						<th><div style="width:90px;">순번</div></th>
+						<th><div>제목</div></th>
+						<th><div>작성자</div></th>
+						<th><div>조회수</div></th>
 					</tr>
 				</thead>
 				<tfoot>
@@ -92,7 +113,7 @@
 							for (int i = 0; i < adto.size(); i++) {
 					%>
 					<tr>
-						<td><%=adto.get(i).getNotice_no()%></td>
+						<td style="width:90px;"><%=adto.get(i).getNotice_no()%></td>
 						<td>
 						<a href="noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><p align="left"><%=adto.get(i).getSubject()%></p></a></td>
 						<td><%=adto.get(i).getName()%></td>

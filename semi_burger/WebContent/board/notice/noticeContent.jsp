@@ -26,18 +26,41 @@
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css"
 	href="/semi_burger/css/mainLayout.css">
-
 <%
 String sid=(String)session.getAttribute("sid");
 
 %>
+<style>
+th div{
+	height:0px;
+	width:140px;
+	border-bottom:20px solid #FF4848;
+	border-right: 10px solid white;
+}
+td{
+	width: 160px;
+	padding-left:28px;
+	padding-top:0px;
+	padding-bottom:0px;
+	text-align:left;
+	border-bottom:1px solid black;
+}
+#textarea{
+	height : 250px;
+	border-bottom:1px solid black;
+	border-top:1px solid black;
+	border-left:1px solid black;
+	border-right:1px solid black;
+	
+}
+</style>
 </head>
 <body>
 	<div id="container">
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
-				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;">
+			<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat; opacity: 0.85;">
 			<br>
 			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;공 지 사 항</h2>
 			<br>
@@ -48,25 +71,25 @@ String sid=(String)session.getAttribute("sid");
 		<div id="container">
 			
 			<div id="content">
-				<table id="tableList" border="1">
+				<table>
 					<tr>
-						<th>번호</th>
+						<th><div>번호</div></th>
 						<td><%=dto.getNotice_no()%></td>
-						<th>작성 날짜</th>
+						<th><div>작성 날짜</div></th>
 						<td><%=dto.getInsert_date()%></td>
 					</tr>
 					<tr>
-						<th>작성자</th>
+						<th><div>작성자</div></th>
 						<td><%=dto.getName()%></td>
-						<th>조회수</th>
+						<th><div>조회수</div></th>
 						<td><%=dto.getBoard_count()%></td>
 					</tr>
 					<tr>
-						<th>제목</th>
+						<th><div>제목</div></th>
 						<td colspan="3" align="left"><%=dto.getSubject()%></td>
 					</tr>
 					<tr height="250">
-						<td colspan="4" align="left" valign="top"><%=dto.getContent().replaceAll("\n", "<br>")%>
+						<td colspan="4" id="textarea"><%=dto.getContent().replaceAll("\n", "<br>")%>
 						</td>
 					</tr>
 				</table>
