@@ -32,14 +32,14 @@
 th div{
 	height:0px;
 	border-bottom:20px solid #DFDFDF;
-	border-right: 10px solid white;
+	border-right: 00px solid white;
 }
 td{
 
-	padding-left:28px;
-	padding-top:0px;
+	padding-left:0px;
+	padding-top:5px;
 	padding-bottom:0px;
-	text-align:left;
+
 	
 }
 #textarea{
@@ -71,10 +71,10 @@ td{
 			<table>
 				<thead>
 					<tr>
-						<th ><div style="width:90px;">순번</div></th>
-						<th><div>제목</div></th>
-						<th><div>작성자</div></th>
-						<th><div>조회수</div></th>
+						<th><div style="width:80px;">순번</div></th>
+						<th><div style="width:440px;">제목</div></th>
+						<th><div style="width:140px;">작성자</div></th>
+						<th><div style="width:90px;">조회수</div></th>
 					</tr>
 				</thead>
 				<tfoot>
@@ -97,7 +97,20 @@ td{
 								&gt;</a> <%
  	}
  %>
-						
+						</td>
+						<td>
+						<br>
+						<div align="right">
+				<%
+					if ("admin".equals(sid)) {
+				%>
+				<input type="button" value="글쓰기"
+					onclick="location.href='noticeWrite.jsp'">
+				<%
+					}
+				%>
+				</div>
+				</td>
 				</tfoot>
 				<tbody>
 					<%
@@ -112,11 +125,11 @@ td{
 							for (int i = 0; i < adto.size(); i++) {
 					%>
 					<tr>
-						<td><%=adto.get(i).getNotice_no()%></td>
-						<td >
+						<td align="center"><%=adto.get(i).getNotice_no()%></td>
+						<td align="left">
 						<a href="noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><p align="left"><%=adto.get(i).getSubject()%></p></a></td>
-						<td><%=adto.get(i).getName()%></td>
-						<td><%=adto.get(i).getBoard_count()%></td>
+						<td align="center"><%=adto.get(i).getName()%></td>
+						<td align="center"><%=adto.get(i).getBoard_count()%></td>
 					</tr>
 					<%
 						}
@@ -124,16 +137,7 @@ td{
 					%>
 				</tbody>
 			</table>
-			<div align="right">
-				<%
-					if ("admin".equals(sid)) {
-				%>
-				<input type="button" value="글쓰기"
-					onclick="location.href='noticeWrite.jsp'">
-				<%
-					}
-				%>
-			</div>
+			<br>
 
 		</div>
 

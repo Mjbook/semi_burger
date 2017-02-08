@@ -31,19 +31,29 @@
 <link rel="stylesheet" type="text/css"	href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
 
-table {
-	width: 100%;
-	margin: 0px auto;
-	border-spacing: 0px;
-	border: 1px #5b0d14;
+th div{
+	height:0px;
+	border-bottom:20px solid #DFDFDF;
+	border-right: 00px solid white;
 }
+td{
 
-table td {
-	text-align: center;
+	padding-left:0px;
+	padding-top:1px;
+	padding-bottom:2px;
+
+	
 }
-
-table textarea {
-	width: 100%;
+#textarea{
+	height : 250px;
+	border-bottom:1px solid black;
+	border-top:1px solid black;
+	border-left:1px solid black;
+	border-right:1px solid black;
+	
+}
+#widthcear{
+	
 }
 
 #sub {
@@ -71,17 +81,18 @@ table textarea {
 		<div id="content">
 		
 			<form action="noticeUpdate_ok.jsp">
-				<table id="table2">
+				<table>
 					<tr>
-						<th>제목</th>
+						<th><div>제목</div></th>
 						<td colspan="3" align="left">
-						<input type="text" name="subject" value=<%=sub%> placeholder="제목을 입력하세요." /></td>
+						<input type="text" id="widthcear" name="subject" value=<%=sub%> placeholder="제목을 입력하세요." /></td>
 					</tr>
 					<tr height="250">
 						<td colspan="4" align="left" valign="top">
-						<textarea id="textarea_test" rows="15" cols="120" name="content" placeholder="내용을 입력하세요."><%=con%></textarea></td>
+						<textarea id="textarea" rows="15" cols="110" name="content" placeholder="내용을 입력하세요."><%=con%></textarea></td>
 					</tr>
 				</table>
+				<br>
 				<div align="center">
 				<input type="hidden" name="notice_no" value=<%=idx%> />
 				<input type="button" value="취소" onclick="location.href='notice.jsp'">
@@ -89,8 +100,9 @@ table textarea {
 		</div>
 		</form>
 		</div>
-
+		
 		<div id="footer">
+		<br>
 			<%@include file="/footer.jsp"%>
 		</div>
 	</div>
