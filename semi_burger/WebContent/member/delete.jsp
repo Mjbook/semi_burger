@@ -12,7 +12,7 @@
 %>
 <body>
 <section>
-  <form name="delete" action="delete_ok.jsp" >
+  <form name="delete" action="delete_ok.jsp" method="post">
   <input type="hidden" name="id" value=<%=userid %>>
   	<fieldset>
   		<div style="text-align: center; font-size:15px;">

@@ -28,6 +28,9 @@
 <title>Yong Burger</title> 
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css"> 
 <style>
+	section{
+		padding-bottom: 50px;
+	}
 	h1{
 		text-align: center;
 	}
@@ -53,7 +56,7 @@
 <%@ include file="/header.jsp" %>
 
 <section style="padding-top: 20px;">
-	<form name="updateinfo" action="updateinfo_ok.jsp">
+	<form name="updateinfo" action="updateinfo_ok.jsp" method="post">
 		<h1> 회원정보 수정 </h1>
 		<table>
 			<thead>

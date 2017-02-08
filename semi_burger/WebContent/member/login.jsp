@@ -8,16 +8,23 @@
 <link rel="stylesheet" type="text/css"
 href="/semi_burger/css/mainLayout.css">
 <style>
+	section{
+		padding-top: 50px;
+		padding-bottom: 50px;
+		background: url(/semi_burger/introduce/img/sub1_1_bg03.png) 100% 100% no-repeat;
+		background-size: contain;
+	}
 	fieldset{
 		width: 260px;
 		margin: 0px auto;
 		border-spacing: 0px;
+		background-color: white;
 	}
 	td{
 		font-size: 14px;
 	}
 	input::-webkit-input-placeholder {
-		color:red;
+		color:gray;
 	}
 </style>
 <script>
@@ -54,11 +61,11 @@ href="/semi_burger/css/mainLayout.css">
 		  	<td> &nbsp; </td>
 		  </tr>
 		  <tr>	
-			<td class="input"> <input type="text" name="id" placeholder="아이디" value="<%= idsave%>"> </td>
+			<td> <input type="text" name="id" placeholder="아이디" value="<%= idsave%>"> </td>
 			<td rowspan="2"> <input type="submit" value="로그인" style="height:48px;"> </td>
 		  </tr>
 		  <tr>
-		  	<td class="input"> <input type="password" name="pwd" placeholder="비밀번호"> </td>
+		  	<td> <input type="password" name="pwd" placeholder="비밀번호"> </td>
 		  	<td> </td>
 		  </tr>	
 		  <tr>

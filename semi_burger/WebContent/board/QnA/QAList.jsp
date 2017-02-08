@@ -8,7 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
-<title>Insert title here</title>
+<title>Yong Burger</title>
 <script>
 	function init() {
 		alert(1);
