@@ -316,9 +316,8 @@ footer {
 	font-size: 25px;
 	height: 30px;
 	padding-bottom: 20px;
-	
+	padding-top: 10px;
 }
-
 #S_menu {
 	width: 25%;
 	border-right: 0.5px dotted;
