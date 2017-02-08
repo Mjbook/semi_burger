@@ -33,7 +33,7 @@ ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
 	right:12%;
 	min-width:280px;
 	text-align:center;
-	background: #fb5e5e;
+	background: #b70303;
 	border-radius: 20px;
 	color:white;
 }
