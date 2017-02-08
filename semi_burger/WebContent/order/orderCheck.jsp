@@ -129,6 +129,7 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 							int row=arr_menu_num.get(i);
 							int total_price=0;
 							String address="";
+							String customer_name="";
 							for(int j=0;j<row;j++){
 								Order_listDTO temp=arr_odto.get(row_count);
 								
@@ -158,7 +159,10 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 							<td><%=menu %></td>
 							<td><%=num %></td>
 							<td><%=df.format(price/num)%>원</td>
-						<%		if(j==0){ //주문별 총 금액 구하기
+						<%		if(j==0){
+									//주문자 이름
+									customer_name=temp.getOrder_user();
+									//주문별 총 금액 구하기
 									int temp_row=row_count;
 									for(int k=0;k<row;k++){
 										Order_listDTO temp1=arr_odto.get(temp_row);
@@ -177,8 +181,14 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 							row_count++;
 							}
 						%>
+						<%if(sid.equals("admin")){ %>
+						<tr style="border-bottom:3px solid white;">
+							<th class="div_th"><div class="addr">주문자 ID</div></th>
+							<td class="addr_s"><%=customer_name %></td>
+						</tr>
+						<%} %>
 						<tr>
-							<th class="div_th"><div class="addr">주소</div></th>
+							<th class="div_th" style="border-top: 6px solid white;"><div class="addr">주소</div></th>
 							<td colspan="4" class="addr_s"><%=address %></td>
 						</tr>
 						<tr>
