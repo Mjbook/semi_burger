@@ -27,6 +27,9 @@ href="/semi_burger/css/mainLayout.css">
 	.button{
 		text-align:center;
 	}
+	.form{
+		padding-bottom: 50px;
+	}
 	
 </style>
 <script>
@@ -39,7 +42,7 @@ href="/semi_burger/css/mainLayout.css">
 <%@ include file="/header.jsp" %>
 
 <section style="padding-top: 20px;">
-	<form name="join" action="join_ok.jsp" method="post">
+	<form class="form" name="join" action="join_ok.jsp" method="post">
 		<h1> 회원가입 </h1>
 		<table>
 			<thead>
