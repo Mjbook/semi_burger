@@ -34,7 +34,7 @@ String sid=(String)session.getAttribute("sid");
 th div{
 	height:0px;
 	width:140px;
-	border-bottom:20px solid #FF4848;
+	border-bottom:20px solid #DFDFDF;
 	border-right: 10px solid white;
 }
 td{
@@ -65,12 +65,13 @@ td{
 			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;공 지 사 항</h2>
 			<br>
 			</div>
-			
-		<%@include file="../sideMenuBar.jsp" %>
+		
+			<%@include file="../sideMenuBar.jsp" %>
 
 		<div id="container">
 			
 			<div id="content">
+				<br>
 				<table>
 					<tr>
 						<th><div>번호</div></th>
@@ -93,23 +94,27 @@ td{
 						</td>
 					</tr>
 				</table>
+				<table align="center">
+				<br>
 					<div align="center">
-				<%
-								if ("admin".equals(sid)) {
+							<%
+							if ("admin".equals(sid)) {
 							%> 
-						
 							<input type="button" value="수정" onclick="location.href='noticeUpdate.jsp?idx=<%=dto.getNotice_no()%>&sub=<%=dto.getSubject()%>&con=<%=dto.getContent().replaceAll("\n", "<br>")%>'">
 							<input type="button" value="삭제" onclick="location.href='noticeDelete.jsp?idx=<%=dto.getNotice_no()%>'">
 							 <%
 							}
-							 %> <input type="button" value="목록" onclick="location.href='notice.jsp'">
+							 %>
+							 <input type="button" value="목록" onclick="location.href='notice.jsp'">
 							 </div>
+							 <br>
+				</table>
 			</div>
-
+			<br>	
+		</div>
 			<div id="footer">
 				<%@include file="/footer.jsp"%>
 			</div>
-		</div>
 		</div>
 </body>
 </html>

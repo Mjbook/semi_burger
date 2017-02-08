@@ -31,17 +31,16 @@
 <style>
 th div{
 	height:0px;
-	
-	border-bottom:20px solid #FF4848;
+	border-bottom:20px solid #DFDFDF;
 	border-right: 10px solid white;
 }
 td{
-	width: 160px;
+
 	padding-left:28px;
 	padding-top:0px;
 	padding-bottom:0px;
 	text-align:left;
-	border-bottom:1px solid black;
+	
 }
 #textarea{
 	height : 250px;
@@ -68,11 +67,11 @@ td{
 		<%@include file="../sideMenuBar.jsp" %>
 		
 		<div id="content">
-		
+		<br>
 			<table>
 				<thead>
 					<tr>
-						<th><div style="width:90px;">순번</div></th>
+						<th ><div style="width:90px;">순번</div></th>
 						<th><div>제목</div></th>
 						<th><div>작성자</div></th>
 						<th><div>조회수</div></th>
@@ -113,8 +112,8 @@ td{
 							for (int i = 0; i < adto.size(); i++) {
 					%>
 					<tr>
-						<td style="width:90px;"><%=adto.get(i).getNotice_no()%></td>
-						<td>
+						<td><%=adto.get(i).getNotice_no()%></td>
+						<td >
 						<a href="noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><p align="left"><%=adto.get(i).getSubject()%></p></a></td>
 						<td><%=adto.get(i).getName()%></td>
 						<td><%=adto.get(i).getBoard_count()%></td>
