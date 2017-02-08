@@ -6,18 +6,20 @@
 String key_s=request.getParameter("select");
 String dkey=request.getParameter("delete");
 int result=0;
+String dt="";
 if(dkey==null){
 	int key=Integer.parseInt(key_s);
 	result=tdao.showToping(key,"show");
 }else if(key_s==null){
 	int key=Integer.parseInt(dkey);
 	result=tdao.deleteTop(key);
+	dt="?to=1";
 }
 
 if(result>0){
 	%>
 	<script>
-		window.opener.location.href='selfBurger.jsp';
+		window.opener.location.href='selfBurger.jsp<%=dt%>';
 		location.href='showTop.jsp';
 	</script>
 	<%
