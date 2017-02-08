@@ -83,12 +83,10 @@ padding-bottom: 15px;
 				<div id="S_menu" align="center"><a href="/semi_burger/burgerMenu/burgerMenu.jsp#side"> <img src="img/side.png"></a> <br> 사이드메뉴	</div>
 				<div id="S_menu" align="center"><a href="/semi_burger/self/selfBurger.jsp"><img src="img/miniburger.jpg"></a> <br> 시그니처</div>
 				<div id="S_menu1" align="center"><a href="/semi_burger/burgerMenu/burgerMenu.jsp#event"> <img src="img/1.png"></a>  <br> 이벤트메뉴   </div>
-			</div>
+			</div>			
 			<div id="mainFont" align="left">
 			  <img src="introduce/img/hat.png" width="25px;"> YongBurger News
-			</div>
-			
-			
+			</div>			
 				<div id ="mainnotice">
 			 	<div id="tableFont" align="center"> NOTICE
 				</div>
