@@ -72,11 +72,11 @@ padding-bottom: 15px;
 </div>	
 <div id="slider">
 	<figure>
-		<img src="img/event1.png">
-		<img src="img/event2.png">
-		<img src="img/event3.png">
-		<img src="img/event4.png">
-		<img src="img/event5.png">
+		<img src="img/main-1.jpg">
+		<img src="img/main-2.jpg">
+		<img src="img/main-3.jpg">
+		<img src="img/main-4.jpg">
+		<img src="img/main-3.jpg">
 	</figure>
 </div>
 	<div>
