@@ -34,10 +34,6 @@ function goMenu(){
 function goSelf(){
 	location.href='/semi_burger/self/selfBurger.jsp';
 }
-function sig(menu){
-	window.alert();
-	window.open("/semi_burger/self/signature.jsp","sig","top=300,left=400,width=380,height=250");
-}
 </script>
 <style>
 body h2{
@@ -49,14 +45,11 @@ body h2{
 	text-align: center;
 	margin:0px auto;
 	border-spacing: 0px;
-	border-color: 1px solid #DFDFDF;
 }
 .otable thead th{
-	border-bottom:1px solid #800000 ;
+	border-bottom:1px solid red ;
 }
-.otable tbody td{
-	padding: 5px;
-}
+
 .otable tfoot th div{
 	height:0px;
 	width:140px;
@@ -84,7 +77,6 @@ if(sid!=null){
 	<section>
 	<article>
 		<form name="orderList" action="orderList_ok.jsp">
-		<input type="hidden" name="sig">
 		<table class="otable">
 		<thead>
 			<tr>
@@ -99,11 +91,11 @@ if(sid!=null){
 		
 		<tfoot>
 			<tr>
-				<th><div>주문자</div></th>
-				<td colspan="4" style="text-align: left;"><input type="text" name="name" value="<%=sid%>" disabled="disabled"></td>
+				<th align="right"><div align="center">주문자</div></th>
+				<td colspan="4" style="text-align: left;" ><%=sid%></td>
 			</tr>
 			<tr>
-				<th><div>배달 수령 주소</div></th>
+				<th align="right"><div align="center">배달 수령 주소</div></th>
 				<td colspan="4" style="text-align: left;"><input type="text" name="addr" value="<%=addr%>" required="required"></td>
 			</tr>
 			<tr>
@@ -115,16 +107,20 @@ if(sid!=null){
 			</tr>
 		</tfoot>
 		
-		<tbody>	
+		<tbody>
+		<tr><td colspan="5"><div style="height:10px;"></div></td></tr>	
 		<%//메뉴 가져오기
 			//총가격
-			int total_price=0;	
+			int total_price=0;
+			int sig_count=0;
+			Vector<String> v=new Vector<String>();
 			for(int i=0;i<arr.size();i++){
 				String price=arr.get(i).getTotal_pay();//개당 가격
 				int num=arr.get(i).getItem_count();
 				total_price+=Integer.parseInt(price)*num;
 			}
 			//나머지 정보, 테이블
+			
 			for(int i=0;i<arr.size();i++){
 				Order_listDTO temp=arr.get(i);
 				String menu=temp.getItem_name();
@@ -139,7 +135,9 @@ if(sid!=null){
 				int min=now.get(Calendar.MINUTE);
 				
 				if(menu.startsWith("signature")){
-					menu="<a href='javascript:sig("+menu+");' class='a'>시그니처 버거</a>";
+					v.add(menu);
+					menu="<a href='javascript:sig"+sig_count+"();' class='a'>시그니처 버거</a>";
+					sig_count++;
 				}
 			%>
 				<tr>
@@ -156,12 +154,23 @@ if(sid!=null){
 				
 			}
 		%>
+		<tr><td colspan="5"><div style="height:20px;"></div></td></tr>
 		</tbody>
 		</table>
 		</form>
 		<br>
 	</article>
 	</section>
+	
+<script>
+<%
+for(int i=0;i<sig_count;i++){
+%>
+function sig<%=i%>(){
+	window.open("/semi_burger/self/signature.jsp?no=<%=v.get(i)%>","sig","top=300,left=400,width=380,height=250");
+}
+<%} %>
+</script>
 <%@include file="/footer.jsp"%>
 </body>
 </html>
