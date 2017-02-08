@@ -38,7 +38,7 @@
 		</div>
 				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;">
 			<br>
-			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;내가 만든 햄버거</h2>
+			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;My Burger</h2>
 			<br>
 			</div>
 			

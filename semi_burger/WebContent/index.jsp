@@ -41,7 +41,7 @@
 }
 #slider { overflow: hidden; }
 #slider figure img { 
-width: 20%; 
+width: 20%;
 float: left; 
 padding-bottom: 15px;
 }
@@ -55,6 +55,12 @@ padding-bottom: 15px;
   font-size: 0;
   -webkit-animation: 20s slidy ease-in-out infinite;
   animation: 20s slidy ease-in-out infinite; 
+}
+#S_menu ing{
+width: 20%;
+height: 350px;
+float: left; 
+padding-bottom: 15px;
 }
 </style>
 </head>
@@ -73,9 +79,10 @@ padding-bottom: 15px;
 		<img src="img/event5.png">
 	</figure>
 </div>
-
+	<div>
 			<div id="mainFont" align="left">
 			   <img src="introduce/img/hat.png" width="25px;"> YongBurger Menu
+			   <br>
 			</div>
 			
 			<div>
@@ -83,7 +90,16 @@ padding-bottom: 15px;
 				<div id="S_menu" align="center"><a href="/semi_burger/burgerMenu/burgerMenu.jsp#side"> <img src="img/side.png"></a> <br> 사이드메뉴	</div>
 				<div id="S_menu" align="center"><a href="/semi_burger/self/selfBurger.jsp"><img src="img/miniburger.jpg"></a> <br> 시그니처</div>
 				<div id="S_menu1" align="center"><a href="/semi_burger/burgerMenu/burgerMenu.jsp#event"> <img src="img/1.png"></a>  <br> 이벤트메뉴   </div>
-			</div>			
+				<br>
+			<br>		
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			</div>	
+			
 			<div id="mainFont" align="left">
 			  <img src="introduce/img/hat.png" width="25px;"> YongBurger News
 			</div>			
@@ -155,7 +171,7 @@ padding-bottom: 15px;
 					<a href="introduce/road.jsp"><img src="img/location.png"></a>
 					<a href="#"><img src="img/gameimg.png" onclick="javascript:game()"></a>
 				</div>
-				
+				</div>
 				<div id="footer">
 					<%@include file="footer.jsp"%>
 				</div>
