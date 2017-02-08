@@ -21,7 +21,6 @@
 	if(arr==null||arr.size()<1){
 		%>
 		<script>
-		window.alert('메뉴를 선택하세요');
 		location.href="/semi_burger/burgerMenu/burgerMenu.jsp";
 		</script>
 		<%
@@ -34,6 +33,10 @@ function goMenu(){
 }
 function goSelf(){
 	location.href='/semi_burger/self/selfBurger.jsp';
+}
+function sig(menu){
+	window.alert();
+	window.open("/semi_burger/self/signature.jsp","sig","top=300,left=400,width=380,height=250");
 }
 </script>
 <style>
@@ -81,6 +84,7 @@ if(sid!=null){
 	<section>
 	<article>
 		<form name="orderList" action="orderList_ok.jsp">
+		<input type="hidden" name="sig">
 		<table class="otable">
 		<thead>
 			<tr>
@@ -135,7 +139,7 @@ if(sid!=null){
 				int min=now.get(Calendar.MINUTE);
 				
 				if(menu.startsWith("signature")){
-					menu="시그니처 버거";
+					menu="<a href='javascript:sig("+menu+");' class='a'>시그니처 버거</a>";
 				}
 			%>
 				<tr>

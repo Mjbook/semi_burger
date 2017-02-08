@@ -46,6 +46,16 @@ body td{
 </head>
 <%
 String menu_name=request.getParameter("no");
+if(menu_name==null||menu_name.equals("")){
+	%>
+	<script>
+	window.alert('잘못된 경로로 접속하셨습니다.');
+	window.self.close();
+	</script>
+	<%
+	return;
+}
+
 HashMap<Integer, String> hm=tdao.getTopings();//메뉴판
 
 StringTokenizer st=new StringTokenizer(menu_name, ".");
