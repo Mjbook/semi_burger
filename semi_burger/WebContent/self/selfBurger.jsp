@@ -38,12 +38,18 @@ h2{
 	text-align:center;
 }
 .sidetop{
-	border-radius:100px 100px 0px 0px;
+	border-radius:20px 20px 5px 5px;
 	width: 200px;
-	height:18px;
+	height:22px;
 	margin: 0px auto;
 }
 .side{
+	border-radius:9px;
+	width: 190px;
+	height:18px;
+	margin: 0px auto;
+}
+.sidebread{
 	border-radius:9px;
 	width: 200px;
 	height:18px;
@@ -51,7 +57,7 @@ h2{
 }
 .sideslim{
 	border-radius:9px;
-	width: 200px;
+	width: 190px;
 	height:10px;
 	margin: 0px auto;
 }
@@ -200,8 +206,10 @@ if(sid!=null&&sid.equals("admin")){
 		if(i==top_i&&tp_n.contains("빵")){
 			div_class="sidetop";
 		}else{
-			if(tp_n.contains("패티")||tp_n.contains("빵")){
-				div_class="side";	
+			if(tp_n.contains("패티")){
+				div_class="side";
+			}else if(tp_n.contains("빵")){
+				div_class="sidebread";	
 			}else{
 				div_class="sideslim";
 			}

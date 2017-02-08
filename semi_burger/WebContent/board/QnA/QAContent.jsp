@@ -60,14 +60,14 @@ td{
 			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;Q & A</h2>
 			<br>
 			</div>
-			<br>
+			
 			
 		<%@include file="../sideMenuBar.jsp" %>
 		
 		<div id="container">
 	
 		<div id="content" align="center">	
-	
+		<br>
 
 			<table class="tableList">
 			<tr>

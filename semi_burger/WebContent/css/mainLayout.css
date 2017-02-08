@@ -71,12 +71,17 @@ footer {
 #sideMenu li{
 	height:65px;
 }
+<<<<<<< HEAD
 #sidestyle{	
+=======
+
+#sidestyle{
+>>>>>>> branch 'master' of https://github.com/yongburger/semi_burger.git
 	border-top : 30px solid white;
-	height:13px;
-	width:140px;
-	border-bottom:20px solid #DFDFDF;
-	border-right: 10px solid white;
+	height:25px;
+	width:130px;
+	border-bottom:3px solid #ff0000;
+	border-right: 0px solid white;
 }
 #sideMenu a{
 	color:black;	
