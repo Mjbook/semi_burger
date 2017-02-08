@@ -18,10 +18,6 @@ nav ul {
 		window.open('/semi_burger/burgerGame/index.html','gameopoup','width=1000,height=700');
 	}
 
-	function sidego(){
-		
-		
-	}
 </script>
 <div id="headerback" style="cursor:pointer;">
 <style>
@@ -70,7 +66,6 @@ nav ul {
 			<li class="firstli"><b><a href="#">메뉴 &nbsp;&nbsp;&nbsp;&nbsp;</a></b>
 
 				<ul>
-					<li><a href="/semi_burger/order/orderList.jsp" >온라인 주문</a></li>
 					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp" >햄버거</a></li>
 					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp#side" >사이드</a></li>
 					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp#event" >이벤트 메뉴</a></li>
@@ -82,8 +77,13 @@ nav ul {
 					<li class="firstli"><b><a href="#">My burger &nbsp;&nbsp;&nbsp;&nbsp;</a></b>
 
 				<ul>
+				<%String userid=(String)session.getAttribute("sid");
+					if(userid==null){%>
+					<li><a href="/semi_burger/order/orderList.jsp" >비회원 주문</a></li>
+					<%}else{ %>
 					<li><a href="/semi_burger/member/updateinfo.jsp">회원정보 수정</a></li>
 					<li><a href="/semi_burger/order/orderCheck.jsp">주문 조회</a></li>
+					<%}%>
 				</ul>
 				</li>
 				
