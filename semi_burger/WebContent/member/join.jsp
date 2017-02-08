@@ -87,7 +87,7 @@ href="/semi_burger/css/mainLayout.css">
 		  			<td> &nbsp; </td>
 		  		</tr>
 				<tr>
-					<td class="button" colspan="3"> <input type=submit value="가입하기"> <input type="reset" value="다시작성"> </td>
+					<td class="button" colspan="3"> <input type="reset" value="다시작성"> <input type=submit value="가입하기"> </td>
 				</tr>
 				<tr>
 		  			<td> &nbsp; </td>

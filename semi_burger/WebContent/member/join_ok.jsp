@@ -13,7 +13,7 @@
 	if(result>0){	
 		%>
 		<script>
-		window.alert('회원가입 완료.\n환영합니다 ^^');
+		//window.alert('회원가입 완료.\n환영합니다 ^^');
 		location.href='/semi_burger/member/login.jsp';
 		</script>
 		<%

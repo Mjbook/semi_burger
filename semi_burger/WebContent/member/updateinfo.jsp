@@ -43,6 +43,11 @@
 		text-align:center;
 	}
 </style>
+<script>
+	function confirmDel(){
+		window.open('delete.jsp?id=<%=sid%>','delete','width=340, height=50, left=420, top=250');
+	}
+</script>
 </head>
 <body>
 <%@ include file="/header.jsp" %>
@@ -58,12 +63,15 @@
 					%>
 			<tbody>
 				<tr>
+					<td> &nbsp; </td>
+				</tr>
+				<tr>
 					<th> ID </th>
 					<td> <input type="text" name="id" value="<%= sid%>" readonly > </td>
 				</tr>
 				<tr>
 					<th> Password </th>
-					<td> <input type="password" name="passwd" id="passwd" required="required"> </td>
+					<td> <input type="password" name="passwd" required="required"> </td>
 				</tr>
 				<tr>
 					<th> 이름 </th>
@@ -86,11 +94,17 @@
 					<td> <input type="text" name="address" value="<%= arr.get(i).getAddress()%>" required="required"> </td>
 				</tr>
 				<tr>
+					<td> &nbsp; </td>
+				</tr>
+				<tr>
 					<td class="button" colspan="2"> <input type="submit" value="수정하기"> <input type="reset" value="다시작성"> 
-						<input type="button" value="탈퇴하기" onclick="location='delete.jsp?id=<%= arr.get(i).getId()%>&passwd=<%= arr.get(i).getPasswd()%>'"></td>
+						<input type="button" value="탈퇴하기" onclick="confirmDel()"></td>
 					<%
 				} %>
-				</tr>		
+				</tr>
+				<tr>
+					<td> &nbsp; </td>
+				</tr>	
 			</tbody>
 			
 		</table>

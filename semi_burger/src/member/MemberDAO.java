@@ -351,11 +351,9 @@ public class MemberDAO {
 			
 			rs = ps.executeQuery();
 			
-			while(rs.next()){
-			System.out.println(rs.getString("passwd"));				
+			rs.next();
+			
 			return rs.getString("passwd");
-			}
-			return "none";
 		} catch(Exception e){
 			e.printStackTrace();
 			return null;
