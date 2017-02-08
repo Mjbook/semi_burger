@@ -85,7 +85,7 @@ padding-bottom: 15px;
 				<div id="S_menu1" align="center"><a href="/semi_burger/burgerMenu/burgerMenu.jsp#event"> <img src="img/1.png"></a>  <br> 이벤트메뉴   </div>
 			</div>
 			<div id="mainFont" align="left">
-			  <img src="introduce/img/hat.png" width="25px;"> YongBurger News 
+			  <img src="introduce/img/hat.png" width="25px;"> YongBurger News
 			</div>
 			
 			
