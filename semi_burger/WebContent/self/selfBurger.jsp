@@ -79,7 +79,7 @@ body table img{
 </style>
 <script>
 function addTop(){
-	window.open('addToping.jsp','toping','width=400,height=250,left=600,top=300');
+	window.open('addToping.jsp','toping','width=400,height=320,left=600,top=300');
 }
 function delTop(key){
 	document.deltop.key.value=key;	

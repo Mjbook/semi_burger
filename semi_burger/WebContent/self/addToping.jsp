@@ -6,6 +6,14 @@
 <head>
 <meta charset=UTF-8>
 <title>Yong Burger</title>
+<style>
+h2{
+	text-align: center;
+}
+body table{
+	margin: 0px auto;
+}
+</style>
 </head>
 <h2>토핑 추가</h2>
 <%
@@ -31,7 +39,7 @@ if(price==null||price.equals("")){
 				<td><input type="text" name="toping_price" required="required" value="<%=price%>"></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit"></td>
+				<td colspan="2" align="right"><input type="submit"></td>
 			</tr>
 		</tbody>
 	</table>
