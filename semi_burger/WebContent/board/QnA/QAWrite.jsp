@@ -31,7 +31,6 @@ table textarea {
 }
  </style>
 </head><body>
-	<div id="container">
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
@@ -43,9 +42,6 @@ table textarea {
 			
 		<%@include file="../sideMenuBar.jsp" %>
 		
-		<div id="container">
-	
-   <div id="content">	
 			<form name="QAWrite" action="QAWrite_ok.jsp">
 			<table id="table2">
 				<tr>
@@ -71,12 +67,10 @@ table textarea {
 						<input type="submit" value="완료"> 
 					</div>
 				</form>
-		</div>
-		</div>
+		
 
 	<div id="footer">
 		<%@include file="/footer.jsp"%>
-	</div>
 	</div>
 </body>
 </html>
