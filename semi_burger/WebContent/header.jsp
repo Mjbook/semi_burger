@@ -93,6 +93,7 @@ nav ul {
 					<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
 					<li><a href="/semi_burger/board/QnA/QAList.jsp">QnA</a></li>
 					<li><a href="/semi_burger/board/knowhow/knowhowList.jsp">My burger</a></li>
+			
 					<li><a href="javascript:game()">게임하기</a></li>
 				</ul>
 				</li>
