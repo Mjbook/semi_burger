@@ -22,11 +22,10 @@ h2{
 	width:500px;
 }
 .d{
-	float: left;
-	width:50%;
-	min-height:500px;
+	width:100%;
+	min-height:350px;
 	margin: 0px;
-	padding:0px;
+	padding-bottom:20px;
 	text-align:center;
 }
 .sidetable{
@@ -73,8 +72,12 @@ body table img{
 }
 .sb{
 	text-align:center;
-	width:50%;
+	width:100%;
 	padding-bottom:20px;
+}
+.leftdiv{
+	float: left;
+	width: 50%;
 }
 </style>
 <script>
@@ -163,17 +166,9 @@ if(sid!=null&&sid.equals("admin")){
 <a href="javascript:showTop()" class="a">토핑 관리</a></p>
 </div>
 <%}%>
-<form name="selfBurger" action="selfBurger_ok.jsp">
-<div class="sb"><a href="selfBurger.jsp?oto=1" class="a">제일 위의 토핑 빼기</a>
-	&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="selfBurger.jsp?to=1" class="a">토핑 전부 빼기</a>
-	<br><br>수량:<input type="text" name="item_count" size="5px">
-			<input type="submit" value="계산서에 담기">
-			<input type="button" value="계산하러 가기" onclick="order()">
-</div>
-</form>
 </article>
 <article>
+	<div class="leftdiv">
 	<div class="d">
 	<%
 	int price=0;
@@ -224,7 +219,18 @@ if(sid!=null&&sid.equals("admin")){
 	%>
 	</table>
 	</div>
+	<form name="selfBurger" action="selfBurger_ok.jsp">
+	<div class="sb"><a href="selfBurger.jsp?oto=1" class="a">제일 위의 토핑 빼기</a>
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="selfBurger.jsp?to=1" class="a">토핑 전부 빼기</a>
+	<br><br>수량:<input type="text" name="item_count" size="5px">
+			<input type="submit" value="계산서에 담기">
+			<input type="button" value="계산하러 가기" onclick="order()">
+	</div>
+	</form>
+	</div>
 </article>
+<!--오른쪽 div-->
 <article>
 	<table>
 		<tbody>
