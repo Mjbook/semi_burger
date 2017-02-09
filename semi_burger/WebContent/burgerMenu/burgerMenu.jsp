@@ -30,7 +30,7 @@ ArrayList<BurgerDTO> al3=burgerdao.eventMenu(burgerdto);
 #orderlist{
 	position:fixed;
 	top:200px;
-	right:12%;
+	right:171px;
 	min-width:280px;
 	text-align:center;
 	background: #b70303;

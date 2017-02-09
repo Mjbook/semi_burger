@@ -232,7 +232,7 @@ if(sid!=null&&sid.equals("admin")){
 </article>
 <!--오른쪽 div-->
 <article>
-	<table style="padding-top: 30px;">
+	<table style="padding-top: 30px;padding-bottom: 30px;">
 		<tbody>
 		<%
 		if(tdtos.size()==0||tdtos==null){
@@ -247,7 +247,7 @@ if(sid!=null&&sid.equals("admin")){
 				%>
 			<tr>
 				<td><img src="/semi_burger/self/toping_img/<%=tdto.getToping_img()%>"></td>
-				<td style="width:120px;"><%=tdto.getToping_name()%><br><%=tdto.getToping_price() %>원</td>
+				<td style="min-width:200px;"><%=tdto.getToping_name()%><br><%=tdto.getToping_price() %>원</td>
 				<td><a href="selfBurger.jsp?at=<%=tdto.getToping_key()%>" class="a">추가</a><%
 				if(sid!=null&&sid.equals("admin")){
 				%><br><a href="javascript:delTop(<%=tdto.getToping_key()%>)" class="a">토핑 숨기기</a><%	
