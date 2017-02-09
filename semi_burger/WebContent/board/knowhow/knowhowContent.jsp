@@ -27,12 +27,6 @@ if(dto==null){
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
 
-#img {
-  width: inherit;
-  max-width: 80%;
-  height: auto;
-}  
-  
 th div{
 	height:0px;
 	width:140px;
@@ -101,10 +95,12 @@ url = url.substring(url.length()-4, url.length());
 			</tr>
 			<tr>
 					<td colspan="4" align="center" valign="top" id="textarea">
+					<br>
 						<%=dto.getContent().replaceAll("\n", "<br>") %>
 						<br/>
 						<br/>
 						<% if(!"null".equals(url) && !"".equals(url)) {  %>
+						<br>
 						<img src="<%= pageContext.getServletContext().getContextPath() %>/<%=dto.getMy_img_url() %>" id="img" />
 						<% } %>
 					</td>
