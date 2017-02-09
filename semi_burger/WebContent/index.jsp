@@ -104,8 +104,7 @@ padding-bottom: 15px;
 			  <img src="introduce/img/hat.png" width="25px;"> YongBurger News
 			</div>			
 				<div id ="mainnotice">
-			 	<div id="tableFont" align="center"> NOTICE
-				</div>
+			 	<div id="tableFont" align="center"> NOTICE </div>
 					<table>
 						<tbody>
 							<%
@@ -120,7 +119,6 @@ padding-bottom: 15px;
 						for (int i = 0; i < adto.size(); i++) {
 								%>
 							<tr>
-								<td><%=adto.get(i).getNotice_no()%></td>
 								<td colspan="1" align="center"><a
 									href="./board/notice/noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><%=adto.get(i).getSubject() %></a></td>
 							</tr>
@@ -130,7 +128,7 @@ padding-bottom: 15px;
 					%>
 						</tbody>
 					</table>
-					</div>
+				</div>
 					<%
 					ArrayList<knowhowDTO> cdto = cdao.knowhowList(cp, 3);
 					%>
@@ -168,8 +166,8 @@ padding-bottom: 15px;
 					
 				<div id="maincenter1">
 					<div id="tableFont" align="center"> BURGER STORE</div>
-					<a href="introduce/road.jsp"><img src="img/location.png"></a>
-					<a href="#"><img src="img/gameimg.png" onclick="javascript:game()"></a>
+					<a href="introduce/road.jsp"><img src="img/location.png" width="240"></a>
+					<a href="#"><img src="img/gameimg.png" onclick="javascript:game()" width="240"></a>
 				</div>
 				</div>
 				<div id="footer">

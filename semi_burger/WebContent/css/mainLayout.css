@@ -200,11 +200,9 @@ footer {
 
 #mainnotice {
 	box-sizing: border-box;
-	width: 30%;
-	padding-top: 20px;
+	width: 33%;
 	margin-bottom: 20px;
 	float: left; 
-	border: 1px;
 	height: 30%;
 }
 #mainnotice table {
@@ -213,10 +211,11 @@ footer {
 }
 #maincenter {
 	box-sizing: border-box;
-	width: 40%;
-	padding: 20px;
+	width: 38%;
+	padding: 0px 20px 20px 20px;
 	float : left;
 	height: 30%;
+	margin-bottom: 20px;
 }
 #maincenter img {
 	width: 75%;
@@ -225,12 +224,11 @@ footer {
 }
 #maincenter1 {
 	box-sizing: border-box;
-	width: 28%;
-	padding: 20px;
+	width: 29%;
+	padding: 0px 20px 20px 20px;
 	margin-bottom: 20px;
 	float : left;
-	border: 1px;
-	height:: 30%;
+	height: 30%;
 }
 
 
@@ -321,12 +319,12 @@ footer {
 	font-weight: bold;
 	font-size: 25px;
 	height: 30px;
-	padding-bottom: 20px;
+	padding-bottom: 30px;
 	padding-top: 10px;
 }
 #S_menu {
 	width: 25%;
-	border-right: 0.5px dotted;
+	border-right: 1px dashed indianred;
 	float: left; 
 	padding-bottom: 10px;
 	
@@ -341,7 +339,6 @@ footer {
 	font-weight: bold;
 	font-size: 15px;
 	height: 30px;
-	padding-top: 30px;
 }
 
 .a{

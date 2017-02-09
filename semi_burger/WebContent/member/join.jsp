@@ -78,7 +78,7 @@ href="/semi_burger/css/mainLayout.css">
 				</tr>
 				<tr>
 					<th> E-mail&nbsp; </th>
-					<td> <input type="text" name="email" required="required"> </td>
+					<td> <input type="email" name="email" required="required"> </td>
 					<td> </td>
 				</tr>
 				<tr>
