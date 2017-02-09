@@ -4,10 +4,12 @@
 <jsp:useBean id="bdao" class="board.QA.QADAO" scope="page"/>
 <%
 	String idx_s=request.getParameter("idx");
+	
 	if(idx_s==null || idx_s.equals("")) {
 		idx_s = "0";
 	}
 	int idx=Integer.parseInt(idx_s);
+	bdao.qaCount(idx);
 	QADTO dto = bdao.QAContent(idx);
 	
 	if(dto==null) {
@@ -79,7 +81,7 @@ td{
 				<th><div>작성자</div></th>
 				<td><%=dto.getName()%></td>
 				<th><div>조회수</div></th>
-				<td><%=dto.getContent() %></td>
+				<td><%=dto.getBoard_count() %></td>
 			</tr>
 			<tr>
 				<th><div>제목</div></th>
