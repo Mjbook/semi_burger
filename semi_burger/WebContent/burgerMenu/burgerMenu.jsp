@@ -18,7 +18,7 @@
 <%
 request.setCharacterEncoding("utf-8");
 ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
-ArrayList<BurgerDTO> al3=burgerdao.burgerMenu(burgerdto);
+ArrayList<BurgerDTO> al3=burgerdao.eventMenu(burgerdto);
 %>
 <!DOCTYPE html>
 <html>
