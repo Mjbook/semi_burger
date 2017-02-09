@@ -18,10 +18,10 @@ nav ul {
 .logo{
 	padding-top:20px;
 	height:100px;
-	width:350px;
+	width:400px;
 	display:inline-block;
 	background-image: url('/semi_burger/img/logo_4.jpg');
-	background-size: contain;
+	background-size: cover;
 	float:left;
 }
 </style>
