@@ -93,10 +93,10 @@ public class Order_listDAO {
 			getConn();
 			String sql="";
 			if(sid.equals("admin")){
-				sql="select count(order_user) as menu_count from order_list group by order_date,order_user,order_shop order by order_date desc";
+				sql="select count(order_date) as menu_count from order_list group by order_date,order_user,order_shop order by order_date desc";
 				ps=conn.prepareStatement(sql);
 			}else{
-				sql="select count(order_user) as menu_count from order_list where order_user=? group by order_date,order_user,order_shop order by order_date desc";
+				sql="select count(order_date) as menu_count from order_list where order_user=? group by order_date,order_user,order_shop order by order_date desc";
 				ps=conn.prepareStatement(sql);
 				ps.setString(1, sid);
 			}
