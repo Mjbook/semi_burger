@@ -119,7 +119,7 @@ padding-bottom: 15px;
 						for (int i = 0; i < adto.size(); i++) {
 								%>
 							<tr>
-								<td colspan="1" align="center"><a
+								<td colspan="1" align="center" style="padding-top: 3px; padding-bottom: 3px;"><a
 									href="./board/notice/noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><%=adto.get(i).getSubject() %></a></td>
 							</tr>
 							<%
@@ -147,7 +147,7 @@ padding-bottom: 15px;
 						<%
 						} else {
 							%>
-													</table>
+							</table>
 							<div id="slider">
 								<figure>
 								<%
@@ -169,6 +169,7 @@ padding-bottom: 15px;
 					<div id="tableFont" align="center" style="text-decoration: underline; font-size: 18px;"> BURGER STORE</div>
 					<br>
 					<a href="introduce/road.jsp"><img src="img/location.png" width="240"></a>
+					<p></p>
 					<a href="#"><img src="img/gameimg.png" onclick="javascript:game()" width="240"></a>
 				</div>
 				</div>
