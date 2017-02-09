@@ -31,31 +31,8 @@ if(dto==null){
   width: inherit;
   max-width: 80%;
   height: auto;
-  
 }  
-th div{
-	height:0px;
-	
-	border-bottom:20px solid #DFDFDF;
-	
-}
-td{
-	width: 160px;
-	padding-left:28px;
-	padding-top:0px;
-	padding-bottom:0px;
-	text-align:left;
-	border-bottom:1px solid black;
-}
-#textarea{
-
-	height : 250px;
-	border-bottom:1px solid black;
-	border-top:1px solid black;
-	border-left:1px solid black;
-	border-right:1px solid black;
-	width:800px;
-}
+  
  </style>
 </head>
 <body>
@@ -72,61 +49,54 @@ url = url.substring(url.length()-4, url.length());
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
-		<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;opacity: 0.85;">
-			<br>
-			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;My Burger</h2>
-			<br>
-			</div>
-			
-		<%@include file="../sideMenuBar.jsp" %>
-		<br>
 		
+		<%@include file="../sideMenuBar.jsp" %>
+		
+		<div id="container">
+			<h2>내가 만든 햄버거</h2>
    <div id="content">	
- <table>
+ <table id="tableList" border="1">
 			<tr>
-				<th><div>번호</div></th>
+				<th>번호</th>
 				<td><%=dto.getKnowhow_no()%></td>
-				<th><div>작성 날짜</div></th>
+				<th>작성 날짜</th>
 				<td><%=dto.getInsert_date() %></td>
 			</tr>
 			<tr>
-				<th><div>작성자</div></th>
+				<th>작성자</th>
 				<td><%=dto.getName()%></td>
-				<th><div>조회수</div></th>
+				<th>조회수</th>
 				<td><%=dto.getBoard_count() %></td>
 			</tr>
 			<tr>
-				<th><div>제목</div></th>
+				<th>제목</th>
 				<td colspan="3" align="left">
 				<%=dto.getSubject() %>
 				</td>
 			</tr>
 			<tr height="250">
-					<td colspan="4" id="textarea" align="center" valign="top">
+					<td colspan="4" align="center" valign="top">
 						<%=dto.getContent().replaceAll("\n", "<br>") %>
 						<br/>
 						<br/>
 						<% if(!"null".equals(url) && !"".equals(url)) {  %>
-						<img src="<%= pageContext.getServletContext().getContextPath() %>/<%=dto.getMy_img_url() %>" id="img"/>
+						<img src="<%= pageContext.getServletContext().getContextPath() %>/<%=dto.getMy_img_url() %>" id="img" />
 						<% } %>
 					</td>
 			</tr>
 			</table>
-			<table>
+			<% if(sname.equals(dto.getName()) || "admin".equals(sid)) { %>
 			<div align="center">
-			<br>
+						
 			<input type="button" value="수정" onclick="location.href='knowhowUpdate.jsp?idx=<%=dto.getKnowhow_no()%>&sub=<%=dto.getSubject()%>&con=<%=dto.getContent().replaceAll("\n", "<br>") %>&url=<%=dto.getMy_img_url() %>'">
 			<input type="button" value="삭제" onclick="location.href='knowhowDelete.jsp?idx=<%=dto.getKnowhow_no()%>'">
 			<input type="button" value="목록" onclick="location.href='knowhowList.jsp'">
 				</div>
-			
-			</table>
-			
+				<%} %>
 
   </div>
 
 			<div id="footer">
-			<br>
 				<%@include file="/footer.jsp"%>
 			</div>
 		</div>

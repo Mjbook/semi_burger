@@ -100,6 +100,7 @@ function listgo(){
 				<input type="hidden" name="url" value="<%=url %>" />
 				<input type="hidden" name="knowhow_no" value=<%=idx%> />
 				<input type="button" value="취소" onclick="listgo()"> <input type="submit" value="완료">
+				
 			</div>
 			</td>
 			</tr>
