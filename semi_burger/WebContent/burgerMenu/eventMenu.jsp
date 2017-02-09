@@ -16,7 +16,7 @@ function eventMenu_delete(){
 
 
 	<article>
-	<div style="background:url(/semi_burger/introduce/img/eventCover.jpg) 50% 50% no-repeat;">
+	<div style="background:url(/semi_burger/introduce/img/eventCover.jpg) 50% 50% no-repeat;opacity: 0.85;">
 	<br>
 	<h2 style="color:white;">&nbsp;&nbsp;이벤트 메뉴</h2>
 	<br>

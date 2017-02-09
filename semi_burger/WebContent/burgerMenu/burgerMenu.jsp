@@ -176,7 +176,7 @@ for(int i=0;i<arr_bdto.size();i++){
 
 <section>
 	<article>
-	<div style="background:url(/semi_burger/introduce/img/sub_top_bg01.jpg) 50% 50% no-repeat;">
+	<div style="background:url(/semi_burger/introduce/img/sub_top_bg01.jpg) 50% 50% no-repeat; opacity: 0.85;">
 	<br>
 	<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;햄버거 메뉴</h2>
 	<br>

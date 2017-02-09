@@ -27,7 +27,7 @@ function side_delete(){
 </script>
 	
 	<article>
-		<div style="background:url(/semi_burger/introduce/img/sub1_1_bg0111.jpg) 50% 50% no-repeat;">
+		<div style="background:url(/semi_burger/introduce/img/sub1_1_bg0111.jpg) 50% 50% no-repeat;opacity: 0.85;">
 		<br>
 		<h2 style="color:white;">&nbsp;&nbsp;사이드 메뉴</h2>
 		<br>
