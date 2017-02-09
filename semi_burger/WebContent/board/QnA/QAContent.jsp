@@ -31,7 +31,6 @@ th div{
 	height:0px;
 	width:140px;
 	border-bottom:20px solid #DFDFDF;
-	border-right: 10px solid white;
 }
 td{
 	width: 160px;

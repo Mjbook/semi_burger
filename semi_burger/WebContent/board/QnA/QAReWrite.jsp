@@ -58,13 +58,13 @@ table textarea {
 			<input type="hidden" name="sunbun" value="<%=sunbun%>">
 			<table id="table2">
 				<tr>
-					<th>작성자</th>
+					<th><div>작성자</div></th>
 					<td><input type="text" name="name1" value="<%=sname %>" disabled="disabled"><input type="hidden" name="name" value="<%=sname %>"></td>
-					<th>비밀번호</th>
+					<th><div>비밀번호</div></th>
 					<td><input type="password" name="pwd" id="pw"> </td>
 				</tr>
 				<tr>
-					<th>제목</th>
+					<th><div>제목</div></th>
 					<td colspan="3" align="left">
 					<input type="text" name="subject" id="sub" value="답변:)<%=subject%>">
 					</td>

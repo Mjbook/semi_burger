@@ -51,11 +51,11 @@ table textarea {
 				<tr>
 					<th><div>작성자</div></th>
 					<td><input type="text" name="name_s" value=<%=sname %> disabled="disabled"> <input type="hidden" name="name" value="<%=sname %>"> </td>	
-					<th>비밀번호</th>
+					<th><div>비밀번호</div></th>
 					<td><input type="password" name="pwd"> </td>
 				</tr>
 				<tr>
-					<th>제목</th>
+					<th><div>제목</div></th>
 					<td colspan="3" align="left">
 					<input type="text" name="subject" id="sub">
 					</td>
