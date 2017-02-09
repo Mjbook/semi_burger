@@ -11,7 +11,12 @@ div, ul, li {
 nav ul {
 	float: right;
 }
+.navp{
+	float:right;
+	display: inline-block;
+}
 .logo{
+	padding-top:20px;
 	height:100px;
 	width:350px;
 	display:inline-block;
@@ -44,20 +49,20 @@ nav ul {
 		color: gray;
 	}
 </style>
+
+	<nav>
 	<%
 		String sname = (String)session.getAttribute("sname");
 		if(sname==null){
 		%><!-- 로그인 전 -->
-		<p><a href="/semi_burger/member/login.jsp">로그인</a> | <a href="/semi_burger/member/agree.jsp"> 회원가입&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> </p> 						
+		<p class="navp"><a class="a" href="/semi_burger/member/login.jsp">로그인</a> | <a class="a" href="/semi_burger/member/agree.jsp"> 회원가입&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p> 						
 		<%
 		} else {
 		%> <!-- 로그인 후 -->
-		<p><%=sname %> 님 로그인 중 | <a href="/semi_burger/member/logout.jsp"> 로그아웃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>		
+		<p class="navp"><%=sname %> 님 로그인 중 | <a class="a" href="/semi_burger/member/logout.jsp"> 로그아웃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>		
 		<%
 		}
 	%>
-	
-	<nav>
 		<div class="logo" onclick="home()"></div>
 		<div id="newMenu">
 		
