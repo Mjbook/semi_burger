@@ -35,9 +35,8 @@ if(dto==null){
   
 th div{
 	height:0px;
-	
+	width:140px;
 	border-bottom:20px solid #DFDFDF;
-	
 }
 td{
 	width: 160px;
@@ -48,13 +47,12 @@ td{
 	border-bottom:1px solid black;
 }
 #textarea{
-
-	height : 250px;
+	
 	border-bottom:1px solid black;
 	border-top:1px solid black;
 	border-left:1px solid black;
 	border-right:1px solid black;
-	width:800px;
+	
 }
 </style>
 </head>
@@ -81,7 +79,7 @@ url = url.substring(url.length()-4, url.length());
 		<br>
 		<div id="container">
 		
-   <div id="content">	
+   <div id="content" align="center">	
  <table >
 			<tr>
 				<th><div>번호</div></th>
@@ -101,7 +99,7 @@ url = url.substring(url.length()-4, url.length());
 				<%=dto.getSubject() %>
 				</td>
 			</tr>
-			<tr height="250">
+			<tr>
 					<td colspan="4" align="center" valign="top" id="textarea">
 						<%=dto.getContent().replaceAll("\n", "<br>") %>
 						<br/>
