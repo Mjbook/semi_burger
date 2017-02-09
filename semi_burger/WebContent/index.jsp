@@ -104,7 +104,7 @@ padding-bottom: 15px;
 			  <img src="introduce/img/hat.png" width="25px;"> YongBurger News
 			</div>			
 				<div id ="mainnotice">
-			 	<div id="tableFont" align="center" style="text-decoration: underline;"> NOTICE </div>
+			 	<div id="tableFont" align="center" style="text-decoration: underline;font-size: 18px;"> NOTICE </div>
 					<table>
 						<tbody>
 							<%
@@ -133,7 +133,7 @@ padding-bottom: 15px;
 					ArrayList<knowhowDTO> cdto = cdao.knowhowList(cp, 3);
 					%>
 				<div id="maincenter">
-							 	<div id="tableFont" align="center" style="text-decoration: underline;" > USER BURGERS </div>
+							 	<div id="tableFont" align="center" style="text-decoration: underline;font-size: 18px;" > USER BURGERS </div>
 							 	<br>
 							 	<table> 
 							 	<%
@@ -166,7 +166,7 @@ padding-bottom: 15px;
 					
 					
 				<div id="maincenter1">
-					<div id="tableFont" align="center" style="text-decoration: underline;"> BURGER STORE</div>
+					<div id="tableFont" align="center" style="text-decoration: underline; font-size: 18px;"> BURGER STORE</div>
 					<br>
 					<a href="introduce/road.jsp"><img src="img/location.png" width="240"></a>
 					<a href="#"><img src="img/gameimg.png" onclick="javascript:game()" width="240"></a>
