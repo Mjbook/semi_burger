@@ -18,7 +18,7 @@
 <%
 request.setCharacterEncoding("utf-8");
 ArrayList<BurgerDTO> al=burgerdao.burgerMenu(burgerdto);
-
+ArrayList<BurgerDTO> al3=burgerdao.burgerMenu(burgerdto);
 %>
 <!DOCTYPE html>
 <html>
@@ -304,7 +304,7 @@ for(int i=0;i<arr_bdto.size();i++){
 		<%@include file="/sideMenu/sideMenu.jsp"%>	
 		
 		<div id="event" style="width: 1000px; height:120px;"></div>
-		
+		<%@include file="/burgerMenu/eventMenu.jsp" %>
 		
 		<div style="width: 1000px; height:120px;"></div>
 		<article>
