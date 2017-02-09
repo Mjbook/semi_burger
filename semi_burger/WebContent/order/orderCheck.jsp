@@ -130,6 +130,7 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 							int total_price=0;
 							String address="";
 							String customer_name="";
+							
 							for(int j=0;j<row;j++){
 								Order_listDTO temp=arr_odto.get(row_count);
 								
@@ -153,15 +154,16 @@ ArrayList<Integer> arr_menu_num=odao.getOrderMenuNumber(sid);
 						
 						%>
 						<tr>
-						<%		if(j==0){	%>
+						<%		if(j==0){
+							//주문자 이름
+							customer_name=temp.getOrder_user();
+							%>
 							<td rowspan="<%=row%>"><%=date%><br><%=hm%></td>
 						<%		}			%>
 							<td><%=menu %></td>
 							<td><%=num %></td>
 							<td><%=df.format(price/num)%>원</td>
 						<%		if(j==0){
-									//주문자 이름
-									customer_name=temp.getOrder_user();
 									//주문별 총 금액 구하기
 									int temp_row=row_count;
 									for(int k=0;k<row;k++){

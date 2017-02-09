@@ -150,10 +150,12 @@ public class Order_listDAO {
 					String total_pay=rs.getString("total_pay");
 					java.sql.Date date=rs.getDate("order_date");
 					String hm=rs.getString("hm");
+					String order_user=rs.getString("order_user");
 					
 					Order_listDTO temp=new Order_listDTO(item_name, item_count, date, order_place, sid, total_pay);
 					temp.setOrder_no(order_no);
 					temp.setDate_hm(hm);
+					temp.setOrder_user(order_user);
 					odtos.add(temp);
 				}while(rs.next());
 			}
