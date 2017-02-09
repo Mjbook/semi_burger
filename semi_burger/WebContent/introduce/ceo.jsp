@@ -45,21 +45,17 @@
 	}
 	section a:link{
 		text-decoration: none;
-		color: gray;
 	}	
-	section a:active{
-		text-decoration: none;
-		color: gray;
-	}
 	sction a:visited{
 		text-decoration: none;
-		color: gray;
-	}
+	}		
 	section a:hover{
 		text-decoration: none;
 		color: red;
 	}
-
+	section a:active{
+		text-decoration: none;
+	}
 </style>
 </head>
 <body>

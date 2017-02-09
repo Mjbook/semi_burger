@@ -35,24 +35,36 @@ th div{
 	border-right: 00px solid white;
 }
 td{
-
 	padding-left:0px;
 	padding-top:5px;
-	padding-bottom:0px;
-
-	
+	padding-bottom:0px;	
 }
 #textarea{
 	height : 250px;
 	border-bottom:1px solid black;
 	border-top:1px solid black;
 	border-left:1px solid black;
-	border-right:1px solid black;
-	
+	border-right:1px solid black;	
 }
+	.tlink a:link{
+		text-decoration: none;
+		color: #430000;
+	}	
+	.tlink a:visited{
+		text-decoration: none;
+		color: #353535;
+	}
+	.tlink a:hover{
+		text-decoration: none;
+		color: gray;
+	}
+	.tlink a:active{
+		text-decoration: none;
+		color: brown;
+	}	
 </style>
 </head>
-<body>
+<body style="cursor:pointer;">
 
 	<div id="container">
 		<div id="header">
@@ -112,7 +124,7 @@ td{
 				</div>
 				</td>
 				</tfoot>
-				<tbody>
+				<tbody class="tlink">
 					<%
 						ArrayList<noticeDTO> adto = ddao.noticeList(cp, listSize);
 						if (adto == null || adto.size() == 0) {
