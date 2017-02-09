@@ -6,7 +6,7 @@
 
 <%
 int result=bdao.QAReWrite(bdto);
-String msg=result>0?"문의 사항이 성공적으로 접수 되었습니다.!":"접수 실패 다시확인 바랍니다.";
+String msg=result>0?"등록 완료!!":"등록에 실패하였습니다.";
 %>
 <script>
 window.alert('<%=msg%>')

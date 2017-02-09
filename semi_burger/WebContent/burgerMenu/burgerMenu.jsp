@@ -113,6 +113,8 @@ for(int i=0;i<arr_bdto.size();i++){
 		}
 		document.burgerMenu.m<%=i%>_check.value="true";
 		document.burgerMenu.submit();
+		
+		
 	}
 	function addside<%=i%>(menu){
 		no=document.sideMenu.s<%=i%>.value;
@@ -122,6 +124,8 @@ for(int i=0;i<arr_bdto.size();i++){
 		}
 		document.sideMenu.s<%=i%>_check.value="true";
 		document.sideMenu.submit();
+		
+		
 	}
 </script>
 <%
@@ -182,7 +186,7 @@ for(int i=0;i<arr_bdto.size();i++){
 	<br>
 	</div>
 	<div>
-		<form name="burgerMenu" method="post">
+		<form name="burgerMenu" method="post" >
 		
 			<table border="0" cellspacing="0">
 				<tr>
