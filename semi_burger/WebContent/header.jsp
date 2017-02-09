@@ -36,9 +36,9 @@ nav ul {
 	}
 </style>
 
-
+	<div></div>
 	<nav>
-		<div id="newMenu">
+		<div></div><div id="newMenu">
 		<%
 		String sname = (String)session.getAttribute("sname");
 		if(sname==null){
@@ -54,7 +54,7 @@ nav ul {
 		<ul>
 			<li><B><a href="/semi_burger/index.jsp">HOME &nbsp;&nbsp;&nbsp;&nbsp;</a></B></li>
 
-			<li class="firstli"><b><a href="#">소개  &nbsp;&nbsp;&nbsp;&nbsp;</a></b>
+			<li class="firstli"><b><a href="/semi_burger/introduce/ceo.jsp">소개  &nbsp;&nbsp;&nbsp;&nbsp;</a></b>
 
 				<ul>
 					<li><a href="/semi_burger/introduce/ceo.jsp">CEO 인사말</a></li>
@@ -63,7 +63,7 @@ nav ul {
 				</ul>
 				</li>
 
-			<li class="firstli"><b><a href="#">메뉴 &nbsp;&nbsp;&nbsp;&nbsp;</a></b>
+			<li class="firstli"><b><a href="/semi_burger/burgerMenu/burgerMenu.jsp">메뉴 &nbsp;&nbsp;&nbsp;&nbsp;</a></b>
 
 				<ul>
 					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp" >햄버거</a></li>
@@ -73,11 +73,16 @@ nav ul {
 					<li><a href="#">재료 원산지 표기</a></li>
 				</ul>
 				</li>
-				
-					<li class="firstli"><b><a href="#">고객정보 &nbsp;&nbsp;&nbsp;&nbsp;</a></b>
+				<%String userid=(String)session.getAttribute("sid");
+				String ahref="/semi_burger/order/orderList.jsp";	
+				if(userid!=null){
+						ahref="/semi_burger/member/updateinfo.jsp";
+				}
+				%>
+					<li class="firstli"><b><a href="<%=ahref%>">고객정보 &nbsp;&nbsp;&nbsp;&nbsp;</a></b>
 
 				<ul>
-				<%String userid=(String)session.getAttribute("sid");
+				<%
 					if(userid==null){%>
 					<li><a href="/semi_burger/order/orderList.jsp" >비회원 주문</a></li>
 					<%}else{ %>
@@ -87,7 +92,7 @@ nav ul {
 				</ul>
 				</li>
 				
-					<li class="firstli"><b><a href="#">커뮤니티 &nbsp;&nbsp;&nbsp;&nbsp; </a></b>
+					<li class="firstli"><b><a href="/semi_burger/board/notice/notice.jsp">커뮤니티 &nbsp;&nbsp;&nbsp;&nbsp; </a></b>
 
 				<ul>
 					<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
