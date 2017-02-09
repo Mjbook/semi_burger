@@ -202,6 +202,27 @@ public class QADAO {
 				}catch(Exception e2) {}
 			}
 		}
+		
+		/**qna 조회수 메서드*/
+		public void qaCount(int idx) {
+			try{
+				conn=yb.db.YB_DB.getConn();
+				String sql = "UPDATE QNA_BOARD SET BOARD_COUNT =  BOARD_COUNT + 1 WHERE QNA_NO = ?";
+
+				ps = conn.prepareStatement(sql);		
+				ps.setInt(1, idx);
+				ps.executeUpdate();		
+
+			}catch(Exception e){
+				e.printStackTrace();
+			}finally{
+				try{
+					if(ps!=null)ps.close();
+					if(conn!=null)conn.close();
+				}catch(Exception e2){}
+			}
+		}
+		
 	}
 
 
