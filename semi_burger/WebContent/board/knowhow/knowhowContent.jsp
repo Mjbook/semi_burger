@@ -112,7 +112,6 @@ url = url.substring(url.length()-4, url.length());
 					</td>
 			</tr>
 			</table>
-<<<<<<< HEAD
 			<%
 				if(sname!=null) {
 				 	if(sname.equals(dto.getName()) || "admin".equals(sid)) {
