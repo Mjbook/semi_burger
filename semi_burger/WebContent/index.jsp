@@ -119,7 +119,7 @@ padding-bottom: 15px;
 						for (int i = 0; i < adto.size(); i++) {
 								%>
 							<tr>
-								<td colspan="1" align="center" style="padding-top: 3px; padding-bottom: 3px;"><a
+								<td colspan="1" align="center" style="padding-top: 3px; padding-bottom: 3px;"><a class="a"
 									href="./board/notice/noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><%=adto.get(i).getSubject() %></a></td>
 							</tr>
 							<%

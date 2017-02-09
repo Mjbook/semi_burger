@@ -45,23 +45,7 @@ td{
 	border-top:1px solid black;
 	border-left:1px solid black;
 	border-right:1px solid black;	
-}
-	.tlink a:link{
-		text-decoration: none;
-		color: #430000;
-	}	
-	.tlink a:visited{
-		text-decoration: none;
-		color: #353535;
-	}
-	.tlink a:hover{
-		text-decoration: none;
-		color: gray;
-	}
-	.tlink a:active{
-		text-decoration: none;
-		color: brown;
-	}	
+}	
 </style>
 </head>
 <body style="cursor:pointer;">
@@ -124,7 +108,7 @@ td{
 				</div>
 				</td>
 				</tfoot>
-				<tbody class="tlink">
+				<tbody>
 					<%
 						ArrayList<noticeDTO> adto = ddao.noticeList(cp, listSize);
 						if (adto == null || adto.size() == 0) {
@@ -139,7 +123,7 @@ td{
 					<tr>
 						<td align="center"><%=adto.get(i).getNotice_no()%></td>
 						<td align="left">
-						<a href="noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><p align="left"><%=adto.get(i).getSubject()%></p></a></td>
+						<a class="a" href="noticeContent.jsp?NOTICE_NO=<%=adto.get(i).getNotice_no()%>"><p align="left"><%=adto.get(i).getSubject()%></p></a></td>
 						<td align="center"><%=adto.get(i).getName()%></td>
 						<td align="center"><%=adto.get(i).getBoard_count()%></td>
 					</tr>

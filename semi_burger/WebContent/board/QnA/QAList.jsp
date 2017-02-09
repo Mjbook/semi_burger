@@ -33,23 +33,7 @@ td{
 	border-left:1px solid black;
 	border-right:1px solid black;
 	
-}	
-	.tlink a:link{
-		text-decoration: none;
-		color: #430000;
-	}	
-	.tlink a:visited{
-		text-decoration: none;
-		color: #353535;
-	}
-	.tlink a:hover{
-		text-decoration: none;
-		color: gray;
-	}
-	.tlink a:active{
-		text-decoration: none;
-		color: #9D3636;
-	}	
+}		
 </style>
 </head>
 <%
@@ -120,7 +104,7 @@ if(cp%pageSize==0) {
 
 					</tr>
 				</tfoot>
-				<tbody class="tlink">
+				<tbody class="a">
 					<%
 						ArrayList<QADTO> arr = bdao.QAList(cp,listSize);
 						if (arr == null || arr.size() == 0) {
@@ -141,7 +125,7 @@ if(cp%pageSize==0) {
 								out.print("&nbsp;&nbsp;&nbsp;&nbsp;");
 							}
 						%>
-						<a href="QAContent.jsp?idx=<%=arr.get(i).getQna_no()%>" class="a"><%=arr.get(i).getSubject() %></a>
+						<a class="a" href="QAContent.jsp?idx=<%=arr.get(i).getQna_no()%>" class="a"><%=arr.get(i).getSubject() %></a>
 						</div></td>
 						<td><%=arr.get(i).getName()%></td>
 						<td><%=arr.get(i).getBoard_count()%></td>
