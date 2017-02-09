@@ -11,13 +11,22 @@ div, ul, li {
 nav ul {
 	float: right;
 }
-
+.logo{
+	height:100px;
+	width:350px;
+	display:inline-block;
+	background-image: url('/semi_burger/img/logo_4.jpg');
+	background-size: contain;
+	float:left;
+}
 </style>
 <script>
 	function game() {
 		window.open('/semi_burger/burgerGame/index.html','gameopoup','width=1000,height=700');
 	}
-
+	function home(){
+		location.href='/semi_burger/index.jsp';
+	}
 </script>
 <div id="headerback" style="cursor:pointer;">
 <style>
@@ -35,11 +44,7 @@ nav ul {
 		color: gray;
 	}
 </style>
-
-	<div></div>
-	<nav>
-		<div></div><div id="newMenu">
-		<%
+	<%
 		String sname = (String)session.getAttribute("sname");
 		if(sname==null){
 		%><!-- 로그인 전 -->
@@ -50,7 +55,12 @@ nav ul {
 		<p><%=sname %> 님 로그인 중 | <a href="/semi_burger/member/logout.jsp"> 로그아웃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>		
 		<%
 		}
-		%>
+	%>
+	
+	<nav>
+		<div class="logo" onclick="home()"></div>
+		<div id="newMenu">
+		
 		<ul>
 			<li><B><a href="/semi_burger/index.jsp">HOME &nbsp;&nbsp;&nbsp;&nbsp;</a></B></li>
 
