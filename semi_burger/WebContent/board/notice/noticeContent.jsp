@@ -33,9 +33,9 @@ String sid=(String)session.getAttribute("sid");
 <style>
 th div{
 	height:0px;
-	width:140px;
+	
 	border-bottom:20px solid #DFDFDF;
-	border-right: 10px solid white;
+	
 }
 td{
 	width: 160px;
@@ -46,12 +46,13 @@ td{
 	border-bottom:1px solid black;
 }
 #textarea{
+
 	height : 250px;
 	border-bottom:1px solid black;
 	border-top:1px solid black;
 	border-left:1px solid black;
 	border-right:1px solid black;
-	
+	width:800px;
 }
 </style>
 </head>

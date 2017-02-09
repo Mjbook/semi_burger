@@ -28,27 +28,36 @@ if(dto==null){
 	href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
 
-table {
-	width: 100%;
-	margin: 0px auto;
-	border-spacing: 0px;
-	border: 1px #5b0d14;
-}
-
-table td {
-	text-align: center;
-}
 
 table textarea {
-	width: 100%;
+	
 }
 
 #sub {
-	width: 100%;
+	
 }
 
 #button {
 	text-align: right;
+}
+
+th div{
+	height:0px;
+
+	border-bottom:20px solid #DFDFDF;
+
+}
+td{
+	width: 160px;
+	padding-left:0px;
+	padding-top:0px;
+	padding-bottom:0px;
+	text-align:left;
+	
+}
+#textarea{
+	
+	
 }
 </style>
 </head>
@@ -70,16 +79,17 @@ table textarea {
 
 			<form action="noticeWrite_ok.jsp">
 			
-				<table id="table2">
+				<table>
 					<tr>
-						<th>제목</th>
+						<th><div>제목</div></th>
 						<td colspan="3" align="left"><input type="text"	name="subject" placeholder="제목을 입력하세요." /></td>
 					</tr>
 					<tr height="100%">
-						<td colspan="4" align="left" valign="top"><textarea rows="15" cols="100" name="content" placeholder="내용을 입력하세요."></textarea></td>
+						<td colspan="4" align="left" valign="top"><textarea rows="15" cols="110" name="content" placeholder="내용을 입력하세요."></textarea></td>
 					</tr>
 				</table>
-				<div align="right">
+				<div align="center">
+				<br>
 					<input type="button" value="취소"  onclick="location.href='notice.jsp'"> <input type="submit" value="완료">
 				</div>
 			</form>
@@ -87,6 +97,7 @@ table textarea {
 		</div>
 
 	<div id="footer">
+	<br>
 		<%@include file="/footer.jsp"%>
 	</div>
 </body>
