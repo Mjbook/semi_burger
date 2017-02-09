@@ -304,7 +304,6 @@ for(int i=0;i<arr_bdto.size();i++){
 		<%@include file="/sideMenu/sideMenu.jsp"%>	
 		
 		<div id="event" style="width: 1000px; height:120px;"></div>
-		<%@include file="eventMenu.jsp" %>
 		
 		
 		<div style="width: 1000px; height:120px;"></div>

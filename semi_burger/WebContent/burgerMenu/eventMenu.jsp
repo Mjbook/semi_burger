@@ -14,9 +14,6 @@ function eventMenu_delete(){
 </script>
 
 
-<%
-ArrayList<BurgerDTO> al3=burgerdao.eventMenu(burgerdto);
-%>
 
 	<article>
 	<div style="background:url(/semi_burger/introduce/img/eventCover.jpg) 50% 50% no-repeat;">
