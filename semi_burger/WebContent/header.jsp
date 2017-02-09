@@ -77,20 +77,13 @@ nav ul {
 					<li class="firstli"><b><a href="#">My burger &nbsp;&nbsp;&nbsp;&nbsp;</a></b>
 
 				<ul>
-					<%
-						String userid=(String)session.getAttribute("sid");
-					
-						if(userid==null){
-							%>
-							<li><a href="/semi_burger/order/orderList.jsp" >비회원 주문</a></li>
-							<%
-						} else{
-							%>
-							<li><a href="/semi_burger/member/updateinfo.jsp">회원정보 수정</a></li>
-							<li><a href="/semi_burger/order/orderCheck.jsp">주문 조회</a></li>
-							<%
-						}
-						%>
+				<%String userid=(String)session.getAttribute("sid");
+					if(userid==null){%>
+					<li><a href="/semi_burger/order/orderList.jsp" >비회원 주문</a></li>
+					<%}else{ %>
+					<li><a href="/semi_burger/member/updateinfo.jsp">회원정보 수정</a></li>
+					<li><a href="/semi_burger/order/orderCheck.jsp">주문 조회</a></li>
+					<%}%>
 				</ul>
 				</li>
 				
@@ -98,8 +91,8 @@ nav ul {
 
 				<ul>
 					<li><a href="/semi_burger/board/notice/notice.jsp">공지사항</a></li>
-					<li><a href="/semi_burger/board/QnA/QAList.jsp"> QnA</a></li>
-					<li><a href="/semi_burger/board/knowhow/knowhowList.jsp">My Burger</a></li>
+					<li><a href="/semi_burger/board/QnA/QAList.jsp">QnA</a></li>
+					<li><a href="/semi_burger/board/knowhow/knowhowList.jsp">My burger</a></li>
 					<li><a href="javascript:game()">게임하기</a></li>
 				</ul>
 				</li>
