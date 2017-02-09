@@ -85,11 +85,9 @@ url = url.substring(url.length()-4, url.length());
 					</td>
 			</tr>
 			</table>
-			<% if(sname.equals(dto.getName()) || "admin".equals(sid)) { %>
 			<div align="center">
 			<input type="button" value="수정" onclick="location.href='knowhowUpdate.jsp?idx=<%=dto.getKnowhow_no()%>&sub=<%=dto.getSubject()%>&con=<%=dto.getContent().replaceAll("\n", "<br>") %>&url=<%=dto.getMy_img_url() %>'">
 			<input type="button" value="삭제" onclick="location.href='knowhowDelete.jsp?idx=<%=dto.getKnowhow_no()%>'">
-				<%} %>
 			<input type="button" value="목록" onclick="location.href='knowhowList.jsp'">
 				</div>
 
