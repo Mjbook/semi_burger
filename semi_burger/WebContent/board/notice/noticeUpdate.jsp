@@ -77,7 +77,7 @@ td{
 			</div>
 			
 		<%@include file="../sideMenuBar.jsp" %>
-		
+		<br>
 		<div id="content">
 		
 			<form action="noticeUpdate_ok.jsp">

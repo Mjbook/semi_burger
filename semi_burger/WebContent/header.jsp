@@ -74,7 +74,7 @@ nav ul {
 				</ul>
 				</li>
 				
-					<li class="firstli"><b><a href="#">My burger &nbsp;&nbsp;&nbsp;&nbsp;</a></b>
+					<li class="firstli"><b><a href="#">고객정보 &nbsp;&nbsp;&nbsp;&nbsp;</a></b>
 
 				<ul>
 				<%String userid=(String)session.getAttribute("sid");

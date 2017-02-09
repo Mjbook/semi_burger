@@ -27,16 +27,6 @@ if(dto==null){
 <link rel="stylesheet" type="text/css"
 	href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
-
-
-table textarea {
-	
-}
-
-#sub {
-	
-}
-
 #button {
 	text-align: right;
 }
@@ -55,10 +45,7 @@ td{
 	text-align:left;
 	
 }
-#textarea{
-	
-	
-}
+
 </style>
 </head>
 </head>
@@ -74,7 +61,7 @@ td{
 			</div>
 			
 		<%@include file="../sideMenuBar.jsp" %>
-		
+		<br>
 		<div id="contnet">
 
 			<form action="noticeWrite_ok.jsp">

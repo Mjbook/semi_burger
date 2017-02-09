@@ -32,71 +32,85 @@
 <link rel="stylesheet" type="text/css"	href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
 
-table {
-	width: 100%;
-	margin: 0px auto;
-	border-spacing: 0px;
-	border: 1px #5b0d14;
-}
-
-table td {
-	text-align: center;
-}
-
-table textarea {
-	width: 100%;
-}
-
-#sub {
-	width: 100%;
-}
 
 #button {
 	text-align: right;
 }
+th div{
+	height:0px;
+	border-bottom:20px solid #DFDFDF;
+	border-right: 00px solid white;
+}
+td{
+
+	padding-left:0px;
+	padding-top:1px;
+	padding-bottom:2px;
+
+	
+}
+#textarea{
+	height : 250px;
+	border-bottom:1px solid black;
+	border-top:1px solid black;
+	border-left:1px solid black;
+	border-right:1px solid black;
+	
+}
 </style>
+<script>
+function listgo(){
+	location.href='knowhowList.jsp';
+}
+</script>
 </head>
 <body>
 	<div id="container">
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
-		
+		<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;opacity: 0.85;">
+			<br>
+			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;My Burger</h2>
+			<br>
+			</div>
 		<%@include file="../sideMenuBar.jsp" %>
+		<br>
 		
-		<div id="content">
-			<h2>내가 만든 햄버거</h2>
-    <form action="knowhowUpdate_ok.jsp"  method="post" enctype="multipart/form-data" >
- <table id="table2">
+   		<form action="knowhowUpdate_ok.jsp"  method="post" enctype="multipart/form-data" >
+ 		<table>
 			<tr>
-				<th>제목</th>
+				<th><div>제목</div></th>
 				<td colspan="3" align="left" >
-				<input id="sub" type="text" name="subject" value="<%=sub %>" placeholder="제목을 입력하세요." />
+				<input type="text" name="subject" value="<%=sub %>" placeholder="제목을 입력하세요." />
 				</td>
 			</tr>
 			<tr height="250">
 					<td colspan="4" align="left" valign="top">
-						<textarea rows="15" cols="100" name="content" placeholder="내용을 입력하세요."><%=con %></textarea>
+						<textarea rows="15" cols="110"  placeholder="내용을 입력하세요."><%=con %></textarea>
 					</td>
 			</tr>
 			<tr>
 				<td id="file" colspan="2" align="left" ><input type="file" name="upLoad"></td>
 			</tr>
 			<tr>
-			
-			</tr>
-			</table>
+			<td colspan="4">
 			<div align="center">
 				<input type="hidden" name="name" value="<%=sname %>" />
 				<input type="hidden" name="url" value="<%=url %>" />
 				<input type="hidden" name="knowhow_no" value=<%=idx%> />
-				<a href="knowhowList.jsp">취소</a> <input type="submit" value="완료">
+				<input type="button" value="취소" onclick="listgo()"> <input type="submit" value="완료">
 			</div>
+			</td>
+			</tr>
+			</table>
+			
    
   </form>
 		</div>
 
 		<div id="footer">
+		<br>
 			<%@include file="/footer.jsp"%>
 		</div>
 	</div>

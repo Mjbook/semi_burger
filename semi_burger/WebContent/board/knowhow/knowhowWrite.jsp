@@ -29,23 +29,22 @@ if(dto==null){
 	href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
 
-table {
-	width: 100%;
-	margin: 0px auto;
-	border-spacing: 0px;
-	border: 1px #5b0d14;
-}
+th div{
+	height:0px;
+	border-bottom:20px solid #DFDFDF;
 
-table td {
-	text-align: center;
 }
-
-table textarea {
-	width: 100%;
+td{
+	width: 170px;
+	padding-left:0px;
+	padding-top:0px;
+	padding-bottom:0px;
+	text-align:left;
+	
 }
 
 #sub {
-	width: 100%;
+	
 }
 
 #button {
@@ -59,9 +58,9 @@ table textarea {
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
-				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;">
+			<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;opacity: 0.85;">
 			<br>
-			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;내가 만든 햄버거</h2>
+			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;My Burger</h2>
 			<br>
 			</div>
 			
@@ -72,16 +71,16 @@ table textarea {
 		
 				
     <form action="knowhowWrite_ok.jsp" method="post" enctype="multipart/form-data" >
-<table id="table2">	
+<table>	
 			<tr>
-				<th>제목</th>
+				<th><div>제목</div></th>
 				<td colspan="3" align="left" >
-				<input id="sub" type="text" name="subject" placeholder="제목을 입력하세요." />
+				<input type="text" name="subject" placeholder="제목을 입력하세요." />
 				</td>
 			</tr>
 			<tr height="250">
 					<td colspan="4" align="left" valign="top">
-						<textarea rows="15" cols="100" name="content" placeholder="내용을 입력하세요."></textarea>
+						<textarea rows="15" cols="110" name="content" placeholder="내용을 입력하세요."></textarea>
 					</td>
 			</tr>
 			<tr>
@@ -94,7 +93,7 @@ table textarea {
 		    </td>
 			</tr>
 			</table>
-			<div align="right">
+			<div align="center">
 					<input type="button" value="취소"  onclick="location.href='knowhowList.jsp'"> <input type="submit" value="완료">
 				</div>
 </form>
@@ -102,6 +101,7 @@ table textarea {
 		</div>
 
 	<div id="footer">
+	<br>
 		<%@include file="/footer.jsp"%>
 	</div>
 </body>

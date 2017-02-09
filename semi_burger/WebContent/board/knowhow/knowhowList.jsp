@@ -36,14 +36,14 @@
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
-				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;">
+				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;opacity: 0.85;">
 			<br>
 			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;My Burger</h2>
 			<br>
 			</div>
 			
 		<%@include file="../sideMenuBar.jsp" %>
-		
+		<br>
 		<div id="content">
 		
    
@@ -102,6 +102,7 @@
 				<%
 					if (sname != null) {
 				%>
+				<br>
 				<input type="button" value="글쓰기"
 					onclick="location.href='knowhowWrite.jsp'">
 				<%
@@ -114,6 +115,7 @@
 
 	</div>
 		<div id="footer">
+		<br>
 			<%@include file="/footer.jsp"%>
 		</div>
 	
