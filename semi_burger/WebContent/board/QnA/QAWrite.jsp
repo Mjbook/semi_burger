@@ -49,7 +49,7 @@ table textarea {
 			<form name="QAWrite" action="QAWrite_ok.jsp">
 			<table id="table2">
 				<tr>
-					<th>작성자</th>
+					<th><div>작성자</div></th>
 					<td><input type="text" name="name_s" value=<%=sname %> disabled="disabled"> <input type="hidden" name="name" value="<%=sname %>"> </td>	
 					<th>비밀번호</th>
 					<td><input type="password" name="pwd"> </td>

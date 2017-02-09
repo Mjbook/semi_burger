@@ -14,6 +14,27 @@
 		alert(1);
 	}
 </script>
+<style>
+th div{
+	height:0px;
+	border-bottom:20px solid #DFDFDF;
+	border-right: 00px solid white;
+}
+td{
+	text-align:center;
+	padding-left:0px;
+	padding-top:5px;
+	padding-bottom:0px;
+}
+#textarea{
+	height : 250px;
+	border-bottom:1px solid black;
+	border-top:1px solid black;
+	border-left:1px solid black;
+	border-right:1px solid black;
+	
+}
+</style>
 </head>
 <%
 int totalCnt=bdao.getTotalCnt(); //총 게시물 수 
@@ -51,13 +72,13 @@ if(cp%pageSize==0) {
 <div id="content">
 
 <br>
-				<table id="tableList">
+				<table>
 				<thead>
 					<tr>
-						<th>순번</th>
-						<th>제목</th>
-						<th>작성자</th>
-						<th>조회수</th>
+						<th><div style="width:80px">순번</div></th>
+						<th><div style="width:440px">제목</div></th>
+						<th><div style="width:140px">작성자</div></th>
+						<th><div style="width:90px">조회수</div></th>
 					</tr>
 				</thead>
 				<tfoot>
@@ -65,17 +86,17 @@ if(cp%pageSize==0) {
 						<td colspan="3" align="center">
 							<%
 						if(userGroup!=0) {
-							%><a href="QAList.jsp?cp=<%=(userGroup-1)*pageSize+pageSize%>">&lt;&lt;</a>
+							%><a href="QAList.jsp?cp=<%=(userGroup-1)*pageSize+pageSize%>" class="a">&lt;&lt;</a>
 							<%
 							 }
 						for(int i=userGroup*pageSize+1; i<=userGroup*pageSize+pageSize; i++) {
-							%> &nbsp;&nbsp;<a href="QAList.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
+							%> &nbsp;&nbsp;<a href="QAList.jsp?cp=<%=i%>" class="a"><%=i%></a>&nbsp;&nbsp;<%
 							if(i==totalPage) {
 								break;
 								}
 							}
 						if(userGroup!=((totalPage/pageSize)-(totalPage%pageSize==0?1:0))) {
-							%> <a href="QAList.jsp?cp=<%=((userGroup+1)*pageSize+1)%>">&gt;
+							%> <a href="QAList.jsp?cp=<%=((userGroup+1)*pageSize+1)%>" class="a">&gt;
 								&gt;</a> <%
 							}
 						%>
@@ -104,7 +125,7 @@ if(cp%pageSize==0) {
 								out.print("&nbsp;&nbsp;&nbsp;&nbsp;");
 							}
 						%>
-						<a href="QAContent.jsp?idx=<%=arr.get(i).getQna_no()%>"><%=arr.get(i).getSubject() %></a>
+						<a href="QAContent.jsp?idx=<%=arr.get(i).getQna_no()%>" class="a"><%=arr.get(i).getSubject() %></a>
 						</div></td>
 						<td><%=arr.get(i).getName()%></td>
 						<td><%=arr.get(i).getBoard_count()%></td>
@@ -116,7 +137,7 @@ if(cp%pageSize==0) {
 				</tbody>
 
 			</table>
-			<div align="right">
+			<div align="right" style="width:768px;">
 				<input type="button" value="글쓰기" onclick="location.href='QAWrite.jsp'">
 			</div>
 

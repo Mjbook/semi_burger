@@ -284,16 +284,23 @@ footer {
 	border-collapse: collapse
 }
 #table2 {
-	width: 800px;
+	width: 768px;
 }
 
 #table2, #table2 th, #table2 td {
 	font-size: 12px;
 	text-align: center;
 	padding: 4px;
-	border-collapse: collapse
+	border-collapse: collapse;
 }
-#table2 th {
+#table2 div{
+	height:0px;
+	width:100%;
+	border-bottom:10px solid #DFDFDF;
+	border-top:10px solid	#DFDFDF;
+	border-right:5px solid white;
+}
+/* #table2 th {
 	color: #ffffff;
 	background-color: #aae1fe;
 	background: -o-linear-gradient(90deg, #800000, #ffffff);
@@ -302,7 +309,7 @@ footer {
 		), color-stop(1, #ffffff ));
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#800000',
 		endColorstr='#ffffff ');
-	}
+	} */
 #table2 input {
 	width: 100%;
 	}
