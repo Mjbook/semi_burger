@@ -307,13 +307,14 @@ for(int i=0;i<arr_bdto.size();i++){
 		<%@include file="/burgerMenu/eventMenu.jsp" %>
 		
 		<div style="width: 1000px; height:120px;"></div>
-		<article>
+		
+	<article>
 		<div>
 		<form name="orderlist" action="/semi_burger/order/orderList.jsp">
 			<table id="orderlist">
 				<thead>
 				<tr>
-					<th colspan="4"><%=session.getAttribute("sid")==null?"고객":session.getAttribute("sid")%>님의 주문서</th>
+					<th colspan="4"><%=session.getAttribute("sid")==null?"고객":session.getAttribute("sname")%>님의 주문서</th>
 				</tr>
 				</thead>
 
@@ -363,7 +364,7 @@ for(int i=0;i<arr_bdto.size();i++){
 			</table>
 		</form>
 		</div>
-		</article>
+	</article>
 
 </section>
 
