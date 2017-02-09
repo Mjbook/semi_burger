@@ -94,6 +94,7 @@ function showTop(){
 function order(){
 	location.href='/semi_burger/order/orderList.jsp';
 }
+
 </script>
 </head>
 <%
@@ -179,7 +180,7 @@ if(sid!=null&&sid.equals("admin")){
 		price+=Integer.parseInt(tp_price);
 	}
 	%>
-	<div>가격:<%=df.format(price) %>원</div>
+	<div>가격/1개:<%=df.format(price) %>원</div>
 	<br>
 	<table class="sidetable" cellpadding="0" cellspacing="0">
 	<%
@@ -223,7 +224,8 @@ if(sid!=null&&sid.equals("admin")){
 	<div class="sb"><a href="selfBurger.jsp?oto=1" class="a">제일 위의 토핑 빼기</a>
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="selfBurger.jsp?to=1" class="a">토핑 전부 빼기</a>
-	<br><br>수량:<input type="text" name="item_count" size="5px">
+		<a id="printp"></a><br>
+		수량:<input type="text" name="item_count" size="5px" onkeyup="add()" onkeypress="onlyNum()">
 			<input type="submit" value="계산서에 담기">
 			<input type="button" value="계산하러 가기" onclick="order()">
 	</div>
@@ -270,4 +272,17 @@ if(sid!=null&&sid.equals("admin")){
 </section>
 <%@include file="/footer.jsp"%>
 </body>
+<script>
+function onlyNum(){
+	if (event.keyCode<48||event.keyCode>57){
+		event.returnValue=false;
+	}
+}
+function add() {
+	eanum=document.selfBurger.item_count.value;
+	eaprice=<%=df.format(price)%>;
+	tp=eaprice*eanum;
+	document.getElementById('printp').innerHTML="<br>"+eaprice+'원&nbsp;*'+eanum+"="+tp+'원';
+}
+</script>
 </html>
