@@ -232,7 +232,7 @@ if(sid!=null&&sid.equals("admin")){
 </article>
 <!--오른쪽 div-->
 <article>
-	<table>
+	<table style="padding-top: 30px;">
 		<tbody>
 		<%
 		if(tdtos.size()==0||tdtos==null){
