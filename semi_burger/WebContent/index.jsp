@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="css/mainLayout.css">
 <%
 	int totalCnt = bdao.getTotalCnt();//총 게시물 수
-	int listSize = 6;//보여줄 리스트 수
+	int listSize = 5;//보여줄 리스트 수
 	int pageSize = 3;//보여줄 페이지 수
 	String cp_s = request.getParameter("cp");
 	if (cp_s == null || cp_s.equals("")) {
@@ -104,7 +104,7 @@ padding-bottom: 15px;
 			  <img src="introduce/img/hat.png" width="25px;"> YongBurger News
 			</div>			
 				<div id ="mainnotice">
-			 	<div id="tableFont" align="center"> NOTICE </div>
+			 	<div id="tableFont" align="center" style="text-decoration: underline;"> NOTICE </div>
 					<table>
 						<tbody>
 							<%
@@ -133,7 +133,8 @@ padding-bottom: 15px;
 					ArrayList<knowhowDTO> cdto = cdao.knowhowList(cp, 3);
 					%>
 				<div id="maincenter">
-							 	<div id="tableFont" align="center" > USER BURGERS </div>
+							 	<div id="tableFont" align="center" style="text-decoration: underline;" > USER BURGERS </div>
+							 	<br>
 							 	<table> 
 							 	<%
 
@@ -165,7 +166,8 @@ padding-bottom: 15px;
 					
 					
 				<div id="maincenter1">
-					<div id="tableFont" align="center"> BURGER STORE</div>
+					<div id="tableFont" align="center" style="text-decoration: underline;"> BURGER STORE</div>
+					<br>
 					<a href="introduce/road.jsp"><img src="img/location.png" width="240"></a>
 					<a href="#"><img src="img/gameimg.png" onclick="javascript:game()" width="240"></a>
 				</div>
