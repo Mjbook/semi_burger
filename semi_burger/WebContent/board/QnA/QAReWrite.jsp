@@ -6,23 +6,19 @@
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
 <style type="text/css">
-table {
-	width: 100%;
-	margin: 0px auto;
-	border-spacing: 0px;
-	border: 1px #5b0d14;
-}
+th div{
+	height:0px;
 
-table td {
-	text-align: center;
-}
+	border-bottom:20px solid #DFDFDF;
 
-table textarea {
-	width: 100%;
 }
-
-#sub {
-	width: 100%;
+td{
+	width: 160px;
+	padding-left:0px;
+	padding-top:0px;
+	padding-bottom:0px;
+	text-align:left;
+	
 }
 
 #button {
@@ -35,14 +31,14 @@ table textarea {
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
-				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;">
+				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;opacity: 0.85;">
 			<br>
 			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;Q & A</h2>
 			<br>
 			</div>
 			
 		<%@include file="../sideMenuBar.jsp" %>
-		
+		<br>
 		<div id="container">
 	
    <div id="content">	
@@ -56,7 +52,7 @@ table textarea {
 			<input type="hidden" name="ref" value="<%=ref%>">
 			<input type="hidden" name="lev" value="<%=lev%>">
 			<input type="hidden" name="sunbun" value="<%=sunbun%>">
-			<table id="table2">
+			<table>
 				<tr>
 					<th><div>작성자</div></th>
 					<td><input type="text" name="name1" value="<%=sname %>" disabled="disabled"><input type="hidden" name="name" value="<%=sname %>"></td>
@@ -71,11 +67,12 @@ table textarea {
 				</tr>
 				<tr>
 					<td colspan="4" >
-					<textarea rows="15" cols="50" name="content"></textarea>
+					<textarea rows="15" cols="110" name="content"></textarea>
 					</td>
 				</tr>
 			</table>
-				<div align="right">
+				<div align="center">
+				<br>
 						<input type="reset" value="다시작성">
 						<input type="submit" value="완료"> 
 					</div>
@@ -85,6 +82,7 @@ table textarea {
 		</div>
 
 	<div id="footer">
+	<br>
 		<%@include file="/footer.jsp"%>
 	</div>
 </body>

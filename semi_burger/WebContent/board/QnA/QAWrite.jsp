@@ -22,6 +22,7 @@ td{
 	
 }
 
+
 #button {
 	text-align: right;
 }
@@ -30,7 +31,7 @@ td{
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
-				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;">
+				<div style="background:url(/semi_burger/introduce/img/sub_top_bg02.jpg) 50% 50% no-repeat;opacity: 0.85;">
 			<br>
 			<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;Q & A</h2>
 			<br>
