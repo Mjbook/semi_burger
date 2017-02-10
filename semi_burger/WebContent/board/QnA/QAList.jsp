@@ -104,7 +104,7 @@ if(cp%pageSize==0) {
 
 					</tr>
 				</tfoot>
-				<tbody class="a">
+				<tbody>
 					<%
 						ArrayList<QADTO> arr = bdao.QAList(cp,listSize);
 						if (arr == null || arr.size() == 0) {

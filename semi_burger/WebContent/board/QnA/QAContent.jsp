@@ -28,6 +28,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css">
+<script>
+	function qnaDel(){
+		window.open('QADelete.jsp?idx=<%=dto.getQna_no()%>&pwd=<%=dto.getPwd()%>','QADelete','width=340, height=50, left=420, top=250');
+	}
+</script>
 <style>
 th div{
 	height:0px;
@@ -99,6 +104,7 @@ td{
 			<div align="center">
 			<br>
 			<div class="ol_div" style="width:70px; text-align: center;"><a href="QAList.jsp">목록보기</a></div>
+			<div class="ol_div" style="width:70px; text-align: center;"><a href="javascript:qnaDel()">삭제하기</a></div>
 			<div class="ol_div" style="width:70px; text-align: center;"><a href="QAReWrite.jsp?subject=<%=dto.getSubject()%>&ref=<%=dto.getRef()%>&lev=<%=dto.getLev()%>&sunbun=<%=dto.getSunbun()%>">답변쓰기</a></div>
 			</div>
 			</table>

@@ -223,7 +223,62 @@ public class QADAO {
 			}
 		}
 		
+		/** 게시글 비밀번호 가져오기 메서드*/
+		public String getPwd(int idx){
+			try{
+				conn = yb.db.YB_DB.getConn();
+				
+				String sql = "select * from qna_board where qna_no=?";
+				
+				ps = conn.prepareStatement(sql);
+				ps.setInt(1, idx);
+				
+				rs = ps.executeQuery();
+				
+				rs.next();
+				
+				return rs.getString("pwd");
+			} catch(Exception e){
+				e.printStackTrace();
+				return null;
+			} finally{
+				try{
+					if(rs!=null) rs.close();
+					if(ps!=null) ps.close();
+					
+					if(conn!=null) conn.close();					
+				} catch(Exception e2){}
+			}
+		}
+		
+		/** qna 글 삭제 관련 메서드*/
+		public int qaDel(int idx, String pwd){
+			try{
+				conn = yb.db.YB_DB.getConn();
+				
+				String sql = "delete from qna_board where qna_no=? and pwd=?";
+				
+				ps = conn.prepareStatement(sql);
+				ps.setInt(1, idx);
+				ps.setString(2, pwd);
+				
+				int count = ps.executeUpdate();
+				
+				return count;
+				
+			} catch(Exception e){
+				e.printStackTrace();
+				return -1;
+			} finally{
+				try{
+					if(rs!=null) rs.close();
+					if(ps!=null) ps.close();					
+				} catch(Exception e2){}
+			}
+		}
+		
 	}
+
 
 
 
