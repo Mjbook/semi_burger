@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@page import="yb.order_list.*"%>
 <%@page import="java.util.*"%>
+<%@page import="java.text.DecimalFormat"%>
 <jsp:useBean id="burgerdto" class="yb.burger.BurgerDTO"/>
 <jsp:useBean id="burgerdao" class="yb.burger.BurgerDAO"/>
 <jsp:useBean id="mdto" class="member.MemberDTO"/>
@@ -17,7 +18,8 @@
 <title>Yong Burger</title>
 <link rel="stylesheet" type="text/css" href="/semi_burger/css/mainLayout.css" >
 <%
-	ArrayList<Order_listDTO> arr=odto.getOdtos();
+DecimalFormat df=new DecimalFormat("##,###,###,###,###");
+ArrayList<Order_listDTO> arr=odto.getOdtos();
 	if(arr==null||arr.size()<1){
 		%>
 		<script>
@@ -158,11 +160,11 @@ if(sid!=null){
 				<tr>
 					<td><%=menu%></td>
 					<td><%=num%></td>
-					<td><%=price%></td>
+					<td align="right"><%=df.format(Integer.parseInt(price))%>원</td>
 					<%-- <td><%=shop%></td> --%>
 				<%if(i==0){ %>
 					<td rowspan="<%=arr.size()%>"><%=year+"-"+month+"-"+date+" "+hour+":"+min%></td>
-					<td rowspan="<%=arr.size()%>"><%=total_price%>원</td>
+					<td rowspan="<%=arr.size()%>"><%=df.format(total_price)%>원</td>
 				<%} %>
 				</tr>			
 			<%
