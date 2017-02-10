@@ -58,7 +58,7 @@ function side_delete(){
 					%>
 					<span style="font-size:20px;color:gray;"><b><%=al2.get(i).getSideitem_name() %></b></span>
 					<br><br><br>
-					<span style="font-size:15px;color:black;"><b><%=al2.get(i).getSideitem_pay()+"원" %></b></span>
+					<span style="font-size:15px;color:black;"><b><%=df.format(Integer.parseInt(al2.get(i).getSideitem_pay()))+"원" %></b></span>
 					<br><br><br>
 					<select name="s<%=i%>" style="vertical-align: middle; height: 30px">
 					<%
