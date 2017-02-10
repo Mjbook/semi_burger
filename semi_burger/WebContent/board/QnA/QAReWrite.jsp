@@ -34,6 +34,20 @@ td{
 }
  </script>
 </head>
+<%
+	String sid = (String)session.getAttribute("sid");
+	
+	if(sid==null || !sid.equals("admin")){
+		%>
+		<script>
+			window.alert('관리자만 작성 가능합니다');
+			history.back();
+		</script>
+		<%
+		return;
+	}
+
+%>
 <body>
 	<div id="container">
 		<div id="header">
