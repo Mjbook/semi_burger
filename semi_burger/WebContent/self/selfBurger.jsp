@@ -180,7 +180,7 @@ if(sid!=null&&sid.equals("admin")){
 		price+=Integer.parseInt(tp_price);
 	}
 	%>
-	<div>가격/1개:<%=df.format(price) %>원</div>
+	<div>시그니처 버거 가격:&nbsp;<%=df.format(price) %>원</div>
 	<br>
 	<table class="sidetable" cellpadding="0" cellspacing="0">
 	<%
@@ -225,7 +225,7 @@ if(sid!=null&&sid.equals("admin")){
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="selfBurger.jsp?to=1" class="a">토핑 전부 빼기</a>
 		<a id="printp"></a><br>
-		수량:<input type="text" name="item_count" size="5px" onkeyup="add()" onkeypress="onlyNum()">
+		수량:&nbsp;<input type="text" name="item_count" size="5px"  onkeypress="onlyNum()">
 			<input type="submit" value="계산서에 담기">
 			<input type="button" value="계산하러 가기" onclick="order()">
 	</div>
@@ -278,11 +278,12 @@ function onlyNum(){
 		event.returnValue=false;
 	}
 }
+<%-- 
 function add() {
 	eanum=document.selfBurger.item_count.value;
-	eaprice=<%=df.format(price)%>;
+	eaprice=<%=price%>;
 	tp=eaprice*eanum;
 	document.getElementById('printp').innerHTML="<br>"+eaprice+'원&nbsp;*'+eanum+"="+tp+'원';
-}
-</script>
+}--%>
+</script> 
 </html>
