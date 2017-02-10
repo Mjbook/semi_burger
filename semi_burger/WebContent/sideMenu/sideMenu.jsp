@@ -60,7 +60,7 @@ function side_delete(){
 					<br><br><br>
 					<span style="font-size:15px;color:black;"><b><%=al2.get(i).getSideitem_pay()+"원" %></b></span>
 					<br><br><br>
-					<select name="s<%=i%>">
+					<select name="s<%=i%>" style="vertical-align: middle; height: 30px">
 					<%
 						for(int j=0;j<=100;j++){
 							%>
@@ -71,7 +71,9 @@ function side_delete(){
 					%>
 					</select>
 					<input type="hidden" name="s<%=i %>_check" value="false">
-					<input type="button" value="담기" onclick="javascript:addside<%=i%>(<%=i%>)">
+					<div style="display: inline-block; height: 30px; vertical-align: bottom;" >
+					<input type="image" src="/semi_burger/img/sidebutton.jpg" width="35px" height="30px" value="담기" onclick="javascript:addside<%=i%>(<%=i%>)">
+					</div>
 					</td>
 					
 				<%
