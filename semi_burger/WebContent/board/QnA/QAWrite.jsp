@@ -31,6 +31,9 @@ td{
  function submit() {
 	document.QAWrite.submit();
 }
+function rrewrite() {
+		document.QAWrite.reset();
+}
  </script>
 </head><body>
 		<div id="header">
@@ -67,7 +70,7 @@ td{
 					<div align="center">
 					
 						<div class="ol_div" style="width:70px; text-align: center;"><a href="javascript:rrewrite()">다시작성</a></div>
-						<div class="ol_div" style="width:70px; text-align: center;"><a href="javascript:rresubmit()">완료</a></div>
+						<div class="ol_div" style="width:70px; text-align: center;"><a href="javascript:submit()">완료</a></div>
 					</div>
 				</form>
 		

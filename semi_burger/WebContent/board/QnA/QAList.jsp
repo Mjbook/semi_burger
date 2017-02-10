@@ -138,12 +138,7 @@ if(cp%pageSize==0) {
 
 			</table>
 			<div align="right" style="width:768px;">
-<<<<<<< HEAD
-			<div class="ol_div" style="width:70px; text-align: center;"><a href="QAWrite.jsp">글쓰기</a></div>
-				
-=======
-				<div class="ol_div" style="width:70px;text-align: center;"><a href='QAWrite.jsp'>글쓰기</a></div>
->>>>>>> branch 'master' of https://github.com/yongburger/semi_burger.git
+				<div class="ol_div" style="width:70px; text-align: center;"><a href="QAWrite.jsp">글쓰기</a></div>
 			</div>
 
 		</div>
