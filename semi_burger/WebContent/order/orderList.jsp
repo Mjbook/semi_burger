@@ -34,6 +34,9 @@ function goMenu(){
 function goSelf(){
 	location.href='/semi_burger/self/selfBurger.jsp';
 }
+function submit(){
+	document.orderList.submit();
+}
 </script>
 <style>
 body h2{
@@ -55,6 +58,18 @@ body h2{
 	width:140px;
 	border-bottom:20px solid #DFDFDF;
 	border-right: 10px solid white;
+}
+.ol_div{
+	display:inline-block;
+	border-radius:5px;
+	background: #656161;
+	height:22px;
+	padding-top:3px;
+	border:1px solid #DFDFDF;
+	
+}
+.ol_div a{
+	color: white;
 }
 </style>
 </head>
@@ -96,13 +111,13 @@ if(sid!=null){
 			</tr>
 			<tr>
 				<th align="right"><div align="center">배달 수령 주소</div></th>
-				<td colspan="4" style="text-align: left;"><input type="text" name="addr" value="<%=addr%>" required="required"></td>
+				<td colspan="4" style="text-align: left;"><input type="text" name="addr" value="<%=addr%>"></td>
 			</tr>
 			<tr>
 				<td colspan="5" style="padding-top: 20px;">
-					<input type="button" value="다른 메뉴 담기" onclick="goMenu()">
-					<input type="button" value="시그니처 버거 담기" onclick="goSelf()">
-					<input type="submit" value="주문하기">
+					<div class="ol_div" style="width:25%;"><a href="javascript:goMenu()">다른 메뉴 담기</a></div>
+					<div class="ol_div" style="width:30%;"><a href="javascript:goSelf()">시그니처 버거 담기</a></div>
+					<div class="ol_div" style="width:15%;"><a href="javascript:submit()">주문하기</a></div>
 				</td>
 			</tr>
 		</tfoot>

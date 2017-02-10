@@ -343,6 +343,8 @@ for(int i=0;i<arr_bdto.size();i++){
 							String price=arr_odto.get(i).getTotal_pay();
 							int order_price=Integer.parseInt(price)*num;
 							total_price+=order_price;
+							
+							if(menu.startsWith("signature"))menu="시그니처 버거";
 							%> 
 							<tr>
 								<td><%=menu%></td>
