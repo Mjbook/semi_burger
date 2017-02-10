@@ -90,18 +90,18 @@ td{
 						<td colspan="3" align="center">
 							<%
 								if (userGroup != 0) {
-							%><a
+							%><a class="a"
 							href="noticejsp?cp=<%=(userGroup - 1) * pageSize + pageSize%>">&lt;&lt;</a>
 							<%
 								}
 								for (int i = userGroup * pageSize + 1; i <= userGroup * pageSize + pageSize; i++) {
-							%> &nbsp;&nbsp;<a href="notice.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
+							%> &nbsp;&nbsp;<a class="a" href="notice.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
  	if (i == totalPage) {
  			break;
  		}
  	}
  	if (userGroup != ((totalPage / pageSize) - (totalPage % pageSize == 0 ? 1 : 0))) {
- %> <a href="notice.jsp?cp=<%=((userGroup + 1) * pageSize + 1)%>">&gt;
+ %> <a class="a" href="notice.jsp?cp=<%=((userGroup + 1) * pageSize + 1)%>">&gt;
 								&gt;</a> <%
  	}
  %>
