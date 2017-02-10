@@ -27,6 +27,11 @@ td{
 	text-align: right;
 }
  </style>
+ <script>
+ function submit() {
+	document.QAWrite.submit();
+}
+ </script>
 </head><body>
 		<div id="header">
 			<%@include file="/header.jsp"%>
@@ -60,8 +65,8 @@ td{
 				</tr>
 			</table>
 					<div align="center">
-						<input type="reset" value="다시작성">
-						<input type="submit" value="완료"> 
+						<div class="ol_div"><a href="qawrite.jsp">다시 작성</a></div>
+						<div class="ol_div"><a href='javascript:submit()'>완료</a></div> 
 					</div>
 				</form>
 		
