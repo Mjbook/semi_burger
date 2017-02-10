@@ -223,7 +223,7 @@ for(int i=0;i<arr_bdto.size();i++){
 					<span style="font-size:15px;color:black;"><b><%=al.get(i).getItem_pay()+"원" %></b></span>
 					<br><br><br>
 					
-					<select name="m<%=i%>">
+					<select name="m<%=i%>" style="vertical-align: middle; height: 25px">
 					<%
 						for(int j=0;j<=100;j++){
 							%>
@@ -232,8 +232,11 @@ for(int i=0;i<arr_bdto.size();i++){
 						}
 					%>
 					</select>
+					
 					<input type="hidden" name="m<%=i %>_check" value="false">
-					<input type="button" value="담기" onclick="javascript:add<%=i%>(<%=i%>)">
+					<div style="display: inline-block; height: 25px; vertical-align: bottom;" >
+					<input type="image" src="/semi_burger/img/button.jpg" width="35px" height="25px" value="담기" onclick="javascript:add<%=i%>(<%=i%>)">
+					</div>
 					</td>
 				<%
 				}
