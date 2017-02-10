@@ -47,6 +47,11 @@ td{
 }
 
 </style>
+<script>
+function noticewrite(){
+	document.noticeW.submit();
+}
+</script>
 </head>
 </head>
 <body>
@@ -64,7 +69,7 @@ td{
 		<br>
 		<div id="contnet">
 
-			<form action="noticeWrite_ok.jsp">
+			<form name="noticeW" action="noticeWrite_ok.jsp">
 			
 				<table>
 					<tr>
@@ -77,7 +82,9 @@ td{
 				</table>
 				<div align="center">
 				<br>
-					<input type="button" value="취소"  onclick="location.href='notice.jsp'"> <input type="submit" value="완료">
+				<div class="ol_div" style="width:70px; text-align: center;"><a href="notice.jsp">취소</a></div>
+				<div class="ol_div" style="width:70px; text-align: center;"><a href="javascript:noticewrite()">완료</a></div>
+				
 				</div>
 			</form>
 		</div>

@@ -138,7 +138,8 @@ if(cp%pageSize==0) {
 
 			</table>
 			<div align="right" style="width:768px;">
-				<input type="button" value="글쓰기" onclick="location.href='QAWrite.jsp'">
+			<div class="ol_div" style="width:70px; text-align: center;"><a href="QAWrite.jsp">글쓰기</a></div>
+				
 			</div>
 
 		</div>

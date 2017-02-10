@@ -27,7 +27,16 @@ td{
 	text-align: right;
 }
  </style>
-</head><body>
+ <script>
+ function rrewrite() {
+	document.QAWrite.reset();
+}
+ function rresubmit() {
+	 document.QAWrite.submit();
+}
+ </script>
+</head>
+<body>
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>
@@ -60,8 +69,9 @@ td{
 				</tr>
 			</table>
 					<div align="center">
-						<input type="reset" value="다시작성">
-						<input type="submit" value="완료"> 
+					
+						<div class="ol_div" style="width:70px; text-align: center;"><a href="javascript:rrewrite()">다시작성</a></div>
+						<div class="ol_div" style="width:70px; text-align: center;"><a href="javascript:rresubmit()">완료</a></div>
 					</div>
 				</form>
 		
