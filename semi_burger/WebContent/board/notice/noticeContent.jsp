@@ -52,6 +52,7 @@ td{
 	border-right:1px solid black;
 	
 }
+
 </style>
 </head>
 <body>
@@ -99,7 +100,8 @@ td{
 							<%
 							if ("admin".equals(sid)) {
 							%> 
-							<input type="button" value="수정" onclick="location.href='noticeUpdate.jsp?idx=<%=dto.getNotice_no()%>&sub=<%=dto.getSubject()%>&con=<%=dto.getContent().replaceAll("\n", "<br>")%>'">
+							<div class="ol_div" style="width:70px; text-align: center;"><a href="noticeUpdate.jsp?idx=<%=dto.getNotice_no()%>&sub=<%=dto.getSubject()%>&con=<%=dto.getContent().replaceAll("\n", "<br>")%>">수정</a></div>
+							
 							<input type="button" value="삭제" onclick="location.href='noticeDelete.jsp?idx=<%=dto.getNotice_no()%>'">
 							 <%
 							}

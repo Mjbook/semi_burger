@@ -29,6 +29,18 @@
 	}
 %>
 <style>
+.ol_div{
+	display:inline-block;
+	border-radius:5px;
+	background: #656161;
+	height:22px;
+	padding-top:3px;
+	border:1px solid #DFDFDF;
+	
+}
+.ol_div a{
+	color: white;
+}
 th div{
 	height:0px;
 	border-bottom:20px solid #DFDFDF;
@@ -100,8 +112,8 @@ td{
 				<%
 					if ("admin".equals(sid)) {
 				%>
-				<input type="button" value="글쓰기"
-					onclick="location.href='noticeWrite.jsp'">
+				<div class="ol_div" style="width:70px; text-align: center;"><a href="noticeWrite.jsp">글쓰기</a></div>
+				
 				<%
 					}
 				%>
