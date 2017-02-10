@@ -79,6 +79,14 @@ body table img{
 	float: left;
 	width: 50%;
 }
+.btd{
+	display: inline-block;
+    width: 50px;
+    height: 22px;
+    border-radius: 3px;
+    background: #464241;
+    vertical-align: middle;
+}
 </style>
 <script>
 function addTop(){
@@ -94,6 +102,10 @@ function showTop(){
 function order(){
 	location.href='/semi_burger/order/orderList.jsp';
 }
+function submit() {
+	document.selfBurger.submit();
+}
+
 </script>
 </head>
 <%
@@ -179,7 +191,7 @@ if(sid!=null&&sid.equals("admin")){
 		price+=Integer.parseInt(tp_price);
 	}
 	%>
-	<div>가격:<%=df.format(price) %>원</div>
+	<div>시그니처 버거 가격:&nbsp;<%=df.format(price) %>원</div>
 	<br>
 	<table class="sidetable" cellpadding="0" cellspacing="0">
 	<%
@@ -223,9 +235,10 @@ if(sid!=null&&sid.equals("admin")){
 	<div class="sb"><a href="selfBurger.jsp?oto=1" class="a">제일 위의 토핑 빼기</a>
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="selfBurger.jsp?to=1" class="a">토핑 전부 빼기</a>
-	<br><br>수량:<input type="text" name="item_count" size="5px">
-			<input type="submit" value="계산서에 담기">
-			<input type="button" value="계산하러 가기" onclick="order()">
+		<a id="printp"></a><br>
+		수량:&nbsp;<input type="text" name="item_count" size="5px"  onkeypress="onlyNum()">
+			<div class="btd"><input type="image" src="/semi_burger/img/button_noblank.jpg" width="22px" height="22px" onclick="submit()"></div>
+			<div class="ol_div" style="width: 100px;vertical-align: middle;padding: 0px;"><a href="javascript:order()">계산하기</a></div>
 	</div>
 	</form>
 	</div>
@@ -247,7 +260,7 @@ if(sid!=null&&sid.equals("admin")){
 				%>
 			<tr>
 				<td><img src="/semi_burger/self/toping_img/<%=tdto.getToping_img()%>"></td>
-				<td style="min-width:200px;"><%=tdto.getToping_name()%><br><%=tdto.getToping_price() %>원</td>
+				<td style="min-width:200px;"><%=tdto.getToping_name()%><br><%=df.format(Integer.parseInt(tdto.getToping_price())) %>원</td>
 				<td><a href="selfBurger.jsp?at=<%=tdto.getToping_key()%>" class="a">추가</a><%
 				if(sid!=null&&sid.equals("admin")){
 				%><br><a href="javascript:delTop(<%=tdto.getToping_key()%>)" class="a">토핑 숨기기</a><%	
@@ -270,4 +283,18 @@ if(sid!=null&&sid.equals("admin")){
 </section>
 <%@include file="/footer.jsp"%>
 </body>
+<script>
+function onlyNum(){
+	if (event.keyCode<48||event.keyCode>57){
+		event.returnValue=false;
+	}
+}
+<%-- 
+function add() {
+	eanum=document.selfBurger.item_count.value;
+	eaprice=<%=price%>;
+	tp=eaprice*eanum;
+	document.getElementById('printp').innerHTML="<br>"+eaprice+'원&nbsp;*'+eanum+"="+tp+'원';
+}--%>
+</script> 
 </html>

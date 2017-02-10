@@ -16,7 +16,7 @@ function eventMenu_delete(){
 
 
 	<article>
-	<div style="background:url(/semi_burger/introduce/img/eventCover.jpg) 50% 50% no-repeat;">
+	<div style="background:url(/semi_burger/introduce/img/eventCover.jpg) 50% 50% no-repeat;opacity: 0.85;">
 	<br>
 	<h2 style="color:white;">&nbsp;&nbsp;이벤트 메뉴</h2>
 	<br>
@@ -57,9 +57,9 @@ function eventMenu_delete(){
 					<b><%=epays %>원</b>
 					</span>		
 					<br>
-					<span style="font-size:15px ; color:black;"><b><%=	al3.get(i).getItem_pay()%>원</b></span>
+					<span style="font-size:15px ; color:black;"><b><%=	df.format(Integer.parseInt(al3.get(i).getItem_pay()))%>원</b></span>
 					<br><br>
-					<input type="button" value="주문하기" onclick="location.href='/semi_burger/burgerMenu/burgerMenu.jsp'">
+					<input type="image" src="/semi_burger/img/eventbutton.jpg" width="35px" height="30px"value="주문하기" onclick="location.href='/semi_burger/burgerMenu/burgerMenu.jsp'">
 					</td>
 					
 					

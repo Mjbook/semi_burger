@@ -13,11 +13,19 @@ if(sid==null){
 }
 int result=0;
 String addr=request.getParameter("addr");
+
+if(addr==null||addr.equals("")){%>
+	<script>
+		window.alert('주소를 입력해 주세요');
+		location.href="/semi_burger/order/orderList.jsp"
+	</script><%
+	return;
+}
+
 Calendar c=Calendar.getInstance();
 result=odao.orderMenu(odto, sid, addr,c);
 
-%>
-<%
+
 if(result>0){
 	odto.clearOdtos();
 %>

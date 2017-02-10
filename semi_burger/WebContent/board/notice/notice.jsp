@@ -29,6 +29,18 @@
 	}
 %>
 <style>
+.ol_div{
+	display:inline-block;
+	border-radius:5px;
+	background: #656161;
+	height:22px;
+	padding-top:3px;
+	border:1px solid #DFDFDF;
+	
+}
+.ol_div a{
+	color: white;
+}
 th div{
 	height:0px;
 	border-bottom:20px solid #DFDFDF;
@@ -78,18 +90,18 @@ td{
 						<td colspan="3" align="center">
 							<%
 								if (userGroup != 0) {
-							%><a
+							%><a class="a"
 							href="noticejsp?cp=<%=(userGroup - 1) * pageSize + pageSize%>">&lt;&lt;</a>
 							<%
 								}
 								for (int i = userGroup * pageSize + 1; i <= userGroup * pageSize + pageSize; i++) {
-							%> &nbsp;&nbsp;<a href="notice.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
+							%> &nbsp;&nbsp;<a class="a" href="notice.jsp?cp=<%=i%>"><%=i%></a>&nbsp;&nbsp;<%
  	if (i == totalPage) {
  			break;
  		}
  	}
  	if (userGroup != ((totalPage / pageSize) - (totalPage % pageSize == 0 ? 1 : 0))) {
- %> <a href="notice.jsp?cp=<%=((userGroup + 1) * pageSize + 1)%>">&gt;
+ %> <a class="a" href="notice.jsp?cp=<%=((userGroup + 1) * pageSize + 1)%>">&gt;
 								&gt;</a> <%
  	}
  %>
@@ -100,8 +112,8 @@ td{
 				<%
 					if ("admin".equals(sid)) {
 				%>
-				<input type="button" value="글쓰기"
-					onclick="location.href='noticeWrite.jsp'">
+				<div class="ol_div" style="width:70px; text-align: center;"><a href="noticeWrite.jsp">글쓰기</a></div>
+				
 				<%
 					}
 				%>

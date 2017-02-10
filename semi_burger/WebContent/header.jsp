@@ -74,7 +74,7 @@ nav ul {
 				<ul>
 					<li><a href="/semi_burger/introduce/ceo.jsp">CEO 인사말</a></li>
 					<li><a href="/semi_burger/introduce/story.jsp">YONG BURGER</a></li>					
-					<li><a href="/semi_burger/introduce/road.jsp">찾아오시는길</a></li>
+					<li style="padding-bottom:10px;border-bottom:5px solid white; border-radius:0px 0px 10px 10px;"><a href="/semi_burger/introduce/road.jsp">찾아오시는길</a></li>
 				</ul>
 				</li>
 
@@ -84,8 +84,8 @@ nav ul {
 					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp" >햄버거</a></li>
 					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp#side" >사이드</a></li>
 					<li><a href="/semi_burger/burgerMenu/burgerMenu.jsp#event" >이벤트 메뉴</a></li>
-					<li><a href="/semi_burger/self/selfBurger.jsp">시그니처 버거</a></li>
-					<li><a href="#">재료 원산지 표기</a></li>
+					<li style="padding-bottom:10px;border-bottom:5px solid white; border-radius:0px 0px 10px 10px;"><a href="/semi_burger/self/selfBurger.jsp">시그니처 버거</a></li>
+					<!-- <li><a href="#">재료 원산지 표기</a></li> -->
 				</ul>
 				</li>
 				<%String userid=(String)session.getAttribute("sid");
@@ -99,10 +99,10 @@ nav ul {
 				<ul>
 				<%
 					if(userid==null){%>
-					<li><a href="/semi_burger/order/orderList.jsp" >비회원 주문</a></li>
+					<li style="padding-bottom:10px;border-bottom:5px solid white; border-radius:0px 0px 10px 10px;"><a href="/semi_burger/order/orderList.jsp" >비회원 주문</a></li>
 					<%}else{ %>
 					<li><a href="/semi_burger/member/updateinfo.jsp">회원정보 수정</a></li>
-					<li><a href="/semi_burger/order/orderCheck.jsp">주문 조회</a></li>
+					<li style="padding-bottom:10px;border-bottom:5px solid white; border-radius:0px 0px 10px 10px;"><a href="/semi_burger/order/orderCheck.jsp">주문 조회</a></li>
 					<%}%>
 				</ul>
 				</li>
@@ -114,7 +114,7 @@ nav ul {
 					<li><a href="/semi_burger/board/QnA/QAList.jsp">QnA</a></li>
 					<li><a href="/semi_burger/board/knowhow/knowhowList.jsp">My burger</a></li>
 			
-					<li><a href="javascript:game()">게임하기</a></li>
+					<li style="padding-bottom:10px;border-bottom:5px solid white; border-radius:0px 0px 10px 10px;"><a href="javascript:game()" >게임하기</a></li>
 				</ul>
 				</li>
 

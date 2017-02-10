@@ -64,6 +64,11 @@ td{
 	text-align: right;
 }
 </style>
+<script>
+function submitnotice(){
+	document.noticeupdate.submit();
+}
+</script>
 </head>
 <body>
 	<div id="container">
@@ -80,12 +85,12 @@ td{
 		<br>
 		<div id="content">
 		
-			<form action="noticeUpdate_ok.jsp">
+			<form name="noticeupdate" action="noticeUpdate_ok.jsp">
 				<table>
 					<tr>
 						<th><div>제목</div></th>
 						<td colspan="3" align="left">
-						<input type="text" id="widthcear" name="subject" value=<%=sub%> placeholder="제목을 입력하세요." /></td>
+						<input type="text" id="widthcear" name="subject" value="<%=sub%>" placeholder="제목을 입력하세요." /></td>
 					</tr>
 					<tr height="250">
 						<td colspan="4" align="left" valign="top">
@@ -94,9 +99,10 @@ td{
 				</table>
 				<br>
 				<div align="center">
-				<input type="hidden" name="notice_no" value=<%=idx%> />
-				<input type="button" value="취소" onclick="location.href='notice.jsp'">
-				 <input	type="submit" value="완료">
+				<input type="hidden" name="notice_no" value="<%=idx%>" />
+				<div class="ol_div" style="width:70px; text-align: center;"><a href="notice.jsp">취소</a></div>
+				<div class="ol_div" style="width:70px; text-align: center;"><a href="javascript:submitnotice()">완료</a></div>
+				
 		</div>
 		</form>
 		</div>

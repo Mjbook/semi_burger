@@ -98,8 +98,8 @@ td{
 			<table align="center">
 			<div align="center">
 			<br>
-			<input type="button" value="목록보기" onclick="location.href='QAList.jsp'">
-			<input type="button" value="답변쓰기" onclick="location.href='QAReWrite.jsp?subject=<%=dto.getSubject()%>&ref=<%=dto.getRef()%>&lev=<%=dto.getLev()%>&sunbun=<%=dto.getSunbun()%>'">
+			<div class="ol_div" style="width:70px; text-align: center;"><a href="QAList.jsp">목록보기</a></div>
+			<div class="ol_div" style="width:70px; text-align: center;"><a href="QAReWrite.jsp?subject=<%=dto.getSubject()%>&ref=<%=dto.getRef()%>&lev=<%=dto.getLev()%>&sunbun=<%=dto.getSunbun()%>">답변쓰기</a></div>
 			</div>
 			</table>
 			</div>

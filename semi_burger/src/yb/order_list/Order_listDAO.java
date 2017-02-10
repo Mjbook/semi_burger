@@ -93,10 +93,10 @@ public class Order_listDAO {
 			getConn();
 			String sql="";
 			if(sid.equals("admin")){
-				sql="select count(order_user) as menu_count from order_list group by order_date,order_user,order_shop order by order_date desc";
+				sql="select count(order_shop) as menu_count from order_list group by order_date,order_user,order_shop order by order_date desc,order_user,order_shop";
 				ps=conn.prepareStatement(sql);
 			}else{
-				sql="select count(order_user) as menu_count from order_list where order_user=? group by order_date,order_user,order_shop order by order_date desc";
+				sql="select count(order_shop) as menu_count from order_list where order_user=? group by order_date,order_user,order_shop order by order_date desc,order_shop";
 				ps=conn.prepareStatement(sql);
 				ps.setString(1, sid);
 			}
@@ -130,10 +130,10 @@ public class Order_listDAO {
 			getConn();
 			String sql="";
 			if(sid.equals("admin")){
-				sql="select a.*,to_char(a.order_date,'hh24:mi') as hm from (order_list)a order by order_date desc,order_user,order_no";
+				sql="select a.*,to_char(a.order_date,'hh24:mi') as hm from (order_list)a order by order_date desc,order_user,order_shop";
 				ps=conn.prepareStatement(sql);	
 			}else{
-				sql="select a.*,to_char(a.order_date,'hh24:mi') as hm from (order_list)a where order_user=? order by order_date desc,order_no";
+				sql="select a.*,to_char(a.order_date,'hh24:mi') as hm from (order_list)a where order_user=? order by order_date desc,order_shop";
 				ps=conn.prepareStatement(sql);	
 				ps.setString(1, sid);
 			}
@@ -150,10 +150,12 @@ public class Order_listDAO {
 					String total_pay=rs.getString("total_pay");
 					java.sql.Date date=rs.getDate("order_date");
 					String hm=rs.getString("hm");
+					String order_user=rs.getString("order_user");
 					
 					Order_listDTO temp=new Order_listDTO(item_name, item_count, date, order_place, sid, total_pay);
 					temp.setOrder_no(order_no);
 					temp.setDate_hm(hm);
+					temp.setOrder_user(order_user);
 					odtos.add(temp);
 				}while(rs.next());
 			}

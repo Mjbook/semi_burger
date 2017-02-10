@@ -27,7 +27,7 @@ function side_delete(){
 </script>
 	
 	<article>
-		<div style="background:url(/semi_burger/introduce/img/sub1_1_bg0111.jpg) 50% 50% no-repeat;">
+		<div style="background:url(/semi_burger/introduce/img/sub1_1_bg0111.jpg) 50% 50% no-repeat;opacity: 0.85;">
 		<br>
 		<h2 style="color:white;">&nbsp;&nbsp;사이드 메뉴</h2>
 		<br>
@@ -58,9 +58,9 @@ function side_delete(){
 					%>
 					<span style="font-size:20px;color:gray;"><b><%=al2.get(i).getSideitem_name() %></b></span>
 					<br><br><br>
-					<span style="font-size:15px;color:black;"><b><%=al2.get(i).getSideitem_pay()+"원" %></b></span>
+					<span style="font-size:15px;color:black;"><b><%=df.format(Integer.parseInt(al2.get(i).getSideitem_pay()))+"원" %></b></span>
 					<br><br><br>
-					<select name="s<%=i%>">
+					<select name="s<%=i%>" style="vertical-align: middle; height: 30px">
 					<%
 						for(int j=0;j<=100;j++){
 							%>
@@ -71,7 +71,9 @@ function side_delete(){
 					%>
 					</select>
 					<input type="hidden" name="s<%=i %>_check" value="false">
-					<input type="button" value="담기" onclick="javascript:addside<%=i%>(<%=i%>)">
+					<div style="display: inline-block; height: 30px; vertical-align: bottom;" >
+					<input type="image" src="/semi_burger/img/sidebutton.jpg" width="35px" height="30px" value="담기" onclick="javascript:addside<%=i%>(<%=i%>)">
+					</div>
 					</td>
 					
 				<%

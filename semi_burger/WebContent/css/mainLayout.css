@@ -357,3 +357,17 @@ footer {
 .button_div a {
 	color: #800000;
 }
+.ol_div{
+	display:inline-block;
+	border-radius:5px;
+	background: #656161;
+	height:22px;
+	padding-top:3px;
+	padding-left:6px;
+	padding-right:6px;
+	border:1px solid #DFDFDF;
+	
+}
+.ol_div a{
+	color: white;
+}

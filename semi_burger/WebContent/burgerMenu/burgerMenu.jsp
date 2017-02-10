@@ -3,6 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="yb.burger.*" %>
 <%@ page import="yb.order_list.*"  %>
+<%@page import="java.text.DecimalFormat"%>
 <jsp:useBean id="burgerdto" class="yb.burger.BurgerDTO"/>
 <jsp:setProperty property="*" name="burgerdto"/>
 <jsp:useBean id="burgerdao" class="yb.burger.BurgerDAO"/>
@@ -78,6 +79,7 @@ if(request.getParameter("re")!=null){
 	</script>
 	<%
 }
+DecimalFormat df=new DecimalFormat("##,###,###,###,###");
 if(request.getParameter("delorder")!=null){
 	String temp_s=request.getParameter("delorder");
 	int temp=Integer.parseInt(temp_s);
@@ -113,6 +115,8 @@ for(int i=0;i<arr_bdto.size();i++){
 		}
 		document.burgerMenu.m<%=i%>_check.value="true";
 		document.burgerMenu.submit();
+		
+		
 	}
 	function addside<%=i%>(menu){
 		no=document.sideMenu.s<%=i%>.value;
@@ -122,6 +126,8 @@ for(int i=0;i<arr_bdto.size();i++){
 		}
 		document.sideMenu.s<%=i%>_check.value="true";
 		document.sideMenu.submit();
+		
+		
 	}
 </script>
 <%
@@ -176,13 +182,13 @@ for(int i=0;i<arr_bdto.size();i++){
 
 <section>
 	<article>
-	<div style="background:url(/semi_burger/introduce/img/sub_top_bg01.jpg) 50% 50% no-repeat;">
+	<div style="background:url(/semi_burger/introduce/img/sub_top_bg01.jpg) 50% 50% no-repeat; opacity: 0.85;">
 	<br>
 	<h2 style="color:white;" id="burgerevent">&nbsp;&nbsp;햄버거 메뉴</h2>
 	<br>
 	</div>
 	<div>
-		<form name="burgerMenu" method="post">
+		<form name="burgerMenu" method="post" >
 		
 			<table border="0" cellspacing="0">
 				<tr>
@@ -216,10 +222,10 @@ for(int i=0;i<arr_bdto.size();i++){
 					
 					<span style="font-size:20px;color:gray;"><b><%=al.get(i).getItem_name()%></b></span>
 					<br><br><br>
-					<span style="font-size:15px;color:black;"><b><%=al.get(i).getItem_pay()+"원" %></b></span>
+					<span style="font-size:15px;color:black;"><b><%=df.format(Integer.parseInt(al.get(i).getItem_pay()))+"원" %></b></span>
 					<br><br><br>
 					
-					<select name="m<%=i%>">
+					<select name="m<%=i%>" style="vertical-align: middle; height: 30px">
 					<%
 						for(int j=0;j<=100;j++){
 							%>
@@ -228,8 +234,11 @@ for(int i=0;i<arr_bdto.size();i++){
 						}
 					%>
 					</select>
+					
 					<input type="hidden" name="m<%=i %>_check" value="false">
-					<input type="button" value="담기" onclick="javascript:add<%=i%>(<%=i%>)">
+					<div style="display: inline-block; height: 30px; vertical-align: bottom;" >
+					<input type="image" src="/semi_burger/img/button.jpg" width="35px" height="30px" value="담기" onclick="javascript:add<%=i%>(<%=i%>)">
+					</div>
 					</td>
 				<%
 				}
@@ -336,11 +345,13 @@ for(int i=0;i<arr_bdto.size();i++){
 							String price=arr_odto.get(i).getTotal_pay();
 							int order_price=Integer.parseInt(price)*num;
 							total_price+=order_price;
+							
+							if(menu.startsWith("signature"))menu="시그니처 버거";
 							%> 
 							<tr>
 								<td><%=menu%></td>
 								<td><%=num %></td>
-								<td><%=order_price%></td>
+								<td><%=df.format(order_price)%></td>
 								<td><a href="burgerMenu.jsp?delorder=<%=i%>"class="ola">취소</a></td>
 							</tr>
 							<%
@@ -352,7 +363,7 @@ for(int i=0;i<arr_bdto.size();i++){
 				<tfoot>
 				<tr>
 					<th colspan="3">금액:</th>
-					<td><%=""+total_price%>원</td>
+					<td><%=""+df.format(total_price)%>원</td>
 				</tr>
 				<tr>
 					<td colspan="4" align="center">
