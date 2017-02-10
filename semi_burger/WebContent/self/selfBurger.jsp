@@ -79,6 +79,14 @@ body table img{
 	float: left;
 	width: 50%;
 }
+.btd{
+	display: inline-block;
+    width: 50px;
+    height: 22px;
+    border-radius: 3px;
+    background: #464241;
+    vertical-align: middle;
+}
 </style>
 <script>
 function addTop(){
@@ -93,6 +101,9 @@ function showTop(){
 }
 function order(){
 	location.href='/semi_burger/order/orderList.jsp';
+}
+function submit() {
+	document.selfBurger.submit();
 }
 
 </script>
@@ -226,7 +237,7 @@ if(sid!=null&&sid.equals("admin")){
 	<a href="selfBurger.jsp?to=1" class="a">토핑 전부 빼기</a>
 		<a id="printp"></a><br>
 		수량:&nbsp;<input type="text" name="item_count" size="5px"  onkeypress="onlyNum()">
-			<input type="submit" value="계산서에 담기">
+			<div class="btd"><input type="image" src="/semi_burger/img/button_noblank.jpg" width="22px" height="22px" onclick="submit()"></div>
 			<input type="button" value="계산하러 가기" onclick="order()">
 	</div>
 	</form>
