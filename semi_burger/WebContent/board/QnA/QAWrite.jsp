@@ -28,15 +28,11 @@ td{
 }
  </style>
  <script>
- function rrewrite() {
-	document.QAWrite.reset();
-}
- function rresubmit() {
-	 document.QAWrite.submit();
+ function submit() {
+	document.QAWrite.submit();
 }
  </script>
-</head>
-<body>
+</head><body>
 		<div id="header">
 			<%@include file="/header.jsp"%>
 		</div>

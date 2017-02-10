@@ -57,7 +57,7 @@ function eventMenu_delete(){
 					<b><%=epays %>원</b>
 					</span>		
 					<br>
-					<span style="font-size:15px ; color:black;"><b><%=	al3.get(i).getItem_pay()%>원</b></span>
+					<span style="font-size:15px ; color:black;"><b><%=	df.format(Integer.parseInt(al3.get(i).getItem_pay()))%>원</b></span>
 					<br><br>
 					<input type="image" src="/semi_burger/img/eventbutton.jpg" width="35px" height="30px"value="주문하기" onclick="location.href='/semi_burger/burgerMenu/burgerMenu.jsp'">
 					</td>

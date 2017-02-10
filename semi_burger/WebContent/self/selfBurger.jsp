@@ -238,7 +238,7 @@ if(sid!=null&&sid.equals("admin")){
 		<a id="printp"></a><br>
 		수량:&nbsp;<input type="text" name="item_count" size="5px"  onkeypress="onlyNum()">
 			<div class="btd"><input type="image" src="/semi_burger/img/button_noblank.jpg" width="22px" height="22px" onclick="submit()"></div>
-			<input type="button" value="계산하러 가기" onclick="order()">
+			<div class="ol_div" style="width: 100px;vertical-align: middle;padding: 0px;"><a href="javascript:order()">계산하기</a></div>
 	</div>
 	</form>
 	</div>
@@ -260,7 +260,7 @@ if(sid!=null&&sid.equals("admin")){
 				%>
 			<tr>
 				<td><img src="/semi_burger/self/toping_img/<%=tdto.getToping_img()%>"></td>
-				<td style="min-width:200px;"><%=tdto.getToping_name()%><br><%=tdto.getToping_price() %>원</td>
+				<td style="min-width:200px;"><%=tdto.getToping_name()%><br><%=df.format(Integer.parseInt(tdto.getToping_price())) %>원</td>
 				<td><a href="selfBurger.jsp?at=<%=tdto.getToping_key()%>" class="a">추가</a><%
 				if(sid!=null&&sid.equals("admin")){
 				%><br><a href="javascript:delTop(<%=tdto.getToping_key()%>)" class="a">토핑 숨기기</a><%	

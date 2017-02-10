@@ -3,6 +3,7 @@
 <%@ page import="java.util.*" %>
 <%@ page import="yb.burger.*" %>
 <%@ page import="yb.order_list.*"  %>
+<%@page import="java.text.DecimalFormat"%>
 <jsp:useBean id="burgerdto" class="yb.burger.BurgerDTO"/>
 <jsp:setProperty property="*" name="burgerdto"/>
 <jsp:useBean id="burgerdao" class="yb.burger.BurgerDAO"/>
@@ -78,6 +79,7 @@ if(request.getParameter("re")!=null){
 	</script>
 	<%
 }
+DecimalFormat df=new DecimalFormat("##,###,###,###,###");
 if(request.getParameter("delorder")!=null){
 	String temp_s=request.getParameter("delorder");
 	int temp=Integer.parseInt(temp_s);
@@ -220,7 +222,7 @@ for(int i=0;i<arr_bdto.size();i++){
 					
 					<span style="font-size:20px;color:gray;"><b><%=al.get(i).getItem_name()%></b></span>
 					<br><br><br>
-					<span style="font-size:15px;color:black;"><b><%=al.get(i).getItem_pay()+"원" %></b></span>
+					<span style="font-size:15px;color:black;"><b><%=df.format(Integer.parseInt(al.get(i).getItem_pay()))+"원" %></b></span>
 					<br><br><br>
 					
 					<select name="m<%=i%>" style="vertical-align: middle; height: 30px">
@@ -349,7 +351,7 @@ for(int i=0;i<arr_bdto.size();i++){
 							<tr>
 								<td><%=menu%></td>
 								<td><%=num %></td>
-								<td><%=order_price%></td>
+								<td><%=df.format(order_price)%></td>
 								<td><a href="burgerMenu.jsp?delorder=<%=i%>"class="ola">취소</a></td>
 							</tr>
 							<%
@@ -361,7 +363,7 @@ for(int i=0;i<arr_bdto.size();i++){
 				<tfoot>
 				<tr>
 					<th colspan="3">금액:</th>
-					<td><%=""+total_price%>원</td>
+					<td><%=""+df.format(total_price)%>원</td>
 				</tr>
 				<tr>
 					<td colspan="4" align="center">
